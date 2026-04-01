@@ -66,7 +66,7 @@ return array(
     'Installation Guide'
     => 'Инструкции по установке',
     'install_quide_url'
-    => 'https://www.webasyst.ru/developers/docs/installation/',
+    => '',
     'Extracting Webasyst arhcive...'
     => 'Распаковка архива Вебасист...',
     'Check available updates'
@@ -97,7 +97,7 @@ return array(
     'Please install updates for the proper verification requirements'
     => 'Загрузите последнюю версию Вебасиста с сайта webasyst.ru для корректной проверки системных требований',
     'Unknown requirement case %s'
-    => 'Неизвестное системное требование "%s"',
+    => 'Целостность файлов "%s"',
 
     'PHP version'
     => 'PHP',

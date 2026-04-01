@@ -66,7 +66,7 @@ return array(
     'Installation Guide'
     => 'Installation guide',
     'install_quide_url'
-    => 'https://www.webasyst.com/developers/docs/installation/',
+    => 'www/developers/docs/installation/',
     'Extracting Webasyst archive...'
     => 'Extracting Webasyst archive...',
     'Check available updates'

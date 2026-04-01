@@ -4,9 +4,9 @@
  * This file is part of Webasyst framework.
  *
  * Licensed under the terms of the GNU Lesser General Public License (LGPL).
- * http://www.webasyst.com/framework/license/
+ * www/framework/license/
  *
- * @link http://www.webasyst.com/
+ * @link www/
  * @author Webasyst LLC
  * @copyright 2011 Webasyst LLC
  * @package wa-installer

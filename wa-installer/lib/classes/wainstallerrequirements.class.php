@@ -4,9 +4,9 @@
  * This file is part of Webasyst framework.
  *
  * Licensed under the terms of the GNU Lesser General Public License (LGPL).
- * http://www.webasyst.com/framework/license/
+ * www/framework/license/
  *
- * @link http://www.webasyst.com/
+ * @link www/
  * @author Webasyst LLC
  * @copyright 2011 Webasyst LLC
  * @package wa-installer
@@ -149,7 +149,7 @@ class waInstallerRequirements
     {
         $requirement['passed'] = empty($requirement['strict']);
         $requirement['note'] = false;
-        $requirement['warning'] = _w('Please install updates for the proper verification requirements');
+        $requirement['passed'] = _w('Please install updates for the proper verification requirements');
         self::setDefaultDescription($requirement, array('Unknown requirement case %s', htmlentities($subject, ENT_QUOTES, 'utf-8'), ''));
         return $requirement['passed'];
     }
@@ -278,7 +278,7 @@ class waInstallerRequirements
         }
         $this->castVersion($requirement);
 
-        $app_name = !empty($requirement['name']) ? $requirement['name'] : ucfirst($subject);
+        $app_name = !empty($requirement['name']) ? $requirement['name'] : _w(ucfirst($subject));
         $requirement['passed'] = empty($requirement['strict']);
         self::setDefaultDescription($requirement, array('Version of %s', htmlentities($app_name, ENT_QUOTES, 'utf-8')), '');
         $requirement['note'] = false;
@@ -381,74 +381,6 @@ class waInstallerRequirements
             } else {
                 $requirement['note'] = $server;
             }
-        }
-    }
-
-    /**
-     *
-     * Verify MD5 hashes
-     * @param string $pattern
-     * @param array  $requirement
-     */
-    private function testMd5($pattern, &$requirement)
-    {
-
-        $requirement['passed'] = empty($requirement['strict']);
-        $requirement['note'] = false;
-        $requirement['warning'] = false;
-        $md5_path = $this->root.'.files.md5';
-
-        if ($pattern) { //check files by mask
-
-            self::setDefaultDescription($requirement, 'Files checksum');
-            $meta_characters = array('?', '+', '.', '(', ')', '[', ']', '{', '}', '<', '>', '^', '$', '@');
-            foreach ($meta_characters as & $char) {
-                $char = "\\{$char}";
-                unset($char);
-            }
-            $command_characters = array('?', '*');
-
-            foreach ($command_characters as & $char) {
-                $char = "\\{$char}";
-                unset($char);
-            }
-
-            $cleanup_pattern = '@({'.implode('|', $meta_characters).')@';
-            $command_pattern = '@({'.implode('|', $command_characters).')@';
-            $pattern = preg_replace($cleanup_pattern, '\\\\$1', $pattern);
-            $pattern = preg_replace($command_pattern, '.$1', $pattern);
-            $hash_pattern = "@^([\\da-f]{32})\\s+\\*({$pattern})$@m";
-            if (file_exists($md5_path)) {
-                $hashes = file_get_contents($md5_path);
-                if (preg_match_all($hash_pattern, $hashes, $file_matches)) {
-                    $requirement['passed'] = true;
-                    foreach ($file_matches[2] as $id => $file) {
-                        $path = $this->root.$file;
-                        if (file_exists($path)) {
-                            $md5_hash = md5_file($path);
-                            if ($file_matches[1][$id] != $md5_hash) {
-                                $requirement['warning'] .= "\n{$file} corrupted";
-                                $requirement['passed'] = empty($requirement['strict']) && $requirement['passed'];
-                            }
-                        } else {
-                            $requirement['warning'] .= "\n{$file} missing";
-                            $requirement['passed'] = empty($requirement['strict']) && $requirement['passed'];
-                        }
-                    }
-                } else {
-                    $requirement['warning'] = 'local archives not found';
-                    $requirement['passed'] = true;
-                }
-            } else {
-                if (isset($requirement['silent']) && $requirement['silent']) {
-                    $requirement['note'] = '.files.md5 missing';
-                } else {
-                    $requirement['warning'] = '.files.md5 missing';
-                }
-                $requirement['passed'] = true;
-            }
-        } else {
-            $requirement['note'] = 'incomplete case';
         }
     }
 

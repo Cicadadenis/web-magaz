@@ -4,9 +4,9 @@
  * This file is part of Webasyst framework.
  *
  * Licensed under the terms of the GNU Lesser General Public License (LGPL).
- * http://www.webasyst.com/framework/license/
+ * www/framework/license/
  *
- * @link http://www.webasyst.com/
+ * @link www/
  * @author Webasyst LLC
  * @copyright 2011 Webasyst LLC
  * @package wa-installer
@@ -136,7 +136,7 @@ class waInstaller
      * @todo root path workaround
      * @todo partial copy
      *
-     * @throws Exception|waInstallerDownloadException
+     * @throws Exception
      * @param $update_list array[][string]string
      * @param $update_list []['source'] array[][string]string Source path or URI
      * @param $update_list []['target'] array[][string]string Target path
@@ -304,25 +304,6 @@ class waInstaller
                 default:
                     throw new Exception("Invalid resume state {$resume}");
                     break;
-            }
-
-            foreach ($update_list as &$update) {
-                $update['info'] = null;
-                if (function_exists('wa')) {
-                    $path = $update['target'].'lib/config/';
-                    if ($update['subject'] === 'app') {
-                        $path .= 'app.php';
-                        if (file_exists($path)) {
-                            $update['info'] = include $path;
-                        }
-                    } elseif ($update['subject'] === 'app_plugins') {
-                        $path .= 'plugin.php';
-                        $slugs = explode('/', $update['slug']);
-                        if ($slugs[2] === 'plugins' && file_exists($path)) {
-                            $update['info'] = include $path;
-                        }
-                    }
-                }
             }
             //$this->current_stage = 'update_'.self::STATE_COMPLETE;
             //$this->current_chunk_id = 'total';
@@ -644,7 +625,7 @@ class waInstaller
      * @param $source
      * @param $temporary_path
      * @return array
-     * @throws Exception|waInstallerDownloadException
+     * @throws Exception
      */
     private function downloadStandard($source, $temporary_path)
     {
@@ -678,21 +659,17 @@ class waInstaller
                     $hint .= " PHP ini option 'allow_url_fopen' are disabled;";
                 }
 
-                // Extract http status (and form hint)
-                $status = 500;
-                if (!empty($http_response_header)) {;
+                if (!empty($http_response_header)) {
                     foreach ($http_response_header as $header) {
-                        if (preg_match( "#http/[0-9\.]+\s+([0-9]+)\s+(.+)#i", $header, $matches)) {
-                            $status = intval($matches[1]);  // typecast here is important, so === would work in outside (consumer) codes
-                            $hint .= " {$matches[1]} {$matches[2]}.";
+                        if (preg_match('@^status:\s+(\d+)\s+(.+)$@i', $header, $matches)) {
+                            $hint .= " {$matches[1]} {$matches[2]}";
                             $hint .= self::getHintByStatus($matches[1]);
+                            break;
                         }
-
                     }
                 }
-
                 $source = preg_replace('@([\?&](previous_hash|hash|token)=)([^&\?]+)@', '$1*hash*', $source);
-                throw new waInstallerDownloadException("Error while opening source stream [{$source}]. Hint: {$hint}", $status);
+                throw new Exception("Error while opening source stream [{$source}]. Hint: {$hint}");
             } elseif (!empty($http_response_header)) {
                 //XXX ????
                 foreach ($http_response_header as $header) {
@@ -841,6 +818,7 @@ class waInstaller
 
     private static function getHintByStatus($status)
     {
+
         $hint = '';
         switch ($status) {
             case 402:
@@ -1362,12 +1340,7 @@ class waInstaller
                                     $this->cleanupPath($path.'/'.$current_path, $skip_directory);
                                 } else {
                                     if (!@unlink(self::$root_path.$path.'/'.$current_path)) {
-                                        $warning_message = "Error on unlink file {$path}/{$current_path}";
-                                        if (strpos($path, 'wa-cache/') === 0) {
-                                            $this->writeLog($warning_message);
-                                        } else {
-                                            throw new Exception($warning_message);
-                                        }
+                                        throw new Exception("Error on unlink file {$path}/{$current_path}");
                                     }
                                 }
                             }
@@ -1516,11 +1489,11 @@ class waInstaller
 
             );
         }
-        if (strpos((string) $this->current_stage, '_') === false) {
+        if (strpos($this->current_stage, '_') === false) {
             $stage_name = 'unknown';
             $stage_status = self::STAGE_NONE;
         } else {
-            list($stage_name, $stage_status) = explode('_', (string) $this->current_stage, 2);
+            list($stage_name, $stage_status) = explode('_', $this->current_stage, 2);
         }
 
         $default = array(
@@ -1655,7 +1628,7 @@ class waInstaller
 
     private function getFullStateCallback(&$val, $key)
     {
-        $val = preg_match("/^-?\d+(\.|,)\d+$/", (string) $val) ? intval($val) : $val;
+        $val = preg_match("/^-?\d+(\.|,)\d+$/", $val) ? intval($val) : $val;
     }
 
     private function skipPath($path)
@@ -1845,6 +1818,7 @@ class waInstaller
             CURLOPT_RETURNTRANSFER    => 1,
             CURLOPT_TIMEOUT           => self::TIMEOUT_SOCKET * 60,
             CURLOPT_CONNECTTIMEOUT    => self::TIMEOUT_SOCKET,
+            CURLE_OPERATION_TIMEOUTED => self::TIMEOUT_SOCKET * 60,
             CURLOPT_DNS_CACHE_TIMEOUT => 3600,
             CURLOPT_BINARYTRANSFER    => true,
             CURLOPT_WRITEFUNCTION     => array(&$this, 'curlWriteHandler'),

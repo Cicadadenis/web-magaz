@@ -1,2 +1,0 @@
-<?php
-// mistakes were made!

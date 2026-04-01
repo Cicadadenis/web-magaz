@@ -4,9 +4,9 @@
  * This file is part of Webasyst framework.
  *
  * Licensed under the terms of the GNU Lesser General Public License (LGPL).
- * http://www.webasyst.com/framework/license/
+ * www/framework/license/
  *
- * @link http://www.webasyst.com/
+ * @link www/
  * @author Webasyst LLC
  * @copyright 2020 Webasyst LLC
  * @package wa-installer
@@ -56,7 +56,7 @@ $path = preg_replace('!/[^/]*$!', '/', $path);
 $host = preg_replace('@:80(/|/?$)@', '', $_SERVER['HTTP_HOST']).($path ? "/{$path}/" : '/');
 $host = preg_replace('@(([^:]|^)/)/{1,}@', '$1', $host);
 
-setcookie('auth_token', '', -1, $path);
+setcookie('auth_token', null, -1, $path);
 
 /**
  * @param $stages
@@ -510,10 +510,8 @@ HTML;
             $cwd     = getcwd();
             $installer = new waInstaller(waInstaller::LOG_DEBUG);
             if (empty($_POST['complete'])) {
-                $local_path = dirname(dirname(__FILE__)).'/';
-                $sources_path = $local_path . 'wa-sources/';
-                $apps_path = $local_path . 'wa-apps/';
-                if (!file_exists($sources_path) || !is_dir($sources_path) || (file_exists('.git') && file_exists($apps_path) && is_dir($apps_path))) {
+                $local_path = dirname(dirname(__FILE__)).'/wa-sources/';
+                if (!file_exists($local_path) || !is_dir($local_path) || file_exists('.git')) {
 
                     //
                     // Install from a GIT repo: no wa-sources dir, no archives,
@@ -526,6 +524,7 @@ HTML;
                     // Search sources relative to root directory, list all apps and plugins
                     // We will need the list to activate them via wa-config/apps.php
                     // and wa-config/apps/*/plugins.php
+                    $local_path = dirname(dirname(__FILE__)).'/';
                     chdir($local_path);
                     $glob_pattern = '{wa-apps/*,wa-apps/*/plugins/*}';
                     _getComponents($glob_pattern,'#^([\\w%0-9\\-!]+)$#', $local_path, $urls, $apps, $plugins, $widgets);
@@ -540,9 +539,9 @@ HTML;
 
                     // Search sources relative to wa-sources directory,
                     // and unzip to appropriate places relative to root directory
-                    chdir($sources_path);
+                    chdir($local_path);
                     $glob_pattern = '{*.tar.gz,wa-apps/*.tar.gz,wa-widgets/*.tar.gz,wa-apps/*/plugins/*.tar.gz,wa-apps/*/themes/*.tar.gz,wa-apps/*/widgets/*.tar.gz,wa-plugins/*/*.tar.gz}';
-                    _getComponents($glob_pattern, '@^([\\w%0-9\\-!]+)\\.tar\\.gz$@', $sources_path, $urls, $apps, $plugins, $widgets);
+                    _getComponents($glob_pattern, '@^([\\w%0-9\\-!]+)\\.tar\\.gz$@', $local_path, $urls, $apps, $plugins, $widgets);
                 }
             }
 
@@ -655,11 +654,9 @@ HTACCESS;
                             if (!class_exists('waInstallerApps')) {
                                 throw new Exception('Class <b>waInstallerApps</b> not found');
                             }
-                            if ($result = mysqli_query($link, 'SHOW TABLES LIKE "wa_app_settings"')) {
-                                if (mysqli_num_rows($result)) {
-                                    throw new Exception($wa_locale->_('Webasyst cannot be installed into "%s" database because this database already contains Webasyst tables. Please specify connection credentials for another MySQL database.',
-                                        $db_options['database']));
-                                }
+                            if (mysqli_query($link, 'SELECT 1 FROM `wa_app_settings` WHERE 0')) {
+                                throw new Exception($wa_locale->_('Webasyst cannot be installed into "%s" database because this database already contains Webasyst tables. Please specify connection credentials for another MySQL database.',
+                                    $db_options['database']));
                             } elseif ($result = mysqli_query($link, 'SHOW TABLES')) {
                                 if ($count = mysqli_num_rows($result)) {
                                     $warning = $wa_locale->_('The database already contains %d tables.', $count);
@@ -855,13 +852,6 @@ PHP;
                     throw new Exception("Error while create SystemConfig at wa-config");
                 }
             }
-
-            // Possible scenario when user re-installs framework again on the same domain:
-            // we should log out here because old auth interferes with first user creation script later.
-            if (!headers_sent() && session_status() != PHP_SESSION_ACTIVE) {
-                session_start();
-            }
-            unset($_SESSION['auth_user']);
 
             $url = $is_https ? 'https' : 'http';
             $login_path = waInstallerApps::getGenericConfig('mod_rewrite', true) ? 'webasyst/' : 'index.php/webasyst/';
