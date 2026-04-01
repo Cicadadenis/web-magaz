@@ -1,0 +1,131 @@
+{$token = ifset($settings, 'token', '')}
+<div class="field-group">
+    <div class="field">
+        <div class="name"></div>
+        <div class="value"><h3>{$obj->_w('Basic settings')}</h3></div>
+    </div>
+    <div class="field">
+        <div class="name">{$obj->_w('Service name')}</div>
+        <div class="value">
+            <input type="text" name="{$namespace}[service]" value="{ifset($settings, 'service', '')}">
+        </div>
+    </div>
+    <div class="field">
+        <div class="name">{$obj->_w('API URL')}</div>
+        <div class="value">
+            <input type="text" name="{$namespace}[api_url]" value="{ifset($settings, 'api_url', '')}">
+            <br>
+            <span class="hint">{$obj->_w('To switch to the test mode, request a test API address and token from Boxberry support team.')}</span>
+        </div>
+    </div>
+    <div class="field">
+        <div class="name">{$obj->_w('Token')}</div>
+        <div class="value">
+            <input type="text" class="js-boxberry-token" name="{$namespace}[token]" value="{$token}" required>
+        </div>
+    </div>
+
+    <div class="field">
+        <div class="name">{$obj->_w('Parcel office city')}</div>
+        <div class="value">
+            <input class="ui-autocomplete-input js-boxberry-targetstart-autocomplete" autocomplete="off" value="{$points_by_settings['city']}"
+                   placeholder="{$obj->_w('Start typing a city name')}" {if !$token}style="display: none"{/if}>
+            <span class="s-js-boxberry-targetstart-start-message">
+                {$obj->_w('To select a parcel office, please enter a token and save the settings.')}
+            </span>
+            <br>
+            <span class="errormsg s-js-boxberry-targetstart-autocomplete">
+                {$obj->_w('There are no parcel offices in your city.')}
+            </span>
+        </div>
+    </div>
+
+    <div class="field js-boxberry-parcel-points-wrapper" {if !$points_by_settings['targetstart']}style="display: none"{/if}>
+        <div class="name">{$obj->_w('Parcel office')}</div>
+        <div class="value no-shift">
+            <select name="{$namespace}[targetstart]" class="js-boxberry-parcel-points-list">
+                {foreach $points_by_settings['points'] as $point_data}
+                    <option value="{$point_data['code']}" {if $points_by_settings['targetstart'] == $point_data['code']}selected{/if}>
+                       {$point_data['name']}
+                    </option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+
+    <div class="field">
+        <div class="name">{$obj->_w('Maximum dimensions')}
+            <span class="shop-tooltip"><i class="icon10 info"></i><span>{$obj->_w('Maximum package dimensions for which this shipping method should be available. Cannot exceed the maximum dimensions set by Boxberry — length 1.2 m, width 0.8 m, height 0.5 m, all dimensions sum 2.5 m.')}</span></span>
+        </div>
+        <div class="value">
+            <div class="flex-row">
+                <div class="flex-input">
+                    <input name="{$namespace}[max_length]" value="{$settings.max_length|default:'0.001'|escape}" type="text" data-max="1.2" data-dimension="length">
+                    <span class="align-center hint">{$obj->_w('Length')}</span>
+                </div>
+                <span>{$obj->_w('m')} +</span>
+                <div class="flex-input">
+                    <input name="{$namespace}[max_width]" value="{$settings.max_width|default:'0.001'|escape}" type="text" data-max="0.8" data-dimension="width">
+                    <span class="align-center hint">{$obj->_w('Width')}</span>
+                </div>
+                <span>{$obj->_w('m')} +</span>
+                <div class="flex-input">
+                    <input name="{$namespace}[max_height]" value="{$settings.max_height|default:'0.001'|escape}" type="text" data-max="0.5" data-dimension="height">
+                    <span class="align-center hint">{$obj->_w('Height')}</span>
+                </div>
+                <span>{$obj->_w('m')} = <span class="max_sum_dimensions">{$settings.max_length|default:'0.001' + $settings.max_width|default:'0.001' + $settings.max_height|default:'0.001'}</span> {$obj->_w('m')}</span>
+            </div>
+            <div class="js-error-max-length dimension-error" style="display: none">{$obj->_w('Maximum length must be greater than 0 and must not exceed 1.2 m.')}</div>
+            <div class="js-error-max-width dimension-error" style="display: none">{$obj->_w('Maximum width must be greater than 0 and must not exceed 0.8 m.')}</div>
+            <div class="js-error-max-height dimension-error" style="display: none">{$obj->_w('Maximum height must be greater than 0 and must not exceed 0.5 m.')}</div>
+        </div>
+    </div>
+    <div class="field">
+        <div class="name">{$obj->_w('Default dimensions')}
+            <span class="shop-tooltip"><i class="icon10 info"></i><span>{$obj->_w('Used in cases when package dimensions are not provided by a dedicated plugin. If these values are empty then, if no values are provided by a dedicated plugin, shipping terms and rates for this shipping method will not be calculated.')}</span></span>
+        </div>
+        <div class="value">
+            <div class="flex-row">
+                <div class="flex-input">
+                    <input name="{$namespace}[default_length]" type="text" value="{$settings.default_length|default:''|escape}" data-dimension="length">
+                    <span class="align-center hint">{$obj->_w('Length')}</span>
+                </div>
+                <span>{$obj->_w('m')} +</span>
+                <div class="flex-input">
+                    <input name="{$namespace}[default_width]" type="text" value="{$settings.default_width|default:''|escape}" data-dimension="width">
+                    <span class="align-center hint">{$obj->_w('Width')}</span>
+                </div>
+                <span>{$obj->_w('m')} +</span>
+                <div class="flex-input">
+                    <input name="{$namespace}[default_height]" type="text" value="{$settings.default_height|default:''|escape}" data-dimension="height">
+                    <span class="align-center hint">{$obj->_w('Height')}</span>
+                </div>
+                <span>{$obj->_w('m')} = <span class="default_sum_dimensions">{$settings.default_length|default:'0.001' + $settings.default_width|default:'0.001' + $settings.default_height|default:'0.001'}</span> {$obj->_w('m')}</span>
+            </div>
+            <div class="js-error-default-length dimension-error" style="display: none">{$obj->_w('Default length must be greater than 0 and must not exceed the maximum dimensions length.')}</div>
+            <div class="js-error-default-width dimension-error" style="display: none">{$obj->_w('Default width must be greater than 0 and must not exceed the maximum dimensions width.')}</div>
+            <div class="js-error-default-height dimension-error" style="display: none">{$obj->_w('Default height must be greater than 0 and must not exceed the maximum dimensions height.')}</div>
+            <p class="hint">{$obj->_w('Used only if order dimensions have not been calculated by a special plugin. If no value is specified, shipping rate and terms will not be calculated.')}</p>
+        </div>
+    </div>
+    <div class="field">
+        <div class="name">{$obj->_w('Max weight')}
+            <span class="shop-tooltip"><i class="icon10 info"></i><span>{$obj->_w('Maximum weight for which this shipping method will be available. Cannot exceed Boxberry’s weight limitation of 30 kg.')}</span></span>
+        </div>
+        <div class="value">
+            <input name="{$namespace}[max_weight]" type="text" value="{$settings.max_weight|default:''|escape}" data-max="30000" data-dimension="weight">
+            <span>{$obj->_w('g')}</span>
+            <div class="js-error-max-weight dimension-error" style="display: none">{$obj->_w('Must be above 4 g and must not exceed 30 kg.')}</div>
+        </div>
+    </div>
+    <div class="field">
+        <div class="name">{$obj->_w('Default weight')}
+            <span class="shop-tooltip"><i class="icon10 info"></i><span>{$obj->_w('Used in cases when no weight data are available. If this value is empty then, with no information about the shipping weight available, the shipping terms and rates will not be calculated.')}</span></span>
+        </div>
+        <div class="value">
+            <input name="{$namespace}[default_weight]" type="text" value="{$settings.default_weight|default:''|escape}" data-dimension="weight">
+            <span>{$obj->_w('g')}</span>
+            <div class="js-error-default-weight dimension-error" style="display: none">{$obj->_w('Must be greater than 4 g and must not exceed the maximum weight value.')}</div>
+        </div>
+    </div>
+</div>

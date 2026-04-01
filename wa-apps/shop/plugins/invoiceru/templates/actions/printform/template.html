@@ -1,0 +1,602 @@
+{*
+@param string[string] $settings
+@param waOrder $order
+@param mixed[string][] $items
+@param string[string] $contact
+*}
+
+{$_section_id = uniqid("s-incoice-form-section")}
+
+<section class="s-form-section" id="{$_section_id}">
+    <style type="text/css">{include file="./css/printform.css" inline}</style>
+
+    <header class="s-header-wrapper">
+        <div class="s-header-notation">
+            <div class="line">Приложение № 1</div>
+            <div class="line">к постановлению Правительства Российской Федерации от 26 декабря 2011 г. № 1137</div>
+            <div class="line">(в ред. Постановления Правительства РФ от 02.04.2021 № 534)</div>
+        </div>
+        <div class="s-header-block">
+            <table>
+                <tr>
+                    <td class="nowrap">
+                        <span class="s-title">счёт-фактура</span>
+                    </td>
+                    <td>
+                        <span class="s-editable js-editable s-field-1">{$order.id_str|default:'1234567890'}</span>
+                    </td>
+                    <td>от</td>
+                    <td class="nowrap">
+                        "<span class="s-editable js-editable s-field-2">{$order.datetime|date_format:'d'}</span>"
+                    </td>
+                    <td class="column-field-2">
+                        <span class="s-editable js-editable s-field-3">{$order.datetime|date_format:'m.Y'} г.</span>
+                    </td>
+                    <td>(1)</td>
+                </tr>
+                <tr>
+                    <td class="nowrap">
+                        <span class="s-title">исправление</span>
+                    </td>
+                    <td>
+                        <span class="s-editable js-editable s-field-1">{$order.id_str}</span>
+                    </td>
+                    <td>от</td>
+                    <td class="nowrap">
+                        "<span class="s-editable js-editable s-field-2">{$order.datetime|date_format:'d'}</span>"
+                    </td>
+                    <td>
+                        <span class="s-editable js-editable s-field-3">{$order.datetime|date_format:'m.Y'} г.</span>
+                    </td>
+                    <td>(1а)</td>
+                </tr>
+            </table>
+        </div>
+    </header>
+    <section class="s-details-section">
+        <table>
+            <tr>
+                <td>
+                    <div class="s-layout">
+                        <div class="s-column s-column-title">
+                            Продавец:
+                        </div>
+                        <div class="s-column s-column-value">
+                            {$settings.COMPANYNAME|default:"Продавец"|escape}
+                        </div>
+                    </div>
+                </td>
+                <td class="s-column-id">(2)</td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="s-layout">
+                        <div class="s-column s-column-title">Адрес:</div>
+                        <div class="s-column s-column-value">
+                            {$settings.COMPANYADDRESS|escape},&nbsp;(тел.:{$settings.COMPANYPHONE|default:"-"|escape})
+                        </div>
+                    </div>
+                </td>
+                <td class="s-column-id">(2а)</td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="s-layout">
+                        <div class="s-column s-column-title">ИНН/КПП продавца:</div>
+                        <div class="s-column s-column-value">
+                            {$settings.INN|escape}/{$settings.KPP|escape}
+                        </div>
+                    </div>
+                </td>
+                <td class="s-column-id">(2б)</td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="s-layout">
+                        <div class="s-column s-column-title">Грузоотправитель и его адрес:</div>
+                        <div class="s-column s-column-value">
+                            {$settings.COMPANYNAME|default:"Продавец"|escape},&nbsp;{$settings.COMPANYADDRESS|default:"город, улица, дом"|escape}
+                            ,&nbsp;(тел.:{$settings.COMPANYPHONE|default:"-"|escape}
+                            ){", р/счет №`$settings.BANK_ACCOUNT_NUMBER` в `$settings.BANKNAME`, кор/счет №`$settings.BANK_KOR_NUMBER`, БИК `$settings.BIK`"|escape}
+                        </div>
+                    </div>
+                </td>
+                <td class="s-column-id">(3)</td>
+            </tr>
+
+            {$company = $contact.company}
+            {$company = ifempty($company,$order.shipping_address.name)}
+            {$company = ifempty($company,$order.contact_name)}
+            {$company = ifempty($company,$order.billing_address.name)}
+            <tr>
+                <td>
+                    <div class="s-layout">
+                        <div class="s-column s-column-title">Грузополучатель и его адрес:</div>
+                        <div class="s-column s-column-value">
+                            <div class="s-editable js-editable">
+                                {if $company}{$company|escape},&nbsp;{/if}
+                                {if $order.shipping_address.region_name}{$order.shipping_address.region_name|escape},&nbsp;{/if}
+                                {if $order.shipping_address.city}{$order.shipping_address.city|escape},&nbsp;{/if}
+                                {if $order.shipping_address.zip}{$order.shipping_address.zip|escape},&nbsp;{/if}
+                                {if $order.shipping_address.street}{$order.shipping_address.street|escape},&nbsp;{/if}
+                                {if $contact.phone}тел.: {$contact.phone|escape}{/if}
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td class="s-column-id">(4)</td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="s-layout">
+                        <div class="s-column s-column-title">К платежно-расчетному документу:</div>
+                        <div class="s-column s-column-value no-border">
+
+                            <div class="s-layout">
+                                <div class="s-column nowrap">№</div>
+                                <div class="s-column s-column-field" style="width: 35%;">
+                                    <div class="s-editable js-editable"></div>
+                                </div>
+                                <div class="s-column nowrap">от</div>
+                                <div class="s-column s-column-field" style="width: 65%;">
+                                    <div class="s-editable js-editable"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </td>
+                <td class="s-column-id">(5)</td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="s-layout">
+                        <div class="s-column s-column-title">Документ об отгрузке № п/п:</div>
+                        <div class="s-column s-column-value no-border">
+
+                            <div class="s-layout">
+                                <div class="s-column s-column-field" style="width: 18%;">
+                                    <div class="s-editable js-editable"></div>
+                                </div>
+                                <div class="s-column nowrap">№</div>
+                                <div class="s-column s-column-field" style="width: 18%;">
+                                    <div class="s-editable js-editable"></div>
+                                </div>
+                                <div class="s-column nowrap">от</div>
+                                <div class="s-column s-column-field" style="width: 64%;">
+                                    <div class="s-editable js-editable"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </td>
+                <td class="s-column-id">(5а)</td>
+            </tr>
+
+            {$company = $contact.company}
+            {$company = ifempty($company,$order.billing_address.name)}
+            {$company = ifempty($company,$order.contact_name)}
+            {$company = ifempty($company,$order.shipping_address.name)}
+            <tr>
+                <td>
+                    <div class="s-layout">
+                        <div class="s-column s-column-title">Покупатель:</div>
+                        <div class="s-column s-column-value">
+                            <div class="s-editable js-editable">{$company|escape|default:"&nbsp;"}</div>
+                        </div>
+                    </div>
+                </td>
+                <td class="s-column-id">(6)</td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="s-layout">
+                        <div class="s-column s-column-title">Адрес:</div>
+                        <div class="s-column s-column-value">
+                            <div class="s-editable js-editable">
+                                {if !empty($order.billing_address.address)}
+                                    {if $order.billing_address.region_name}{$order.billing_address.region_name|escape},&nbsp;{/if}
+                                    {if $order.billing_address.city}{$order.billing_address.city|escape},&nbsp;{/if}
+                                    {if $order.billing_address.zip}{$order.billing_address.zip|escape},&nbsp;{/if}
+                                    {if $order.billing_address.street}{$order.billing_address.street|escape},&nbsp;{/if}
+                                {else}
+                                    {if $order.shipping_address.region_name}{$order.shipping_address.region_name|escape},&nbsp;{/if}
+                                    {if $order.shipping_address.city}{$order.shipping_address.city|escape},&nbsp;{/if}
+                                    {if $order.shipping_address.zip}{$order.shipping_address.zip|escape},&nbsp;{/if}
+                                    {if $order.shipping_address.street}{$order.shipping_address.street|escape},&nbsp;{/if}
+                                {/if}
+                                {if $contact.phone}тел.: {$contact.phone|escape}{/if}
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td class="s-column-id">(6а)</td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="s-layout">
+                        <div class="s-column s-column-title">ИНН/КПП покупателя:</div>
+                        <div class="s-column s-column-value">
+                            <span class="s-editable js-editable">{$contact.inn|escape|default:"&nbsp;"}</span>
+                            /
+                            <span class="s-editable js-editable">{$contact.kpp|escape|default:"&nbsp;"}</span>
+                        </div>
+                    </div>
+                </td>
+                <td class="s-column-id">(6б)</td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="s-layout">
+                        <div class="s-column s-column-title">Валюта: наименование, код</div>
+                        <div class="s-column s-column-value">
+                            <span class="s-editable js-editable">{$currency.name|escape|default:"Рубли"}</span>
+                            ,
+                            <span class="s-editable js-editable">{$currency.code|escape|default:"RUB"}</span>
+                        </div>
+                    </div>
+                </td>
+                <td class="s-column-id">(7)</td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="s-layout">
+                        <div class="s-column s-column-title">Идентификатор государственного контракта, договора (соглашения) (при наличии)</div>
+                        <div class="s-column s-column-value">
+                            <div class="s-editable js-editable"></div>
+                        </div>
+                    </div>
+                </td>
+                <td class="s-column-id">(8)</td>
+            </tr>
+        </table>
+    </section>
+    <section class="s-items-section">
+        <table>
+            <thead>
+                <tr>
+                    <td class="b_left b_top" rowspan="2">№<br>п/п<br>
+                    </td>
+                    <td class="s-column-1 b_left b_top" rowspan="2">
+                        Наименование товара<br>(описание выполненных работ,<br>оказанных услуг),<br/>имущественного права
+                    </td>
+                    <td class="b_left b_top" rowspan="2">
+                        Код<br>вида<br>товара
+                    </td>
+                    <td class="b_left b_top" colspan="2">
+                        Единица<br>измерения
+                    </td>
+                    <td class="b_left b_top" rowspan="2">
+                        Коли-<br>чество<br>(объем)
+                    </td>
+                    <td class="b_left b_top" rowspan="2">Цена (тариф)<br>за единицу<br>измерения
+                    </td>
+                    <td class="b_left b_top" rowspan="2">
+                        Стоимость товаров<br>(работ, услуг),<br>имущественных прав,<br>без налога — всего
+                    </td>
+                    <td class="b_left b_top" rowspan="2">В том числе<br>сумма<br>акциза
+                    </td>
+                    <td class="b_left b_top" rowspan="2">Налоговая<br>ставка
+                    </td>
+                    <td class="b_left b_top" rowspan="2">Сумма<br>налога,<br>предъявляемая<br>покупателю
+                    </td>
+                    <td class="b_left b_top" rowspan="2">
+                        Стоимость товаров<br>(работ, услуг),<br>имущественных прав,<br>всего с учетом налога
+                    </td>
+                    <td class="b_left b_top" colspan="2">Страна происхож-<br>дения товара</td>
+                    <td class="b_left b_top" rowspan="2">Регистрационный<br>номер декларации<br>на товары или<br>регистрационный<br>номер партии товара,<br>подлежащего<br>прослеживаемости</td>
+                    <td class="b_left b_top" colspan="2">Количественная единиц<br>измерения товара,<br>используемая в целях<br>осуществления<br>прослеживаемости</td>
+                    <td class="b_left b_top b_right" rowspan="2">Количество товара,<br>подлежащего<br>прослеживаемости, в<br>количественной<br>единице измерения<br>товара, используемой в<br>целях осуществления<br>прослеживаемости</td>
+                </tr>
+                <tr>
+                    <td class="b_left b_top" title="Код ОКЕИ">код</td>
+                    <td class="b_left b_top" title="национальное условное обозначение ОКЕИ">условное<br>обозначение<br>(национальное)</td>
+                    <td class="b_left b_top">циф-<br>ровой<br>код</td>
+                    <td class="b_left b_top">краткое<br>наимено-<br>вание</td>
+                    <td class="b_left b_top">код</td>
+                    <td class="b_left b_top">условное<br>обозначение</td>
+                </tr>
+                <tr>
+                    <td class="b_left b_top">1</td>
+                    <td class="s-column-1 b_left b_top">1а</td>
+                    <td class="b_left b_top">1б</td>
+                    <td class="b_left b_top" title="Код ОКЕИ">2</td>
+                    <td class="b_left b_top" title="национальное условное обозначение ОКЕИ">2а</td>
+                    <td class="b_left b_top">3</td>
+                    <td class="b_left b_top">4</td>
+                    <td class="b_left b_top">5</td>
+                    <td class="b_left b_top">6</td>
+                    <td class="b_left b_top">7</td>
+                    <td class="b_left b_top">8</td>
+                    <td class="b_left b_top">9</td>
+                    <td class="b_left b_top">10</td>
+                    <td class="b_left b_top">10а</td>
+                    <td class="b_left b_top">11</td>
+                    <td class="b_left b_top">12</td>
+                    <td class="b_left b_top">12а</td>
+                    <td class="b_left b_top b_right">13</td>
+                </tr>
+            </thead>
+            <tbody>
+                {$total_without_tax = 0}
+                {$total_tax = 0}
+                {$total_amount = 0}
+                {$i = 1}
+                {foreach $order.items as $id => $order_item}
+                    {if $order_item.tax_included}
+                        {$total_tax = $total_tax + round($order_item.tax, 2)}
+                    {/if}
+                    {$total_amount = $total_amount + round($order_item.total, 2)}
+
+                    <tr class="js-product-line">
+                        <td class="b_left b_top center">
+                            <div class="s-editable js-editable">{$i}</div>
+                        </td>
+                        {$i = $i + 1}
+                        <td class="s-column-1 b_left b_top left">
+                            <div class="s-name s-editable js-editable">{$order_item.name|default:"&nbsp;"}{if $order_item.sku} ({$order_item.sku}){/if}</div>
+                        </td>
+                        <td class="b_left b_top center">
+                            <div class="s-editable js-editable">-</div>
+                        </td>
+                        <td class="b_left b_top center">
+                            <div class="s-editable js-editable">{if !empty($order_item.stock_unit_code)}{$order_item.stock_unit_code}{else}796{/if}</div>
+                        </td>
+                        <td class="b_left b_top center">
+                            <div class="s-editable js-editable">{$order_item.stock_unit|default:'шт'|escape}</div>
+                        </td>
+                        <td class="js-column-3 b_left b_top right">{$order_item.quantity}</td>
+                        <td class="js-column-4 b_left b_top right nowrap">{$order_item.price|wa_format_amount:$order.currency:'%2'}</td>
+
+                        <td class="js-column-5 b_left b_top right nowrap">
+                            {$_value_5 = $order_item.total}
+                            {if $order_item.tax_included}{$_value_5 = ($order_item.total-$order_item.tax)}{/if}
+                            {$total_without_tax = $total_without_tax + round($_value_5, 2)}
+                            {$_value_5|wa_format_amount:$order.currency:'%2'}
+                        </td>
+
+                        <td class="b_left b_top right">
+                            <div class="s-editable js-editable">без акциза</div>
+                        </td>
+                        <td class="js-column-7 b_left b_top right">
+                            {if is_null($order_item.tax_percent)}
+                                Без НДС
+                            {else}
+                                {$order_item.tax_percent|string_format:"%0.2f"}%
+                            {/if}
+                        </td>
+                        <td class="js-column-8 b_left b_top right">
+                            <div class="s-editable js-editable">{$order_item.tax|wa_format_amount:$order.currency:'%2'}</div>
+                        </td>
+                        <td class="js-column-9 b_left b_top right nowrap">{$order_item.total|wa_format_amount:$order.currency:'%2'}</td>
+                        <td class="b_left b_top">
+                            <div class="s-editable js-editable"></div>
+                        </td>
+                        <td class="b_left b_top">
+                            <div class="s-editable js-editable"></div>
+                        </td>
+                        <td class="b_top b_left">
+                            <div class="s-editable js-editable"></div>
+                        </td>
+                        <td class="b_left b_top center">
+                            <div class="s-editable js-editable"></div>
+                        </td>
+                        <td class="b_left b_top center">
+                            <div class="s-editable js-editable"></div>
+                        </td>
+                        <td class="b_left b_top b_right right">
+                            <div class="s-editable js-editable"></div>
+                        </td>
+                    </tr>
+                {/foreach}
+                {if $order.shipping > 0}
+                    {if !empty($order.params.shipping_tax_included) && !empty($order.params.shipping_tax)}
+                        {$total_tax = $total_tax + round($order.params.shipping_tax, 2)}
+                    {/if}
+                    {$total_amount = $total_amount + round($order.shipping, 2)}
+                    {$total_without_tax = $total_without_tax + round($order.shipping, 2)}
+
+                    <tr class="js-product-line">
+                        <td class="b_left b_top center">
+                            <div class="s-editable js-editable">{$i}</div>
+                        </td>
+                        <td class="s-column-1 b_left b_top left">
+                            <div class="s-name">доставка {$order.shipping_name|escape}</div>
+                        </td>
+                        <td class="b_left b_top center">
+                            <div class="s-editable js-editable">-</div>
+                        </td>
+                        <td class="b_left b_top center">796</td>
+                        <td class="b_left b_top center">шт</td>
+                        <td class="js-column-3 b_left b_top right">1</td>
+                        <td class="js-column-4 b_left b_top right nowrap">{$order.shipping|wa_format_amount:$order.currency:'%2'}</td>
+                        <td class="js-column-5 b_left b_top right nowrap">{$order.shipping|wa_format_amount:$order.currency:'%2'}</td>
+                        <td class="b_left b_top right">
+                            <div class="s-editable js-editable">без акциза</div>
+                        </td>
+                        <td class="js-column-7 b_left b_top right">
+                            {if is_null($order.params.shipping_tax_percent)}
+                                Без НДС
+                            {else}
+                                {$order.params.shipping_tax_percent|string_format:"%0.2f"}%
+                            {/if}
+                        </td>
+                        <td class="js-column-8 b_left b_top right">
+                            <div class="s-editable js-editable">{$order.params.shipping_tax|default:0|wa_format_amount:$order.currency:'%2'}</div>
+                        </td>
+                        <td class="js-column-9 b_left b_top right nowrap">{$order.shipping|wa_format_amount:$order.currency:'%2'}</td>
+                        <td class="b_left b_top">&nbsp;</td>
+                        <td class="b_left b_top">&nbsp;</td>
+                        <td class="b_left b_top">&nbsp;</td>
+                        <td class="b_left b_top center">
+                            <div class="s-editable js-editable"></div>
+                        </td>
+                        <td class="b_left b_top center">
+                            <div class="s-editable js-editable"></div>
+                        </td>
+                        <td class="b_left b_top b_right right">
+                            <div class="s-editable js-editable"></div>
+                        </td>
+                    </tr>
+                {/if}
+            </tbody>
+            <tfoot>
+                <tr class="js-total-line tfoot totals">
+                    <td colspan="7" class="b_top nowrap">Всего к оплате</td>
+                    <td class="js-column-5 b_left b_top b_bottom right nowrap">
+                        {$total_without_tax|wa_format_amount:$order.currency:'%2'}
+                    </td>
+                    <td class="b_left b_top b_bottom center" colspan="2">X</td>
+                    <td class="js-column-8 b_left b_top b_bottom right">{$total_tax|wa_format_amount:$order.currency:'%2'}</td>
+                    <td class="js-column-9 b_left b_top b_bottom right nowrap">{$total_amount|wa_format_amount:$order.currency:'%2'}</td>
+                    <td class="b_left b_top">&nbsp;</td>
+                    <td class="b_top">&nbsp;</td>
+                    <td class="b_top">&nbsp;</td>
+                    <td class="b_top">&nbsp;</td>
+                    <td class="b_top">&nbsp;</td>
+                    <td class="b_top">&nbsp;</td>
+                </tr>
+            </tfoot>
+        </table>
+    </section>
+    <section class="s-form-footer">
+
+        <div class="s-layout fixed">
+            <div class="s-column">
+
+                <table>
+                    <tr>
+                        <td class="s-column-1">
+                            Руководитель организации<br>или иное уполномоченное лицо<br>&nbsp;
+                        </td>
+                        <td class="s-column-2">
+                            <div class="s-underlined"></div>
+                            <div class="s-small">(подпись)</div>
+                        </td>
+                        <td class="s-column-3">
+                            <div class="s-underlined">{$settings.CEO_NAME|escape|default:""}</div>
+                            <div class="s-small">(Ф.И.О.)</div>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+            <div class="s-column">
+
+                <table>
+                    <tr>
+                        <td class="s-column-1">
+                            Главный бухгалтер<br>или иное уполномоченное лицо<br>&nbsp;
+                        </td>
+                        <td class="s-column-2">
+                            <div class="s-underlined"></div>
+                            <div class="s-small">(подпись)</div>
+                        </td>
+                        <td class="s-column-3">
+                            <div class="s-underlined">{$settings.BUH_NAME|escape|default:""}</div>
+                            <div class="s-small">(Ф.И.О.)</div>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+
+        <div class="s-layout fixed">
+            <div class="s-column">
+
+                <table>
+                    <tr>
+                        <td class="s-column-1">
+                            Индивидуальный предприниматель<br>или иное уполномоченное лицо<br>&nbsp;
+                        </td>
+                        <td class="s-column-2">
+                            <div class="s-underlined"></div>
+                            <div class="s-small">(подпись)</div>
+                        </td>
+                        <td class="s-column-3">
+                            <div class="s-underlined">{$settings.IP_NAME|escape|default:""}</div>
+                            <div class="s-small">(Ф.И.О.)</div>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+            <div class="s-column bottom">
+
+                <div class="s-underlined">{$settings.IP_REGISTRATION|escape|default:""}</div>
+                <div class="s-small">(реквизиты свидетельства о государственной регистрации индивидуального предпринимателя)</div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <script>
+        ( function($, printform) {
+            var $wrapper = $("#{$_section_id}");
+
+            $wrapper.on("edited", function(event, node) {
+                calculate();
+            });
+
+            function calculate() {
+                var col_5_sum = 0,
+                    col_8_sum = 0,
+                    col_9_sum = 0;
+
+                $wrapper.find(".js-product-line").each( function() {
+                    var $line = $(this),
+                        $col_3 = $line.find(".js-column-3"),
+                        $col_4 = $line.find(".js-column-4"),
+                        $col_5 = $line.find(".js-column-5"),
+                        $col_7 = $line.find(".js-column-7"),
+                        $col_8 = $line.find(".js-column-8"),
+                        $col_9 = $line.find(".js-column-9");
+
+                    // static
+                    var col_3_value = printform.parseString($col_3.text()),
+                        col_9_value = printform.parseString($col_9.text());
+
+                    // editable
+                    var col_8_value = printform.parseString($col_8.text());
+
+                    // dependent
+                    var col_5_value = col_9_value - col_8_value;
+                    var col_4_value = col_5_value/col_3_value;
+
+                    var $col_8_text_w = $col_8.find(".js-editable");
+                    if (!$col_8_text_w.length) { $col_8_text_w = $col_8; }
+                    $col_8_text_w.text( printform.formatPrice(col_8_value) );
+
+                    $col_4.text( printform.formatPrice(col_4_value) );
+                    $col_5.text( printform.formatPrice(col_5_value) );
+
+                    col_5_sum += parseFloat(col_5_value.toFixed(2));
+                    col_8_sum += col_8_value;
+                    col_9_sum += col_9_value;
+                });
+
+                var $total_line = $wrapper.find(".js-total-line"),
+                    $total_col_5 = $total_line.find(".js-column-5"),
+                    $total_col_8 = $total_line.find(".js-column-8"),
+                    $total_col_9 = $total_line.find(".js-column-9");
+
+                $total_col_5.text( printform.formatPrice(col_5_sum) );
+                $total_col_8.text( printform.formatPrice(col_8_sum) );
+                $total_col_9.text( printform.formatPrice(col_9_sum) );
+            }
+
+        })(jQuery, window.Printform);
+    </script>
+</section>

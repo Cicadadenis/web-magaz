@@ -1,0 +1,1413 @@
+{strip}
+
+{$_sprite_url = "`$wa_url`wa-apps/shop/img/backend/products/product/icons.svg?v=`$wa->version()`"}
+{$_lang = substr($wa->locale(), 0, 2)}
+{$_max_post_size = waRequest::getPostMaxSize()}
+{$_max_file_size = waRequest::getUploadMaxFilesize()}
+{$_max_post_size_mb = floor($_max_post_size * 10/(1024))/10}
+{$_max_file_size_mb = floor($_max_file_size * 10/(1024))/10}
+
+{* ШАБЛОНЫ *}
+
+{$_templates = []}
+
+{capture assign="_sku_delete_photo"}{include file="./dialogs/sku_delete_photo.html" inline}{/capture}
+{$_templates["dialog_sku_delete_photo"] = $_sku_delete_photo}
+
+{capture assign="_photo_manager_dialog"}{include file="./ProdSkuImageDialog.html" inline}{/capture}
+{$_templates["dialog_photo_manager"] = $_photo_manager_dialog}
+
+{* ПОДСКАЗКИ *}
+
+{$_tooltips = [
+    "price-error" => [
+        "id" => "price-error",
+        "html" => sprintf(_w("Enter a number between 0 and %s99,999,999,999.9999%s with max. 4 decimal digits."), '<span class="nowrap">', "</span>"),
+        "width" => "16rem"
+    ],
+    "product-sku-8" => [
+        "id" => "product-sku-8",
+        "html" => _w("Change image")|escape,
+        "class" => "inline"
+    ],
+    "product-sku-9" => [
+        "id" => "product-sku-9",
+        "html" => _w("Delete image")|escape,
+        "class" => "inline"
+    ],
+    "product-sku-21" => [
+        "id" => "product-sku-21",
+        "html" => _w("The SKU is not available for purchase.")|escape
+    ],
+    "product-sku-22" => [
+        "id" => "product-sku-22",
+        "html" => _w("Some SKU variants are available for purchase.")|escape
+    ],
+    "product-sku-23" => [
+        "id" => "product-sku-23",
+        "html" => _w("The SKU is available for purchase.")|escape
+    ],
+    "product-sku-24" => [
+        "id" => "product-sku-24"
+    ],
+    "product-image-dialog-1" => [
+        "id" => "product-image-dialog-1",
+        "html" => _w("Drag & drop image files here or click this area to upload files.")|escape,
+        "position" => "top"
+    ],
+    "product-name-error" => [
+        "id" => "product-name-error",
+        "html" => _w("This field may contain a maximum of %d character.", "This field may contain a maximum of %d characters.", 255)
+    ],
+    "product-photo-disabled" => [
+        "id" => "product-photo-disabled",
+        "html" => _w("To add images, save the product.")
+    ]
+]}
+
+{* КОМПОНЕНТЫ *}
+
+{capture assign="_dropdown_currency"}
+    <div class="dropdown" v-bind:class="{ 'wide': wide }">
+        <button class="dropdown-toggle wa-button wa-small gray-field" type="button">{ { currency_code } }</button>
+        <div class="dropdown-body right" style="width: 6rem;">
+            <template v-for="currency in currencies">
+                <div class="dropdown-item"
+                     v-bind:data-id="currency.code"
+                     v-bind:class="{ 'selected': currency.code === currency_code }"
+                     v-bind:title="currency.title">{ { currency.code } }</div>
+            </template>
+        </div>
+    </div>
+{/capture}
+{$_templates["component-dropdown-currency"] = $_dropdown_currency}
+
+{capture assign="_component_product_badge_form"}
+    <div class="s-badge-form">
+        <div class="flexbox middle space-8">
+            <textarea class="wa-small wide" placeholder="{_w("Enter a value")|escape}" v-model="badge.code_model"></textarea>
+            <button class="wa-small wa-button blue" type="button" v-on:click="updateForm">
+                <span class="s-icon icon top"><i class="fas fa-check"></i></span>
+            </button>
+            <button class="wa-small wa-button gray" type="button" v-on:click="revertForm">
+                <span class="icon top"><i class="fas fa-times"></i></span>
+            </button>
+        </div>
+    </div>
+{/capture}
+{$_templates["component-product-badge-form"] = $_component_product_badge_form}
+
+{capture assign="_component_file_manager"}
+    <div class="component-file-manager">
+        <div class="s-load-wrapper" v-if="!sku_mod.file.id">
+            <div class="s-button-wrapper" v-if="!files_to_upload.length">
+                <button class="wa-button wa-small gray" type="button">
+                    <span class="s-icon"><i class="fas fa-upload"></i></span>
+                    &nbsp;
+                    <span class="s-name">[`Upload file`]</span>
+                </button>
+                <input class="js-file-field cursor-pointer" type="file" v-on:change="onFileChange($event)" title="">
+            </div>
+
+            <div class="s-loading-wrapper" v-if="files_to_upload.length">
+                <template v-for="file_to_upload in files_to_upload">
+                    <component-loading-file v-bind:file="file_to_upload"
+                                            v-bind:sku_mod="sku_mod"
+                                            v-on:file_load_fail="onFileLoadFail"
+                                            v-on:file_load_success="onFileLoadSuccess"></component-loading-file>
+                </template>
+            </div>
+
+            <template v-if="errors.length">
+                <div class="wa-error-text" v-for="error in errors">{ { error.text } }</div>
+            </template>
+        </div>
+
+        <div class="s-file-wrapper flexbox space-12 wrap baseline" v-if="sku_mod.file.id">
+            <a class="s-file-url" v-bind:href="file.url" target="_blank">
+                <span class="s-icon"><i class="fas fa-download"></i></span>
+                &nbsp;
+                <span class="s-name" v-text="file.name"></span>
+            </a>
+
+            <div class="s-file-size" v-text="file.size"></div>
+
+            <div class="s-file-delete" v-on:click.prevent="fileDelete">
+                <span class="s-icon"><i class="fas fa-trash-alt"></i></span>
+                &nbsp;
+                <span class="s-name">[`Delete`]</span>
+            </div>
+        </div>
+
+        <div class="s-hint-wrapper">
+            <p class="hint">[`A link to download the file will be sent to a customer in an order notification and will be valid only after payment. A convenient delivery method for digital products.`]</p>
+        </div>
+
+        <div class="s-description-wrapper" v-if="sku_mod.file.id">
+            <div class="s-title">[`Comment to attached file (optional):`]</div>
+            <component-flex-textarea v-bind:class="'wide wa-small'" v-model="sku_mod.file.description"></component-flex-textarea>
+        </div>
+    </div>
+{/capture}
+{$_templates["component-file-manager"] = $_component_file_manager|strip}
+
+{capture assign="_sku_file_delete_confirm_dialog"}{include file="./dialogs/sku_file_delete_confirm.html" inline}{/capture}
+{$_templates["sku-file-delete-confirm-dialog"] = $_sku_file_delete_confirm_dialog|strip}
+
+{$_components = []}
+
+{capture assign="_component_fractional_section"}{include file="./components/component_fractional_section.html" inline}{/capture}
+{$_components["component-fractional-section"] = $_component_fractional_section|strip}
+
+{$_globals_components = $wa->globals("components")}
+{if !empty($_globals_components)}
+    {$_components = array_merge($_components, $_globals_components)}
+{/if}
+
+{$_globals_tooltips = $wa->globals("tooltips")}
+{if !empty($_globals_tooltips)}
+    {$_tooltips = array_merge($_tooltips, $_globals_tooltips)}
+{/if}
+
+{* LOCALES *}
+
+{$_locales = [
+    "add_tag" => _w("Add a tag"),
+    "select_category" => _w("Please select a category"),
+    "storefront_changed" =>  _w('Product publication URL has changed. Storefronts’ addresses will be updated after you click “Save”.'),
+    "modification_wysiwyg_message" => _ws('WYSIWYG editor may change your HTML code. It is necessary for correct text formatting. Smarty code may be broken and outdated HTML tags may be replaced with modern ones. Are you sure to switch to WYSIWYG editor?'),
+    "file_type" => _w("Unsupported image type. Use PNG, GIF, WEBP and JPEG image files only."),
+    "file_size" => "{_w("Each file’s size cannot be greater than")} {$_max_file_size_mb}{_w("KB")}.",
+    "post_size" => "{_w("Total size of selected files cannot be greater than")} {$_max_post_size_mb}{_w("KB")}.",
+    "stock_title" => _w("The quantity on this virtual stock is the sum of quantities on physical stocks — %s. You can change the list of stocks in “Settings” section."),
+    "max_length_error" => "{_w("Invalid value")} <span class=\"s-icon\" data-tooltip-id=\"product-name-error\"><i class=\"fas fa-question-circle\"></i></span>",
+    "product_name_required" => _w("Enter a product name.")
+]}
+
+{$_globals_locales = $wa->globals("locales")}
+{if !empty($_globals_locales)}
+    {$_locales = array_merge($_locales, $_globals_locales)}
+{/if}
+
+{* OTHER *}
+
+{$_active_main_category = null}
+{if !empty($categories) && !empty($categories[$product.category_id])}
+    {$_active_main_category = $categories[$product.category_id]}
+{/if}
+
+{/strip}
+
+<div class="article s-product-general-section" id="js-product-general-section" style="visibility: hidden;">
+    <script>
+        ( function($) {
+            $("#js-product-general-section").data("ready", $.Deferred());
+        })(jQuery);
+    </script>
+
+    <!-- plugin hook: 'backend_prod_content.top' -->
+    {* @event backend_prod_content.%plugin_id%.top *}
+    {if !empty($backend_prod_content_event)}{foreach $backend_prod_content_event as $_}{ifset($_.top)}{/foreach}{/if}
+
+    <div class="s-section-body">
+        <form>
+
+            <div class="s-fields-section">
+                <div class="wa-fields space-24">
+                    {* NAME *}
+                    <div class="wa-field">
+                        <div class="name">
+
+                            <div class="wa-label for-input-large">
+                                <div>
+                                    [`Product name`]
+                                    <span class="wa-tooltip right" data-title="{_w("Main product name visible in the storefront.")|escape}">
+                                        <i class="fas fa-question-circle s-icon gray"></i>
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="value">
+                            <div class="s-name-section">
+                                <textarea class="s-field js-auto-height js-product-name-field" name="product[name]">{$product.name|default:""|escape}</textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    {* URL *}
+                    <div class="wa-field">
+                        <div class="name">
+
+                            <div class="wa-label for-input">
+                                <div>[`Product page`]</div>
+                            </div>
+
+                        </div>
+                        <div class="value">
+
+                            <div class="s-storefronts-section js-storefronts-section">
+
+                                <div class="s-url-redactor">
+                                    <div class="tablebox space-8 middle">
+                                        <div class="s-column-name wide">
+
+                                            <div class="s-url-field-wrapper js-simulate-border-lighting">
+                                                <span class="s-tail">{ifset($url_template, 'base', '')|escape}</span>
+                                                <input class="s-field js-product-url-field" type="text" name="product[url]" value="{$product.url|escape}">
+                                            </div>
+
+                                        </div>
+                                        <div class="s-column-actions nowrap">
+                                            <div class="s-actions inlinebox middle space-12">
+                                                <span class="s-action wa-tooltip inline bottom-left" data-title="{_w("Editable part of the product address in the storefront.")|escape}">
+                                                    <i class="fas fa-question-circle hint"></i>
+                                                </span>
+                                                <span class="s-action gray s-refresh-button js-refresh-button">
+                                                    <i class="fas fa-sync-alt"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {if !empty($frontend_urls) && (count($frontend_urls) > 1)}
+                                    {$_limit = 1}
+                                    {$_count = count($frontend_urls)}
+                                    {$_show_toggle = ($_count > $_limit)}
+
+                                    {$_locales["storefronts_show"] = _w("Show %d storefront on which the product is available", "Show %d storefronts on which the product is available", $_count)}
+                                    {$_locales["storefronts_hide"] = _w("Hide storefront list")}
+
+                                    <ul class="wa-list space-12 s-storefronts-list js-storefronts-list">
+                                        {if !empty($_show_toggle)}
+                                            <li>
+                                                <a class="s-action js-list-toggle" href="javascript:void(0);">{$_locales["storefronts_show"]|escape}</a>
+                                            </li>
+
+                                            {foreach $frontend_urls as $_front}
+                                                <li class="s-extended-item" style="display: none;">
+                                                    <a href="{$_front.url|escape}" target="_blank">{$_front.url|escape}</a>
+                                                </li>
+                                            {/foreach}
+
+                                            {*
+                                            {if $total_storefronts_count > $_count}
+                                                <li class="s-extended-item" style="display: none;">
+                                                    [`Not all storefronts are included in this list.`]
+                                                    [`Open “SEO” tab to view the full list.`]
+                                                </li>
+                                            {/if}
+                                            *}
+
+                                            {if $_count > 10}
+                                                <li class="s-extended-item" style="display: none;">
+                                                    <a class="s-action js-list-close" href="javascript:void(0);">{_w("Hide storefronts")}</a>
+                                                </li>
+                                            {/if}
+                                        {else}
+                                            {foreach $frontend_urls as $_front}
+                                                <li>
+                                                    <a href="{$_front.url|escape}" target="_blank">{$_front.url|escape}</a>
+                                                </li>
+                                            {/foreach}
+                                        {/if}
+                                    </ul>
+                                {/if}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- plugin hook: 'backend_prod_content.form_top' -->
+                    {* @event backend_prod_content.%plugin_id%.form_top *}
+                    {if !empty($backend_prod_content_event)}{foreach $backend_prod_content_event as $_}{ifset($_.form_top)}{/foreach}{/if}
+
+                    {* STATUS *}
+                    <div class="wa-field">
+                        <div class="name">
+
+                            <div class="wa-label">
+                                <div>
+                                    [`Availability in the storefront`]
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="value">
+
+                            {$_statuses = [
+                                "1" => [
+                                    "id" => "1",
+                                    "ident" => "published",
+                                    "icon" => "fas fa-check color-green-dark",
+                                    "name" => _w("Published")
+                                ],
+                                "0" => [
+                                    "id" => "0",
+                                    "ident" => "unpublished",
+                                    "icon" => "fas fa-times color-yellow",
+                                    "name" => _w("Hidden")
+                                ],
+                                "-1" => [
+                                    "id" => "-1",
+                                    "ident" => "hidden",
+                                    "icon" => "fas fa-times color-red",
+                                    "name" => _w("Unpublished")
+                                ]
+                            ]}
+
+                            {$_active_status = $_statuses["1"]}
+                            {if isset($product.status) && !empty($_statuses[$product.status])}
+                                {$_active_status = $_statuses[$product.status]}
+                            {/if}
+
+                            <div class="s-product-status-section js-product-status-section" data-id="{$_active_status.ident|escape}">
+                                <div class="tablebox fixed space-20">
+                                    <div class="s-column-status">
+                                        <div class="dropdown" id="js-product-status-select">
+                                            <button class="dropdown-toggle wa-button wa-small gray-field" type="button">
+                                                {if !empty($_active_status.icon)}
+                                                    <i class="{$_active_status.icon|escape}"></i>
+                                                {/if}
+                                                {$_active_status.name|escape}
+                                            </button>
+                                            <div class="dropdown-body">
+                                                {foreach $_statuses as $_status}
+                                                    {$_is_active = (isset($product.status) && $product.status === $_status.id)}
+                                                    <div class="dropdown-item {if !empty($_is_active)}selected{/if}" data-id="{$_status.id|escape}" data-ident="{$_status.ident|escape}">
+                                                        {if !empty($_status.icon)}
+                                                            <span class="icon baseline shift-2"><i class="{$_status.icon|escape}"></i></span>
+                                                        {/if}
+                                                        {$_status.name|escape}
+                                                    </div>
+                                                {/foreach}
+                                            </div>
+                                            <input name="product[status]" type="hidden" value="{$product.status|default:""|escape}">
+                                        </div>
+
+                                        <div class="s-status-hint" data-status-id="unpublished">
+                                            [`The product is not shown among other products in the storefront, is not available for purchase, and can be viewed at its direct URL only.`]
+                                        </div>
+
+                                        <div class="s-status-hint" data-status-id="hidden">
+                                            {sprintf(
+                                                _w('The product is not visible among other products in the storefront, is not available for purchase, cannot be viewed at its direct URL, and is excluded from the %sSitemap file%s.'),
+                                                '<a href="javascript:void(0);">',
+                                                sprintf(
+                                                    '</a> <span class="wa-tooltip bottom-left" data-title="%s"><i class="fas fa-question-circle s-icon gray"></i></span>',
+                                                    _w('A Sitemap file is a special XML file containing URLs of all website pages that need to be indexed by search engines.')|escape
+                                                )
+                                            )}
+                                        </div>
+                                    </div>
+                                    <div class="s-column-redirect">
+
+                                        {$_redirect_options = [
+                                            "404" => [
+                                                "id" => "404",
+                                                "name" => "404"
+                                            ],
+                                            "home" => [
+                                                "id" => "home",
+                                                "name" => _w("Homepage")
+                                            ],
+                                            "category" => [
+                                                "id" => "category",
+                                                "name" => _w("Main category")
+                                            ],
+                                            "url" => [
+                                                "id" => "url",
+                                                "name" => _w("Specified URL")
+                                            ]
+                                        ]}
+
+                                        {if empty($product.params.redirect_code)}
+                                            {$_active_redirect_option = $_redirect_options["404"]}
+                                        {elseif empty($product.params.redirect_url) && empty($product.params.redirect_category_id)}
+                                            {$_active_redirect_option = $_redirect_options["home"]}
+                                        {elseif !empty($product.params.redirect_category_id)}
+                                            {$_active_redirect_option = $_redirect_options["category"]}
+                                        {else}
+                                            {$_active_redirect_option = $_redirect_options["url"]}
+                                        {/if}
+
+                                        <div class="s-redirect-section" data-id="{$_active_redirect_option.id|escape}">
+
+                                            <div class="s-redirect-select-wrapper flexbox middle wrap space-12">
+                                                <div class="s-label">
+                                                    <span class="fas fa-arrow-right color-blue"></span>
+                                                    [`Redirect`]
+                                                    <span class="wa-tooltip bottom-left" data-title="{_w("Select an address to which website visitors and search engines will be redirected when attempting to access this product’s URL.")|escape}"><i class="fas fa-question-circle s-icon gray"></i></span>
+                                                </div>
+                                                <div class="dropdown" id="js-product-redirect-select">
+                                                    <button class="dropdown-toggle wa-button wa-small gray-field" type="button">
+                                                        {$_active_redirect_option.name|escape}
+                                                    </button>
+                                                    <div class="dropdown-body right">
+                                                        {foreach $_redirect_options as $_option}
+                                                            {$_is_active = ($_active_redirect_option.id === $_option.id)}
+                                                            <div class="dropdown-item {if !empty($_is_active)}selected{/if}" data-id="{$_option.id|escape}">
+                                                                {$_option.name|escape}
+                                                            </div>
+                                                        {/foreach}
+                                                    </div>
+                                                    <input name="product[params][redirect_type]" type="hidden" value="{$_active_redirect_option.id|escape}">
+                                                </div>
+                                            </div>
+
+                                            <div class="s-custom-url-form">
+                                                <div class="s-redirect-field">
+                                                    <input class="full-width js-validate-email" type="text" name="product[params][redirect_url]" value="{$product.params.redirect_url|default:""|escape}" placeholder="http://yoursite.com/category/product-name" required>
+
+                                                    {capture assign="_error_url_required"}
+                                                        <div class="wa-error-text">[`This is a required field.`]</div>
+                                                    {/capture}
+                                                    {$_templates["error_url_required"] = $_error_url_required}
+
+                                                    {capture assign="_error_url_incorrect"}
+                                                        <div class="wa-error-text">[`Incorrect URL format.`]</div>
+                                                    {/capture}
+                                                    {$_templates["error_url_incorrect"] = $_error_url_incorrect}
+                                                </div>
+
+                                                <div class="">
+                                                    <div class="s-label">
+                                                        [`Redirect code`]
+                                                        <span class="wa-tooltip bottom-left" data-title="{_w("Your server will add this code to its response to web browsers and search engines.")|escape}"><i class="fas fa-question-circle s-icon gray"></i></span>
+                                                    </div>
+
+                                                    {$_redirect_codes = [
+                                                        "302" => [
+                                                            "id" => "302",
+                                                            "label" => _w("302: the product is temporarily hidden")
+                                                        ],
+                                                        "301" => [
+                                                            "id" => "301",
+                                                            "label" => _w("301: the product is permanently hidden")
+                                                        ]
+                                                    ]}
+
+                                                    {$_active_code = reset($_redirect_codes)}
+                                                    {if !empty($product.params.redirect_code) && !empty($_redirect_codes[$product.params.redirect_code])}
+                                                        {$_active_code = $_redirect_codes[$product.params.redirect_code]}
+                                                    {/if}
+
+                                                    <ul class="s-options wa-list space-8">
+                                                        {foreach $_redirect_codes as $_code}
+                                                            {$_is_active = ($_active_code.id === $_code.id)}
+
+                                                            <li>
+                                                                <label>
+                                                                    <input type="radio" name="product[params][redirect_code]" value="{$_code.id|escape}" {if $_is_active}checked{/if}>
+                                                                    {$_code.label|escape}
+                                                                </label>
+                                                            </li>
+                                                        {/foreach}
+                                                    </ul>
+                                                    <div class="redirect-message wa-message warn flexbox space-8" {if $_active_code.id != '301'}style="display: none;"{/if}>
+                                                        <div class="message-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                                                        <div class="message-text wide">
+                                                            <span class="s-text">[`A 301 redirect is applied at once and works permanently, and cannot be quickly disabled. Search engines will remove the page from their indices. The redirect will get saved in website visitors’ browsers. If you later decide to publish this page again, it might become available only after quite a long while.`]</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                {* SKU *}
+                <div class="s-product-minimal-sku-section" id="vue-sku-section">
+                    {* SKU ADVANCE MODE *}
+                    <div class="wa-fields space-24">
+                        <div class="wa-field">
+                            <div class="name unshifted">
+
+                                <div class="wa-label">
+                                    <div class="flexbox space-10">
+                                        <span class="s-name">[`The product contains several SKUs or variants`]</span>
+                                        <span class="wa-tooltip right" data-title="{_w("Enable to offer customers several versions of the product.")|escape}">
+                                            <i class="fas fa-question-circle s-icon gray"></i>
+                                        </span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="value s-small-text">
+
+                                <div class="flexbox middle space-10">
+                                    <component-switch v-model="product.normal_mode_switch"
+                                                      v-bind:disabled="(product.has_features_values || product.normal_mode)"
+                                                      v-bind:class="'wa-small'"
+                                                      v-on:change="changeProductMode"></component-switch>
+                                    <div class="s-status">{ { product.normal_mode_switch ? {_w("Enabled")|json_encode} : {_w("Disabled")|json_encode} } }</div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <template v-if="!product.normal_mode_switch">
+                        {* SKU *}
+                        <div class="s-sku-wrapper">
+                            <div class="s-sku-table tablebox fixed space-16">
+                                <div class="s-column-view-actions">
+                                    <div class="s-image-wrapper"></div>
+
+                                    {strip}
+                                    <div class="s-actions nowrap">
+                                        {*
+                                        <template v-if="product.normal_mode_switch">
+                                            <button class="wa-button transparent" v-on:click.prevent="skuMainToggle(sku);"
+                                                    v-bind:title="( product.sku_id === sku.sku_id ? '{_w("Main product SKU")|escape}': '{_w("Make the main product SKU")|escape}')">
+
+                                                <span class="s-icon" v-bind:class="{ 'color-orange': product.sku_id === sku.sku_id, 'color-gray-light': product.sku_id !== sku.sku_id }"><i class="fas fa-check-circle"></i></span>
+                                            </button>
+                                        </template>
+                                        *}
+                                        <button class="wa-button transparent"
+                                                v-on:click.prevent="skuAvailableToggle(sku)"
+                                                v-bind:data-tooltip-id="getSkuModAvailableTitle(sku, ['product-sku-21', 'product-sku-22', 'product-sku-23'])">
+
+                                            <span class="s-icon icon top size-18 color-green-dark" v-if="getSkuModAvailableState(sku, 'all')"><svg><use xlink:href='{$_sprite_url}#cart'></use></svg></span>
+                                            <span class="s-icon icon top size-18 color-gray-light" v-if="getSkuModAvailableState(sku, 'part')"><svg><use xlink:href='{$_sprite_url}#cart'></use></svg></span>
+                                            <span class="s-icon icon top size-18 color-gray-light" v-if="getSkuModAvailableState(sku, 'none')"><svg><use xlink:href='{$_sprite_url}#cart-slash'></use></svg></span>
+                                        </button>
+                                    </div>
+                                    {/strip}
+                                </div>
+
+                                <div class="s-column-details">
+                                    {strip}
+                                    <div class="wa-fields custom-columns vertical">
+                                        <div class="wa-field">
+                                            <div class="name">
+                                                [`SKU code`]<span class="s-label-hint" v-if="!product.normal_mode_switch">&nbsp;([`optional`])</span>
+                                            </div>
+                                            <div class="value">
+                                                <input type="text" class="wa-small"
+                                                       v-model="sku.sku"
+                                                       v-bind:class="{ 'wa-error-field': !!sku.errors['sku.sku'] }"
+                                                       v-on:change="changeSkuSku(sku)">
+
+                                                <template v-if="product.normal_mode && Object.keys(sku.errors).length">
+                                                    <div class="s-errors-place" v-for="error in sku.errors">
+                                                        <div class="wa-error-text">{ { error.text } }</div>
+                                                    </div>
+                                                </template>
+                                            </div>
+                                        </div>
+                                        {*
+                                        <div class="wa-field" v-if="product.normal_mode_switch">
+                                            <div class="name">[`SKU name`]</div>
+                                            <div class="value">
+                                                <component-flex-textarea v-model="sku.name" v-bind:class="'full-width wa-small'" v-on:input="changeSkuName(sku)"></component-flex-textarea>
+                                            </div>
+                                        </div>
+                                        *}
+                                    </div>
+                                    {/strip}
+                                </div>
+                            </div>
+                        </div>
+
+                        {* MODIFICATION *}
+                        <div class="s-modifications-section">
+                            <div class="s-modifications-list">
+                                <template v-for="(sku_mod, sku_mod_index) in sku.modifications">
+                                    <div class="s-modification-wrapper" v-bind:key="sku_mod.id">
+                                        <div class="s-sku-table tablebox fixed space-16">
+                                            <div class="s-column-view-actions">
+                                                <div class="s-image-wrapper">
+                                                    <div class="s-image-item"
+                                                         v-if="sku_mod.photo"
+                                                         v-bind:style="{ 'background-image': 'url(' + sku_mod.photo.url + ')' }"
+                                                         v-on:click.prevent="addProductPhoto($event, sku_mod)"></div>
+
+                                                    <div class="s-image-item"
+                                                         v-if="!sku_mod.photo"
+                                                         v-bind:class="{ 'is-disabled' : !product.id }"
+                                                         v-bind:data-tooltip-id="(product.id ? 'product-sku-8' : 'product-photo-disabled')"
+                                                         v-on:click.prevent="(product.id ? addProductPhoto($event, sku_mod) : null)">
+
+                                                        <div class="s-icon icon">
+                                                            <svg><use xlink:href='{$_sprite_url}#empty-image'></use></svg>
+                                                        </div>
+                                                    </div>
+
+                                                    <span class="s-action rounded"
+                                                          data-tooltip-id="product-sku-9"
+                                                          v-if="sku_mod.photo"
+                                                          v-on:click.prevent="removeProductPhoto(sku_mod)">
+                                                        <span class="icon top size-12"><i class="fas fa-trash-alt"></i></span>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="s-column-details">
+                                                <div class="s-prices-wrapper wa-fields vertical">
+                                                    <div class="wa-field s-field-purchase-price">
+                                                        <div class="name">[`Purchase price`]</div>
+                                                        <div class="value">
+                                                            <input class="wa-small is-number" type="text"
+                                                                   v-model="sku_mod.purchase_price"
+                                                                   v-bind:class="{ 'wa-error-field' : !!errors['product[skus][' + sku_mod.id + '][purchase_price]'] }"
+                                                                   v-on:input="validate($event, 'price', sku_mod, 'purchase_price')">
+
+                                                            <div class="wa-error-text" v-if="!!errors['product[skus][' + sku_mod.id + '][purchase_price]']">
+                                                                {_w("Invalid value")|escape}
+                                                                <span class="s-tooltip-icon" data-tooltip-id="price-error">
+                                                                    <i class="fas fa-question-circle color-red"></i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="wa-field s-field-compare-price">
+                                                        <div class="name">[`Compare at price`]</div>
+                                                        <div class="value">
+                                                            <input class="wa-small strike is-number" type="text"
+                                                                   v-model="sku_mod.compare_price"
+                                                                   v-bind:class="{ 'wa-error-field' : !!errors['product[skus][' + sku_mod.id + '][compare_price]'] }"
+                                                                   v-on:input="validate($event, 'price', sku_mod, 'compare_price')">
+
+                                                            <div class="wa-error-text" v-if="!!errors['product[skus][' + sku_mod.id + '][compare_price]']">
+                                                                {_w("Invalid value")|escape}
+                                                                <span class="s-tooltip-icon" data-tooltip-id="price-error">
+                                                                    <i class="fas fa-question-circle color-red"></i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="wa-field s-field-price">
+                                                        <div class="name">[`Price`]</div>
+                                                        <div class="value">
+                                                            <input class="wa-small bold is-number" type="text"
+                                                                   v-model="sku_mod.price"
+                                                                   v-bind:class="{ 'wa-error-field' : !!errors['product[skus][' + sku_mod.id + '][price]'] }"
+                                                                   v-on:input="validate($event, 'price', sku_mod, 'price')">
+
+                                                            <div class="wa-error-text" v-if="!!errors['product[skus][' + sku_mod.id + '][price]']">
+                                                                {_w("Invalid value")|escape}
+                                                                <span class="s-tooltip-icon" data-tooltip-id="price-error">
+                                                                    <i class="fas fa-question-circle color-red"></i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="wa-field s-field-currency">
+                                                        <div class="name">&nbsp;</div>
+                                                        <div class="value">
+                                                            <component-dropdown-currency v-bind:currency_code="product.currency" v-bind:currencies="currencies" v-bind:wide="true" v-on:change="product.currency = $event"></component-dropdown-currency>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {/strip}
+
+                                                <div class="s-extended-content">
+                                                    <div class="s-visible-content">
+                                                        <div class="s-toggle" v-on:click.prevent="sku_mod.expanded = !sku_mod.expanded">
+                                                            <span class="s-text">{_w("Details")}</span>
+                                                            <span class="s-icon" v-show="!sku_mod.expanded"><i class="fas fa-angle-down"></i></span>
+                                                            <span class="s-icon" v-show="sku_mod.expanded"><i class="fas fa-angle-up"></i></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="s-hidden-content" v-if="sku_mod.expanded">
+                                                        <div class="s-other-fields wa-fields space-24">
+                                                            <div class="wa-field">
+                                                                <div class="name unshifted">
+                                                                    <div class="flexbox space-10">
+                                                                        <div class="s-name wide">[`Attached file`]</div>
+                                                                        <div>
+                                                                            <span class="wa-tooltip right" data-title="{_w("Attached file")|escape}"><i class="fas fa-question-circle s-icon gray"></i></span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="value">
+                                                                    <template v-if="parseInt(sku_mod.id) > 0">
+                                                                        <component-file-manager v-bind:sku_mod="sku_mod"></component-file-manager>
+                                                                    </template>
+                                                                    <template v-else>
+                                                                        <p>[`Save product data to attach a file.`]</p>
+                                                                    </template>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="wa-field">
+                                                                <div class="name unshifted">
+
+                                                                    <div class="flexbox space-10">
+                                                                        <span class="s-name">[`SKU ID`]</span>
+                                                                        <span class="wa-tooltip right" data-title="{_w("Numeric ID of this variant stored in the database.")|escape}"><i class="fas fa-question-circle s-icon gray"></i></span>
+                                                                    </div>
+
+                                                                </div>
+                                                                <div class="value middle">
+                                                                    <span class="s-ident" v-bind:class="{ 'hint': sku_mod.id < 0 }">{ { sku_mod.id < 0 ? "[`An ID will be shown after saving.`]" : sku_mod.id } }</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="s-column-stocks">
+                                                <div class="s-stocks-section">
+                                                    <div class="s-visible-part">
+
+                                                        <div class="wa-fields vertical">
+                                                            <div class="wa-field">
+                                                                <div class="name">[`Quantity`]</div>
+                                                                <div class="value">
+
+                                                                    <div class="s-field-wrapper">
+                                                                        <div class="s-icon left" v-bind:class="{ 'color-green' : sku_mod.stocks_indicator > 0, 'color-orange' : sku_mod.stocks_indicator == 0, 'color-red' : sku_mod.stocks_indicator < 0 }">
+                                                                            <i class="icon size-16"><svg><use xlink:href='{$_sprite_url}#warehouse'></use></svg></i>
+                                                                        </div>
+                                                                        <input class="wa-small s-field full-width is-number" type="text" placeholder="∞"
+                                                                               v-model="sku_mod.count"
+                                                                               v-bind:readonly="!!stocks_array.length"
+                                                                               v-on:click="focusSkuModStocks(sku_mod)"
+                                                                               v-on:input="validate($event, 'number-negative', sku_mod, 'count')">
+                                                                    </div>
+
+                                                                    <template v-if="stocks_array.length">
+                                                                        <div class="s-toggle" v-on:click.prevent="modificationStocksToggle(sku_mod)">
+                                                                            <span class="s-text">{ { sku_mod.stocks_expanded ? {_w("Hide stocks")|json_encode} : {_w("Show stocks")|json_encode} } }</span>
+                                                                            <span class="s-icon" v-show="!sku_mod.stocks_expanded"><i class="fas fa-angle-down"></i></span>
+                                                                            <span class="s-icon" v-show="sku_mod.stocks_expanded"><i class="fas fa-angle-up"></i></span>
+                                                                        </div>
+                                                                    </template>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="s-hidden-part" v-if="sku_mod.stocks_expanded">
+                                                        <div class="s-stocks-list-section" v-bind:class="{ 'is-large': stocks_array.length > 6 }">
+                                                            <div class="s-section-body">
+                                                                <div class="s-stocks-list">
+
+                                                                    <template v-for="stock in stocks_array">
+                                                                        <div class="s-stock-wrapper">
+                                                                            <div class="flexbox middle space-12"
+                                                                                 data-tooltip-id="product-sku-24"
+                                                                                 v-bind:data-title="getStockTitle(stock)">
+
+                                                                                <div class="s-column">
+                                                                                    <div class="s-field-wrapper">
+                                                                                        <div class="s-icon left" v-bind:class="{ 'color-green' : sku_mod.stock[stock.id] > stock.low_count || sku_mod.stock[stock.id] === '', 'color-orange' : sku_mod.stock[stock.id] > stock.critical_count && sku_mod.stock[stock.id] <= stock.low_count, 'color-red' : sku_mod.stock[stock.id] <= stock.critical_count && sku_mod.stock[stock.id] !== '' }">
+                                                                                            <i class="icon size-16"><svg><use xlink:href='{$_sprite_url}#warehouse'></use></svg></i>
+                                                                                        </div>
+                                                                                        <input class="wa-small s-field full-width is-number" type="text" placeholder="∞"
+                                                                                               v-model="sku_mod.stock[stock.id]"
+                                                                                               v-bind:readonly="stock.is_virtual"
+                                                                                               v-bind:style="{ 'opacity' : stock.is_virtual ? '.5' : ''}"
+                                                                                               v-bind:class="{ 'transparent' : stock.is_virtual }"
+                                                                                               v-on:change="changeSkuModStocks(sku_mod)"
+                                                                                               v-on:input="validate($event, 'number-negative', sku_mod.stock, stock.id)">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="s-column wide">
+                                                                                    <span class="cursor-default"
+                                                                                          v-bind:style="{ 'opacity' : stock.is_virtual ? '.5' : '' }">{ { stock.name } }</span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </template>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="s-section-footer">
+                                                                <button class="wa-button wa-small gray-light" type="button" v-on:click.prevent="modificationStocksToggle(sku_mod, false)">[`Close`]</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+
+                        {* BAGES *}
+                        <div class="s-product-badges-section js-product-badges-section">
+                            <div class="tablebox fixed space-16">
+                                <div class="s-column middle s-column-label">
+                                    <div class="flexbox space-10">
+                                        <span class="s-name">[`Badge`]</span>
+                                        <span class="wa-tooltip inline right" data-title="{_w("An icon or brief caption to highlight this product among others.")|escape}">
+                                            <i class="fas fa-question-circle s-icon gray"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="s-column">
+
+                                    <template v-if="product.badges">
+                                        <div class="s-badges-list">
+                                            <template v-for="badge in product.badges">
+                                                <div class="s-badge-wrapper"
+                                                     v-bind:class="{ 'is-active': (badge.id === product.badge_id) }"
+                                                     v-on:click.prevent="changeProductBadge(badge)">
+
+                                                    <span class="s-icon" v-if="badge.id === 'new'"><i class="fas fa-bolt"></i></span>
+                                                    <span class="s-icon" v-if="badge.id === 'bestseller'"><i class="fas fa-chart-line"></i></span>
+                                                    <span class="s-icon" v-if="badge.id === 'lowprice'"><i class="fas fa-piggy-bank"></i></span>
+                                                    <span class="s-icon" v-if="badge.id === ''"><i class="fas fa-code"></i></span>
+                                                    <span class="s-name">{ { badge.name } }</span>
+                                                </div>
+                                            </template>
+                                            <div class="s-button-wrapper" v-if="product.badge_id !== null">
+                                                <button class="wa-button transparent" v-on:click.prevent="changeProductBadge()">
+                                                    <span class="s-icon"><i class="fas fa-times"></i></span>
+                                                    <span class="s-name">[`Remove`]</span>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <template v-if="product.badge_form">
+                                            <component-product-badge-form v-bind:product="product"></component-product-badge-form>
+                                        </template>
+                                    </template>
+                                    <template v-else>
+                                        <p>[`No badges`]</p>
+                                    </template>
+
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                    <template v-else>
+                        <div class="s-info-message">
+                            <div class="wa-message wa-small gray flexbox space-8">
+                                <div class="message-icon color-blue">
+                                    <i class="fas fa-info-circle"></i>
+                                </div>
+                                <div class="message-text wide">{sprintf(_w("Prices are edited under the “%s” tab."),"<span>{_w("Prices & features")}</span>")}</div>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+
+                {* TYPE *}
+                {if !empty($product_types)}
+                    <div class="wa-fields space-24">
+                        <div class="wa-field">
+                            <div class="name">
+
+                                <div class="wa-label">
+                                    <div>
+                                        [`Product type`]
+                                        <span class="wa-tooltip right" data-title="{_w("Each product type; e.g., “TVs”, “Phones”, or “Clocks”, can have its own set of features. You can decide which product types to make visible in a storefront. Separate access rights to product types can be set up for store backend users and user groups.")|escape}">
+                                            <i class="fas fa-question-circle s-icon gray"></i>
+                                        </span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="value">
+
+                                {function name="_render_type_icon" _icon=""}
+                                    {if !empty(_icon)}
+                                        {* <i class="s-icon fas fa-gift"></i>*}
+                                        {shopHelper::getIcon(ifempty($_icon,'box'))}
+                                    {/if}
+                                {/function}
+
+                                {$_active_product_type = reset($product_types)}
+                                {if !empty($product.type_id) && !empty($product_types[$product.type_id])}
+                                    {$_active_product_type = $product_types[$product.type_id]}
+                                {/if}
+
+                                {strip}
+                                <div class="s-product-type-section js-product-type-section">
+                                    <div class="inlinebox baseline space-20">
+                                        <div class="dropdown js-product-type-select">
+                                            <button class="dropdown-toggle wa-button wa-small gray-field" type="button">
+                                                {if !empty($_active_product_type.icon)}{_render_type_icon _icon=$_active_product_type.icon}{/if}
+                                                {$_active_product_type.name|default:""|escape}
+                                            </button>
+                                            <div class="dropdown-body">
+                                                <div class="dropdown-filter js-dropdown-filter">
+                                                    <div class="s-actions left">
+                                                        <div class="s-action js-apply"><i class="fas fa-search"></i></div>
+                                                    </div>
+                                                    <input class="s-field js-field" type="text" value="">
+                                                </div>
+
+                                                {foreach $product_types as $_type}
+                                                    <div class="dropdown-item" data-id="{$_type.id|escape}">
+                                                        {if !empty($_type.icon)}{_render_type_icon _icon=$_type.icon}{/if}
+                                                        {$_type.name|default:""|escape}
+                                                    </div>
+                                                {/foreach}
+                                            </div>
+                                            <input name="product[type_id]" type="hidden" value="{$_active_product_type.id|default:""|escape}">
+                                        </div>
+
+                                        <a class="wa-button wa-small wa-short transparent-gray nowrap js-disable-router js-setup-type-link"
+                                           data-href="{$wa_app_url|escape}?action=settings#/typefeat/%type_id%/"
+                                           href="{$wa_app_url|escape}?action=settings#/typefeat/{$_active_product_type.id|escape}/"
+                                           target="_blank">
+
+                                            <span class="s-icon icon baseline shift-1 size-12"><i class="fas fa-cog"></i></span>
+                                            &nbsp;
+                                            <span class="s-name">[`Customize`]</span>
+                                        </a>
+                                    </div>
+
+                                    <span class="s-icon-loading">
+                                        <i class="fas fa-spinner fa-spin color-gray"></i>
+                                    </span>
+                                </div>
+                                {/strip}
+
+                            </div>
+                        </div>
+                    </div>
+                {/if}
+
+                <div class="js-fractional-section" style="visibility: hidden;">
+                    <component-fractional-section v-bind:key="keys.fractional"></component-fractional-section>
+                </div>
+
+                <div class="wa-fields space-24">
+
+                    {* MAIN CATEGORY *}
+                    <div class="wa-field">
+                        <div class="name">
+
+                            <div class="wa-label">
+                                <div>
+                                    [`Main category`]
+                                    <span class="wa-tooltip right" data-title="{_w("A category is a group of products with its own page in the storefront. The main category in which a product is included affects navigation links on the product page and its address in the storefront with some configurations.")|escape}">
+                                        <i class="fas fa-question-circle s-icon gray"></i>
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="value">
+
+                            <div class="s-product-main-category-section">
+                                <div class="s-visible-place">
+                                    <div class="dropdown" id="js-product-main-category-select">
+                                        <button class="dropdown-toggle wa-button wa-small gray-field" type="button">{$_active_main_category.name|default:$_locales["select_category"]|escape}</button>
+                                        <div class="dropdown-body">
+                                            <div class="dropdown-filter js-dropdown-filter">
+                                                <div class="s-actions left">
+                                                    <div class="s-action js-apply"><i class="fas fa-search"></i></div>
+                                                </div>
+                                                <input class="s-field js-field" type="text" value="">
+                                            </div>
+
+                                            <div class="dropdown-item" data-action="create">
+                                                <div class="dropdown-item-name">[`Add a new category`]</div>
+                                            </div>
+
+                                            {function name="_render_categories_options" _categories=[] }
+                                                {foreach $_categories as $_category}
+                                                    {$_is_active = (!empty($product.category_id) && $product.category_id === $_category.id)}
+                                                    <div class="dropdown-item {if !empty($_is_active)}selected{/if}" data-id="{$_category.id|escape}">
+                                                        <div class="dropdown-item-name">{$_category.name|escape}</div>
+                                                    </div>
+
+                                                    {if !empty($_category.categories)}
+                                                        <div class="dropdown-group">
+                                                            {_render_categories_options _categories=$_category.categories}
+                                                        </div>
+                                                    {/if}
+                                                {/foreach}
+                                            {/function}
+                                            {_render_categories_options _categories=$categories_tree}
+                                        </div>
+                                        <input name="product[category_id]" value="{$product.category_id|default:""|escape}" type="hidden">
+                                    </div>
+                                </div>
+                                <div class="s-hidden-place">
+                                    <div class="js-add-main-category-form">
+                                        <div class="flexbox middle space-8">
+                                            <input type="text" name="name" value="" placeholder="{_w("Enter a name")|escape}" required disabled>
+                                            <button class="wa-button blue js-submit-button" type="submit">
+                                                <span class="icon s-icon"><i class="fas fa-check"></i></span>
+                                            </button>
+                                            <button class="wa-button top gray js-cancel" type="button">
+                                                <span class="icon"><i class="fas fa-times"></i></span>
+                                            </button>
+                                        </div>
+                                        <input type="hidden" name="parent_id" value="" disabled>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    {* ADDITIONAL CATEGORY *}
+                    <div class="wa-field">
+                        <div class="name">
+
+                            <div class="wa-label for-input">
+                                <div>
+                                    [`Additional categories`]
+                                    <span class="wa-tooltip right" data-title="{_w("A category is a group of products with its own page in the storefront. A product can be included in one or several categories. Select additional categories here, in which the product must also be displayed in the storefront.")|escape}">
+                                        <i class="fas fa-question-circle s-icon gray"></i>
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="value">
+
+                            <div class="s-additional-categories-section">
+
+                                <div class="s-categories-list js-categories-list">
+                                    {function name="_render_additional_category" _category=[] _is_main=false}
+                                        <div class="s-category-wrapper {if !empty($_is_main)}is-main{/if}" data-id="{$_category.id|default:"%category_id%"|escape}">
+                                            <div class="flexbox middle space-8">
+                                                <div class="s-icon">
+                                                    <i class="fas fa-folder"></i>
+                                                </div>
+                                                <div class="s-name">{$_category.name|default:"%category_name%"|escape}</div>
+                                                <div class="s-actions">
+                                                    <button class="wa-button transparent-gray nowrap js-category-remove" type="button">
+                                                        <i class="fas fa-times"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <input type="hidden" name="product[categories][]" value="{$_category.id|default:"%category_id%"|escape}">
+                                        </div>
+                                    {/function}
+
+                                    {capture assign="_additional_category_template"}{_render_additional_category}{/capture}
+                                    {$_templates["additional_category_template"] = $_additional_category_template}
+
+                                    {if !empty($product.categories)}
+                                        {foreach $product.categories as $_category}
+                                            {$_is_main = !empty($_active_main_category) && ($_active_main_category.id === $_category.id)}
+                                            {_render_additional_category _category=$_category _is_main=$_is_main}
+                                        {/foreach}
+                                    {/if}
+                                </div>
+
+                                <div class="s-actions">
+                                    <button class="wa-button wa-small wa-short transparent js-add-categories" type="button">
+                                        <span class="s-icon icon baseline shift-1 size-12"><i class="fas fa-plus"></i></span>&nbsp;[`Add`]
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    {* LISTS *}
+                    <div class="wa-field">
+                        <div class="name">
+
+                            <div class="wa-label for-input">
+                                <div>
+                                    [`Sets`]
+                                    <span class="wa-tooltip right" data-title="{_w("A set is a group of products to be displayed on existing storefront pages; e.g., on the homepage or in a slider. A product can be included in one or more sets.")|escape}">
+                                        <i class="fas fa-question-circle s-icon gray"></i>
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="value">
+
+                            <div class="s-product-sets-section">
+
+                                <div class="s-sets-list js-sets-list">
+                                    {function name="_render_set" _set=[]}
+                                        <div class="s-set-wrapper" data-id="{$_set.id|default:"%set_id%"|escape}">
+                                            <div class="flexbox middle space-8">
+                                                <div class="s-icon">
+                                                    <i class="fas fa-folder"></i>
+                                                </div>
+                                                <div class="s-name">{$_set.name|default:"%set_name%"|escape}</div>
+                                                <div class="s-actions">
+                                                    <button class="wa-button transparent-gray nowrap js-set-remove" type="button">
+                                                        <i class="fas fa-times"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <input type="hidden" name="product[sets][]" value="{$_set.id|default:"%set_id%"|escape}">
+                                        </div>
+                                    {/function}
+
+                                    {capture assign="_set_template"}{_render_set}{/capture}
+                                    {$_templates["set_template"] = $_set_template}
+
+                                    {if !empty($product.sets)}
+                                        {foreach $product.sets as $_set}
+                                            {_render_set _set=$_set}
+                                        {/foreach}
+                                    {/if}
+                                </div>
+
+                                <div class="s-actions">
+                                    <button class="wa-button wa-small wa-short transparent js-add-sets" type="button">
+                                        <span class="s-icon icon baseline shift-1 size-12"><i class="fas fa-plus"></i></span>&nbsp;[`Add`]
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    {* TAXES *}
+                    {if !empty($taxes)}
+                        <div class="wa-field">
+                            <div class="name">
+                                <div class="wa-label for-input">
+                                    <div>
+                                        [`Taxable`]
+                                        <span class="wa-tooltip right" data-title="{_w("You can select a tax rule for the product. A tax rule is applied to customers from selected countries and their regions.")|escape}">
+                                            <i class="fas fa-question-circle s-icon gray"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="value">
+
+                                {$_empty_tax = [
+                                    "id" => "",
+                                    "name" => _w("No")
+                                ]}
+
+                                {$_is_empty = empty($taxes[$product.tax_id])}
+                                {$_active_tax = ifset($taxes, $product.tax_id, $_empty_tax)}
+
+                                <div class="dropdown" id="js-product-tax-select">
+                                    <button class="dropdown-toggle wa-button wa-small gray-field" type="button">{ifset($_active_tax, 'name', _w("Select a tax"))|escape}</button>
+                                    <div class="dropdown-body">
+                                        <div class="dropdown-item {if $_is_empty}selected{/if}" data-id="{$_empty_tax.id|escape}">
+                                            {$_empty_tax.name|escape}
+                                        </div>
+                                        {foreach $taxes as $_tax}
+                                            {$_is_active = ifset($_active_tax, 'id', null) == $_tax.id}
+                                            <div class="dropdown-item {if !empty($_is_active)}selected{/if}" data-id="{$_tax.id|escape}">
+                                                {$_tax.name|escape}
+                                            </div>
+                                        {/foreach}
+                                    </div>
+                                    <input name="product[tax_id]" type="hidden" value="{$product.tax_id|default:""|escape}">
+
+                                    <script>
+                                        ( function($) {
+                                            var $select = $("#js-product-tax-select"),
+                                                $input = $select.find("input");
+
+                                            $select.waDropdown({
+                                                hover: false,
+                                                items: ".dropdown-item",
+                                                change: function(event, target) {
+                                                    $input.val($(target).data("id")).trigger("change");
+                                                }
+                                            });
+                                        })(jQuery);
+                                    </script>
+                                </div>
+
+                            </div>
+                        </div>
+                    {/if}
+
+                    {* DESCRIPTION *}
+                    <div class="wa-field">
+                        <div class="name">
+                            <div class="wa-label for-textarea">
+                                <div>
+                                    [`Summary`]
+                                    <span class="wa-tooltip right" data-title="{_w("Brief product description displayed in various product lists.")|escape}">
+                                        <i class="fas fa-question-circle s-icon gray"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="value">
+                            <textarea class="full-width js-auto-height" name="product[summary]">{$product.summary|default:""}</textarea>
+                            <p class="hint">[`Displayed in product lists.`]</p>
+                        </div>
+                    </div>
+
+                    {* TAGS *}
+                    <div class="wa-field s-tags-section">
+                        <div class="name">
+                            <div class="wa-label for-textarea">
+                                <div>
+                                    [`Tags`]
+                                    <span class="wa-tooltip right" data-title="{_w("Words or short phrases, related to the product, which are displayed as a group of links for convenient navigation across all products in the storefront.")|escape}">
+                                        <i class="fas fa-question-circle s-icon gray"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="value">
+                            <input id="js-product-tags" type="hidden" name="product[tags]" value="{$product.tags|default:[]|join:","|escape}">
+                            <p class="hint">[`Separate tags with comma (,).`]</p>
+                        </div>
+                    </div>
+
+                    <!-- plugin hook: 'backend_prod_content.form_bottom' -->
+                    {* @event backend_prod_content.%plugin_id%.form_bottom *}
+                    {if !empty($backend_prod_content_event)}{foreach $backend_prod_content_event as $_}{ifset($_.form_bottom)}{/foreach}{/if}
+                </div>
+            </div>
+
+            <section class="s-editor-section js-editor-section">
+                <div class="s-section-header">
+                    <h5 class="s-section-title">[`Description`]</h5>
+                    {strip}
+                    <div class="toggle tabs-mode js-editor-type-toggle">
+                        <span class="selected" data-id="wysiwyg">[`WYSIWYG`]</span>
+                        <span data-id="html">[`HTML`]</span>
+                    </div>
+                    {/strip}
+                </div>
+
+                <div class="s-section-body">
+                    <div class="s-wysiwyg-editor js-wysiwyg-editor">
+                        <textarea class="js-product-description-textarea" name="product[description]">{$product.description|escape}</textarea>
+                    </div>
+                    <div class="s-html-editor js-html-editor"></div>
+                </div>
+            </section>
+
+            <div class="s-errors-place js-errors-place"></div>
+
+            <input type="hidden" name="product[id]" value="{$product.id|default:""}">
+        </form>
+    </div>
+
+    <!-- plugin hook: 'backend_prod_content.bottom' -->
+    {* @event backend_prod_content.%plugin_id%.bottom *}
+    {if !empty($backend_prod_content_event)}{foreach $backend_prod_content_event as $_}{ifset($_.bottom)}{/foreach}{/if}
+
+    {* FEATURES HIDDEN ON FRONT *}
+    {capture assign="_footer_content"}
+
+        {if $show_sku_warning}
+            {$_tooltips["product-sku-features-hidden-on-front"] = [
+                "id" => "product-sku-features-hidden-on-front",
+                "html" => _w("Open the “Prices & features” tab to fix errors in the product variants.")|escape
+            ]}
+
+            <div class="s-features-hidden-on-front-section">
+                <div class="wa-message wa-small warn flexbox space-8">
+                    <div class="message-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                    <div class="message-text wide">
+                        <span class="s-text">[`Some product variants are not displayed in the storefront because of errors.`]</span>
+                        <span class="s-icon" data-tooltip-id="product-sku-features-hidden-on-front"><i class="fas fa-question-circle  gray"></i></span>
+                    </div>
+                </div>
+            </div>
+        {/if}
+    {/capture}
+
+    {include file="./includes/footer.html" footer_content=$_footer_content inline}
+
+    <script>
+        ( function($) {
+            var sources = [{
+                id: "vue-js",
+                type: "js",
+                uri: "{$wa_app_static_url}js/backend/products/vue/vue.min.js?v={$wa->version()}"
+            }, {
+                id: "ace-js",
+                type: "js",
+                uri: "{$wa_url}wa-content/js/ace/ace.js?v=={$wa->version(true)}"
+            }, {
+                id: "redactor-2-css",
+                type: "css",
+                uri: "{$wa_url}wa-content/js/redactor/2/redactor.css?v={$wa->version(true)}"
+            }, {
+                id: "redactor-2-js",
+                type: "js",
+                uri: "{$wa_url}wa-content/js/redactor/2/redactor.min.js?v={$wa->version(true)}"
+            }, {
+                id: "wa-editor-2-js",
+                type: "js",
+                uri: "{$wa_url}wa-content/js/jquery-wa/editor2.js?v={$wa->version(true)}"
+            }, {
+                id: "wa-shop-products-product-general-js",
+                type: "js",
+                uri: "{$wa_app_static_url}js/backend/products/product/product.general.js?v={$wa->version()}"
+            }, {
+                id: "wa-shop-products-product-general-add_categories-dialog-js",
+                type: "js",
+                uri: "{$wa_app_static_url}js/backend/products/product/dialogs/product.general.add_categories.js?v={$wa->version()}"
+            }, {
+                id: "wa-shop-products-product-general-add_sets-dialog-js",
+                type: "js",
+                uri: "{$wa_app_static_url}js/backend/products/product/dialogs/product.general.add_sets.js?v={$wa->version()}"
+            }, {
+                id: "wa-tags-input-js",
+                type: "js",
+                uri: "{$wa_url}wa-content/js/jquery-plugins/jquery-tagsinput/jquery.tagsinput.min.js?v={$wa->version(true)}"
+            }];
+
+            $.wa.loadSources(sources).then( function() {
+                var locale = {$_lang|json_encode};
+                if (["ru"].indexOf(locale) >= 0) {
+                    $.wa.loadSources([{
+                        id: "redactor-2-{$_lang}-js",
+                        type: "js",
+                        uri: "{$wa_url}wa-content/js/redactor/2/{$_lang}.js?v={$wa->version(true)}"
+                    }]).then(init);
+                } else {
+                    init();
+                }
+            });
+
+            function init() {
+                ace.config.set("basePath", "{$wa_url}wa-content/js/ace/");
+
+                $.wa_shop_products.init.initProductGeneralSection({
+                    $wrapper: $("#js-product-general-section"),
+                    product_id: {if !empty($product.id)}{$product.id|json_encode}{else}null{/if},
+                    product_category_id: {if !empty($product.category_id)}{$product.category_id|json_encode}{else}null{/if},
+                    categories_tree: {$categories_tree|json_encode},
+                    components: {$_components|json_encode},
+                    templates: {$_templates|json_encode},
+                    tooltips: {$_tooltips|json_encode},
+                    locales: {$_locales|json_encode},
+                    urls: {
+                        "wa_url": {$wa_url|json_encode},
+                        "save": "{$wa_app_url}?module=prod&action=saveGeneral",
+                        "transliterate": "{$wa_app_url}?module=prod&action=suggestUrl",
+                        "add_set_dialog": "{$wa_app_url}?module=prod&action=selectSetDialog",
+                        "add_category_dialog": "{$wa_app_url}?module=prod&action=selectCategoryDialog",
+                        "create_category": "{$wa_app_url}?module=category&action=add",
+                        "product_url_checker": "{$wa_app_url}?module=prod&action=checkUrlInUse",
+                        "add_product_image": "{$wa_app_url}?module=prod&action=imageUpload",
+                        "change_image_description": "{$wa_app_url}?module=prod&action=saveImageDetails",
+                        "delete_image": "{$wa_app_url}?module=prod&action=deleteImage",
+                        "sku_file_upload": "{$wa_app_url}?module=prod&action=addSkuFile",
+                        "sku_file_delete": "{$wa_app_url}?module=prod&action=deleteSkuFile",
+                        "type_settings": "{$wa_app_url}?module=prod&action=typeSettings"
+                    },
+                    lang: {$_lang|json_encode},
+
+                    max_file_size: {$_max_file_size|json_encode},
+                    max_post_size: {$_max_post_size|json_encode},
+
+                    stocks: {$stocks|array_values|json_encode},
+                    product: {$formatted_product|json_encode},
+                    currencies: {$currencies|json_encode}
+                });
+
+                $(document).trigger("wa_product_section_change", "product-general");
+            }
+
+        })(jQuery);
+    </script>
+</div>

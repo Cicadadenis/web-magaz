@@ -1,0 +1,260 @@
+<div id="wa-nav">
+    {if $wa->whichUI() == '2.0'}
+        <script>
+            if (typeof wa_url === "undefined") {
+                wa_url = '{$wa_url}';
+            }
+            const backend_url = "{$backend_url}";
+        </script>
+        {include file="./BackendHeader20.html" inline}
+    {else}
+        {include file="./BackendHeader13.html" inline}
+    {/if}
+
+    {** Webasyst 1.3 / 2 UI toggle **}
+
+    {* keep inline style="" to maintain same solid view in both wa-1.3 and wa-2.0 environments *}
+
+    <script>
+        function _setCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays*24*60*60*1000));
+            var expires = "expires="+d.toUTCString();
+            document.cookie = cname + "=" + cvalue + "; " + expires + "; path=/";
+        }
+    </script>
+
+    {$_force_set_wa_backend_ui_version = waSystemConfig::whichBackendUI()}
+
+    {if ifset($app_info, 'ui', '1.3') === '1.3,2.0'}
+
+        {if $wa->debug()}
+
+            {* force global UI mode switch @ debug mode only *}
+            <style>
+                .wa-general-settings-place {
+                    position: fixed;
+                    right: 0;
+                    bottom: 20px;
+                    z-index: 9999;
+
+                    pointer-events: none;
+                    font-size: 16px;
+                }
+
+                .wa-general-settings-place__toggler {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    width: 55px;
+                    color: #1a9afe;
+                    font-weight: bold;
+                    cursor: pointer;
+                }
+                .wa-general-settings-place__toggler:hover {
+                    text-decoration: underline;
+                }
+
+                .wa-general-settings-place__checkbox {
+                    position: absolute;
+                    left: -99999px;
+                }
+
+                .wa-general-settings-place__inner {
+                    pointer-events: auto;
+                    background-color: #fea;
+                    border: 2px solid #eda;
+                    border-radius: 4px;
+                    padding: 12px;
+                    padding-left: 55px;
+                    box-shadow: 0 5px 20px -10px rgba(0,0,0,0.2), 0 3px 10px -5px rgba(0,0,0,0.1);
+                    transform: translate(calc(100% - 55px));
+                    transition: .3s transform;
+                }
+
+                .wa-general-settings-place__checkbox:checked + .wa-general-settings-place__inner {
+                    transform: translate(-20px);
+                }
+            </style>
+
+            <div class="wa-general-settings-place">
+                <input type="checkbox" class="wa-general-settings-place__checkbox" id="wa-general-settings-place">
+
+                <div class="wa-general-settings-place__inner">
+                    <label class="wa-general-settings-place__toggler" for="wa-general-settings-place">
+                        {if $wa->whichUI() == '1.3'}
+                        1.3
+                        {else}
+                        2.0
+                        {/if}
+                    </label>
+
+                    <span class="desktop-only">[`Select UI mode`]:</span>
+
+                    <select onChange="_setCookie('force_set_wa_backend_ui_version', this.options[this.selectedIndex].value, 180); window.location.reload();" style="font-size: 16px;">
+                        <option value="1.3"{if $_force_set_wa_backend_ui_version == '1.3'} selected{/if}>1.3</option>
+                        <option value="2.0"{if $_force_set_wa_backend_ui_version == '2.0'} selected{/if}>2.0</option>
+                    </select>
+                    {if $_force_set_wa_backend_ui_version == '2.0'}
+                        <span style="display: inline-block; border-radius: 50%; border: 1px solid rgba(0,0,0,0.2); width: 18px; height: 18px; background: white; box-shadow: 0 3px 5px -2px rgba(0,0,0,0.2); position: relative; top: 3px; margin: 0 1px 0 8px; cursor: pointer" title="[s`Light mode`]" data-wa-theme-mode="light"></span>
+                        <span style="display: inline-block; border-radius: 50%; border: 1px solid rgba(0,0,0,0.2); width: 18px; height: 18px; background: #333; box-shadow: 0 3px 6px -2px rgba(0,0,0,0.42); position: relative; top: 3px; margin: 0 2px; cursor: pointer" title="[s`Dark mode`]" data-wa-theme-mode="dark"></span>
+                        <span style="display: inline-block; border-radius: 50%; overflow: hidden; border: 1px solid rgba(0,0,0,0.2); width: 18px; height: 18px; position: relative; top: 3px; margin: 0 2px; cursor: pointer" title="[s`Auto (based on device settings)`]" data-wa-theme-mode="auto"><i style="background: linear-gradient(-90deg, rgba(51,51,51,1) 40%, rgba(255,255,255,1) 60%); box-shadow: 0 3px 6px -2px rgba(0,0,0,0.42); display: block; width: 18px; height: 18px;"></i></span>
+                    {/if}
+                </div>
+            </div>
+
+        {else}
+
+            {* user-friendly UI switch is shown only if the app supports BOTH '1.3' & '2.0' *}
+
+            {if $wa->whichUI() == '1.3'
+
+                    && $app_info.id != 'webasyst'
+
+            }
+
+                <style>
+                    @-webkit-keyframes wa2uiAlertBottom {
+                        from { opacity: 0; -webkit-transform: translate3d(0, 10%, 0); transform: translate3d(0, 10%, 0); }
+                        to { opacity: 1; -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+                    }
+                    @keyframes wa2uiAlertBottom {
+                        from { opacity: 0; -webkit-transform: translate3d(0, 10%, 0); transform: translate3d(0, 10%, 0); }
+                        to { opacity: 1; -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+                    }
+
+                    .popup-notification-new {
+                        position: fixed;
+                        right: 20px;
+                        bottom: 20px;
+                        z-index: 9999;
+
+                        max-width: 500px;
+                        background-image: linear-gradient(135deg, #9fff77 0%, #ecf60c 80%);
+                        border-radius: 4px;
+                        padding: 25px;
+                        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05), 0 0.5rem 0.5rem -0.5rem rgba(0, 0, 0, 0.13);
+                        -webkit-animation: 300ms wa2uiAlertBottom;
+                        animation: 300ms wa2uiAlertBottom;
+                    }
+
+                    .popup-notification-new__close {
+                        position: relative;
+                        top: -4px;
+
+                        float: right;
+
+                        color: rgba(0,0,0,0.5);
+                        font-size: 28px;
+                        padding: 0px;
+                    }
+
+                    .popup-notification-new__title {
+                        font-size: 22px;
+                        margin-bottom: 12px;
+                    }
+
+                    .popup-notification-new__title-img {
+                        position: relative;
+                        top: 3px;
+
+                        width: 24px;
+                        height: 24px;
+                    }
+
+                    .popup-notification-new__title-color {
+                        opacity: .42;
+                    }
+
+                    .popup-notification-new__text {
+                        font-size: 13px;
+                    }
+
+                    .popup-notification-new__button {
+                        position: relative;
+                        top: 0;
+
+                        display: inline-block;
+
+                        color: #fff;
+                        font-size: 16px;
+                        font-weight: 500;
+                        line-height: 1;
+                        white-space: nowrap;
+
+                        background: #09f;
+                        border-radius: 4px;
+                        border: none;
+                        outline: 0 none;
+                        padding: 10px 12px;
+                        margin: 0 2px 0 0;
+
+                        box-shadow: 0 0.25em 0.75em -0.25em rgba(0, 0, 0, 0.2);
+                        transition: 0.1s;
+                        cursor: pointer;
+                    }
+
+                    .popup-notification-new__icon {
+                        position: relative;
+                        top: 11px;
+                        left: 2px;
+                    }
+                </style>
+
+                <div class="popup-notification-new js-popup-notification-new"{if $wa->cookie('force_hide_wa2ui_teaser') && $app_info.id != 'ui'} style="display: none;"{/if}>
+                    <a href="#" class="popup-notification-new__close js-popup-notification-new-close">&times;</a>
+                    <h3 class="popup-notification-new__title">
+                        {if $app_info.id != 'webasyst'}<img src="{$root_url}{$app_info.icon.48}" class="popup-notification-new__title-img">{/if}
+                        [s`All-new Webasyst 2 UI`] <span class="popup-notification-new__title-color">([`beta`])</span>
+                    </h3>
+                    <p class="popup-notification-new__text">[s`This app supports the brand-new Webasyst 2 user interface (beta version). Go ahead and check out its amazing new style. And don’t worry — you can return to the classic UI any time.`]</p>
+                    <button class="popup-notification-new__button" onClick="_setCookie('force_set_wa_backend_ui_version', '2.0', 180); window.location.reload();">[s`Turn on the new UI`]</button>
+                    [s`or`]
+                    <a href="[s`http://2.webasyst.com`]" target="_blank">[s`learn more about Webasyst 2`] <i class="icon10 new-window" class="popup-notification-new__icon"></i></a>
+                </div>
+
+                <script>
+                  ( function($) {
+                    $('.js-popup-notification-new-close').click(function(e) {
+                      e.preventDefault()
+                      _setCookie('force_hide_wa2ui_teaser', 1, 180);
+                      $(this).parent('.js-popup-notification-new').hide();
+                    })
+                  })(jQuery);
+                </script>
+
+            {/if}
+
+        {/if}
+
+
+    {elseif ifset($app_info, 'ui', '1.3') === '1.3' && !$wa->debug()}
+
+        {if $_force_set_wa_backend_ui_version == '2.0'}
+
+            <div style="position: fixed; z-index: 9999; bottom: 20px; right: 20px; border-radius: 4px; background: #eee; padding: 25px; box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05), 0 0.5rem 0.5rem -0.5rem rgba(0, 0, 0, 0.13); max-width: 500px;{if $wa->cookie('force_hide_wa2ui_teaser') && $app_info.id != 'ui'} display: none;{/if}">
+                <a href="#" onClick="_setCookie('force_hide_wa2ui_teaser', 1, 180); $(this).parent().hide();
+    " style="padding: 6px; float: right; font-size: 24px; color: rgba(0,0,0,0.5); position: relative; top: -10px; right: -6px;">&times;</a>
+                <h3 style="font-size: 20px; margin-bottom: 12px; color: #777; margin-top: -7px;">
+                    {if $app_info.id != 'webasyst'}<img src="{$root_url}{$app_info.icon.48}" style="width: 24px; height: 24px; position: relative; top: 4px;">{/if}
+                    [s`New UI is not yet supported`]
+                </h3>
+                <p style="font-size: 13px; margin-bottom: 0;">[s`You’ve enabled the new Webasyst 2 UI, but this app does not currently support it. Please contact the app developer to encourage upgrading the UI to the new style.`]</p>
+            </div>
+
+        {/if}
+
+    {/if}
+
+    {** END of Webasyst 1.3 / 2 UI toggle **}
+
+</div>
+{if $wa->whichUI() == '2.0'}
+<div class="wa-header-background dialog-background js-header-background"></div>
+{/if}

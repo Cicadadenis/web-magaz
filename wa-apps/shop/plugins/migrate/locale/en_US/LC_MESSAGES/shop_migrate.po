@@ -1,0 +1,409 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: shop/plugins/migrate\n"
+"POT-Creation-Date: 2014-01-29 02:23-1100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: shop/plugins/migrate\n"
+"Language-Team: shop/plugins/migrate\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 2.0.6\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: en_US\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: .\n"
+
+msgid "Source"
+msgstr ""
+
+msgid "Platform"
+msgstr ""
+
+msgid "Select platform"
+msgstr ""
+
+msgid "Import data"
+msgstr ""
+
+msgid "Please do not close your browser window and do not leave this page until the entire migration process is finished."
+msgstr ""
+
+msgid "Loading..."
+msgstr ""
+
+msgid "Successfully imported"
+msgstr ""
+
+msgid "%02d hr %02d min %02d sec"
+msgstr ""
+
+msgid "(total time: %s)"
+msgstr ""
+
+msgid "Migrate to Shop-Script"
+msgstr ""
+
+msgid "Transfer data from third-party ecommerce platforms and sources to Shop-Script."
+msgstr ""
+
+msgid "WebAsyst Shop-Script (old version) on the same server"
+msgstr ""
+
+msgid "WebAsyst Shop-Script (old version) on a remote server"
+msgstr ""
+
+msgid "Errors only"
+msgstr ""
+
+msgid "Debug (detailed log)"
+msgstr ""
+
+msgid "Log level"
+msgstr ""
+
+msgid "Invalid server response with code %d"
+msgstr ""
+
+msgid "Data access URL"
+msgstr ""
+
+msgid "For WebAsyst <strong>PHP software</strong> installed on your server:<br /> 1. Download data access script <a href=\"http://www.webasyst.com/wa-data/public/site/downloads/old-webasyst-export-php.zip\">export.php</a>, and upload it to your Webasyst published/ folder via FTP.<br /> 2. Enter the complete URL to this file, which should look like this: <strong>http://YOUR_WEBASYST_ROOT_URL/published/export.php</strong><br /><br /> For <strong>hosted accounts</strong>: get your Secure Data Access URL in your ACCOUNT.webasyst.net backend’s “Account (link in the top right corner) &gt; System Settings” page."
+msgstr ""
+
+msgid "Login"
+msgstr ""
+
+msgid "WebAsyst user login"
+msgstr ""
+
+msgid "Password"
+msgstr ""
+
+msgid "WebAsyst user password"
+msgstr ""
+
+msgid "Invalid URL, login or password"
+msgstr ""
+
+msgid "Invalid server response"
+msgstr ""
+
+msgid "PHP extension curl not loaded"
+msgstr ""
+
+msgid "Error while init Curl"
+msgstr ""
+
+msgid "Curl error %d#:%s"
+msgstr ""
+
+msgid "Path to folder"
+msgstr ""
+
+msgid "Path to folder of the WebAsyst (old version) installation"
+msgstr ""
+
+msgid "Invalid PATH %s"
+msgstr ""
+
+msgid "Invalid SQL server name"
+msgstr ""
+
+msgid "%d product review"
+msgid_plural "%d product reviews"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "%d tax"
+msgid_plural "%d taxes"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "%d category"
+msgid_plural "%d categories"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "%d product"
+msgid_plural "%d products"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "%d customer"
+msgid_plural "%d customers"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "%d customer category"
+msgid_plural "%d customer categories"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "%d image"
+msgid_plural "%d images"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "%d product file"
+msgid_plural "%d product files"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "%d order"
+msgid_plural "%d orders"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "%d coupon"
+msgid_plural "%d coupons"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "%d page"
+msgid_plural "%d pages"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Unknown default currency %s"
+msgstr ""
+
+msgid "Undefined default langunage"
+msgstr ""
+
+msgid "Undefined default currency"
+msgstr ""
+
+msgid "Don't import"
+msgstr ""
+
+msgid "Importing taxes..."
+msgstr ""
+
+msgid "Importing categories..."
+msgstr ""
+
+msgid "Importing currencies..."
+msgstr ""
+
+msgid "Updating category hierarchy..."
+msgstr ""
+
+msgid "Importing products..."
+msgstr ""
+
+msgid "Importing customers..."
+msgstr ""
+
+msgid "Importing customer categories..."
+msgstr ""
+
+msgid "Importing product custom options..."
+msgstr ""
+
+msgid "Importing product custom option values..."
+msgstr ""
+
+msgid "Importing product downloadable files..."
+msgstr ""
+
+msgid "Importing product reviews..."
+msgstr ""
+
+msgid "Importing product images (this is the longest part, please be patient)..."
+msgstr ""
+
+msgid "Importing orders..."
+msgstr ""
+
+msgid "Importing coupons..."
+msgstr ""
+
+msgid "Creating product thumbnails..."
+msgstr ""
+
+msgid "Creating product sets..."
+msgstr ""
+
+msgid "Importing pages..."
+msgstr ""
+
+msgid "Storefront"
+msgstr ""
+
+msgid "Shop-Script settlement for static info pages"
+msgstr ""
+
+msgid "Preserve IDs"
+msgstr ""
+
+msgid "If product (or category) with a particular ID already exists in your new store, delete it and replace with the imported data."
+msgstr ""
+
+msgid "Source language"
+msgstr ""
+
+msgid "Shop-Script 7 allows storing product info and database content in one language. Select primary language of your WebAsyst Shop-Script-based online store."
+msgstr ""
+
+msgid "Currency"
+msgstr ""
+
+msgid "Product type"
+msgstr ""
+
+msgid "Selected product type will be applied to all imported products"
+msgstr ""
+
+msgid "Add as new product type"
+msgstr ""
+
+msgid "Default product type"
+msgstr ""
+
+msgid "Weight"
+msgstr ""
+
+msgid "Select feature defining product weight."
+msgstr ""
+
+msgid "Source weight unit: <strong>%s</strong>"
+msgstr ""
+
+msgid "Custom parameters"
+msgstr ""
+
+msgid "Contact fields map"
+msgstr ""
+
+msgid "Status map"
+msgstr ""
+
+msgid "There no options to import"
+msgstr ""
+
+msgid "Ignore this field"
+msgstr ""
+
+msgid "Add as a new contact field"
+msgstr ""
+
+msgid "There no customer fields to import"
+msgstr ""
+
+msgid "Feature"
+msgstr ""
+
+msgid "Content will be imported as a fixed descriptive product field"
+msgstr ""
+
+msgid "Service"
+msgstr ""
+
+msgid "Services feature allows customers to customize product when adding it to shopping cart (either select or unselect particular service with the product)"
+msgstr ""
+
+msgid "SKU"
+msgstr ""
+
+msgid "SKUs feature allows tracking inventory by multiple stocks. Multiple product SKUs (purchase options) will be created according to this custom option value set"
+msgstr ""
+
+msgid "Select target order state"
+msgstr ""
+
+msgid "Add as new order state"
+msgstr ""
+
+msgid "Add as new feature"
+msgstr ""
+
+msgid "Add to existing"
+msgstr ""
+
+msgid "Without dimension"
+msgstr ""
+
+msgid "Add as new service"
+msgstr ""
+
+msgid "Migrate aux pages, categories, products with params, features, images and eproduct files"
+msgstr ""
+
+msgid "%d currency"
+msgid_plural "%d currencies"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Feed URL"
+msgstr ""
+
+msgid "Specify YML feed URL."
+msgstr ""
+
+msgid "Empty URL for YML"
+msgstr ""
+
+msgid "Error while upload YML file: %s"
+msgstr ""
+
+msgid "Connect"
+msgstr ""
+
+msgid "YML feed file"
+msgstr ""
+
+msgid "YML"
+msgstr ""
+
+msgid "Transfer data from other ecommerce platforms to Shop-Script"
+msgstr ""
+
+msgid "OpenCart 1.5.x with Web API 1.0 plugin"
+msgstr ""
+
+msgid "Migrate data from <a href=\"http://www.opencart.com\" target=\"_blank\">OpenCart</a>-powered online store via Web API 1.0 OpenCart plugin.<br><br><strong>IMPORTANT:</strong> <a href=\"https://github.com/zenwalker/opencart-webapi/\" target=\"_blank\">Web API 1.0 OpenCart plugin</a> must be installed to export your data from OpenCart."
+msgstr ""
+
+msgid "Weight unit"
+msgstr ""
+
+msgid "Order currency"
+msgstr ""
+
+msgid "Import data from %s"
+msgstr ""
+
+msgid "Store name"
+msgstr ""
+
+msgid "Source locale"
+msgstr ""
+
+msgid "Source currency code"
+msgstr ""
+
+msgid "%d product's option"
+msgid_plural "%d product's options"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Updating product categories"
+msgstr ""
+
+msgid "Undefined default language"
+msgstr ""
+
+msgid "Bitrix"
+msgstr ""
+
+msgid "Data to import"
+msgstr ""
+
+msgid "Import all products, categories, customers, and orders"
+msgstr ""
+
+msgid "Import only orders and customers starting from"
+msgstr ""

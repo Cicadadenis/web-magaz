@@ -1,0 +1,188 @@
+$border_c = var(--border-color-input)
+
+.t-calendar-page
+    .t-content-header
+        & > .t-layout
+            margin 1em 0 0
+
+            & > .t-column
+                vertical-align middle
+
+    .t-calendar-wrapper
+        margin 1em 0 0
+
+.t-calendar-wrapper
+    user-select none
+
+    .t-labels-wrapper
+        table
+            border-collapse separate
+            table-layout fixed
+            width 100%
+            margin 0
+            border 0
+
+            .t-column
+                padding 4px
+                text-align right
+                color var(--gray)
+                background transparent
+                border solid $border_c
+                border-width 0 0 1px 0
+
+    .t-calendar-block
+        .t-week-row
+            position relative
+            height $week_h
+            border solid $border_c
+            border-width 0 1px 1px 1px
+
+            .t-week-background
+            .t-week-table
+                border-collapse separate
+                table-layout fixed
+                width 100%
+                margin 0
+                border 0
+
+                td.t-column
+                    border solid $border_c
+                    border-width 0 0 0 1px
+                    cursor pointer
+                    padding 0
+                    background transparent
+
+                    &:first-child
+                        border-left 0
+
+            .t-week-background
+                position absolute
+                top 0
+                left 0
+                width 100%
+                height 100%
+
+            .t-week-table
+                position relative
+                border-color transparent
+
+                td.t-column
+                    border-color transparent
+                    background transparent
+
+            .t-day-ornament
+                width 100%
+                height $week_h
+                box-sizing border-box
+                border 2px solid transparent
+                cursor pointer
+
+                &.is-unactive
+                    background var(--background-color)
+
+                &.is-active
+                    background var(--background-color-editable)
+                    border-color var(--thumbs-highlighted-color)
+
+                &.is-highlighted
+                    background var(--background-color-table-row-selected)
+
+                &.is-selected
+                    background var(--background-color-table-row-selected)
+
+            .t-action-wrapper
+
+                .t-action
+                    height $event_h
+                    padding 0 0 0 2px
+                    font-size (14/$rem)em
+                    line-height $event_h
+                    white-space nowrap
+                    overflow hidden
+                    text-overflow ellipsis
+                    cursor pointer
+                    color $link_c
+
+                    &:hover
+                        text-decoration underline
+
+            .t-day-wrapper
+                padding $event_pad * 2 6px 0
+                font-size (13/$rem)em
+                line-height $event_h
+                text-align right
+                color var(--gray)
+                cursor pointer
+
+.t-event-wrapper
+    padding $event_pad
+    user-select none
+
+/*    &.type-0
+        .t-event-block
+            border-radius 10px 10px 10px 10px
+
+    &.type-1
+        .t-event-block
+            border-radius 10px 2px 2px 10px
+
+    &.type-2
+        .t-event-block
+            border-radius 2px
+
+    &.type-3
+        .t-event-block
+            border-radius 2px 10px 10px 2px*/
+
+    .t-event-block
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        overflow hidden
+        height $event_h
+
+        color: var(--white);
+        font-size: 0.875em;
+        font-weight: normal;
+        font-style: normal;
+        line-height: 1em;
+        white-space nowrap
+        text-overflow ellipsis
+
+        background: var(--red);
+        border-radius: 1em;
+        padding 0 .5em
+
+        .t-column:last-child .square-corner &
+            border-top-right-radius 0
+            border-bottom-right-radius 0
+
+        .t-column:first-child .square-corner &
+            border-top-left-radius 0
+            border-bottom-left-radius 0
+
+        &.js-view-event
+            cursor pointer
+
+        &.transparent
+            background transparent
+            border-color transparent
+            color var(--text-color-stronger)
+
+            &:hover
+                background var(--background-color-table-row-hover)
+                border-color rgba(0,0,0,.02)
+
+        .t-day-count
+            padding 0 6px 0 4px
+            color var(--dark-gray)
+
+        .t-start
+            display: inline-block;
+            margin: 0 4px 0 0;
+
+        & > span
+            text-overflow: ellipsis
+            white-space: nowrap
+            overflow: hidden

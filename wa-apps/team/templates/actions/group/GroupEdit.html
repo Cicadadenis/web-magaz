@@ -1,0 +1,151 @@
+{strip}
+
+{$_icons = [
+    "fas fa-user-friends",
+    "fas fa-user-tie",
+    "fas fa-hat-cowboy",
+    "fas fa-stethoscope",
+    "fas fa-syringe",
+    "fas fa-child",
+    "fas fa-mask",
+    "fas fa-male",
+    "fas fa-female",
+    "fas fa-tools",
+    "fas fa-hard-hat",
+    "fas fa-users",
+    "fas fa-lock",
+    "fas fa-unlock",
+    "fas fa-file",
+    "fas fa-broom",
+    "fas fa-star",
+    "fas fa-pencil-alt",
+    "fas fa-bolt",
+    "fas fa-lightbulb",
+    "fas fa-images",
+    "fas fa-chart-bar",
+    "fas fa-book",
+    "fas fa-map-marker-alt",
+    "fas fa-anchor",
+    "fas fa-car",
+    "fas fa-save",
+    "fas fa-cookie",
+    "fas fa-radiation-alt",
+    "fas fa-bug",
+    "fas fa-clock",
+    "fas fa-coffee",
+    "fas fa-home",
+    "fas fa-apple-alt",
+    "fas fa-briefcase",
+    "fas fa-guitar",
+    "fas fa-grin",
+    "fas fa-futbol",
+    "fas fa-bullseye",
+    "fas fa-award",
+    "fas fa-phone",
+    "fas fa-user-clock",
+    "fas fa-paw",
+    "fas fa-seedling",
+    "fas fa-video",
+    "fas fa-store"
+]}
+
+{if empty($group.icon)}
+    {$group.icon = reset($_icons)}
+{/if}
+<div class="dialog t-edit-group-dialog" id="t-edit-group">
+    <div class="dialog-background"></div>
+    <form action="" method="post" class="dialog-body">
+        <h3 class="dialog-header">{if !empty($group.id)}[`Edit group`]{else}[`New group`]{/if}</h3>
+        <div class="dialog-content fields">
+            {* NAME *}
+            <div class="field">
+                <div class="name for-input">
+                    [`Name`]
+                </div>
+                <div class="value">
+                    <input class="full-width js-edit-group-name" name="data[name]" type="text" placeholder="[`Name`]" value="{$group.name|escape}">
+                </div>
+            </div>
+            {* DESCRIPTION *}
+            <div class="field">
+                <div class="name for-input">
+                    [`Description`]
+                </div>
+                <div class="value">
+                    <textarea class="full-width" name="data[description]" placeholder="[`Description`]">{$group.description|escape}</textarea>
+                </div>
+            </div>
+            {* TYPE *}
+            <div class="field">
+                <div class="name for-input">
+                    [`Type`]
+                </div>
+                <div class="value">
+                    <div class="toggle js-type-toggle">
+                        <span class="t-toggle-item{if $group.type == "group"} selected{/if}" data-type="group"><i class="fas fa-users"></i> [`Group`]</span>
+                        <span class="t-toggle-item{if $group.type == "location"} selected{/if}" data-type="location"><i class="fas fa-map-marker-alt"></i> [`Location `]</span>
+                    </div>
+                </div>
+            </div>
+            {* ICONS *}
+            <div class="field t-icon-toggle {if $group.type != teamWaGroupModel::WA_GROUP_TYPE_GROUP}hidden{/if}">
+                <div class="name for-input">
+                    [`Icon`]
+                </div>
+                <div class="value">
+                    <ul class="t-icon-list">
+                        {foreach $_icons as $_icon}
+                            <li class="t-icon-item {if !empty($group.icon) && $_icon == $group.icon}selected{/if}" data-icon-class="{$_icon}">
+                                <i class="{$_icon}"></i>
+                            </li>
+                        {/foreach}
+                    </ul>
+                    <input name="data[icon]" type="hidden" value="{$group.icon}">
+                </div>
+            </div>
+            {$is_location = $group.type == teamWaGroupModel::WA_GROUP_TYPE_LOCATION}
+            {* ADDRESS AND MAP *}
+            <div class="field t-address-toggle {if !$is_location}hidden{/if}">
+                <div class="name for-input">
+                    [`Address`]
+                </div>
+                <div class="value">
+                    <input type="text" name="data[location][address]" value="{$group.location.address|escape}" placeholder="[`Address`]" class="f-location-edit-address-input full-width">
+                    <input type="hidden" class="t-location-longitude-input" name="data[location][longitude]" value="{$group.location.longitude|escape}">
+                    <input type="hidden" class="t-location-latitude-input" name="data[location][latitude]" value="{$group.location.latitude|escape}">
+                    <div class="hint">[`Office location. E.g., 100 5th Avenue, New York.`]</div>
+                    <p class="t-map-hint hint custom-mt-4 text-orange" style="{if !$group.location.address || !empty($group.location.longitude) && !empty($group.location.latitude)}display: none;{/if}">[`Specified address not found on map`]</p>
+                </div>
+            </div>
+            {* MAP *}
+            <div class="field t-map-toggle {if empty($geocoding.key)}hidden{/if}">
+                <div class="name"></div>
+                <div class="value">
+                    <div class="t-location-edit-map" style="display: none;"></div>
+                </div>
+            </div>
+        </div>
+        <footer class="dialog-footer flexbox middle">
+            <input type="submit" class="button" value="{if $group.id}[`Save`]{else}[`Create`]{/if}">
+            <a class="js-close-dialog button light-gray" href="javascript:void(0);">[`Cancel`]</a>
+        </footer>
+        <input name="data[id]" type="hidden" value="{if $group.id}{$group.id}{/if}">
+        <input type="hidden" name="data[type]" value="{if $group.type}{$group.type|escape}{/if}">
+    </form>
+    <script>
+        ( function($) {
+            new GroupEditDialog({
+                $wrapper: $("#t-edit-group"),
+                map_type: '{$geocoding.type}',
+                map_key: '{$geocoding.key}',
+                group_id: {if !empty($group.id)}{$group.id}{else}false{/if},
+                locales: {
+                    empty: "[`Group name is mandatory.`]",
+                    empty_address: "[`Address is needed`]"
+                }
+            });
+        })(jQuery);
+    </script>
+</div>
+
+{/strip}

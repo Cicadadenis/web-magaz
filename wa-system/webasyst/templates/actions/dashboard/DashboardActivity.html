@@ -1,0 +1,37 @@
+{$_group = $datetime_group|default:''}
+
+{foreach $activity as $activity_item}
+    {$app_name = $activity_item.app.name}
+    {$app_color = ifset($activity_item.app.sash_color, "#aaa")}
+
+    {if $activity_item.datetime_group != $_group }
+        <div class="activity-divider h3">{$activity_item.datetime_group}</div>
+    {/if}
+    {$_group=$activity_item.datetime_group}
+
+    <div class="activity-item" data-id="{$activity_item.id}">
+        {if !empty($activity_item.contact_photo) && $activity_item.is_user}
+            <header class="item-image-wrapper userpic userpic48">
+                <img class="image-item" src="{waContact::getPhotoUrl($activity_item.contact_id, $activity_item.contact_photo, 48, 48)}" alt="">
+            </header>
+        {/if}
+        <div class="item-content-wrapper">
+            <div class="inline-content small">
+                <a class="activity-username" href="{$wa_backend_url}contacts/#/contact/{$activity_item.contact_id}">{$activity_item.contact_name|default: ''|escape}</a>
+                <span class="activity-action gray">{$activity_item.action_name|escape}</span>
+                {if !empty($activity_item.params_html)}
+                    {$activity_item.params_html|replace:'&nbsp;':' '}
+                {/if}
+            </div>
+            <span class="badge small" style="background: {$app_color}; font-weight: normal;">{$app_name}</span>
+            <span class="activity-datetime hint">{waDateTime::format('humandatetime', $activity_item.datetime)}</span>
+        </div>
+    </div>
+{/foreach}
+
+{if !empty($activity_load_more)}
+    <div class="activity-divider show-more-activity-wrapper is-loading">
+        <a class="d-load-more-activity inline-link small button light-gray rounded" id="d-load-more-activity" href="javascript:void(0);">[`Load more`]</a>
+        <i class="d-load-more-animation fas fa-spinner fa-pulse wa-animation-spin speed-1000 fa-lg" title="Loading"></i>
+    </div>
+{/if}

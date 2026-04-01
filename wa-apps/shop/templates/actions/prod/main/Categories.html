@@ -1,0 +1,536 @@
+{$_sprite_url = "`$wa_url`wa-apps/shop/img/backend/products/product/icons.svg?v=`$wa->version()`"}
+
+{$_category_types = [
+    [
+        "name" => _w("Static"),
+        "value" => "0",
+        "icon_html" => "<span class=\"icon size-14 shift-inherit color-gray-light\" v-bind:key=\"'fa-folder'\"><i class=\"fas fa-folder\"></i></span>"
+    ],
+    [
+        "name" => _w("Dynamic"),
+        "value" => "1",
+        "icon_html" => "<span class=\"icon size-18 shift-2 color-gray-light\" v-bind:key=\"'fa-folder'\"><svg><use xlink:href=\"{$_sprite_url}#folder-dynamic\"></use></svg></span>"
+    ]
+]}
+
+{$_header_columns = [
+    "name" => [
+        "id" => "name",
+        "name" => _w("Category name"),
+        "width_locked" => false,
+        "min_width" => 350,
+        "width" => null
+    ],
+    "count" => [
+        "id" => "count",
+        "name" => _w("Products"),
+        "width_locked" => false,
+        "min_width" => 70,
+        "width" => null
+    ],
+    "sort" => [
+        "id" => "sort",
+        "name" => _w("Sort order in storefront"),
+        "width_locked" => true,
+        "min_width" => null,
+        "width" => null
+    ],
+    "filters" => [
+        "id" => "filters",
+        "name" => _w("Filtering in storefront"),
+        "width_locked" => true,
+        "min_width" => 220,
+        "width" => null
+    ],
+    "stores" => [
+        "id" => "stores",
+        "name" => _w("Availability in the storefront"),
+        "disabled" => true,
+        "width_locked" => true,
+        "min_width" => null,
+        "width" => null
+    ]
+]}
+
+{* КОМПОНЕНТЫ *}
+{$_components = []}
+
+{capture assign="_component_categories"}
+    <div class="s-table-body">
+        {* HEADER *}
+        <div class="s-table-header">
+            <div class="s-table-row">
+                <div class="s-column s-column-toggle"></div>
+
+                <template v-for="column in columns">
+                    <component-categories-header-column
+                        v-on:column_change_width="updateStorage"
+                        v-bind:column="column"></component-categories-header-column>
+                </template>
+
+                <div class="s-column s-column-space width-auto"></div>
+                <div class="s-column s-column-actions"></div>
+            </div>
+        </div>
+
+        {* LIST *}
+        <template v-for="category in categories">
+            <component-category v-bind:category="category"></component-category>
+        </template>
+
+        <div class="s-category-section" v-if="categories.length">
+            <div class="s-category-wrapper is-dummy"></div>
+        </div>
+    </div>
+{/capture}
+{$_components["component-categories"] = $_component_categories|strip}
+
+{capture assign="_component_categories_header_column"}
+    <div class="s-column" v-bind:class="'s-column-'+column.id" v-bind:style="{ width: column_width }">
+        <div class="s-header-column-wrapper">
+            <div class="s-name">{ { column.name } }</div>
+            <div class="s-toggle-wrapper"
+                 v-if="!column.disabled"
+                 v-bind:class="{ 'is-locked' : column.width_locked }"
+                 v-on:mousedown="onDragColumn($event)"></div>
+        </div>
+    </div>
+{/capture}
+{$_components["component-categories-header-column"] = $_component_categories_header_column|strip}
+
+{capture assign="_component_category"}
+    <div class="s-category-section">
+        <div class="s-table-row s-category-wrapper"
+             v-bind:class="category_class"
+             v-bind:data-id="category.id"
+             v-bind:key="category.id">
+            <div class="s-column s-column-toggle">
+                <div class="s-toggle-wrapper color-gray-light"
+                     draggable="true"
+                     v-bind:class="{ 'cursor-move js-category-move-toggle' : !root_states.move_locked }">
+                    <span class="s-icon icon size-14"
+                          v-if="!category.states.move_locked"
+                          v-bind:key="'fa-bars'">
+                        <svg><use xlink:href='{$_sprite_url}#grip'></use></svg></span>
+                    <span class="s-icon icon size-14"
+                          v-if="category.states.move_locked"
+                          v-bind:key="'fa-spinner'"><i class="fas fa-spinner fa-spin"></i></span>
+                </div>
+            </div>
+
+            <div class="s-column s-column-name" v-bind:style="{ width: getColumnWidth('name') }">
+                <div class="s-name-flexbox flexbox space-12">
+                    <div class="s-actions-list middle">
+                        <div class="s-action" v-for="level in category_depth">
+                            <span class="s-icon icon size-18"></span>
+                        </div>
+
+                        <div class="s-action s-expand-toggle" v-on:click.prevent="extendCategory" v-bind:style="{ 'visibility' : (category.categories.length ? '' : 'hidden' )}">
+                            <span class="s-icon icon size-18 color-gray-light"
+                                  v-bind:key="'fa-caret-right'"
+                                  v-if="!category.states.expanded"><i class="fas fa-caret-right"></i></span>
+                            <span class="s-icon icon size-18 color-gray-light"
+                                  v-bind:key="'fa-caret-down'"
+                                  v-if="category.states.expanded"><i class="fas fa-caret-down"></i></span>
+                        </div>
+                        <div class="s-action">
+                            <template v-if="!states.status_locked">
+                                <span class="s-icon icon size-18 color-blue"
+                                      v-if="category.states.visible"
+                                      v-bind:key="'fa-eye'"
+                                      v-on:click.prevent="changeStatus"><i class="far fa-eye"></i></span>
+                                <span class="s-icon icon size-18 color-gray-light"
+                                      v-if="!category.states.visible"
+                                      v-bind:key="'fa-eye-slash'"
+                                      v-on:click.prevent="changeStatus"><i class="far fa-eye-slash"></i></span>
+                            </template>
+                            <template v-else>
+                                <span class="s-icon icon size-18 color-gray"
+                                      v-bind:key="'fa-spinner'"><i class="fas fa-spinner fa-spin"></i></span>
+                            </template>
+                        </div>
+                    </div>
+                    <div class="s-field-wrapper wide">
+                        <div class="s-field-icon">
+                            <template v-if="states.name_locked">
+                                <span class="s-icon icon size-14 color-gray" v-bind:key="'fa-spinner'"><i class="fas fa-spinner fa-spin"></i></span>
+                            </template>
+                            <template v-else>
+                                <template v-if="category.type === '0'">
+                                    <span class="s-icon icon size-14 color-gray-light" v-bind:key="'fa-folder'"><i class="fas fa-folder"></i></span>
+                                </template>
+                                <template v-else>
+                                    <span class="s-icon icon size-18 color-gray-light" v-bind:key="'fa-folder'">
+                                        <svg><use xlink:href="{$_sprite_url}#folder-dynamic"></use></svg>
+                                    </span>
+                                </template>
+                            </template>
+                        </div>
+                        <input class="s-field s-square-field" type="text" v-model="category.name" v-on:focus="onFocusName" v-on:change="onChangeName" v-bind:disabled="states.name_locked" maxlength="255">
+                        <div class="s-add-icon">
+                            <span class="s-icon icon size-10 top blue-icon cursor-pointer" v-if="!states.create_locked" v-on:click="create" v-bind:key="'fa-plus'"><i class="fas fa-plus"></i></span>
+                            <span class="s-icon icon size-14 top" v-else v-bind:key="'fa-spinner'"><i class="fas fa-spinner fa-spin"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="s-column s-column-count" v-bind:style="{ width: getColumnWidth('count') }">
+                <div class="s-count-wrapper">
+                    <span class="s-icon icon size-12" v-if="category.states.count_locked"><i class="fas fa-spinner fa-spin"></i></span>
+                    <a v-else v-bind:href="'{$wa_app_url}products/?category_id='+ category.id">{ { category.count } }</a>
+                </div>
+            </div>
+            <div class="s-column s-column-sort" v-bind:style="{ width: getColumnWidth('sort') }">
+                <component-category-sorting v-bind:category="category"></component-category-sorting>
+            </div>
+            <div class="s-column s-column-filters" v-bind:style="{ width: getColumnWidth('filters') }">
+                <component-category-filters v-bind:category="category"></component-category-filters>
+            </div>
+            <div class="s-column s-column-stores" v-bind:style="{ width: getColumnWidth('stores') }">
+                <component-dropdown-storefronts v-model="category.storefronts" v-bind:category="category"></component-dropdown-storefronts>
+            </div>
+
+            <div class="s-column s-column-space width-auto"></div>
+            <div class="s-column s-column-actions">
+                <div class="s-actions-list">
+                    <div class="s-action animate" v-on:click.prevent="edit" data-tooltip-id="category_edit">
+                        <span class="s-icon icon size-14" v-if="!states.edit_locked" v-bind:key="'fa-pen'"><i class="fas fa-pen"></i></span>
+                        <span class="s-icon icon size-14" v-else v-bind:key="'fa-spinner'"><i class="fas fa-spinner fa-spin"></i></span>
+                    </div>
+                    <div class="s-action animate" v-on:click.prevent="categoryView" v-if="!category_view_url" data-tooltip-id="category_link">
+                        <span class="s-icon icon size-14" v-if="!states.view_locked" v-bind:key="'fa-external-link-square-alt'"><i class="fas fa-external-link-square-alt"></i></span>
+                        <span class="s-icon icon size-14" v-else v-bind:key="'fa-spinner'"><i class="fas fa-spinner fa-spin"></i></span>
+                    </div>
+                    <a v-bind:href="category_view_url" target="_blank" class="s-action animate" v-if="category_view_url">
+                        <span class="s-icon icon size-14"><i class="fas fa-external-link-square-alt"></i></span>
+                    </a>
+                    {*
+                    <div class="s-action animate" v-on:click.prevent="categoryClone">
+                        <span class="s-icon icon size-14"><i class="far fa-clone"></i></span>
+                    </div>
+                    *}
+                    <div class="s-action animate" v-on:click.prevent="categoryDelete" data-tooltip-id="category_delete">
+                        <span class="s-icon icon size-14" v-if="!states.delete_locked" v-bind:key="'fa-trash-alt'"><i class="far fa-trash-alt"></i></span>
+                        <span class="s-icon icon size-14" v-else v-bind:key="'fa-spinner'" v-bind:key="'fa-spinner'"><i class="fas fa-spinner fa-spin"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <template v-for="inner_category in category.categories" v-if="category.categories.length && category.states.expanded">
+            <component-category v-bind:category="inner_category"></component-category>
+        </template>
+    </div>
+{/capture}
+{$_components["component-category"] = $_component_category|strip}
+
+{capture assign="_component_category_sorting"}
+    <div class="vue-component-category-sorting">
+        <div class="s-locked-message" v-show="states.sort_locked">
+            <span class="s-icon icon size-16"><i class="fas fa-spinner fa-spin"></i></span>
+        </div>
+        <div class="flexbox middle space-8" v-show="!states.sort_locked">
+            <div class="dropdown js-dropdown">
+                <button class="dropdown-toggle wa-button wa-small s-square-field" type="button">{ { active_option.name } }</button>
+                <div class="dropdown-body">
+                    <template v-for="option in options">
+                        <div class="dropdown-item"
+                             v-on:click.prevent="change(option)"
+                             v-bind:class="{ 'selected' : (option.value === active_option.value) }">
+                            <span class="s-label" v-bind:data-value="option.value">{ { option.name } }</span>
+                        </div>
+                    </template>
+                </div>
+            </div>
+            <template v-if="category.sort_products === ''">
+                <span class="link" v-on:click.prevent="setup">[`configure`]</span>
+            </template>
+        </div>
+    </div>
+{/capture}
+{$_components["component-category-sorting"] = $_component_category_sorting|strip}
+
+{capture assign="_component_category_filters"}
+    <div class="vue-component-category-filters">
+        <div v-if="states.locked">
+            <span class="s-icon icon"><i class="fas fa-spinner fa-spin"></i></span>
+        </div>
+        <div class="flexbox middle space-8" v-else>
+            <component-switch v-model="category.allow_filter" v-on:change="onChange" v-bind:key="keys.switch"></component-switch>
+            <template v-if="category.allow_filter">
+                <span class="s-name">[`Category is available`]</span>
+                <span class="link" v-on:click.prevent="setup">[`configure`]</span>
+            </template>
+            <template v-else>
+                <span class="s-name">[`Category is unavailable`]</span>
+            </template>
+        </div>
+    </div>
+{/capture}
+{$_components["component-category-filters"] = $_component_category_filters|strip}
+
+{capture assign="_component_dropdown_storefronts"}
+    <div class="vue-component-dropdown-storefronts">
+        <div class="dropdown" v-show="!states.locked">
+            <button class="dropdown-toggle wa-button wa-small s-square-field" type="button">{ { value.length ? '{_w("Selected storefronts")|escape} ('+value.length+')' : '{_w("All storefronts")|escape}' } }</button>
+            <div class="dropdown-body right">
+                <div class="s-options-section">
+                    <div class="s-options-group">
+                        <div class="s-radio-wrapper">
+                            <label class="flexbox middle space-8">
+                                <component-radio v-model="type"
+                                                 v-bind:val="'all'"
+                                                 v-bind:name="radio_name"></component-radio>
+                                <span class="s-label">[`All storefronts`]</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="s-options-group">
+                        <div class="s-radio-wrapper">
+                            <label class="flexbox middle space-8">
+                                <component-radio v-model="type"
+                                                 v-bind:val="'selection'"
+                                                 v-bind:name="radio_name"></component-radio>
+                                <span class="s-label">{_w("Selected storefronts")|escape} ({ { selected_storefronts.length } })</span>
+                            </label>
+                        </div>
+                        <div class="s-options-list" v-if="type === 'selection'">
+                            <template v-for="storefront in storefronts">
+                                <div class="s-option">
+                                    <label class="flexbox middle space-8" v-bind:title="storefront.name">
+                                        <component-checkbox v-model="storefront.active"></component-checkbox>
+                                        <span class="s-label">{ { storefront.name } }</span>
+                                    </label>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown-footer">
+                    <button class="wa-button wa-small gray-light" type="button" v-on:click.prevent="save">[`Apply`]</button>
+                </div>
+            </div>
+        </div>
+        <div class="s-loading-wrapper" v-if="states.locked">
+            <span class="s-icon icon size-14 top"><i class="fas fa-spinner fa-spin"></i></span>
+        </div>
+    </div>
+{/capture}
+{$_components["component-dropdown-storefronts"] = $_component_dropdown_storefronts|strip}
+
+{capture assign="_component_search_categories"}
+    <div class="s-search-section flexbox space-8">
+        <div class="s-field-wrapper wide">
+            <input class="s-field" placeholder="{_w("Search")|escape}" v-model="search_string" v-on:input="search">
+        </div>
+        <template v-if="search_string.length">
+            <div class="s-counter-wrapper">
+                <div class="s-counter">{ { position } }/{ { selection.length } }</div>
+            </div>
+            <div class="s-actions-wrapper flexbox space-8">
+                <div class="s-action"
+                     v-on:click.prevent="moveUp"
+                     v-bind:class="{ 'is-disabled' : is_start, 'is-active' : !is_start }">
+                    <span class="s-icon icon size-14"><i class="fas fa-chevron-up"></i></span>
+                </div>
+                <div class="s-action"
+                     v-on:click.prevent="moveDown"
+                     v-bind:class="{ 'is-disabled' : is_end, 'is-active' : !is_end }">
+                    <span class="s-icon icon size-14"><i class="fas fa-chevron-down"></i></span>
+                </div>
+                <div class="s-action is-active"
+                     v-on:click.prevent="revert">
+                    <span class="s-icon icon size-14"><i class="fas fa-times"></i></span>
+                </div>
+            </div>
+        </template>
+    </div>
+{/capture}
+{$_components["component-search-categories"] = $_component_search_categories|strip}
+
+{capture assign="_component_dropdown_categories_sorting"}
+    <div class="vue-component-categories-sorting">
+        <div class="dropdown js-dropdown">
+            <button class="dropdown-toggle wa-button wa-small transparent" type="button">[`Sort by`]</button>
+            <div class="dropdown-body">
+                <div class="dropdown-item" v-on:click="change('name ASC')">
+                    <span class="s-label">[`Order alphabetically in direct order <span class="nowrap">(A—Z)</span>`]</span>
+                </div>
+                <div class="dropdown-item" v-on:click="change('name DESC')">
+                    <span class="s-label">[`Order alphabetically in reverse order <span class="nowrap">(Z—A)</span>`]</span>
+                </div>
+            </div>
+        </div>
+    </div>
+{/capture}
+{$_components["component-dropdown-categories-sorting"] = $_component_dropdown_categories_sorting|strip}
+
+{* ШАБЛОНЫ *}
+{$_templates = []}
+
+{capture assign="_dialog_category_delete"}{include file="./dialogs/categories.category.delete.html" inline}{/capture}
+{$_templates["dialog-category-delete"] = $_dialog_category_delete|strip}
+
+{capture assign="_dialog_category_clone"}{include file="./dialogs/categories.category.clone.html" inline}{/capture}
+{$_templates["dialog-category-clone"] = $_dialog_category_clone|strip}
+
+{capture assign="_dialog_category_view"}{include file="./dialogs/categories.category.storefronts.html" inline}{/capture}
+{$_templates["dialog-category-view"] = $_dialog_category_view|strip}
+
+{capture assign="_categories_sort_confirm"}{include file="./dialogs/categories.sort_confirm.html" inline}{/capture}
+{$_templates["categories-sort-confirm"] = $_categories_sort_confirm}
+
+{* ПОДСКАЗКИ *}
+{$_tooltips = [
+    "category_edit" => [
+        "id" => "category_edit",
+        "html" => _w("Edit category settings"),
+        "position" => "top-right",
+        "class" => "inline"
+    ],
+    "category_link" => [
+        "id" => "category_link",
+        "html" => _w("View category page in the storefront"),
+        "position" => "top-right",
+        "class" => "inline"
+    ],
+    "category_delete" => [
+        "id" => "category_delete",
+        "html" => _w("Delete category"),
+        "position" => "top-right",
+        "class" => "inline"
+    ]
+]}
+
+{* ЛОКАЛИЗАЦИЯ *}
+{$_locales = []}
+
+{* template will update components array *}
+{include file="./components/main.html" scope="parent" inline}
+{include file="./dialogs/callback.html" scope="parent" inline}
+
+<div class="s-categories-page" id="js-categories-page">
+    <div class="s-page-wrapper" id="js-vue-section" style="visibility: hidden;">
+        <div class="s-page-flexbox">
+            <div class="s-page-header">
+                <div class="flexbox full-width">
+                    <div class="s-title-wrapper flexbox middle space-12">
+                        <h1 class="s-title">[`Categories`]</h1>
+                        <button class="wa-button flexbox middle" type="button" v-on:click.prevent="categoryAdd" v-bind:disabled="states.create_locked">
+                            <span class="icon size-12" v-if="!states.create_locked" v-bind:key="'plus'"><svg><use xlink:href="{$_sprite_url}#plus"></use></svg></span>
+                            <span class="icon size-12" v-else v-bind:key="'fa-spinner'"><i class="fas fa-spinner fa-spin"></i></span>
+                            <span class="s-name">[`new category`]</span>
+                        </button>
+
+                        <div class="s-plugins-section-header-left">
+                            <!-- plugin hook: 'backend_prod_categories.header_left' -->
+                            {* @event backend_prod_categories.%plugin_id%.header_left *}
+                            {if !empty($backend_prod_categories)}{foreach $backend_prod_categories as $_}{ifset($_, 'header_left', '')}{/foreach}{/if}
+                        </div>
+                    </div>
+
+                    <div class="flexbox middle space-20">
+                        <div class="s-support-section">
+                            <button class="s-button wa-button rounded pink animation-pulse" type="button" v-on:click.prevent="showCallbackDialog">
+                                <span class="s-icon"><i class="fas fa-comment-dots"></i></span>
+                                <span class="s-name">[`How do you like the new products section?`]</span>
+                            </button>
+                        </div>
+
+                        <div class="s-plugins-section-header-right">
+                            <!-- plugin hook: 'backend_prod_categories.header_right' -->
+                            {* @event backend_prod_categories.%plugin_id%.header_right *}
+                            {if !empty($backend_prod_categories)}{foreach $backend_prod_categories as $_}{ifset($_, 'header_right', '')}{/foreach}{/if}
+                        </div>
+
+                        <div class="s-categories-sorting-section flexbox middle space-12">
+                            <div class="s-description">[`Warning: the sort order selected in this section corresponds to the category sorting in the storefront.`]</div>
+                            <div class="s-dropdown-wrapper">
+                                <component-dropdown-categories-sorting v-on:change="sortCategories"></component-dropdown-categories-sorting>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="s-action-bar">
+                    <component-search-categories></component-search-categories>
+                </div>
+            </div>
+            <div class="s-page-body flexbox">
+                {* CATEGORIES TABLE *}
+                <div class="s-categories-table-section">
+                    {* BODY *}
+                    <div class="s-categories-table">
+                        <component-categories v-bind:categories="categories"></component-categories>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        ( function($) {
+            $.wa.title.set("{_w("Categories")|escape}");
+
+            var sources = [{
+                id: "vue-js",
+                type: "js",
+                uri: "{$wa_app_static_url}js/backend/products/vue/vue.min.js?v={$wa->version()}"
+            }, {
+                id: "wa-shop-products-categories-js",
+                type: "js",
+                uri: "{$wa_app_static_url}js/backend/products/main/main.categories.js?v={$wa->version()}"
+            }, {
+                id: "wa-shop-products-category-sort-dialog-js",
+                type: "js",
+                uri: "{$wa_app_static_url}js/backend/products/main/dialogs/category.sort_products.js?v={$wa->version()}"
+            }];
+
+            $.wa.loadSources(sources).done( function() {
+                $.wa_shop_products.init.initProductsCategoriesPage({
+                    $wrapper: $("#js-categories-page"),
+                    components: {$_components|json_encode},
+                    templates: {$_templates|json_encode},
+                    tooltips: {$_tooltips|json_encode},
+                    locales: {$_locales|json_encode},
+                    urls: {
+                        "transliterate"       : "{$wa_app_url}?action=transliterate",
+                        "autocomplete_filter" : "{$wa_app_url}?action=autocomplete&type=filter",
+                        "autocomplete_feature": "{$wa_app_url}?module=prod&action=categoryFilterAutocomplete",
+
+                        "categories_sort"        : "{$wa_app_url}?module=prod&action=categoriesSort",
+
+                        "category_dialog"        : "{$wa_app_url}?module=prod&action=categoryDialog",
+                        "category_dialog_save"   : "{$wa_app_url}?module=prod&action=categorySave",
+                        "category_condition_edit": "{$wa_app_url}?module=prod&action=categoryConditionEditDialog",
+
+                        "category_name"          : "{$wa_app_url}?module=prod&action=categoryName",
+                        "category_move"          : "{$wa_app_url}?module=prod&action=categoryMove",
+                        "category_sort"          : "{$wa_app_url}?module=prod&action=categorySort",
+                        "category_sort_dialog"   : "{$wa_app_url}?module=prod&action=categorySortDialog",
+                        "category_clone"         : "{$wa_app_url}?module=prod&action=categoryClone",
+                        "category_status"        : "{$wa_app_url}?module=prod&action=categoryStatus",
+                        "category_delete"        : "{$wa_app_url}?module=prod&action=categoryDelete",
+                        "category_delete_dialog" : "{$wa_app_url}?module=prod&action=categoryDeleteDialog",
+                        "category_storefronts"   : "{$wa_app_url}?module=prod&action=categoryStorefronts",
+                        "category_recount"       : "{$wa_app_url}?module=prod&action=categoriesRecount",
+                        "category_filter_change" : "{$wa_app_url}?module=prod&action=categoryChangeFilter",
+
+                        "category_view"          : "{$wa_app_url}?module=prod&action=categoryView",
+                        "category_get_urls"      : "{$wa_app_url}?module=prod&action=categoryGetUrls",
+
+                        "callback_submit"        : "{$wa_app_url}?module=prod&action=feedback"
+                    },
+
+                    categories            : {$categories|json_encode},
+                    storefronts           : {$storefronts|json_encode},
+                    category_sort_variants: {$category_sort_variants|json_encode},
+                    category_types        : {$_category_types|json_encode},
+                    header_columns         : {$_header_columns|json_encode}
+                });
+            });
+
+        })(jQuery);
+    </script>
+</div>

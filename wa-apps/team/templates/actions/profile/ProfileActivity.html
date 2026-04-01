@@ -1,0 +1,109 @@
+{strip}
+
+{$_timestamp = waRequest::request("timestamp")}
+{$months = waDateTime::getMonthNames()}
+{$_current_month_index = date('n', time())}
+
+<section class="t-activity-wrapper break-word" id="t-activity-wrapper">
+    {if !empty($activity)}
+        {$_period = 60 * 60 * 24 * 30}
+        {$_last_datetime = time()}
+        {if !empty($_timestamp)}
+            {$_last_datetime = $_timestamp}
+        {/if}
+        {$_max_id = null}
+
+        <ul class="t-activity">
+            {foreach $activity as $_activity_item}
+                {if $_activity_item@last}
+                    {$_max_id = $_activity_item.id}
+                {/if}
+
+                {$time = strtotime($_activity_item.datetime)}
+                {$current_month_index = date('n', $time)}
+                {$before_month_index = date('n', $_last_datetime)}
+                {$_long_pause = ( $_last_datetime - $time > $_period) }
+                {$_last_datetime = $time}
+
+                {*{if $_long_pause}*}
+                    {*<li class="t-space-wrapper"></li>*}
+                {*{/if}*}
+
+                {if $current_month_index != $before_month_index || ($_activity_item@first && $current_month_index == $_current_month_index)}
+                    <li class="t-month-wrapper">
+                        <h5>{$months[date('n', $time)]} {date('Y', $time)}</h5>
+                    </li>
+                {/if}
+
+                <li class="t-activity-item small{if !empty($_activity_item.is_empty)} is-empty{/if}{if $current_month_index != $before_month_index} is-first{/if}" data-id="{$_activity_item.id}" data-timestamp="{$_last_datetime}">
+                    <p class="t-app-badge">
+                        {if !( empty($_activity_item.app) || empty($_activity_item.app.name) )}
+                            <span class="badge" style="background: {$_activity_item.app.sash_color|default: "#aaa"};">{$_activity_item.app.name}</span>
+                        {/if}
+                        {if !empty($_activity_item.datetime)}
+                            <span class="gray">{waDateTime::format('humandatetime', $_activity_item.datetime)}</span>
+                        {/if}
+                    </p>
+
+                    <p>
+                        {if !empty($_activity_item.action_name)}
+                            <span class="gray custom-mr-4">{$_activity_item.action_name|escape}</span>
+                        {/if}
+                        {if !empty($_activity_item.params_html)}
+                        <span>{$_activity_item.params_html}</span>
+                        {/if}
+                    </p>
+
+                    <span class="t-activity-point" style="background: {$_activity_item.app.sash_color|default: "#aaa"};"></span>
+                </li>
+            {/foreach}
+        </ul>
+
+        {if ($count == 50)}
+            <div class="t-paging-wrapper flexbox middle" data-max-id="{$_max_id}">
+                <i class="fas fa-spinner custom-mr-8 wa-animation-spin speed-1000"></i>
+                [`Loading...`]
+            </div>
+        {/if}
+
+        <script>
+            ( function($) {
+                $.team.app_url = {$wa_app_url|json_encode};
+
+                var $wrapper = $("#t-activity-wrapper");
+
+                setLast();
+
+                new ActivityLazyLoading({
+                    $wrapper: $wrapper,
+                    names: {
+                        list: ".t-activity",
+                        items: " > li",
+                        paging: ".t-paging-wrapper"
+                    },
+                    user_id: {if !empty($user_id)}{$user_id}{else}false{/if},
+                    onLoad: setLast
+                });
+
+                function setLast() {
+                    var first_class = "is-first",
+                        last_class = "is-last";
+
+                    var $items = $wrapper.find(".t-activity-item." + first_class);
+                    $items.each( function() {
+                        var $prev = $(this).prev().prev();
+                        if (!$prev.hasClass(last_class)) {
+                            $prev.addClass(last_class);
+                        }
+                    });
+                }
+
+            })(jQuery);
+        </script>
+
+    {else}
+        <p class="custom-mt-8">[`No events for this user yet.`]</p>
+    {/if}
+</section>
+
+{/strip}

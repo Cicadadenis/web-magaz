@@ -1,0 +1,20 @@
+.wa-select
+    height fit-content
+
+.sidebar
+    .sidebar-header
+        .t-sidebar-header-wrapper
+            display grid
+            grid-template-columns 1fr auto
+            .button
+                background var(--accent-color)
+                color #fff
+                transition background 200ms linear
+                box-sizing border-box
+                &:hover
+                    background: var(--accent-color-hover)
+
+    .t-drop-here
+        .t-groups-list
+        .t-locations-list
+            background-color: var(--background-color-editable);

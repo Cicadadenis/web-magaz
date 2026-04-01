@@ -1,0 +1,69 @@
+{$_title = "[s`Database`] — {$wa->accountName(false)}"}
+<div class="article s-db-page" id="s-db-page">
+  <div class="article-body">
+    <h1 class="s-page-title">[s`Database`]</h1>
+    <form action="?module=settingsGeneralSave" class="fields">
+        <div class="fields-group blank">
+            {* MySQL version *}
+            <div class="field">
+                <div class="name">
+                    [s`MySQL version`]
+                </div>
+                <div class="value">
+                    {$mysql_version} <span class="hint">{if $mb4_is_supported}[s`supports emoji`]{else}[s`does not support emoji`]{/if}</span>
+                </div>
+            </div>
+
+            {* DB Name *}
+            <div class="field">
+                <div class="name">
+                   [s`Database`]
+                </div>
+                <div class="value">
+                    {$db_name}
+                </div>
+            </div>
+
+            {if !empty($connection_charset)}
+
+                {* Connection charset *}
+                <div class="field">
+                    <div class="name">
+                        [s`Connection charset`]
+                    </div>
+                    <div class="value">
+                        {$connection_charset}
+                    </div>
+                </div>
+
+            {/if}
+
+            {*  *}
+            {if $mb4_is_supported}
+                <div class="field">
+                    <div class="name">
+                        [s`Tables and fields without emoji support`]
+                    </div>
+
+                    <div class="value">
+                        {if $is_debug}
+                            <a href="javascript:void(0);" class="{if $wa->isMobile()}smallest {/if}inline-link js-show-list button rounded gray"><i class="fas fa-plus-circle"></i> [s`Proceed to adding emoji support`]</a>
+                        {else}
+                            <p>[s`To add emoji support enable <b>Debug mode</b> in <b>General settings</b>.`]</p>
+                        {/if}
+                    </div>
+                </div>
+            {/if}
+        </div>
+    </form>
+  </div>
+</div>
+<script type="text/javascript">
+    (function($) {
+        $.wa.title.set({$_title|json_encode});
+        new WASettingsDatabase({
+            $wrapper: $("#s-db-page"),
+            wa2: true
+        });
+    })(jQuery);
+</script>

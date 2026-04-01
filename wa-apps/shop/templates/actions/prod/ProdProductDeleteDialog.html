@@ -1,0 +1,46 @@
+<div class="wa-dialog">
+    <div class="dialog-background"></div>
+    <div class="dialog-body">
+        <div class="dialog-header">
+            <h2>[`Confirm product deletion`]</h2>
+        </div>
+        <div class="dialog-content">
+
+            <!-- plugin hook: 'backend_prod_dialog.top' -->
+            {* @event backend_prod_dialog.%plugin_id%.top *}
+            {if !empty($backend_prod_dialog_event)}{foreach $backend_prod_dialog_event as $_}{ifset($_.top)}{/foreach}{/if}
+
+            {if $orders_count > 0}
+                {$message = sprintf(
+                    _w(
+                        'Found <a href="%s">%d order</a> containing product “%s”.',
+                        'Found <a href="%s">%d orders</a> containing product “%s”.',
+                        $orders_count,
+                        false
+                    ),
+                    $orders_list_url|escape,
+                    $orders_count,
+                    $product.name|escape
+                )}
+
+                <p class="color-red">{$message}</p>
+                <p>
+                    [`After the deletion of this product, related orders will be preserved but the information on order-viewing pages will become incomplete — only the product name will be visible.`]
+                </p>
+
+                <p>[`Delete the product?`]</p>
+            {else}
+                <p>{sprintf_wp('No orders containing product “%s”.', $product.name|escape)}</p>
+            {/if}
+
+            <!-- plugin hook: 'backend_prod_dialog.bottom' -->
+            {* @event backend_prod_dialog.%plugin_id%.bottom *}
+            {if !empty($backend_prod_dialog_event)}{foreach $backend_prod_dialog_event as $_}{ifset($_.bottom)}{/foreach}{/if}
+
+        </div>
+        <div class="dialog-footer">
+            <button class="js-success-action wa-button red" type="button">[`Delete`]</button>
+            <button class="js-dialog-close wa-button gray-light" type="button">[`Cancel`]</button>
+        </div>
+    </div>
+</div>

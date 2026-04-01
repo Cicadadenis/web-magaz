@@ -1,0 +1,6 @@
+{$class_id = 'wa-backend-login-form'}
+{$wrapper_id = uniqid($class_id)}
+<div class="{$class_id}" id="{$wrapper_id}">
+    {$renderer->setTitle($title)}
+    {$renderer->render($data, $errors, $messages)}
+</div>

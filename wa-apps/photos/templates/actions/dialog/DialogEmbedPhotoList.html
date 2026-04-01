@@ -1,0 +1,116 @@
+<div class="dialog">
+    <div class="dialog-background"></div>
+    <form method="post" action="" class="dialog-body">
+        <div class="dialog-header">
+            <div class="flexbox full-width">
+                <div class="wide">
+                    <h3>[`Share photos`] <span class="gray">({$context['count']})</span><span style="display:none;"><i class="fas fa-spinner fa-spin loading"></i></span></h3>
+                </div>
+                <div>
+                    <div class="wa-select small">
+                        <select name="size">
+                            {foreach $sizes as $sz}
+                                <option value="{$sz}" {if $sz == $size}selected{/if}>{$sz}px</option>
+                            {/foreach}
+                        </select>
+                    </div>
+                    {if !empty($domains)}
+                        <div class="wa-select small">
+                            <select name="domain" data-original-domain="{$original_domain|escape}">
+                                {foreach $domains as $d}
+                                    <option value="{$d.url|escape}" data-frontend-url="{$d.frontend_url|escape}">{$d.url|escape|truncate:42:'...':false:true}</option>
+                                {/foreach}
+                            </select>
+                        </div>
+                    {/if}
+                </div>
+            </div>
+        </div>
+        <div class="dialog-content">
+
+
+                <ul class="tabs switcher" STYLE="DISPLAY: NONE; {* TO BE DEPRECATED *}">
+                    <li{if !$is_entire} class="selected" data-action="selected-photos"{else} style="display:none"{/if}>
+                        <a href="#">[`selected photos`] ({$context['count']})</a>
+                    </li>
+                    <li {if $is_entire}class="selected"{/if} data-action="all-list-photos">
+                    {if isset($entire_context['album'])}
+                        <a href="#">[`entire album`] ({$entire_context['album']['count']})</a>
+                    {elseif isset($entire_context['tag'])}
+                        <a href="#">[`all tagged`] ({$entire_context['tag']['tag']})</a>
+                    {elseif isset($entire_context['rate'])}
+                        <a href="#">[`all rated`] ({$entire_context['rate']['count']})</a>
+                    {elseif isset($entire_context['all'])}
+                        <a href="#">[`all listed`] ({$entire_context['all']['count']})</a>
+                    {/if}
+                    </li>
+                </ul>
+
+            <div class="fields p-dialog-form">
+                <div class="fields-group">
+                    {if $context['link']}
+                    <div class="field">
+                        <div class="name bold">
+                            <strong>[`Link`]</strong>
+                        </div>
+                        <div class="value">
+                            <input type="text" name="link" class="bold" value="{$context['link']}">
+                           <span class="icon">
+                               <a href="{$context['link']}" target="_blank" class="link"><i class="fas fa-external-link-alt"></i></a>
+                           </span>
+                        </div>
+                    </div>
+                    {/if}
+                    <div class="field">
+                        <div class="name">
+                            [`HTML`]
+                        </div>
+                        <div class="value">
+                            <p>
+                            <label class="small">
+                                <span class="wa-checkbox">
+                                    <input type="checkbox" name="description" value="1" checked id="embed-photo-list-description">
+                                    <span>
+                                        <span class="icon">
+                                            <i class="fas fa-check"></i>
+                                        </span>
+                                    </span>
+                                </span>
+                                [`Descriptions`]
+                            </label>
+                            </p>
+                            <textarea name="html" class="full-width smaller" id="embed-photo-list-html-with-descriptions">{$context['html_with_descriptions']}</textarea>
+                            <textarea class="full-width smaller" name="html" id="embed-photo-list-html" disabled style="display:none;">{$context['html']}</textarea>
+
+
+
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="name">
+                            [`Smarty`]
+                            <p class="hint">[`For embedding into other Webasyst apps content.`]</p>
+                        </div>
+                        <div class="value">
+                            <textarea class="full-width smaller" name="smarty_code">{$context['smarty_code']}</textarea>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="name">[`Image URLs`]</div>
+                        <div class="value">
+                            <textarea class="full-width smaller" name="urls">{$context['urls']}</textarea>
+                        </div>
+                    </div>
+                    <div class="field exclamation-message" {if $context.all_public}style="display:none;"{/if}>
+                        <p class="state-caution-hint">
+                            <i class="fas fa-exclamation-triangle"></i> [`Image URLs of private photos are temporary. Permanent linking (embedding) is not recommended.`]
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dialog-buttons dialog-footer">
+            <input class="button light-gray js-close-dialog" type="button" value="[`Close`]">
+        </div>
+    </form>
+</div>

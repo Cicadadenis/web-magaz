@@ -1,0 +1,21 @@
+<div class="dialog" id="">
+    <div class="dialog-background"></div>
+    <form class="dialog-body" method="post" action="javascript:void(0);">
+        <a href="#" class="dialog-close js-close-dialog"><i class="fas fa-times"></i></a>
+        <header class="dialog-header"><h1>[s`Settings`]</h1></header>
+        <div class="dialog-content">
+            {$wa->csrf()}
+            <div class="fields form width100px">
+                {foreach $settings_controls as $name => $control}
+                    <div class="field">
+                        {$control}
+                    </div>
+                {/foreach}
+            </div>
+        </div>
+        <footer class="dialog-footer">
+            <input type="submit" class="button" value="[s`Save`]">
+            <button class="js-close-dialog button light-gray">[s`Cancel`]</button>
+        </footer>
+    </form>
+</div>

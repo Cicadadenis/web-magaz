@@ -1,0 +1,207 @@
+<div class="p-app-sidebar sidebar flexbox overflow-visible width-adaptive-wider mobile-friendly" id="js-app-sidebar">
+    <nav class="sidebar-mobile-toggle">
+        <div class="box align-center">
+            <a href="javascript:void(0);"><i class="fas fa-bars"></i> [`Show navigation`]</a>
+        </div>
+    </nav>
+    {if $rights.upload}
+    <div class="sidebar-header">
+        <div class="p-new-section box custom-mt-12">
+            <a class="button p-new-link purple align-center width-100" href="?module=upload" id="p-upload-link">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <span class="s-title small">[`Upload`]</span>
+            </a>
+        </div>
+    </div>
+    {/if}
+    <div class="sidebar-body p-sidebar-block">
+        <ul class="menu">
+            <li id="sidebar-all-albums">
+                <a href="#/albums/">
+                    <span class="count" id="albums-count">{if $top_level_albums_count > 0}{$top_level_albums_count}{/if}</span>
+                    <i class="fas fa-folder"></i>
+                    <span>[`Albums`]</span>
+                </a>
+            </li>
+            <li id="sidebar-all-photos">
+                <a href="#/">
+                    <span class="count" id="photos-count">{if $count > 0}{$count}{/if}</span>
+                    <i class="fas fa-images"></i>
+                    <span>[`Photostream`]</span>
+                </a>
+            </li>
+            <li id="sidebar-rated">
+                <a href="#/search/rate>0/">
+                    <span class="count" id="rated-count">{if $rated_count > 0}{$rated_count}{/if}</span>
+                    <i class="fas fa-star"></i>
+                    <span>[`Rated`]</span>
+                </a>
+            </li>
+            {foreach $app_albums as $item}
+            <li>
+                <a href="#/app/{$item.id}">
+                    <span class="count">{$item.count}</span>
+                    <i class="fas fa-folder"></i>
+                    <span>{$item.name}</span>
+                </a>
+            </li>
+            {/foreach}
+            {* @event backend_sidebar.%plugin_id%.menu *}
+            {foreach $backend_sidebar as $plugin_id => $item}
+            {if !empty($item.menu)}
+            {if is_array($item.menu)}
+            {foreach $item.menu as $i => $item_menu}
+            <li id="sidebar-{$plugin_id}-{$i}">
+                {$item_menu}
+            </li>
+            {/foreach}
+            {else}
+            <li id="sidebar-{$plugin_id}">
+                {$item.menu}
+            </li>
+            {/if}
+            {/if}
+            {/foreach}
+        </ul>
+            <!-- collections -->
+        <section class="p-drop p-sidebar-section" id="album-list-container" data-id="photos-albums-list">
+            <span class="count subtree never-recount" style="display:none;">{$albums_count}</span>
+            <header class="heading collapse-handler js-collapse-handler" id="album-list-handler">
+                <span>
+                    <span class="caret">
+                        <i class="fas fa-caret-down"></i>
+                    </span>
+                    [`Albums`]
+                </span>
+                {if $rights.upload}
+                    <a id="p-new-album" class="count action p-new-album" href="#" title="[`New album`]">
+                        <i class="fas fa-plus-circle"></i>
+                    </a>
+                {/if}
+            </header>
+
+            <div class="js-album-list" id="album-list">
+                {$albums}
+                <div class="p-empty-album-list box custom-m-16" {if $albums}style="display: none;"{/if}>
+                    <p class="hint align-center">[`Create an album using the green icon above.`]</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="p-sidebar-section" {if !isset($cloud) || empty($cloud)} style="display:none;"{/if} id="tag-cloud-block" data-id="photos-tags-list">
+            <header class="heading collapse-handler js-collapse-handler">
+                <span>
+                    <span class="caret">
+                        <i class="fas fa-caret-down"></i>
+                    </span>
+                    [`Tags`]
+                </span>
+            </header>
+            <ul class="tags p-plugin-tag-cloud collapsible-content chips rounded small transparent outline custom-px-16" id="tag-cloud"></ul>
+        </section>
+
+    {*@event backend_sidebar.%plugin_id%.section *}
+    {foreach $backend_sidebar as $plugin_id => $item}
+        {if !empty($item.section)}
+        <section class="p-sidebar-section" id="sidebar-section-{$plugin_id}" data-id="photos-plugin-{$plugin_id}">
+            {$item.section}
+        </section>
+        {/if}
+    {/foreach}
+    </div>
+
+
+    {if $wa->user()->getRights($wa->app(), 'pages') ||
+    $wa->user()->getRights($wa->app(), 'design') ||
+    $wa->user()->isAdmin('photos')}
+    <div class="sidebar-footer shadowed">
+        <ul class="menu">
+            {if $wa->user()->getRights($wa->app(), 'pages')}
+            <li id="sidebar-pages">
+                <a href="#/pages/">
+                    <i class="fas fa-pen fa-3x"></i>
+                    <span>[s`Pages`]</span>
+                </a>
+            </li>
+            {/if}
+            {if $wa->user()->getRights($wa->app(), 'design')}
+            <li id="sidebar-design">
+                <a href="#/design/">
+                    <i class="fas fa-palette"></i>
+                    <span>[s`Design`]</span>
+                </a>
+            </li>
+            {/if}
+            {if $wa->user()->isAdmin('photos')}
+            <li id="sidebar-settings">
+                <a href="#/settings/">
+                    <i class="fas fa-cog"></i>
+                    <span>[`Settings`]</span>
+                </a>
+            </li>
+            <li id="sidebar-plugins">
+                <a href="#/plugins/">
+                    <i class="fas fa-plug"></i>
+                    <span>[`Plugins`]</span>
+                </a>
+            </li>
+            {/if}
+        </ul>
+    </div>
+    {/if}
+</div>
+{capture name="template-album-list-item"}
+    {literal}
+    <li class="dr {%#o.type == Album.TYPE_STATIC ? 'static' : 'dynamic'%}" rel="{%#o.id%}">
+        <a href="#/album/{%#o.id%}" class="new-item" title="{%#o.name%}">
+            <span class="count">
+                {% if (o.status <= 0) { %}
+                <span class="hint"><i class="fas fa-lock"></i></span>&nbsp;
+                {% } %}
+            </span>
+            <i class="fas fa-{%#o.type == Album.TYPE_STATIC ? 'image' : 'filter' %}"></i>
+            <span class="album-name">{%#o.name%}</span>
+            <strong class="small highlighted count-new"></strong>
+        </a>
+    </li>
+    {/literal}
+{/capture}
+
+{capture name="template-tag-cloud"}
+    {literal}
+    {% for (var i = 0, n = o.cloud.length, tag = o.cloud[i]; i < n; tag = o.cloud[++i]) { %}
+    <li>
+        <a href="#/tag/{%=tag.uri_name%}/" data-id="{%#tag.id%}" class="small"><span><i class="fas fa-hashtag"></i> {%=tag.name%}</span></a>
+    </li>
+    {% } %}
+    {/literal}
+{/capture}
+
+{* js templates block*}
+{foreach $smarty.capture as $template => $template_content}
+    {if $template_content && (strpos($template, 'template-')===0)}
+        <script id="{$template}" type="text/html">
+            {$template_content|replace:'</':'<\/'}
+        </script>
+        {capture name=$template}{/capture}
+    {/if}
+{/foreach}
+
+<script>
+    ( function($) {
+        $('#tag-cloud').html(tmpl('template-tag-cloud', {
+            cloud: {json_encode($cloud)}
+        }));
+
+        const $sidebar = $('#js-app-sidebar');
+
+        $.photos_sidebar.init({
+            $wrapper: $sidebar,
+            wa2: true
+        });
+
+        $sidebar.waShowSidebar({
+            direction: "down"
+        });
+    })(jQuery);
+</script>

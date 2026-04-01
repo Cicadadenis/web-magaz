@@ -1,0 +1,127 @@
+{*
+Шаблон квитанции для физических лиц (РФ)
+
+ @var waOrder $order Order data
+ @var string[string] $settings Payment plugin settings (data already escaped!)
+
+*}{strip}
+<!DOCTYPE HTML>
+<html style="padding: 0; margin: 0;">
+<head>
+    <meta charset="UTF-8">
+    <title>Квитанция {$order.order_id_str|escape}</title>
+</head>
+<body style="padding: 0; margin: 0; font-family: Verdana, Arial, sans-serif; font-size: 7pt; line-height: 1; color: #000;">
+
+    <table cellpadding="8" cellspacing="0" width="680" border="0" style="border-collapse: collapse; margin: auto;">
+        <tr>
+            <td style="vertical-align: bottom; width: 30%; border: 2px solid #000; text-align: right;">
+                <table cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse;">
+                    <tr>
+                        <td style="vertical-align: top; text-align: right;">Извещение</td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: top; padding: 15em 0 5px; text-align: right;">Кассир</td>
+                    </tr>
+                </table>
+            </td>
+            <td style="width: 70%; border: 2px solid #000;">
+                {capture name='row'}
+                    <table cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse;">
+                        <tr>
+                            <td style="vertical-align: top;">
+                                <table cellpadding="4" cellspacing="0" border="0" width="100%" style="border-collapse:collapse;">
+                                    <tr>
+                                        <td colspan=3><strong>Получатель платежа</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan=3>Наименование:&nbsp;{$settings.company_name}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>счет:&nbsp;{$settings.bank_account_number}</td>
+                                        <td>инн:&nbsp;{$settings.inn}</td>
+                                        <td>кпп:&nbsp;{$settings.kpp}</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan=3>Наименование банка:&nbsp;{$settings.bank_name}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>кор.&nbsp;счет:&nbsp;{$settings.bank_kor_number}</td>
+                                        <td colspan=2>бик:&nbsp;{$settings.bik}</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: top; padding: 10px 0 0;">
+                                <table cellspacing=0 cellpadding=4 width="100%" border="0">
+                                    {if !empty($order.billing_address.address)}
+                                        <tr>
+                                            <td><strong>Плательщик</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td>{$order.billing_address.name|default:$order.contact_name|escape}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>{$order.billing_address.address|escape}</td>
+                                        </tr>
+                                    {else}
+                                        <tr>
+                                            <td><strong>Плательщик</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td>{$order.shipping_address.name|default:$order.contact_name|escape}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>{$order.shipping_address.address|escape}</td>
+                                        </tr>
+                                    {/if}
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: top; padding: 10px 0 0;">
+                                <table cellspacing="0" cellpadding="4" border="1" style="width: 100%; text-align: center;">
+                                    <tr>
+                                        <td>Назначение платежа</td>
+                                        <td>Дата</td>
+                                        <td>Сумма</td>
+                                    </tr>
+                                    <tr>
+                                        <td>{$settings.description|regex_replace:'/\{\$order\.id\}/':{$order.id_str|escape}}</td>
+                                        <td></td>
+                                        <td>{$order.total|wa_format_amount:$order.currency:'%2'}</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: top; padding: 10px 0 5px;">
+                                Подпись плательщика:
+                            </td>
+                        </tr>
+                    </table>
+                {/capture}
+                {$smarty.capture.row}
+            </td>
+        </tr>
+        <tr>
+            <td style="vertical-align: bottom; border: 2px solid #000; text-align: right;">
+                <table cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse;">
+                    <tr>
+                        <td style="vertical-align: top; text-align: right;">Квитанция</td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: top; padding: 15em 0 5px; text-align: right;">Кассир</td>
+                    </tr>
+                </table>
+            </td>
+            <td style="border: 2px solid #000;">
+                {$smarty.capture.row}
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
+{/strip}

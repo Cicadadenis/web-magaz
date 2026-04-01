@@ -1,0 +1,245 @@
+$header_row_h = 72px
+$row_h = 52px
+$column_w = 115px
+$border_c = #f0f0f0
+
+.t-access-sidebar
+    overflow unset !important;
+    .t-toggle-wrapper
+        display flex
+        justify-content center
+        align-items center
+        height $header_row_h
+        box-sizing: border-box;
+        position: sticky;
+        top: 4rem;
+        z-index 1
+
+    .t-users-wrapper
+        .t-users-item
+            height $row_h
+            box-sizing border-box
+
+.t-access-page
+    position relative
+    user-select none
+
+    .t-access-wrapper
+    .t-header-apps
+        overflow hidden
+        position relative
+
+        &.type-1
+            .t-action
+                &.left
+                    display none
+                &.right
+                    display block
+
+        &.type-2
+            .t-action
+                &.left
+                    display block
+                &.right
+                    display block
+
+        &.type-3
+            .t-action
+                &.left
+                    display block
+                &.right
+                    display none
+
+        .t-action
+            display none
+
+            position absolute
+            top 0
+            width 75px
+            height 100%
+            background rgba(0,0,0,.8)
+            cursor pointer
+
+            &.left
+                left 0
+                background #fff
+                background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 25%, rgba(255,255,255,0) 100%);
+                border-left 1px solid $border_c
+
+            &.right
+                right 0
+                background #fff
+                background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 75%, rgba(255,255,255,1) 100%);
+
+    .t-apps-list
+        display: grid;
+        overflow hidden
+        height $header_row_h
+        position: sticky;
+        top: 4rem;
+        z-index 2
+        .t-apps-list-wrapper
+            display table
+            transition-property: transform
+            box-sizing content-box
+            z-index 1
+            position relative
+            .t-app-item
+                display table-cell
+                vertical-align middle
+                min-width $column_w
+                height 100%
+                box-sizing border-box
+                .t-app-item-wrapper
+                    display flex
+                    flex-direction column
+                    justify-content center
+                    align-items center
+                    .t-app-image
+                        max-width 48px
+                        height auto
+
+                    .t-app-name
+                        display inline-block
+                        white-space nowrap
+                        overflow hidden
+                        text-overflow ellipsis
+                        max-width $column_w
+        .t-apps-list-nav
+            position absolute
+            top 0
+            bottom 0
+            font-size 150%
+            z-index 1
+            display grid
+            place-items center
+            cursor pointer
+            color var(--text-color-hint)
+            padding: .5rem;
+            margin 1px 0
+            &.left
+                left 0
+                background: linear-gradient(90deg, var(--dashboard-widget-fade-background-end) 0%, var(--dashboard-widget-fade-background-start) 100%);
+            &.right
+                right 0
+                background: linear-gradient(270deg, var(--dashboard-widget-fade-background-end) 0%, var(--dashboard-widget-fade-background-start) 100%);
+
+
+    .t-access-table-wrapper
+        display grid
+        overflow hidden
+        position relative
+
+        &::before
+        &::after
+            content ''
+            position absolute
+            top 0
+            bottom 0
+            z-index 1
+            width: 2rem;
+            transition var(--timing-default)
+            transition-property opacity, visibility
+
+        &::before
+            left 0
+            background: linear-gradient(90deg, var(--dashboard-widget-fade-background-end) 0%, var(--dashboard-widget-fade-background-start) 100%);
+
+            .reachstart&
+                opacity: 0;
+                visibility: hidden;
+
+        &::after
+            right 0
+            background: linear-gradient(270deg, var(--dashboard-widget-fade-background-end) 0%, var(--dashboard-widget-fade-background-start) 100%);
+
+            .reachend&
+                opacity: 0;
+                visibility: hidden;
+
+        .t-access-table
+            width 100%
+            min-width 0
+            margin 0
+
+            td
+                padding 0
+                max-width $column_w
+                max-height $row_h
+                box-sizing: border-box;
+                border: 0;
+
+.t-access-status
+    min-width 100%
+    width $column_w
+    height $row_h
+    padding 0 $pad
+    box-sizing border-box
+
+    line-height $row_h
+    text-align center
+    color #bbb
+
+    white-space nowrap
+    text-overflow ellipsis
+    overflow hidden
+    max-width 100%
+    cursor pointer
+
+    .t-access-name
+        display none
+
+    &.type-no
+        color: #aaa;
+        background-color: rgba(229, 229, 229, .5);
+
+        .t-access-name.type-no
+            display inline
+
+    &.type-limited
+        color: rgba(#000, .5) !important;
+        background-color: rgba(161, 229, 161, .6) !important;
+        .t-access-name.type-limited
+            display inline
+
+    &.type-full
+        color: rgba(#000, .75) !important;
+        background-color: rgba(102, 204, 102, .85) !important;
+        .t-access-name.type-full
+            display inline
+
+    &.is-admin
+        text-align left
+        text-indent 12px
+
+    &
+    &.type-full
+    &.type-no
+    &.type-limited
+        &:hover
+            color var(--text-color) !important
+            background-color: var(--background-color-editable) !important
+
+.t-layout
+    display: table;
+    width: 100%;
+    & > .t-column
+        display: table-cell;
+        vertical-align: top;
+
+.swiper-notification
+    &:empty
+        display none
+
+.access-highlighted
+    background-color: var(--background-color-editable);
+
+    span.t-app-name
+        color: var(--text-color);
+
+
+.t-users-wrapper
+    .t-users-item
+        .t-user-name
+            .t-name
+                line-height: 1.2;

@@ -1,0 +1,78 @@
+{strip}
+
+{*
+    get products from predefined product set 'promo' and 'bestsellers';
+    feel free to replace these with any other product set IDs
+*}
+
+{$_products_list_id = "bestsellers"}
+{if !empty($theme_settings.slider_product_list_id)}
+    {$_products_list_id = $theme_settings.slider_product_list_id}
+{/if}
+
+{$promos = $wa->shop->productSet('promo')}
+{$bestsellers = $wa->shop->productSet($_products_list_id)}
+{$promocards = $wa->shop->promos('link', '900')}
+
+{$_show_promocards_slider = ( $theme_settings.homepage_bxslider_mode == "promos" )}
+{$_show_products_slider = ( $theme_settings.homepage_bxslider_mode == "products" )}
+
+{if $_show_promocards_slider}
+    {if !empty($promocards)}
+        {include file="home-slider.html" _promocards=$promocards inline}
+    {else}
+        <div style="margin: 2em 0;">
+            <p>[`There are no promo cards to show a slider.`]</p>
+        </div>
+    {/if}
+
+{elseif $_show_products_slider}
+    {if !empty($bestsellers)}
+        {include file="home-slider.html" _products=$bestsellers inline}
+    {else}
+        <div style="margin: 2em 0;">
+            <p>{sprintf('[`There are no products in selected product set “%s” to show a slider.`]', {$_products_list_id|escape})}</p>
+        </div>
+    {/if}
+{/if}
+
+{if $promocards}
+    <!-- PROMOS -->
+    <section class="promos-wrapper">
+        <div class="promos-list">
+            {foreach $promocards as $promo}
+            <div class="promo-item" id="s-promo-{$promo.id}">
+                <a href="{$promo.link|escape}" style="background-image: url('{$promo.image}');">
+                    {if !empty($promo.title)}<h5 style="color: {$promo.color};">{$promo.title|escape}</h5>{/if}
+                    {*{if !empty($promo.body)}<p style="color: {$promo.color};">{$promo.body|escape}</p>{/if}*}
+                </a>
+            </div>
+            {/foreach}
+        </div>
+    </section>
+{/if}
+
+<!-- NAVIGATION -->
+{include file="layout-nav.html" inline}
+<!-- END NAVIGATION -->
+
+{* @event frontend_nav.%plugin_id% *}
+{foreach $frontend_nav as $_}{$_}{/foreach}
+
+<!-- plugin hook: 'frontend_homepage' -->
+{* @event frontend_homepage.%plugin_id% *}
+{foreach $frontend_homepage as $_}{$_}{/foreach}
+
+<!-- PROMOS product list -->
+{if $promos}
+    {$type = $theme_settings.related_view_type}
+    {$template_url = 'list-thumbs.html'}
+    {if $type && $type == 'thumbs'}
+        {$template_url = 'list-table.html'}
+    {/if}
+    {include file=$template_url products=$promos disable_compare=true}
+{*{else}*}
+    {*<div>{sprintf('[`In your store backend, drag some products into <strong>%s</strong> product list (which is in the left sidebar of the Products screen), and these products will be automatically published here — right on your storefront homepage.`]','promo')}</div>*}
+{/if}
+
+{/strip}

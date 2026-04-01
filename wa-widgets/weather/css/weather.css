@@ -1,0 +1,125 @@
+.s-weather {
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: #1c60ac;
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+  padding: 16px;
+}
+.s-weather .s-weather-icon-wrapper {
+  position: absolute;
+  top: -1rem;
+  left: 0;
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+.s-weather .s-weather-icon-wrapper .s-weather-icon {
+  position: relative;
+  display: inline-block;
+  width: 16em;
+  height: 16em;
+  background-size: 16em 16em;
+}
+.s-weather .info-wrapper > * {
+  color: #fff;
+}
+.s-weather .info-wrapper h2 {
+  margin: 0 0 4px 0;
+  font-weight: 700;
+  font-size: 3.5rem;
+  padding-left: 6%;
+}
+.s-weather .info-wrapper h4 {
+  margin: 0.75em 0 0;
+  opacity: 0.8;
+  font-weight: normal;
+}
+.s-weather .wa-no-weather {
+  padding: 2em 0;
+  font-weight: normal;
+  color: #fff;
+}
+.s-weather.s-weather-day {
+  background: radial-gradient(68.67% 68.67% at 50% 31.33%, #8ad6e6 0%, #45a2e6 100%);
+}
+.s-weather.s-weather-night {
+  background: radial-gradient(68.67% 68.67% at 50% 31.33%, #2f2d73 0%, #270e33 100%);
+  background-image: url("/wa-widgets/weather/img/night.jpg");
+  background-size: cover;
+}
+.s-weather.s-weather-notavailable {
+  background: #aaa;
+}
+.widget-2x1 .s-weather {
+  justify-content: center;
+  align-items: center;
+  padding-left: calc(8.063rem + 16px);
+}
+.widget-2x1 .s-weather.s-weather-notavailable {
+  padding-top: 0;
+}
+.widget-2x1 .s-weather .wa-no-weather {
+  padding: 2em 2.75em;
+}
+.widget-2x1 .s-weather .info-wrapper h2 {
+  font-size: 2.5rem;
+}
+.widget-2x1 .s-weather .info-wrapper h6 {
+  font-size: 0.875rem;
+  margin-top: 0;
+}
+.widget-2x1 .s-weather .s-weather-icon-wrapper {
+  top: 0.5rem;
+  left: 0.5rem;
+  text-align: left;
+}
+.widget-2x1 .s-weather .s-weather-icon-wrapper .s-weather-icon {
+  width: 8.063rem;
+  height: 8.063rem;
+  background-size: 8.063rem 8.063rem;
+}
+.widget-1x1 .s-weather.s-weather-notavailable {
+  padding-top: 0;
+}
+.widget-1x1 .s-weather .s-weather-icon-wrapper {
+  top: -0.25rem;
+  text-align: center;
+}
+.widget-1x1 .s-weather .s-weather-icon-wrapper .s-weather-icon {
+  width: 6rem;
+  height: 6rem;
+  background-size: 6rem 6rem;
+}
+.widget-1x1 .s-weather h2 {
+  font-size: 1.3rem;
+}
+.widget-1x1 .s-weather h6 {
+  margin: 0;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+.widget-2x2 .s-weather.s-weather-notavailable {
+  padding-top: 0;
+}
+.widget-2x2 .s-weather .info-wrapper h6 {
+  font-size: 1.125rem;
+  margin: 0;
+}
+.widget-2x2 .s-weather .wa-no-weather {
+  padding: 4em 1.5em;
+}
+.mobile .s-weather {
+  font-size: 1.1rem;
+}
+.mobile .widget-1x1 .s-weather h2,
+.mobile .widget-2x1 .s-weather h2 {
+  font-size: 2em;
+}

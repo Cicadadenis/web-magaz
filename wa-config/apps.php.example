@@ -1,0 +1,11 @@
+<?php
+
+return array(
+    'team' => true,
+//    'developer' => true,
+//    'contacts' => true,
+    'site' => true,
+    'blog' => true,
+    'photos' => true,
+    'shop' => true,    
+);

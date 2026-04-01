@@ -1,0 +1,223 @@
+<!-- get products from predefined product lists 'promo' and 'bestsellers' -->
+{$promos = $wa->shop->productSet('promo')}
+{$bestsellers = $wa->shop->productSet('bestsellers')}
+
+{if (empty($promos) && empty($bestsellers))}
+
+    <div class="welcome">
+        <h1>[`Welcome to your new online store!`]</h1>
+        <p>{sprintf('[`Start by <a href="%s">creating a product</a> in your store backend.`]', $wa_backend_url|cat:'shop/?action=products#/welcome/')}</p>
+    </div>
+
+{else}
+
+    <!-- top products -->
+    <div class="hero superhero promo">
+        {if $promos && count($promos)}
+            <ul class="bxslider">
+            {foreach $promos as $p}
+            <li itemscope itemtype ="http://schema.org/Product">
+                <a href="{$p.frontend_url}" title="{$p.name}{if $p.summary} &ndash; {strip_tags($p.summary)|escape}{/if}">
+                    <div class="image">
+                            {$badge_html = $wa->shop->badgeHtml($p.badge)}
+                            {if $badge_html}
+                                <div class="corner top right">{$badge_html}</div>
+                            {/if}
+                            {$wa->shop->productImgHtml($p, '970', ['itemprop' => 'image', 'alt' => $p.name, 'default' => "`$wa_theme_url`img/dummy200.png"])}
+
+                    </div>
+                    <div class="info">
+                        <h2 itemprop="name">
+                            <span class="name">{$p.name}</span>
+                        </h2>
+                        <p>{if $p.compare_price > 0}<span class="compare-at-price nowrap"> {shop_currency_html($p.compare_price)} </span>{/if}<span class="price nowrap">{shop_currency_html($p.price)}</span></p>
+                        {if $p.summary}<p itemprop="description">{strip_tags($p.summary|truncate:255)}</p>{/if}
+
+                    </div>
+                </a>
+            </li>
+            {/foreach}
+            </ul>
+        {else}
+            <p class="hint align-center"><br><em>{sprintf('[`Product set with the ID <strong>%s</strong> either does not exist or does not contain any product. Add some products into a product set with the specified ID to make these products featured here.`]','promo')}</em></p>
+        {/if}
+    </div>
+
+    {if $promocards = $wa->shop->promos('link', '900')}
+        <!-- PROMOS -->
+        <section class="promos">
+            <ul>
+                {foreach $promocards as $promo}
+                    <li id="s-promo-{$promo.id}">
+                        <a href="{$promo.link|escape}" style="background-image: url('{$promo.image}');">
+                            <div class="background-color-layer"></div>
+                            {if !empty($promo.title)}<h5 style="color: {$promo.color};">{$promo.title|escape}</h5>{/if}
+                            {if !empty($promo.body)}<p style="color: {$promo.color};">{$promo.body|escape}</p>{/if}
+                        </a>
+                    </li>
+                {/foreach}
+            </ul>
+            <div class="clear-both"></div>
+        </section>
+    {/if}
+
+    <!-- plugin hook: 'frontend_homepage' -->
+    {* @event frontend_homepage.%plugin_id% *}
+    {foreach $frontend_homepage as $_}{$_}{/foreach}
+
+    <div class="sidebar left300px">
+        <!-- storefront navigation -->
+        {include file="sidebar.html" inline}
+    </div>
+
+    <div class="content left300px">
+
+        <!-- GENERAL WELCOME TEXT -->
+        <div itemscope itemtype="http://schema.org/Store">
+            {if !empty($theme_settings.store_address)}
+                <meta itemprop="address" content="{$theme_settings.store_address}">
+            {/if}
+            {if !empty($theme_settings.store_price_range)}
+                <meta itemprop="priceRange" content="{$theme_settings.store_price_range}">
+            {/if}
+            {if !empty($theme_settings.logo)}
+                {$_absolute_thumb_uri = "{$wa->url(true)}{$wa_theme_url|substr:1}{$theme_settings.logo}?v{$wa_theme_version}"}
+                <meta itemprop="image" content="{$_absolute_thumb_uri|escape}">
+            {/if}
+
+            <h1 class="align-center"><span itemprop="name">{sprintf('[`%s online store`]', $wa->shop->settings('name'))}</span></h1>
+            <meta itemprop="description" content="{$wa->meta('description')|escape}">
+
+            <div class="align-center">
+                {if $wa->shop->settings('phone')}
+                    <p class="align-center large" style="display: inline-block; margin-right: 1em;">[`Contact us`]: <strong itemprop="telephone">{$wa->shop->settings('phone')}</strong></p>
+                {/if}
+
+                {if !empty($theme_settings.use_shop_schedule) && method_exists($wa->shop, 'schedule')}
+                    {$_schedule = $wa->shop->schedule()}
+
+                    <div class="s-schedule-wrapper" id="js-home-schedule-wrapper">
+                        <div class="s-visible">
+                            <div class="s-label-wrapper js-show-schedule" title="{_wd("shop", "Business hours")}">
+                                {_wd("shop", "Business hours")} <i class="s-icon"></i>
+                            </div>
+                        </div>
+                        <div class="s-hidden bottom right">
+                            <div class="s-days-wrapper">
+                                {foreach $_schedule.current_week as $_day}
+                                    <div class="s-day-wrapper">
+                                        <div class="s-date">{$_day.name|escape}</div>
+                                        <div class="s-value">
+                                            {if !empty($_day.work)}
+                                                <div class="s-time">{$_day.start_work|escape} — {$_day.end_work|escape}</div>
+                                            {else}
+                                                <div class="s-text">{_wd("shop", "day off")}</div>
+                                            {/if}
+                                        </div>
+                                    </div>
+                                {/foreach}
+                            </div>
+                            <i class="s-close-icon js-close-schedule" title="[`Close`]"></i>
+                        </div>
+                        <script>
+                            ( function($) {
+
+                                var ScheduleSection = ( function($) {
+
+                                    ScheduleSection = function(options) {
+                                        var that = this;
+
+                                        // DOM
+                                        that.$wrapper = options["$wrapper"];
+
+                                        // VARS
+
+                                        // DYNAMIC VARS
+
+                                        // INIT
+                                        that.initClass();
+                                    };
+
+                                    ScheduleSection.prototype.initClass = function() {
+                                        var that = this,
+                                            $wrapper = that.$wrapper;
+
+                                        var open_class = "is-open";
+
+                                        $wrapper.on("click", ".js-show-schedule", function(event) {
+                                            event.preventDefault();
+                                            $wrapper.toggleClass(open_class);
+                                        });
+
+                                        $wrapper.on("click", ".js-close-schedule", function(event) {
+                                            event.preventDefault();
+                                            $wrapper.removeClass(open_class);
+                                        });
+
+                                        $(document).on("click", clickWatcher);
+                                        function clickWatcher(event) {
+                                            var is_exist = $.contains(document, $wrapper[0]);
+                                            if (is_exist) {
+                                                var is_target = $.contains($wrapper[0], event.target);
+                                                if (!is_target) {
+                                                    if ($wrapper.hasClass(open_class)) {
+                                                        $wrapper.removeClass(open_class);
+                                                    }
+                                                }
+                                            } else {
+                                                $(document).off("click", clickWatcher);
+                                            }
+                                        }
+
+                                        $(document).on("keyup", keyWatcher);
+                                        function keyWatcher(event) {
+                                            var is_exist = $.contains(document, $wrapper[0]);
+                                            if (is_exist) {
+                                                var is_escape = (event.keyCode === 27);
+                                                if (is_escape) {
+                                                    if ($wrapper.hasClass(open_class)) {
+                                                        $wrapper.removeClass(open_class);
+                                                    }
+                                                }
+                                            } else {
+                                                $(document).off("click", keyWatcher);
+                                            }
+                                        }
+                                    };
+
+                                    return ScheduleSection;
+
+                                })($);
+
+                                new ScheduleSection({
+                                    $wrapper: $("#js-home-schedule-wrapper")
+                                });
+                            })(jQuery);
+                        </script>
+                    </div>
+                {elseif !empty($theme_settings.manual_schedule)}
+                {strip}
+                    <div class="s-schedule-wrapper">
+                        <div class="s-visible">
+                            <div class="s-label-wrapper">
+                                <span class="s-text">{$theme_settings.manual_schedule|escape}</span>
+                            </div>
+                        </div>
+                    </div>
+                {/strip}
+                {/if}
+            </div>
+
+            <p class="align-center gray">[`Edit this information in the <strong>home.html</strong> template file using built-in design editor in the store backend.`]</p>
+
+        </div>
+
+        {if $bestsellers}
+            {include file="list-thumbs.html" products=$bestsellers inline}
+        {else}
+            <p class="hint align-center"><em>{sprintf('[`Product set with the ID <strong>%s</strong> either does not exist or does not contain any product. Add some products into a product set with the specified ID to make these products featured here.`]','bestsellers')}</em></p>
+        {/if}
+
+    </div>
+
+{/if}

@@ -1,0 +1,27 @@
+{strip}
+
+<div class="dialog t-delete-group-popup" id="t-group-delete">
+    <div class="dialog-background"></div>
+    <div class="dialog-body">
+        <h3 class="dialog-header">[`Delete this group?`]</h3>
+
+        <div class="dialog-content">
+            <p>[`No users will be deleted.`]</p>
+        </div>
+
+        <footer class="dialog-footer">
+            <input class="button red js-delete-event" type="button" value="[`Delete`]">
+            <a class="js-close-dialog button light-gray" href="javascript:void(0);">[`Cancel`]</a>
+        </footer>
+    </div>
+    <script>
+        ( function($) {
+            new GroupDeleteDialog({
+                $wrapper: $("#t-group-delete"),
+                group_id: "{$group.id}"
+            });
+        })(jQuery);
+    </script>
+</div>
+
+{/strip}

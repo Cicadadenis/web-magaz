@@ -1,0 +1,26 @@
+{strip}
+
+<div class="t-users-page content article is-online-page break-word" id="t-users-page">
+
+    <div class="t-content-body article-body">
+        {* HEADER *}
+        <header class="t-content-header">
+            <h1>[`Invitations`]</h1>
+        </header>
+
+        {if !empty($contacts)}
+            {include file="./Users.inc.html" contacts=$contacts list_context="invited"}
+        {else}
+            <p class="t-description">[`No invited contacts.`]</p>
+        {/if}
+    </div>
+
+    <script>
+        ( function($) {
+            $.team.setTitle('[`Invitations`]');
+            $.team.sidebar.updateCount('{$wa_app_url}invited/', {count($contacts)});
+        })(jQuery);
+    </script>
+</div>
+
+{/strip}

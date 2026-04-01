@@ -1,0 +1,97 @@
+{strip}
+
+{$_is_sku = ($sku_class === "sku")}
+
+{$_sku = reset($skus)}
+{if !empty($_sku.name) && !empty($_sku.sku)}
+    {$_sku_name = sprintf('%s (%s)', $_sku.name, $_sku.sku)}
+{elseif !empty($_sku.sku)}
+    {$_sku_name = $_sku.sku}
+{elseif !empty($_sku.name)}
+    {$_sku_name = $_sku.name}
+{else}
+    {if empty($sku_id)}
+        {$_sku_id = $_sku["id"]}
+    {else}
+        {$_sku_id = $sku_id}
+    {/if}
+    {$_sku_name = $_sku_id}
+{/if}
+
+{/strip}
+
+<div class="wa-dialog">
+    <div class="dialog-background"></div>
+    <div class="dialog-body">
+        <div class="dialog-header">
+            <h2>
+                {if $_is_sku}
+                    [`Confirm SKU deletion`]
+                {else}
+                    [`Confirm variant deletion`]
+                {/if}
+            </h2>
+        </div>
+        <div class="dialog-content">
+
+            <!-- plugin hook: 'backend_prod_dialog.top' -->
+            {* @event backend_prod_dialog.%plugin_id%.top *}
+            {if !empty($backend_prod_dialog_event)}{foreach $backend_prod_dialog_event as $_}{ifset($_.top)}{/foreach}{/if}
+
+            <p class="color-red">
+                {if $_is_sku}
+                    {sprintf(
+                        _w(
+                            'You are about to delete SKU “%s” of product “%s” with %d variant.',
+                            'You are about to delete SKU “%s” of product “%s” with %d variants.',
+                            count($skus),
+                            false
+                        ),
+                        $_sku_name,
+                        $product.name|escape,
+                        count($skus)
+                    )}
+                {else}
+                    {sprintf_wp(
+                        'You are about to delete a variant of SKU “%s” of product “%s”.',
+                        $_sku_name,
+                        $product.name|escape
+                    )}
+                {/if}
+            </p>
+
+
+            {if $orders_count > 0}
+                <p>{sprintf(
+                    _w(
+                        'It is used in <a href="%s">%d order</a>.',
+                        'It is used in <a href="%s">%d orders</a>.',
+                        $orders_count,
+                        false
+                    ),
+                    $orders_list_url|escape,
+                    $orders_count
+                )}</p>
+            {else}
+                <p>[`No orders were found.`]</p>
+            {/if}
+
+            <p>
+                {if $_is_sku}
+                    [`Are you sure you want to delete this SKU?`]
+                {else}
+                    [`Are you sure you want to delete this SKU variant?`]
+                {/if}
+            </p>
+
+            <!-- plugin hook: 'backend_prod_dialog.bottom' -->
+            {* @event backend_prod_dialog.%plugin_id%.bottom *}
+            {if !empty($backend_prod_dialog_event)}{foreach $backend_prod_dialog_event as $_}{ifset($_.bottom)}{/foreach}{/if}
+
+        </div>
+        <div class="dialog-footer">
+            <button class="js-success-action wa-button red" type="button">[`Delete`]</button>
+            <button class="js-dialog-close wa-button gray-light" type="button">[`Cancel`]</button>
+        </div>
+    </div>
+</div>

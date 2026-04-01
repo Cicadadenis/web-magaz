@@ -1,0 +1,147 @@
+<div class="field">
+    <div class="name"></div>
+    <div class="value"><h3>Фискализация платежей</h3></div>
+</div>
+
+<div class="field">
+    <div class="name">
+        <label for="{$prefix}fiscalization">Фискализация</label>
+    </div>
+    <div class="value">
+        <input type="checkbox" class="js-payment-sb-fiscalization" name="{$namespace}[fiscalization]"
+               id="{$prefix}fiscalization" value="1" {if ifset($settings, 'fiscalization', '')}checked{/if}>
+        <br>
+        <span class="hint">Если включена фискализация, то клиенты смогут использовать этот способ оплаты только в следующих случаях:<br>— к элементам заказа и стоимости доставки не применяются налоги<br>— налог составляет 0%, 10% либо 20% и <em>включён</em> в стоимость элементов заказа и стоимость доставки</span>
+    </div>
+</div>
+
+<div class="js-payment-sb-subjects-wrapper">
+    <div class="field">
+        <div class="name">
+            <label for="{$prefix}payment_method">Признак способа расчёта в чеках</label>
+        </div>
+        <div class="value">
+            <select name="{$namespace}[payment_method]" autocomplete="off" id="{$prefix}payment_method">
+                {$current_payment_method= ifset($settings, 'payment_method', '')}
+                {foreach $payment_methods as $method}
+                    <option value="{$method['value']}" {if $current_payment_method === {$method['value']}}selected{/if}>{$method['title']}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+
+    <div class="field">
+        <div class="name">
+            <label for="{$prefix}payment_subject_product">Признак предмета расчёта для товаров в чеках</label>
+        </div>
+        <div class="value">
+            <select name="{$namespace}[payment_subject_product]" autocomplete="off" id="{$prefix}payment_subject_product">
+                {$current_product = ifset($settings, 'payment_subject_product', '')}
+                {foreach $payment_subject as $subject}
+                    <option value="{$subject['value']}" {if $current_product === {$subject['value']}}selected{/if}>{$subject['title']}</option>
+                {/foreach}
+            </select>
+            <br>
+            <span class="hint">Категория ваших товаров в чеке — для передачи в налоговую инспекцию.</span>
+        </div>
+    </div>
+
+    <div class="field">
+        <div class="name">
+            <label for="{$prefix}payment_subject_service">Признак предмета расчёта для услуг в чеках</label>
+        </div>
+        <div class="value">
+            <select name="{$namespace}[payment_subject_service]" autocomplete="off" id="{$prefix}payment_subject_service">
+                {$current_service = ifset($settings, 'payment_subject_service', '')}
+                {foreach $payment_subject as $subject}
+                    <option value="{$subject['value']}" {if $current_service === {$subject['value']}}selected{/if}>{$subject['title']}</option>
+                {/foreach}
+            </select>
+            <br>
+            <span class="hint">Категория ваших услуг для товаров в чеке — для передачи в налоговую инспекцию.</span>
+        </div>
+    </div>
+
+    <div class="field">
+        <div class="name">
+            <label for="{$prefix}payment_subject_shipping">Признак предмета расчёта для доставки в чеках</label>
+        </div>
+        <div class="value">
+            <select name="{$namespace}[payment_subject_shipping]" autocomplete="off" id="{$prefix}payment_subject_shipping">
+                {$current_shipping = ifset($settings, 'payment_subject_shipping', '')}
+                {foreach $payment_subject as $subject}
+                    <option value="{$subject['value']}" {if $current_shipping === {$subject['value']}}selected{/if}>{$subject['title']}</option>
+                {/foreach}
+            </select>
+            <br>
+            <span class="hint">Категория услуги по доставке заказа в чеке — для передачи в налоговую инспекцию.</span>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="field js-payment-sb-tax-wrapper">
+    <div class="name">
+        <label for="{$prefix}tax_system">Система налогообложения</label>
+    </div>
+    <div class="value">
+        <select name="{$namespace}[tax_system]" autocomplete="off" id="{$prefix}tax_system">
+            {$current_tax = ifset($settings, 'tax_system', '')}
+            {foreach $tax_systems as $tax}
+                <option value="{$tax['value']}" {if $current_tax === {$tax['value']}}selected{/if}>{$tax['title']}</option>
+            {/foreach}
+        </select>
+        <br>
+        <span class="hint">Категория способа оплаты всех позиций в чеке — для передачи в налоговую инспекцию.</span>
+    </div>
+</div>
+
+<div class="field js-payment-sb-ffd-wrapper">
+    <div class="name">
+        <label for="{$prefix}ffd_version">Версия ФФД</label>
+    </div>
+    <div class="value">
+        <select name="{$namespace}[ffd_version]" autocomplete="off" id="{$prefix}ffd_version">
+            {$current_ffd = ifset($settings, 'ffd_version', '')}
+            <option value="1.05">1.05 (V4)</option>
+            <option value="1.2"{if $current_ffd === '1.2'} selected{/if}>1.2 (V5)</option>
+        </select>
+        <br>
+        <span class="hint">Текущая выбранная версия должна совпадать с версией в настройках ОФД</span>
+    </div>
+
+    <div class="value js-okei-table" style="{if $current_ffd !== '1.2'} display: none; {/if}padding: 1rem; border-radius: 5px; background: #efefef; border: solid 1px rgba(0,0,0,0.1); width: 450px;">
+        <h5>Проверьте правильность настроек единиц измерения количества</h5>
+        <small><a>Развернуть</a></small>
+        <table class="light" style="width: 300px; margin: 30px 30px 10px; display: none;">
+            <tr>
+                <th>Наименование единицы</th>
+                <th>Код ОКЕИ</th>
+            </tr>
+            <tr><td>Штука               </td><td>796 </td></tr>
+            <tr><td>Грамм               </td><td>163 </td></tr>
+            <tr><td>Килограмм           </td><td>166 </td></tr>
+            <tr><td>Тонна               </td><td>168 </td></tr>
+            <tr><td>Сантиметр           </td><td>004 </td></tr>
+            <tr><td>Дециметр            </td><td>005 </td></tr>
+            <tr><td>Метр                </td><td>006 </td></tr>
+            <tr><td>Квадратный сантиметр</td><td>051 </td></tr>
+            <tr><td>Квадратный дециметр </td><td>053 </td></tr>
+            <tr><td>Квадратный метр     </td><td>055 </td></tr>
+            <tr><td>Миллилитр           </td><td>111 </td></tr>
+            <tr><td>Литр                </td><td>112 </td></tr>
+            <tr><td>Кубический метр     </td><td>113 </td></tr>
+            <tr><td>Киловатт-час        </td><td>245 </td></tr>
+            <tr><td>Гигакалория         </td><td>233 </td></tr>
+            <tr><td>Сутки (день)        </td><td>359 </td></tr>
+            <tr><td>Час                 </td><td>356 </td></tr>
+            <tr><td>Минута              </td><td>355 </td></tr>
+            <tr><td>Секунда             </td><td>354 </td></tr>
+            <tr><td>Килобайт            </td><td>256 </td></tr>
+            <tr><td>Мегабайт            </td><td>257 </td></tr>
+            <tr><td>Гигабайт            </td><td>2553</td></tr>
+            <tr><td>Терабайт            </td><td>2554</td></tr>
+        </table>
+    </div>
+</div>

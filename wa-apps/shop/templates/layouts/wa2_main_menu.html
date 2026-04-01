@@ -1,0 +1,41 @@
+{$_menu = shopMainMenu::get(['inline_icons'=>true])}
+
+<div class="wa2-menu-aside">
+    <div class="s-aside-body">
+        <ul class="menu s-main-menu">
+            {foreach $_menu as $_item}
+                <li class="{if !empty($_item["submenu"])}is-restricted{/if}">
+                    {if !empty($_item["submenu"])}
+                        <div class="item js-group-toggle js-{$_item["id"]}-toggle">
+                            <span class="s-icon-main icon">{$_item["icon"]}</span>
+                            <span class="s-name">
+                                {$_item["name"]|escape}
+                                <span class="s-icon-toggle icon is-expanded">
+                                    <svg viewBox="0 0 320 512"><path fill="currentColor" d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"></path></svg>
+                                </span>
+                                <span class="s-icon-toggle icon">
+                                    <svg viewBox="0 0 192 512"><path fill="currentColor" d="M0 384.662V127.338c0-17.818 21.543-26.741 34.142-14.142l128.662 128.662c7.81 7.81 7.81 20.474 0 28.284L34.142 398.804C21.543 411.404 0 402.48 0 384.662z"></path></svg>
+                                </span>
+                            </span>
+                        </div>
+
+                        <ul class="menu s-sub-menu">
+                            {foreach $_item["submenu"] as $_sub_item}
+                                <li>
+                                    <a class="item" href="{$_sub_item["url"]|escape}">
+                                        <span class="s-name">{$_sub_item["name"]|escape}</span>
+                                    </a>
+                                </li>
+                            {/foreach}
+                        </ul>
+                    {else}
+                        <a class="item" href="{$_item["url"]|escape}">
+                            <span class="s-icon-main icon">{$_item["icon"]}</span>
+                            <span class="s-name">{$_item["name"]|escape}</span>
+                        </a>
+                    {/if}
+                </li>
+            {/foreach}
+        </ul>
+    </div>
+</div>

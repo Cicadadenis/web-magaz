@@ -1,0 +1,804 @@
+.t-profile-page
+    @media screen and (min-width: 760px)
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-rows: 1fr;
+    .t-profile
+        overflow hidden
+        .t-profile-users
+            position relative
+            background-color: var(--background-color);
+            display flex
+            justify-content center
+            align-items center
+            padding 0
+            list-style none
+            margin 0
+            max-width 100vw
+            box-sizing border-box
+            .t-profile-users-item
+                display inline-flex
+                padding .5em
+                box-sizing: border-box;
+                max-width 3rem
+                &.selected
+                &:hover
+                    background-color: var(--list-item-selected-background-color)
+            .t-profile-users-nav
+                width: 3rem
+                height: 3rem
+                display grid
+                place-items center
+                background-color var(--background-color);
+                cursor pointer
+                position absolute
+                z-index 2
+                color var(--gray)
+                outline none
+                &.right
+                    right 0
+                &.left
+                    left 0
+                &.hidden
+                    display none
+                &.swiper-button-disabled
+                    color var(--border-color-soft)
+
+        .t-profile-user-slider
+            position relative
+            &:hover
+                .nav-arrows
+                    opacity: 1;
+            .t-profile-user-slide
+                min-height 13.75em
+                position relative
+                background-size: cover
+                background-position: center
+                flex-shrink: 0
+                transition-property: transform
+                &:hover
+                    img
+                        filter brightness(.8)
+                        transition filter linear 300ms
+                    .camera-overlay
+                        opacity 1
+                .camera-overlay
+                    opacity 0
+                    font-size:5em
+                    display grid
+                    place-items center
+                    position absolute
+                    width 100%
+                    height 100%
+                    color var(--white)
+                    left 0
+                    top 0
+                    transition opacity linear 300ms
+                    background-color rgba(0,0,0, .2)
+            .nav-arrows
+                position absolute
+                top 0
+                bottom 0
+                width 3.5em
+                z-index: 1
+                display grid
+                place-items center
+                cursor pointer
+                color var(--white)
+                opacity: 0;
+                transition: opacity var(--timing-fast);
+                &.right
+                    right 0
+                    background: linear-gradient(270deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
+                &.left
+                    left 0
+                    background: linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
+                &.is-disabled
+                    color rgba(255, 255, 255, .4)
+            .nav-bullets
+                position absolute
+                display flex
+                justify-content space-between
+                align-items center
+                flex-grow 1
+                z-index 1
+                gap 1em
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
+                top 0
+                bottom auto
+                left 0
+                padding 0.5rem
+                box-sizing border-box
+                &:empty
+                    display none;
+                .nav-bullet
+                    display flex
+                    flex-grow: 1;
+                    height .25rem;
+                    background: var(--white);
+                    opacity: 0.4;
+                    border-radius: .625rem;
+                    &.is-active
+                        opacity: 0.8
+
+        .t-profile-user-info
+            padding .875em 3em
+
+            .t-profile-user-info-bar
+                display flex
+
+                @media (max-width: 1440px)
+                    display: grid;
+                    grid-template-columns: max-content 1fr;
+                    grid-template-areas: "avatar buttons" "info info";
+
+                .t-profile-userpic
+                    grid-area: avatar;
+
+                    position relative
+                    display flex
+                    flex-wrap: wrap
+                    margin-top -3.5em
+                    margin-right 1em
+                    column-gap: 1.25em;
+                    z-index 1
+
+                    .userpic
+                        box-shadow: 0 0 0 0.25em var(--background-color-blank)
+                        &:hover
+                            img
+                                filter brightness(.8)
+                                transition filter linear 300ms
+                            .camera-overlay
+                                opacity 0.6
+                                cursor pointer
+                        .camera-overlay
+                            opacity 0
+                            font-size:5em
+                            display grid
+                            place-items center
+                            position absolute
+                            width 100%
+                            height 100%
+                            color var(--white)
+                            left 0
+                            top 0
+                            transition opacity linear 300ms
+
+
+                .t-profile-user-data
+                    grid-area: info;
+
+                    @media (max-width: 1440px)
+                        margin-top: 16px;
+
+                    h2
+                     margin-bottom .625rem
+
+                .t-profile-actions-btn
+                    grid-area: buttons;
+                    margin-left auto
+                    display: flex;
+                    align-items: flex-start;
+                    font-size: 14px;
+
+                    @media (max-width: 768px)
+                        font-size: 16px;
+
+            .t-profile-user-info-block
+                margin-top 1.25rem
+                padding-bottom 2.25rem
+                .t-profile-user-details
+                    padding 0
+                    margin 0 0 1.3125rem 0
+                    list-style none
+                        &.login
+                            color var(--menu-glyph-color-hover)
+                            font-weight: bold
+                        &.jobtitle
+                            color var(--menu-glyph-color-hover)
+                            font-size: .875rem
+                            font-weight: 400
+                            .input-editable
+                                width auto !important
+                        &.socialnetwork
+                            .fa-twitter
+                                color #1DA1F2
+                            .fa-facebook-f
+                                color #4267B2
+                            .fa-vk
+                                color #2787f5
+                            .fa-linkedin-in
+                                color #2867B2
+                .fields-group
+                    p
+                        margin 0;
+                .view-mode
+                    .subname
+                    .jobtitle-company
+                    [data-field-id="email"]
+                    [data-field-id="phone"]
+                    [data-field-id="im"]
+                        display none
+                    [data-field-id="socialnetwork"]
+                        .fa-twitter
+                            color #1DA1F2
+                        .fa-facebook-f
+                            color #4267B2
+                        .fa-vk
+                            color #2787f5
+                        .fa-linkedin-in
+                            color #2867B2
+
+            .t-profile-user-info-activity
+                .t-activity
+                    padding-left 0.625rem
+                    list-style none
+                    .t-activity-item
+                        display flex
+                        flex-direction column
+                        padding 0 0 1.25rem 1.375rem
+                        position relative
+                        p
+                            margin 0
+                        .t-app-badge
+                            margin-top -.15rem
+                            .badge
+                                margin-right .5rem
+                        .t-activity-point
+                            position absolute
+                            left: -0.925rem
+                            top: -0.395rem
+                            display: block
+                            width: 1.25em
+                            height: 1.25em
+                            border-radius: 50%
+                            background: var(--red)
+                            border  6px solid var(--background-color-blank)
+                        &:not(:last-child):not(.is-last)
+                            border-left 1px solid var(--border-color-hr)
+                            .activity-photo-wrapper
+                                .activity-photo-list
+                                    display flex
+                                    flex-wrap wrap
+                                    gap 1rem
+                                    margin-top: .5rem;
+                                    .photo-item
+                                        img
+                                            border-radius 0.25rem
+                    .t-month-wrapper
+                        margin-bottom 1.5rem
+                        margin-left -.625rem;
+
+
+.waid-login
+    display inline-flex
+    align-items center
+    margin .5em 0
+
+    .waid-auth-link
+        border-radius 4px;
+        box-shadow 0 5px 10px 0 rgba(0,0,0,0.07)
+        border solid 1px rgba(0,0,0,0.25)
+        background-color #fff
+        color #444
+        padding 8px 12px
+        font-size 16px
+        font-weight bold
+        &:hover
+            box-shadow none
+            color #000 !important
+
+        & > img
+            height 15px
+            vertical-align middle
+
+        & > span
+            display inline-block
+            font-style normal
+            &.wa-logo-web
+                color #000
+            &.wa-logo-a
+                color #0077CC
+                transform rotate(5deg)
+            &.wa-logo-s1
+                color #33BB11
+                transform rotate(-8deg)
+            &.wa-logo-y
+                color #EE5500
+            &.wa-logo-s2
+                color #EEBB11
+                transform rotate(8deg)
+            &.wa-logo-t
+                color #44DDDD
+                transform rotate(3deg)
+
+        & + a
+            margin-left 8px
+
+.t-calendar-place
+        $actions_h = 48px
+
+        position relative
+        overflow hidden
+        padding 0 0 $actions_h
+
+        &.is-short
+            height ( 6.5rem * 2 ) + 26
+
+            .t-actions-wrapper
+                .t-action
+                    &.t-calendar-toggle
+                        svg
+                            transform rotate(0deg)
+
+        .t-calendar-wrapper
+            .t-labels-wrapper
+                background #cec
+
+                table
+                    .t-column
+                        color #aaa
+
+        .t-actions-wrapper
+            position absolute
+            bottom 0
+            left 0
+            width 100%
+            height $actions_h
+            background #fff
+            background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,1) 100%);
+
+            text-align center
+            font-size (13/16)em
+            line-height $actions_h
+            cursor pointer
+
+            .t-layout
+                table-layout fixed
+                .t-column
+                    &.right
+                        padding-right 1em
+
+            .t-action
+                display inline-block
+                vertical-align middle
+                line-height 16px
+
+                .icon16
+                    vertical-align top
+                    margin 0 4px 0 0
+
+                &.t-calendar-toggle
+                    position relative
+                    color #888
+
+                    svg
+                        transform rotate(180deg)
+
+    .t-profile-tabs
+        border 1px solid #ddd
+        box-shadow: 0 2px 9px rgba(0, 0, 0, 0.2);
+
+        // hide contacts-pro tabs that don't make sense
+        [data-tab-id="events"], [data-tab-id="notes"], [data-tab-id="pro-plugin"]
+            display: none;
+
+    .t-profile-tabs-iframes
+        iframe
+            width 100%
+            border 0
+.t-activity-wrapper
+    .t-no-activity
+        padding 1em
+
+    .t-activity-list
+        margin 0
+        padding 0 0 0 12px
+        $icon_w = 16px
+        $icon_top = 13px
+        $pane_w = 2px
+        $pane_c = #ccc
+
+        & > li
+            list-style none
+
+        .t-space-wrapper
+            position relative
+            border-left $pane_w dashed $pane_c
+            padding 10px 0 10px 20px
+            margin 0 0 0 10px
+            height 36px
+
+        .t-month-wrapper
+            margin 20px 0 4px
+
+            & + .t-activity-item
+                &:before
+                    display block
+                    background #fff;
+
+        .t-activity-item
+            position relative
+            border-left $pane_w solid $pane_c
+            padding 10px 0 10px 20px
+            margin 0 0 0 10px
+
+            &:before
+                display none
+                content ""
+                position absolute
+                top 0
+                left (-($pane_w))
+                width $pane_w
+                height ( $icon_top + ($icon_w/2))
+
+            &.is-first
+                &:before
+                    display block
+                    background #fff;
+
+            &.is-last
+                border-color transparent
+                &:before
+                    display block
+                    background $pane_c;
+
+            &:last-child
+                border-color transparent
+                &:before
+                    display block
+                    background $pane_c;
+
+            &.is-last.is-first
+                border-color transparent
+                &:before
+                    display none
+
+            &:first-child
+                $_lift = 16px
+                padding-top (10 + $_lift)
+
+                &.is-last
+                    &:before
+                        height ( $icon_top + ($icon_w/2) ) + $_lift
+
+                .t-activity-point
+                    top (13 + $_lift)
+
+            .t-activity-point
+                position absolute
+                top $icon_top
+                left (($icon_w + $pane_w)/-2)
+                width $icon_w
+                height $icon_w
+                border-radius 50%
+                background #f8f8f8
+                border 1px solid rgba(0,0,0,.05)
+                box-sizing border-box
+
+            .t-activity-block
+                .t-datetime
+                    margin: 4px 0 0
+
+                .t-app
+                .t-username
+                .t-action
+                .activity-target
+                    display inline
+                    vertical-align baseline
+                    box-sizing border-box
+                    margin 0 4px 0 0
+
+                .t-app
+                    display inline-block
+                    padding: 3px 6px
+                    border-radius 2px
+                    border: 1px solid rgba(0,0,0,.05)
+                    color: #fff
+
+                .activity-body
+                    margin 4px 0 0
+                    p
+                        margin: .5em 0 0
+
+                        &:first-child
+                            margin-top 0
+
+                .activity-target
+                    font-weight: bold
+
+                .activity-photo-wrapper
+                    margin: 6px 0 0
+                    padding 0
+                    list-style none
+
+                    .activity-photo-list
+                        .photo-item
+                            display inline-block
+                            vertical-align top
+                            width: 96px
+                            margin: 2px 4px 2px 0
+                            padding 0
+                            text-align center
+
+                            img
+                                display inline-block
+                                vertical-align middle
+                                max-width 100%
+                                max-height 96px
+                                box-sizing border-box
+                                border-radius 2px
+
+    .t-paging-wrapper
+        margin 0
+        padding 1em 2rem
+        color #888
+
+        .icon16
+            position relative
+            top -1px
+            margin 0 4px 0 0
+
+.c-checkbox-menu-container
+    display: inline-block
+    overflow: hidden
+    min-width: 200px
+    width: 65%
+    height: 8.3em
+    border-color: var(--border-color-soft);
+    border-style: solid
+    border-width: 1px
+
+    div
+        overflow: auto;
+        overflow-x: hidden;
+        height: 100%;
+
+    ul.menu-v
+        margin:8px;
+
+.c-checkbox-menu li
+    padding-left 23px !important
+    position relative
+
+    input
+        position absolute
+        left 6px
+        top 4px
+
+    label
+        padding 0 .25em
+
+.t-external-calendar-page
+    line-height 1.4em
+
+    h1
+        margin 0 0 32px
+
+    .line
+        margin .5em 0 0
+
+        &:first-child
+            margin-top 0
+
+    .t-actions
+        margin 2em 0 0
+
+    .profile
+        margin 2em 0 0
+        display table
+
+        &.image32px
+            .image
+                width 32px
+
+        .image
+        .details
+            float: none;
+            display table-cell
+            vertical-align: middle;
+            margin: 0;
+            min-height: auto;
+
+        .image
+            padding-right 1em
+            img
+                width 100%
+                height auto
+
+    span
+    a
+        .icon16
+            vertical-align top
+            margin 0 4px 0 0
+
+    .t-html
+        overflow hidden
+
+    .t-date
+        font-size: 12px;
+        color #aaa
+
+    .t-plugin-icon
+        vertical-align top
+        margin 0 4px 0 0
+
+    .t-calendar-name
+        display inline-block
+        padding 0 4px;
+        border-radius 2px
+
+.t-edit-external-calendar-page
+    form
+        overflow visible
+
+    h1
+        margin 0 0 32px
+
+    .fields
+        float none
+        margin 2em 0 0
+
+    .line
+        margin .5em 0 0
+
+        &:first-child
+            margin-top 0
+
+    .t-date
+        font-size: 12px;
+        color #aaa
+
+    .t-html
+        overflow hidden
+        line-height 1.5em
+
+    .t-buttons-block
+        margin 2em 0 0
+
+    .t-calendar-toggle
+        & > li
+            margin 0
+            padding 0
+            line-height 1.25em
+            display block
+
+            &:hover
+                background transparent
+
+        .t-selected-item
+            display inline-block
+            position relative
+            padding 0 28px 0 0
+            margin 0
+            max-width: 100%;
+            box-sizing border-box
+            white-space nowrap
+            text-overflow ellipsis
+            overflow: hidden
+            color $link_c
+
+            &:hover
+                color $link_c !important
+
+            .is-bold
+                font-weight bold
+
+            .icon16
+                position relative
+                top 3px
+                margin-right 5px
+                vertical-align baseline
+
+            &:after
+                $_icon_w = 8px
+                $_icon_h = 6px
+
+                content: "";
+                position: absolute;
+                top: 50%;
+                right: 15px;
+                width: 0;
+                height: 0;
+                margin (-($_icon_h/4)) (-($_icon_w/2)) 0 0
+                border solid transparent
+                border-width $_icon_h ($_icon_w/2)
+                border-top-color #7c878c
+
+        .menu-v
+            width: 250px
+            max-height 200px
+            overflow auto
+
+            li
+                a
+                    padding: 6px 8px 6px 24px;
+                    margin: -6px -8px -6px -24px;
+
+                    b
+                        font-weight normal
+
+                    i
+                        font-style normal
+
+svg
+    pointer-events none
+
+.t-profile-blocks
+    display: flex;
+    flex-wrap: wrap;
+    margin: 16px -8px 0;
+
+    @media (max-width: 768px)
+        margin: 16px 0 0;
+
+.t-profile-block
+    box-sizing: border-box;
+
+    position: relative;
+    overflow: hidden;
+
+    width: calc(50% - 16px);
+    min-height: 64px;
+    background-color: var(--background-color);
+    border-radius: 12px;
+    padding: 10px 50px 10px 10px;
+    margin: 16px 8px 0;
+
+    @media (max-width: 768px)
+        width: 100%;
+        margin: 16px 0 0;
+
+    &_map
+        flex-grow: 1;
+
+    &__icon
+        display: flex;
+        justify-content: flex-end;
+
+        position: absolute;
+        top: 16px;
+        right: 15px;
+
+        width: 26px;
+        height: 26px;
+        font-size: 1.3rem;
+
+    &__value
+        &-link
+            word-break: break-all;
+
+    &__type
+        color: var(--text-color-hint);
+        font-size: .8125rem;
+
+    &__map
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        #map
+            height: 100%;
+
+.t-profile-username
+    display: inline-block;
+
+.t-profile-group-item
+    &-bullet
+        display: inline-block;
+        color: #bbb;
+        pointer-events: none;
+        user-select: none;
+        -webkit-user-select: none;
+
+.t-profile-im-icon
+    display: inline-block;
+
+    width: 18px;
+    height: 18px;
+
+    text-align: center;
+    margin-right: 6px;

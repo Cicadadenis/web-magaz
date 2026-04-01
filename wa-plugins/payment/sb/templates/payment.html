@@ -1,0 +1,30 @@
+<form id="payment-form" action="{$form_url}" method="get" target="_top">
+    {if $auto_submit}
+        <i class="icon16 loading"></i>
+        <em>Перенаправление на сайт «Сбербанка» для оплаты...</em>
+        <br /><br />
+        <script type="text/javascript">
+            var sb_form = document.getElementById('payment-form');
+            var timer = setTimeout(function () {
+                sb_form.submit();
+                sb_form.querySelector('input[type="submit"]').setAttribute('disabled', 'disabled');
+            }, 5000);
+            sb_form.addEventListener('submit', function() {
+                clearTimeout(timer);
+                sb_form.querySelector('input[type="submit"]').setAttribute('disabled', 'disabled');
+            });
+        </script>
+    {else}
+        <script>
+            var sb_form = document.getElementById('payment-form');
+            sb_form.addEventListener('submit', function() {
+                sb_form.querySelector('input[type="submit"]').setAttribute('disabled', 'disabled');
+            });
+        </script>
+    {/if}
+
+    {foreach $url_params_array as $name => $value}
+        <input type="hidden" name="{$name}" value="{$value}">
+    {/foreach}
+    <input type="submit" value="Оплатить заказ на сайте «Сбербанка»" />
+</form>

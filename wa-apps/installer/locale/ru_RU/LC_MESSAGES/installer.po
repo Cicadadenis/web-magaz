@@ -1,0 +1,545 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WebAsyst\n"
+"POT-Creation-Date: 2011-05-11 17:22+0400\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: WebAsyst Team\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((((n%10)==1)&&((n%100)!=11))?(0):(((((n%10)>=2)&&((n%10)<=4))&&(((n%100)<10)||((n%100)>=20)))?(1):2));\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 2.0.6\n"
+"Language: ru_RU\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: .\n"
+
+msgid "Application"
+msgstr "Приложение"
+
+msgid "Version"
+msgstr "Версия"
+
+msgid "Install"
+msgstr "Установить"
+
+msgid "Do you confirm the installation?"
+msgstr "Вы подтверждаете установку?"
+
+msgid "This will delete the product’s source code and data, without a recovery option. Are you sure?"
+msgstr "Это полностью удалит код и данные продукта без возможности восстановления. Вы уверены?"
+
+msgid "Applications"
+msgstr "Приложения"
+
+msgid "Updates"
+msgstr "Обновления"
+
+msgid "Settings"
+msgstr "Настройки"
+
+msgid "Installer"
+msgstr "Инсталлер"
+
+msgid "Preparing"
+msgstr "Подготовка к установке"
+
+msgid "Creating backup"
+msgstr "Резервное копирование текущей версии"
+
+msgid "Downloading new version"
+msgstr "Загрузка файлов"
+
+msgid "Extracting downloaded files"
+msgstr "Распаковка файлов"
+
+msgid "Replacing files"
+msgstr "Замена файлов обновленными"
+
+msgid "Cleaning up"
+msgstr "Удаление временных файлов"
+
+msgid "Update"
+msgstr "Обновить"
+
+msgid "Resuming"
+msgstr "Возобновление"
+
+msgid "Standing by"
+msgstr "Ожидание"
+
+msgid "Error occurred"
+msgstr "Произошла ошибка"
+
+msgid "Installation completed"
+msgstr "Установка завершена"
+
+msgid "Current version"
+msgstr "Текущая версия"
+
+msgid "New version"
+msgstr "Новая версия"
+
+msgid "An error occurred during the installation."
+msgstr "При установке произошла ошибка."
+
+msgid "Installation has been successfully completed."
+msgstr "Установка успешно завершена."
+
+msgid "Delete"
+msgstr "Удалить"
+
+msgid "Download installation log"
+msgstr "Скачать журнал установки"
+
+msgid "Application not found"
+msgstr "Приложение не найдено"
+
+msgid "Unable to delete the app (developer mode is on)."
+msgstr "Приложение не удалено (активирован режим разработки)."
+
+msgid "A .git or .svn directory has been detected. To ignore the developer mode, add option 'installer_in_developer_mode' => true to wa-config/config.php file."
+msgstr "Обнаружен каталог .git или .svn. Чтобы игнорировать режим разработки, добавьте параметр 'installer_in_developer_mode' => true в файл wa-config/config.php."
+
+msgid "Cannot delete system application “%s”."
+msgstr "Нельзя удалить системное приложение «%s»."
+
+msgid "Update is already in progress. Please wait while the current update session is completed before starting a new session."
+msgstr "Обновление уже запущено и еще не завершено. Пожалуйста, дождитесь окончания предыдущего сеанса обновления, прежде чем запускать его заново."
+
+msgid "application successfully installed"
+msgid_plural "applications successfully installed"
+msgstr[0] "успешно установлено"
+msgstr[1] "успешно установлены"
+msgstr[2] "успешно установлены"
+
+msgid "application failed to install"
+msgid_plural "applications failed to install"
+msgstr[0] "не установлено"
+msgstr[1] "не установлены"
+msgstr[2] "не установлены"
+
+msgid "Application “%s” has been deleted."
+msgid_plural "Applications “%s” have been deleted."
+msgstr[0] "Приложение «%s» удалено."
+msgstr[1] "Приложения «%s» удалены."
+msgstr[2] "Приложений «%s» удалены."
+
+msgid "Installing the application"
+msgid_plural "Installing applications"
+msgstr[0] "Установка"
+msgstr[1] "Установка"
+msgstr[2] "Установка"
+
+msgid "Plugins"
+msgstr "Плагины"
+
+msgid "Themes"
+msgstr "Темы дизайна"
+
+msgid "Please select items for update"
+msgstr "Выберите продукты для обновления"
+
+msgid "Design theme not deleted: .svn or .git folder located in the theme directory."
+msgstr "Тема дизайна не удалена: в директории есть папка с названием .svn или .git."
+
+msgid "Plugin not deleted: .svn or .git folder located in the plugin directory."
+msgstr "Плагин не удален: в директории есть папка с названием .svn или .git."
+
+msgid "Themes not found"
+msgstr "Темы дизайна не найдены"
+
+msgid "Plugins not found"
+msgstr "Плагины не найдены"
+
+msgid "Unable to delete theme “%s”."
+msgstr "Невозможно удалить тему «%s»."
+
+msgid "Unable to delete plugin “%s”."
+msgstr "Невозможно удалить плагин «%s»."
+
+msgid "Plugin “%s“ has been deleted."
+msgid_plural "Plugins “%s“ have been deleted."
+msgstr[0] "Плагин «%s» удален."
+msgstr[1] "Плагины «%s» удалены."
+msgstr[2] "Плагины «%s» удалены."
+
+msgid "Theme “%s“ has been deleted."
+msgid_plural "Themes “%s“ have been deleted."
+msgstr[0] "Тема «%s» удалена."
+msgstr[1] "Темы «%s» удалены."
+msgstr[2] "Темы «%s» удалены."
+
+msgid "All apps are up to date."
+msgstr "Установлены последние версии всех приложений."
+
+msgid "Clear cache"
+msgstr "Очистить кеш"
+
+msgid "Cache cleared"
+msgstr "Кеш очищен"
+
+msgid "Webasyst version"
+msgstr "Версия Вебасиста"
+
+msgid "more"
+msgstr "еще"
+
+msgid "Webasyst framework"
+msgstr "Фреймворк Вебасист"
+
+msgid "Your current version is %s."
+msgstr "Установленная версия: %s"
+
+msgid "“%s”"
+msgstr "«%s»"
+
+msgid "Install all updates"
+msgstr "Установить все обновления"
+
+msgid "License is either expired or not valid for this installation"
+msgstr "Лицензия истекла либо недействительна для данной установки"
+
+msgid "Install update"
+msgstr "Обновить"
+
+msgid "Get license"
+msgstr "Получить лицензию"
+
+msgid "All"
+msgstr "Все"
+
+msgid "Unable to install the product (developer mode is on)."
+msgstr "Невозможно установить продукт (активирован режим разработки)."
+
+msgid "Unable to update the product (developer mode is on)."
+msgstr "Невозможно обновить продукт (активирован режим разработки)."
+
+msgid "Plugin \"<strong>%s</strong>\""
+msgstr "Плагин «<strong>%s</strong>»"
+
+msgid "Theme \"<strong>%s</strong>\""
+msgstr "Тема дизайна «<strong>%s</strong>»"
+
+msgid "Close"
+msgstr "Закрыть"
+
+msgid "Reviews"
+msgstr "Отзывы"
+
+msgid "But with errors:"
+msgstr "С ошибками:"
+
+msgid "Finalizing the installation and redirecting back to the app..."
+msgstr "Завершение установки и перенаправление обратно в приложение..."
+
+msgid "Widgets"
+msgstr "Виджеты"
+
+msgid "Application widget %s has been deleted"
+msgid_plural "Applications widgets %s have been deleted"
+msgstr[0] "Виджет «%s» удален"
+msgstr[1] "Виджеты «%s» удалены"
+msgstr[2] "Виджеты «%s» удалены"
+
+msgid "Unable to delete application's widgets (developer version is on)"
+msgstr "Виджет не удален: в директории есть папка с названием .svn или .git"
+
+msgid "Widget \"<strong>%s</strong>\""
+msgstr "Виджет «<strong>%s</strong>»"
+
+msgid "This widget will be updated automatically when you update %s app."
+msgstr "Виджет будет обновлен автоматически при установке обновления приложения «%s»."
+
+msgid "Cannot delete system app’s widgets \"%s\""
+msgstr "Ошибка удаления виджетов системного приложения «%s»"
+
+msgid "Cannot delete built-in app’s widgets \"%s\""
+msgstr "Ошибка удаления виджетов системного приложения «%s»"
+
+msgid "Gathering information about available updates..."
+msgstr "Сбор информации о доступных обновлениях…"
+
+msgid "Assets"
+msgstr "Активы"
+
+msgid "Plugin <a href=\"%s\">%s</a> (%s)"
+msgstr "Плагин «<a href=\"%s\">%s</a>» (%s)"
+
+msgid "Theme <a href=\"%s\">%s</a> (%s)"
+msgstr "Тема дизайна «<a href=\"%s\">%s</a>» (%s)"
+
+msgid "Widget <a href=\"%s\">%s</a> (%s)"
+msgstr "Виджет «<a href=\"%s\">%s</a>» (%s)"
+
+msgid "Paused"
+msgstr "Выключен"
+
+msgid "Resume"
+msgstr "Включить"
+
+msgid "Pause"
+msgstr "Выключить"
+
+msgid "System requirements not met:"
+msgstr "Системные требования не выполнены:"
+
+msgid "Webasyst Framework version <strong>%s</strong>"
+msgstr "Версия Webasyst — <strong>%s</strong>"
+
+msgid "Manage apps"
+msgstr "Установлено"
+
+msgid "App %s installed"
+msgstr "Приложение «%s» установлено"
+
+msgid "Plugin %s installed"
+msgstr "Плагин «%s» установлен"
+
+msgid "Widget %s installed"
+msgstr "Виджет «%s» установлен"
+
+msgid "Theme %s installed"
+msgstr "Тема «%s» установлена"
+
+msgid "App %s updated"
+msgstr "Приложение «%s» обновлено"
+
+msgid "Plugin %s updated"
+msgstr "Плагин «%s» обновлен"
+
+msgid "Widget %s updated"
+msgstr "Виджет «%s» обновлен"
+
+msgid "Theme %s updated"
+msgstr "Тема «%s» обновлена"
+
+msgid "App %s enabled"
+msgstr "Приложение «%s» включено"
+
+msgid "Plugin %s enabled"
+msgstr "Плагин «%s» включен"
+
+msgid "Widget %s enabled"
+msgstr "Виджет «%s» включен"
+
+msgid "Theme %s enabled"
+msgstr "Тема «%s» включена"
+
+msgid "App %s disabled"
+msgstr "Приложение «%s» отключено"
+
+msgid "Plugin %s disabled"
+msgstr "Плагин «%s» отключен"
+
+msgid "Widget %s disabled"
+msgstr "Виджет «%s» отключен"
+
+msgid "Theme %s disabled"
+msgstr "Тема «%s» отключена"
+
+msgid "App %s uninstalled"
+msgstr "Приложение «%s» удалено"
+
+msgid "Plugin %s uninstalled"
+msgstr "Плагин «%s» удален"
+
+msgid "Widget %s uninstalled"
+msgstr "Виджет «%s» удален"
+
+msgid "Theme %s uninstalled"
+msgstr "Тема «%s» удалена"
+
+msgid "Item installed"
+msgstr "Продукт установлен"
+
+msgid "Item disabled"
+msgstr "Продукт отключен"
+
+msgid "Item updated"
+msgstr "Продукт обновлен"
+
+msgid "Item enabled"
+msgstr "Продукт включен"
+
+msgid "Item uninstalled"
+msgstr "Продукт удален"
+
+msgid "System settings"
+msgstr "Системные настройки"
+
+msgid "<a href=\"%s\">Change system settings in Settings app</a>."
+msgstr "<a href=\"%s\">Управляйте системными настройками в приложении «Настройки»</a>."
+
+msgid "Failed to get the URL of the remote Store"
+msgstr "Не удалось получить URL удаленного Магазина"
+
+msgid "Your review"
+msgstr "Ваш отзыв"
+
+msgid "What you like or dislike about this product"
+msgstr "Что вам нравится и не нравится в этом продукте"
+
+msgid "optional"
+msgstr "необязательно"
+
+msgid "Add a review"
+msgstr "Оставить отзыв"
+
+msgid "Your review has been added, thank you!"
+msgstr "Спасибо, ваш отзыв добавлен!"
+
+msgid "Your rate has been added, thank you!"
+msgstr "Спасибо, ваша оценка добавлена!"
+
+msgid "Add a rate"
+msgstr "Оставить оценку"
+
+msgid "Add a rate and a review"
+msgstr "Оставить оценку и отзыв"
+
+msgid "Change rate"
+msgstr "Изменить оценку"
+
+msgid "Change rate and review"
+msgstr "Изменить оценку и отзыв"
+
+msgid "close"
+msgstr "закрыть"
+
+msgid "Your rates"
+msgstr "Ваши оценки"
+
+msgid "for app"
+msgstr "о приложении"
+
+msgid "for plugin"
+msgstr "о плагине"
+
+msgid "for widget"
+msgstr "о виджете"
+
+msgid "for theme"
+msgstr "о теме"
+
+msgid "You are currently signed into Webasyst as <span class=\"js-customer-center-user-name\"></span>"
+msgstr "Вы авторизованы в Центре заказчика как <span class=\"js-customer-center-user-name\"></span>"
+
+msgid "If you want to add a review as another customer, please <a class=\"js-customer-center-logout-link\">sign out</a>."
+msgstr "Если вы хотите оставить отзыв под другим именем, то <a class=\"js-customer-center-logout-link\">выйдите</a> из текущей учетной записи."
+
+msgid "Contact the developer"
+msgstr "Связь с разработчиком"
+
+msgid "Non-rated products"
+msgstr "Неоцененные продукты"
+
+msgid "Rated products"
+msgstr "Оцененные продукты"
+
+msgid "Rate plugin"
+msgstr "Оцените плагин"
+
+msgid "Rate widget"
+msgstr "Оцените виджет"
+
+msgid "Rate theme"
+msgstr "Оцените тему"
+
+msgid "Rate app"
+msgstr "Оцените приложение"
+
+msgid "System error"
+msgstr "Системная ошибка"
+
+msgid "Unknown error while trying to get licenses."
+msgstr "Неизвестная ошибка при получении лицензий."
+
+msgid "Invalid license ID"
+msgstr "Неверный идентификатор лицензии"
+
+msgid "License not found."
+msgstr "Лицензия не найдена."
+
+msgid "License binding not available."
+msgstr "Привязка лицензии недоступна."
+
+msgid "Unknown error while trying to bind the license."
+msgstr "Неизвестная ошибка при попытке привязки лицензии."
+
+msgid "Not connected with a Webasyst ID contact."
+msgstr "Нет связи с контактом Webasyst ID."
+
+msgid "Product installation is allowed only to users with admin access to Installer app."
+msgstr "Установка продуктов доступна только пользователям с административным доступом к приложению «Инсталлер»."
+
+msgid "License binding is allowed only to users with admin access to Installer app."
+msgstr "Привязка лицензий доступна только пользователям с административным доступом к приложению «Инсталлер»."
+
+msgid "copy"
+msgstr "копировать"
+
+msgid "Installer ID"
+msgstr "ID Инсталлера"
+
+msgid "View..."
+msgstr "Показать..."
+
+msgid "beta version"
+msgstr "бета-версия"
+
+msgid "<p><b>Software product update available for testing purposes, which has not been reviewed by Webasyst.</b></p><p>The beta version will remain available in the updates list, even after its installation, until the developer publishes the product update in the Installer or disables the beta testing option for this product.</p>"
+msgstr "<p><b>Обновление программного продукта, предназначенное для тестирования и не прошедшее проверку модераторами Webasyst.</b></p><p>Бета-версия будет доступна в списке обновлений в том числе после ее установки — до тех пор, пока разработчик не опубликует обновление продукта в магазине Webasyst или не отключит возможность бета-тестирования для этого продукта.</p>"
+
+msgid "<p><b>The beta version was not reviewed by Webasyst!</b></p><p>By installing this non-reviewed beta version you agree that errors in its source code may cause abnormal or insecure functioning of your account. Please report issues to the product developer directly.</p>"
+msgstr "<p><b>Бета-версия не проверялась модераторами Webasyst!</b></p><p>Устанавливая бета-версию, вы соглашаетесь с тем, что ошибки в ее коде могут привести к нарушению работы вашего аккаунта. О проблемах, связанных с использованием бета-версии, сообщайте разработчику продукта.</p>"
+
+msgid "Beta test"
+msgstr "Бета-тест"
+
+msgid "disconnect"
+msgstr "отключить"
+
+msgid "Confirm disconnection from the beta testing of this product"
+msgstr "Подтвердите отключение от бета-тестирования этого продукта"
+
+msgid "Disconnect"
+msgstr "Отключить"
+
+msgid "Cancel"
+msgstr "Отменить"
+
+msgid "Show navigation"
+msgstr "Показать меню"
+
+msgid "Products whose beta testing is enabled for this backend:"
+msgstr "Список продуктов, к бета-тестированию которых подключена установка:"
+
+msgid "Can’t disconnect."
+msgstr "Не удалось выполнить отключение."
+
+msgid "Deletion of design theme “%s” for the “%s” app is unavailable because it is selected as a parent theme for the child themes of apps %s. Before deleting this design theme, either delete all its child themes or change their parent design theme."
+msgstr "Удаление темы дизайна «%s» для приложения «%s» недоступно, потому что она является родительской для дочерних тем приложений %s. Перед удалением этой темы дизайна удалите все ее дочерние темы или смените для них родительскую тему дизайна."
+
+msgid "Never show again"
+msgstr "Больше не показывать"
+
+msgid "App plugin %s has been deleted."
+msgid_plural "App plugins %s have been deleted."
+msgstr[0] "Плагин %s удален."
+msgstr[1] "Плагины %s удалены."
+msgstr[2] "Плагины %s удалены."
+
+msgid "App widget %s has been deleted."
+msgid_plural "App widgets %s have been deleted."
+msgstr[0] "Виджет %s удален."
+msgstr[1] "Виджеты %s удалены."
+msgstr[2] "Виджеты %s удалены."
+
+msgid "App theme %s has been deleted."
+msgid_plural "App themes %s have been deleted."
+msgstr[0] "Тема дизайна %s удалена."
+msgstr[1] "Темы дизайна %s удалены."
+msgstr[2] "Темы дизайна %s удалены."

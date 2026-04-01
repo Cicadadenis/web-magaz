@@ -1,0 +1,38 @@
+{if $type == 'delete-album'}
+    {assign var="title" value="[`Delete album`]"}
+    {include file=$templates_path|cat:"DeleteAlbum.html" assign="text" photos_count=$photos_count}
+{else if $type == 'delete-photos'}
+    {assign var="title" value="[`Delete photos`]"|cat:" <span class='gray'>(":$photos_count:")</span>"}
+    {assign var="text" value={_w('%d photo will be deleted without the ability to restore.', '%d photos will be deleted without the ability to restore.', $photos_count)}|cat:' [`Delete`]':'?'}
+{else if $type == 'delete-photo'}
+    {assign var="title" value="[`Delete photo`]"}
+    {assign var="text" value='[`Photo “%s” will be deleted without the ability to restore. `]'|sprintf:$photo_name|cat:'[`Delete`]':'?'}
+{else if $type == 'unstack'}
+    {assign var="title" value="[`Unstack`]"}
+    {assign var="text" value={_w('This will unstack %d photo.', 'This will unstack %d photos.', $photos_count)}|cat:'[`Are your shure?`]'}
+{/if}
+{if $type|strstr:'delete' !== false}
+    {assign var="button_text" value='[`Delete`]'}
+    {assign var="button_class" value='red'}
+{else}
+    {assign var="button_text" value='[`OK`]'}
+    {assign var="button_class" value='green'}
+{/if}
+<div class="dialog">
+    <div class="dialog-background"></div>
+    <div class="dialog-body">
+        <form method="post" action="">
+            <header class="dialog-header"><h3>{$title}</h3></header>
+
+            <div class="dialog-content">
+                {$text}
+            </div>
+
+            <div class="dialog-footer">
+                <button type="submit" class="button {$button_class}">{$button_text}</button>
+
+                <button type="button" class="button light-gray js-close-dialog">[`Cancel`]</button>
+            </div>
+        </form>
+    </div>
+</div>

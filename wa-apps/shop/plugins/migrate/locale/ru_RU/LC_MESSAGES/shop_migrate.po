@@ -1,0 +1,509 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: shop/plugins/migrate\n"
+"POT-Creation-Date: 2013-02-11 13:34+0400\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: shop/plugins/migrate\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((((n%10)==1)&&((n%100)!=11))?(0):(((((n%10)>=2)&&((n%10)<=4))&&(((n%100)<10)||((n%100)>=20)))?(1):2));\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 2.0.6\n"
+"Language: ru_RU\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: .\n"
+
+msgid "Source"
+msgstr "Источник"
+
+msgid "Platform"
+msgstr "Платформа"
+
+msgid "Select platform"
+msgstr "Выберите платформу"
+
+msgid "Import data"
+msgstr "Импортировать данные"
+
+msgid "Please do not close your browser window and do not leave this page until the entire migration process is finished."
+msgstr "Пожалуйста, не закрывайте браузер и не покидайте эту страницу, пока процесс переноса данных не будет полностью завершен."
+
+msgid "Loading..."
+msgstr "Загрузка..."
+
+msgid "Successfully imported"
+msgstr "Успешно импортировано"
+
+msgid "%02d hr %02d min %02d sec"
+msgstr "%02d ч %02d мин %02d сек"
+
+msgid "(total time: %s)"
+msgstr "(общее время: %s)"
+
+msgid "Migrate to Shop-Script"
+msgstr "Переход на Shop-Script"
+
+msgid "Transfer data from third-party ecommerce platforms and sources to Shop-Script."
+msgstr "Перенос данных из внешних источников и других платформ электронной коммерции в Shop-Script."
+
+msgid "WebAsyst Shop-Script (old version) on the same server"
+msgstr "WebAsyst Shop-Script (старая версия) на этом же сервере"
+
+msgid "WebAsyst Shop-Script (old version) on a remote server"
+msgstr "WebAsyst Shop-Script (старая версия) на удаленном сервере"
+
+msgid "Errors only"
+msgstr "Только ошибки"
+
+msgid "Debug (detailed log)"
+msgstr "Отладка (подробное логирование)"
+
+msgid "Log level"
+msgstr "Уровень логирования"
+
+msgid "Invalid server response with code %d"
+msgstr "Неверный ответ сервера с кодом %d"
+
+msgid "Data access URL"
+msgstr "URL доступа к данным"
+
+msgid "For WebAsyst <strong>PHP software</strong> installed on your server:<br /> 1. Download data access script <a href=\"http://www.webasyst.com/wa-data/public/site/downloads/old-webasyst-export-php.zip\">export.php</a>, and upload it to your Webasyst published/ folder via FTP.<br /> 2. Enter the complete URL to this file, which should look like this: <strong>http://YOUR_WEBASYST_ROOT_URL/published/export.php</strong><br /><br /> For <strong>hosted accounts</strong>: get your Secure Data Access URL in your ACCOUNT.webasyst.net backend’s “Account (link in the top right corner) &gt; System Settings” page."
+msgstr "Для <strong>PHP-скриптов</strong> WebAsyst, установленных на вашем сервере:<br /> 1. Скачайте скрипт доступа к данным <a href=\"http://www.webasyst.com/wa-data/public/site/downloads/old-webasyst-export-php.zip\">export.php</a> и загрузите его по FTP на  сервер с установленными скриптами в директорию published/.<br /> 2. Введите полный URL к этому файлу, который должен иметь следующий вид: <strong>http://YOUR_WEBASYST_ROOT_URL/published/export.php</strong><br /><br /> Для аккаунтов <strong>веб-сервисов</strong>: защищенный URL доступа к данным вашего аккаунта вы можете получить в бекенде вашего аккаунта ACCOUNT.webasyst.net в разделе «Аккаунт (ссылка в верхнем правом углу) &gt; Системные настройки»."
+
+msgid "Login"
+msgstr "Логин"
+
+msgid "WebAsyst user login"
+msgstr "Логин пользователя WebAsyst"
+
+msgid "Password"
+msgstr "Пароль"
+
+msgid "WebAsyst user password"
+msgstr "Пароль пользователя WebAsyst"
+
+msgid "Invalid URL, login or password"
+msgstr "Неверный URL, логин или пароль"
+
+msgid "Invalid server response"
+msgstr "Неверный ответ сервера"
+
+msgid "Path to folder"
+msgstr "Путь к установке"
+
+msgid "Path to folder of the WebAsyst (old version) installation"
+msgstr "Путь к папке с установленными скриптами WebAsyst (старая версия)"
+
+msgid "Invalid PATH %s"
+msgstr "Неверный PATH %s"
+
+msgid "Invalid SQL server name"
+msgstr "Неверное имя SQL-сервера"
+
+msgid "Unknown default currency %s"
+msgstr "Неизвестная основная валюта %s"
+
+msgid "Undefined default langunage"
+msgstr "Неопределенный основной язык"
+
+msgid "Undefined default currency"
+msgstr "Неопределенная основная валюта"
+
+msgid "Don't import"
+msgstr "Не импортировать"
+
+msgid "Importing categories..."
+msgstr "Импорт категорий..."
+
+msgid "Updating category hierarchy..."
+msgstr "Обновление иерархии категорий..."
+
+msgid "Importing products..."
+msgstr "Импорт товаров..."
+
+msgid "Importing pages..."
+msgstr "Импорт страниц..."
+
+msgid "Importing customers..."
+msgstr "Импорт покупателей..."
+
+msgid "Importing currencies..."
+msgstr "Импорт валют..."
+
+msgid "Importing product custom options..."
+msgstr "Импорт дополнительных характеристик товаров..."
+
+msgid "Importing product custom option values..."
+msgstr "Импорт значений дополнительных характеристик товаров..."
+
+msgid "Importing product downloadable files..."
+msgstr "Импорт файлов электронных товаров..."
+
+msgid "Importing product reviews..."
+msgstr "Импорт отзывов о товарах..."
+
+msgid "Importing product images (this is the longest part, please be patient)..."
+msgstr "Импорт изображений товаров (самая длинная часть, подождите, пожалуйста)…"
+
+msgid "Creating product thumbnails..."
+msgstr "Создание эскизов изображений товаров..."
+
+msgid "Creating product sets..."
+msgstr "Создание списков товаров..."
+
+msgid "Source language"
+msgstr "Исходный язык"
+
+msgid "Shop-Script 7 allows storing product info and database content in one language. Select primary language of your WebAsyst Shop-Script-based online store."
+msgstr "Shop-Script 7 позволяет хранить информацию о товарах и содержимое базы данных на одном языке. Выберите основной язык вашего магазина на базе WebAsyst Shop-Script."
+
+msgid "Currency"
+msgstr "Валюта"
+
+msgid "Product type"
+msgstr "Тип товаров"
+
+msgid "Selected product type will be applied to all imported products"
+msgstr "Выбранный тип будет присвоен всем импортированным товарам."
+
+msgid "Custom parameters"
+msgstr "Дополнительные параметры"
+
+msgid "Contact fields map"
+msgstr "Контактные данные покупателей"
+
+msgid "There no options to import"
+msgstr "Нет характеристик для импорта"
+
+msgid "Ignore this field"
+msgstr "Игнорировать это поле"
+
+msgid "There no customer fields to import"
+msgstr "Нет полей с данными контактов для импорта"
+
+msgid "Feature"
+msgstr "Характеристика"
+
+msgid "Content will be imported as a fixed descriptive product field"
+msgstr "Содержимое будет импортировано в виде фиксированной строки текста"
+
+msgid "Service"
+msgstr "Услуга"
+
+msgid "Services feature allows customers to customize product when adding it to shopping cart (either select or unselect particular service with the product)"
+msgstr "Услуги позволяют покупателям изменять ценность приобретаемого товара при добавлении его в корзину (выбрав либо отменив выбор какой-либо услуги, предлагаемой вместе с товаром)"
+
+msgid "SKU"
+msgstr "Артикул"
+
+msgid "SKUs feature allows tracking inventory by multiple stocks. Multiple product SKUs (purchase options) will be created according to this custom option value set"
+msgstr "Артикулы (SKU, вариации товаров) позволяют отслеживать складские остатки по нескольким складам. В соответствии с этим набором значений дополнительных характеристик можно создавать множественные вариации товаров."
+
+msgid "Add as new feature"
+msgstr "Добавить в качестве новой характеристики"
+
+msgid "Add to existing"
+msgstr "Добавить к существующей"
+
+msgid "Add as new service"
+msgstr "Добавить в качестве новой услуги"
+
+msgid "Importing orders..."
+msgstr "Импорт заказов..."
+
+msgid "Status map"
+msgstr "Статусы заказов"
+
+msgid "Select target order state"
+msgstr "Выберите соответствующий статус заказа"
+
+msgid "Importing taxes..."
+msgstr "Импорт налогов..."
+
+msgid "Importing customer categories..."
+msgstr "Импорт категорий покупателей..."
+
+msgid "Preserve IDs"
+msgstr "Сохранять ID"
+
+msgid "If product (or category) with a particular ID already exists in your new store, delete it and replace with the imported data."
+msgstr "Если товар (или категория) с заданным ID уже существует, удалить его (ее) и импортировать заново"
+
+msgid "Importing coupons..."
+msgstr "Импорт купонов..."
+
+msgid "PHP extension curl not loaded"
+msgstr "Для работы импорта требуется поддержка PHP-расширения curl"
+
+msgid "Error while init Curl"
+msgstr "Ошибка инициализации Curl"
+
+msgid "Curl error %d#:%s"
+msgstr "Ошибка Curl %d#:%s"
+
+msgid "%d tax"
+msgid_plural "%d taxes"
+msgstr[0] "%d налоговое правило"
+msgstr[1] "%d налоговых правила"
+msgstr[2] "%d налоговых правил"
+
+msgid "%d category"
+msgid_plural "%d categories"
+msgstr[0] "%d категория"
+msgstr[1] "%d категории"
+msgstr[2] "%d категорий"
+
+msgid "%d product"
+msgid_plural "%d products"
+msgstr[0] "%d товар"
+msgstr[1] "%d товара"
+msgstr[2] "%d товаров"
+
+msgid "%d product review"
+msgid_plural "%d product reviews"
+msgstr[0] "%d отзыв о товарах"
+msgstr[1] "%d отзыва о товарах"
+msgstr[2] "%d отзывов о товарах"
+
+msgid "%d customer"
+msgid_plural "%d customers"
+msgstr[0] "%d покупатель"
+msgstr[1] "%d покупателя"
+msgstr[2] "%d покупателей"
+
+msgid "%d customer category"
+msgid_plural "%d customer categories"
+msgstr[0] "%d группа покупателей"
+msgstr[1] "%d группы покупателей"
+msgstr[2] "%d групп покупателей"
+
+msgid "%d image"
+msgid_plural "%d images"
+msgstr[0] "%d изображение товаров"
+msgstr[1] "%d изображения товаров"
+msgstr[2] "%d изображений товаров"
+
+msgid "%d product file"
+msgid_plural "%d product files"
+msgstr[0] "%d файл товаров"
+msgstr[1] "%d файла товаров"
+msgstr[2] "%d файлов товаров"
+
+msgid "%d order"
+msgid_plural "%d orders"
+msgstr[0] "%d заказ"
+msgstr[1] "%d заказа"
+msgstr[2] "%d заказов"
+
+msgid "%d coupon"
+msgid_plural "%d coupons"
+msgstr[0] "%d купон на скидку"
+msgstr[1] "%d купона на скидку"
+msgstr[2] "%d купонов на скидку"
+
+msgid "%d page"
+msgid_plural "%d pages"
+msgstr[0] "%d страница"
+msgstr[1] "%d страницы"
+msgstr[2] "%d страниц"
+
+msgid "Default product type"
+msgstr "Обычный товар"
+
+msgid "Add as new order state"
+msgstr "Добавить как новый статус заказа"
+
+msgid "Without dimension"
+msgstr "Без размерности"
+
+msgid "Add as new product type"
+msgstr "Добавить новый тип товаров"
+
+msgid "Add as a new contact field"
+msgstr "Добавить как новое поле контакта"
+
+msgid "Storefront"
+msgstr "Витрина"
+
+msgid "Shop-Script settlement for static info pages"
+msgstr "Витрина для публикации информационных страниц"
+
+msgid "Weight"
+msgstr "Вес"
+
+msgid "Select feature defining product weight."
+msgstr "Выберите характеристику, соответствующую весу товара."
+
+msgid "Source weight unit: <strong>%s</strong>"
+msgstr "Исходная единица веса: <strong>%s</strong>."
+
+msgid "Migrate aux pages, categories, products with params, features, images and eproduct files"
+msgstr "Перенос информационных страниц, товаров, характеристик, изображений и категорий товаров"
+
+msgid "%d currency"
+msgid_plural "%d currencies"
+msgstr[0] "%d валюта"
+msgstr[1] "%d валюты"
+msgstr[2] "%d валют"
+
+msgid "Feed URL"
+msgstr "Адрес YML-файла"
+
+msgid "Specify YML feed URL."
+msgstr "Укажите URL файла данных в формате YML"
+
+msgid "Empty URL for YML"
+msgstr "Не указан URL"
+
+msgid "Error while upload YML file: %s"
+msgstr "Произошла ошибка при загрузке YML-файла: %s"
+
+msgid "Connect"
+msgstr "Загрузить"
+
+msgid "YML feed file"
+msgstr "YML-файл"
+
+msgid "YML"
+msgstr "YML"
+
+msgid "Transfer data from other ecommerce platforms to Shop-Script"
+msgstr "Перенос данных в Shop-Script из других CMS для интернет-магазинов"
+
+msgid "OpenCart 1.5.x with Web API 1.0 plugin"
+msgstr "OpenCart 1.5.x с установленным плагином Web API 1.0"
+
+msgid "Migrate data from <a href=\"http://www.opencart.com\" target=\"_blank\">OpenCart</a>-powered online store via Web API 1.0 OpenCart plugin.<br><br><strong>IMPORTANT:</strong> <a href=\"http://www.opencart.com/index.php?route=extension/extension/info&extension_id=14754\" target=\"_blank\">Opencart API plugin</a> must be installed to export your data from OpenCart."
+msgstr "Перенос данных из интернет-магазина на основе <a href=\"http://www.opencart.com\" target=\"_blank\">OpenCart</a> с установленным плагином Web API 1.0.<br><br><strong>ВАЖНО:</strong> Для переноса данных в вашу установку OpenCart нужно обязательно добавить плагин <a href=\"https://github.com/zenwalker/opencart-webapi/\" target=\"_blank\">Web API 1.0 OpenCart</a>, иначе перенос работать не будет."
+
+msgid "Weight unit"
+msgstr "Единица измерения веса"
+
+msgid "Order currency"
+msgstr "Валюта заказов"
+
+msgid "Import data from %s"
+msgstr "Импортировать данные из %s"
+
+msgid "Store name"
+msgstr "Название магазина"
+
+msgid "Source locale"
+msgstr "Язык источника"
+
+msgid "Source currency code"
+msgstr "Валюта источника"
+
+msgid "%d product's option"
+msgid_plural "%d product's options"
+msgstr[0] "%d характеристика товаров"
+msgstr[1] "%d характеристики товаров"
+msgstr[2] "%d характеристик товаров"
+
+msgid "Updating product categories"
+msgstr "Обновление категорий товаров"
+
+msgid "Undefined default language"
+msgstr "Не задан базовый язык для импорта данных"
+
+msgid "Bitrix"
+msgstr "1С-Битрикс"
+
+msgid "Data to import"
+msgstr "Что импортировать"
+
+msgid "Import all products, categories, customers, and orders"
+msgstr "Импортировать все товары, категории, покупателей и товары"
+
+msgid "Import only orders and customers starting from"
+msgstr "Импортировать только заказы и покупателей начиная с указанной даты"
+
+msgid "Enable WooCommerce REST API and obtain Consumer Key and Consumer Secret according to this guide: <a href=\"%1$s\" target=\"_blank\">%1$s</a>"
+msgstr "Включите WooCommerce REST API и получите Consumer Key и Consumer Secret по этой инструкции: <a href=\"%1$s\" target=\"_blank\">%1$s</a>"
+
+msgid "Migrate data from <a href=\"http://www.woothemes.com/woocommerce/\" target=\"_blank\">WooCommerce</a>-powered online store (a plugin that enables ecommerce functionality for WordPress)."
+msgstr "Импортируйте данные из интернет-магазина на основе <a href=\"http://www.woothemes.com/woocommerce/\" target=\"_blank\">WooCommerce</a> — плагина, добавляющего функции интернет-магазина для WordPress."
+
+msgid "Enter your main WordPress blog URL"
+msgstr "Введите URL вашего блога на WordPress"
+
+msgid "Enter your OpenCart installation URL"
+msgstr "Введите URL вашей установки OpenCart"
+
+msgid "Import data from an online store powered by <a href=\"http://magento.com\" target=\"_blank\">Magento</a> CE 1.7 and later or Magento EE 1.12 and later."
+msgstr "Импорт данных из интернет-магазина на основе <a href=\"http://magento.com\" target=\"_blank\">Magento</a> CE 1.7 и старше либо Magento EE 1.12 и старше."
+
+msgid "Enter the URL of your Magento storefront. Make sure to enter storefront URL, not admin URL."
+msgstr "Введите URL вашей витрины Magento. Не перепутайте его с URL раздела администратора."
+
+msgid "Path to Magento admin (backend)"
+msgstr "Путь к административному разделу (бекенду) Magento"
+
+msgid "Magento URL"
+msgstr ""
+
+msgid "Admin mode path"
+msgstr "Путь к разделу администрирования"
+
+msgid "Consumer Key"
+msgstr ""
+
+msgid "Consumer Secret"
+msgstr ""
+
+msgid "Verifier code"
+msgstr ""
+
+msgid "Empty URL"
+msgstr "Пустой URL"
+
+msgid "Invalid URL"
+msgstr "Недопустимый URL"
+
+msgid "Magento installation was not found by this URL: %s"
+msgstr "Установка Magento не найдена по этому URL: %s"
+
+msgid "empty server response"
+msgstr "пустой ответ сервера"
+
+msgid "Empty value"
+msgstr "Пустое значение"
+
+msgid "Invalid value"
+msgstr "Недопустимое значение"
+
+msgid "Paste Magento verifier code to continue"
+msgstr "Вставьте Magento verifier code, чтобы продолжить"
+
+msgid "Empty server response"
+msgstr "Пустой ответ сервера"
+
+msgid "unexpected server response"
+msgstr "неожиданный ответ сервера"
+
+msgid "1. Click this link: <a href=\"%1$s\" target=\"_blank\" style=\"color: #03c;\"><b>%1$s</b><i class=\"icon10 new-window\"></i></a><br> 2. Copy <b>verifier code</b> from the Magento window and paste in the field above.<br> 3. Click <b>Connect</b>. This will grant API access to your data in Magento admin mode."
+msgstr "1. Перейдите по ссылке: <a href=\"%1$s\" target=\"_blank\" style=\"color: #03c;\"><b>%1$s</b><i class=\"icon10 new-window\"></i></a><br> 2. Скопируйте <b>verifier code</b> и окна Magento и вставьте его в поле выше.<br> 3. Щелкните по <b>Connect</b>, чтобы предоставить API-доступ к вашим данным в режиме администрирование Magento."
+
+msgid "Get new verifier code"
+msgstr "Получить новый verifier code"
+
+msgid "This will generate new Magento request link so you can copy the new verifier code"
+msgstr "Это сгенерирует новую ссылку для запросов к Magento, чтобы вы могли скопировать новый verifier code"
+
+msgid "WordPress URL"
+msgstr ""
+
+msgid "Woocommerce plugin version"
+msgstr "Версия плагина Woocommerce"
+
+msgid "Woocommerce plugin version should be 2.2 or later"
+msgstr "Версия плагина Woocommerce должна быть не ниже 2.2"
+
+msgid "Invalid URL: http:// or https:// is expected at the beginning."
+msgstr "Неправильный URL: в начале ожидается http:// or https://."
+
+msgid "Invalid URL: missing host name."
+msgstr "Неправильный URL: отсутствует имя хоста."

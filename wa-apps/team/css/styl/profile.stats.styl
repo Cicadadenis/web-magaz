@@ -1,0 +1,192 @@
+$_bg_color = var(--background-color-blank)
+
+.t-stats-wrapper
+    position relative
+
+    &:after
+        content ""
+        position absolute
+        top 0
+        left 0
+        width 100%
+        height 100%
+        opacity 0
+        visibility hidden
+        background var(--background-color-blank)
+        transition opacity 200ms linear
+
+    &.is-loading
+        &:after
+            visibility visible
+            opacity .8
+
+    .t-header-wrapper
+        padding $pad
+
+        .t-filters
+            margin 0
+            padding 0
+            $_filters_lh = 24px
+
+            .t-filter
+                display inline-block
+                padding 0
+                margin 0 0 0 1em
+                list-style none
+
+            .t-period-filter
+                padding 0
+
+                input[type="text"]
+                    width 80px
+
+                input
+                select
+                    margin 0 4px
+
+    .t-graph-wrapper
+        position relative
+        pointer-events all
+
+        .t-graph
+            position relative
+            width 100%
+            height 0
+            padding 0 0 ( (9/16) * 100 / 2 )%
+            overflow hidden
+
+            svg
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+
+                path
+                    fill: #f0f0f0;
+                    stroke-width 0
+                    shape-rendering: auto
+
+                rect
+                    stroke-width 1px
+                    stroke $_bg_color
+                    fill: var(--light-gray)
+                    shape-rendering: auto
+
+                .axis
+                    path
+                    line
+                        fill: none;
+                        stroke: var(--gray);
+                        shape-rendering: crispEdges;
+
+                    text
+                        font-family: sans-serif;
+                        font-size: 11px;
+                        fill: var(--gray);
+
+                    .x
+                        .domain
+                            stroke-width: 1px;
+                            stroke: var(--gray);
+
+                        line
+                            display none
+
+                    .y
+                        .domain
+                            display none;
+
+                        line
+                            stroke: var(--gray);
+
+                        text
+                            fill: var(--gray);
+
+                .background
+                    opacity 0.05
+
+                    line
+                        stroke: var(--blue);
+                        shape-rendering: crispEdges;
+
+                        &:first-child
+                            shape-rendering: auto;
+
+                    rect
+                        fill: #fcfeff
+
+        .t-hint-wrapper
+            display block
+            visibility hidden
+            position absolute
+            top 0
+            left 0
+            padding $pad
+            border-radius 2px
+            max-width 500px
+            background #fff
+            box-shadow 0 0 15px rgba(0,0,0,.1)
+            transition opacity 200ms linear
+            opacity 0
+
+            // delete after
+            //width 200px
+            //min-height 100px
+
+            &.is-shown
+                visibility visible
+                opacity 1
+
+            .t-line
+                margin 4px 0 0
+
+                &:first-child
+                    margin-top 0
+
+                .t-date
+                    font-size (12/$rem)em
+                    color var(--text-color-hint)
+
+                .t-value
+                    font-weight bold
+
+    .t-status-wrapper
+        padding 1em
+
+        .t-status-list
+            margin 0
+            padding 0
+
+            .t-status-item
+                margin .5em 0 0
+                padding 0
+                list-style none
+
+                &:first-child
+                    margin-top 0
+
+                .t-name
+                .t-divider
+                .t-count
+                    display inline-block
+                    vertical-align top
+                    line-height $event_h
+
+                .t-divider
+                    margin 0 4px
+
+                .t-name
+                    height: $event_h;
+                    padding: 0 4px;
+                    box-sizing: border-box;
+
+                    border-radius: 2px;
+                    border: 1px solid rgba(0,0,0,0.02);
+                    background: #f8f8f8;
+                    font-size: .9285714285714286em;
+                    line-height: $event_h;
+
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    cursor: default;

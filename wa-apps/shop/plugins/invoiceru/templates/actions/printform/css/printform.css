@@ -1,0 +1,292 @@
+html,
+body {
+  margin: 0;
+  padding: 5px;
+  background-color: #fff;
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 11px;
+  line-height: 1.3em;
+}
+form {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+table {
+  width: 100%;
+  border: 0;
+  border-collapse: collapse;
+}
+td.right {
+  text-align: right;
+}
+td.center {
+  text-align: center;
+}
+td.left {
+  text-align: left;
+}
+p {
+  padding: 0;
+  margin: 8px 0;
+}
+p:first-child {
+  margin-top: 0;
+}
+p:last-child {
+  margin-bottom: 0;
+}
+h1 {
+  margin-top: 0;
+  font-family: inherit;
+  font-size: 16px;
+  color: #000;
+  font-weight: normal;
+}
+.s-form-section .bold {
+  font-weight: bold;
+}
+.s-form-section .nobr,
+.s-form-section .nowrap {
+  white-space: nowrap;
+}
+.s-form-section .s-editable {
+  display: inline-block;
+  border-bottom: 1px solid #000;
+  white-space: nowrap;
+  min-height: 1.3em;
+  line-height: 1.3em;
+}
+.s-form-section div.s-editable {
+  display: block;
+  width: 100%;
+}
+.s-form-section .s-layout {
+  display: table;
+  width: 100%;
+}
+.s-form-section .s-layout.inline {
+  width: auto;
+}
+.s-form-section .s-layout.fixed {
+  table-layout: fixed;
+}
+.s-form-section .s-layout > .s-column {
+  display: table-cell;
+  vertical-align: top;
+}
+.s-form-section .s-layout > .s-column.middle {
+  vertical-align: middle;
+}
+.s-form-section .s-layout > .s-column.bottom {
+  vertical-align: bottom;
+}
+.s-form-section .s-layout > .s-column.baseline {
+  vertical-align: baseline;
+}
+.s-form-section .s-layout > .s-column.center {
+  text-align: center;
+}
+.s-form-section .s-layout > .s-column.right {
+  text-align: right;
+}
+.s-form-section .s-header-wrapper .s-header-notation {
+  white-space: nowrap;
+  text-align: right;
+  font-size: 9px;
+  color: #000;
+}
+.s-form-section .s-header-wrapper .s-header-notation .line {
+  margin-top: 2px;
+}
+.s-form-section .s-header-wrapper .s-header-notation .line:first-child {
+  margin-top: 0;
+}
+.s-form-section .s-header-wrapper .s-header-block {
+  margin: 5px 0 0;
+  text-align: center;
+  font-size: 16px;
+}
+.s-form-section .s-header-wrapper .s-header-block table {
+  display: inline-block;
+  width: auto;
+}
+.s-form-section .s-header-wrapper .s-header-block table tr td {
+  padding: 1px 0 1px 8px;
+}
+.s-form-section .s-header-wrapper .s-header-block table tr td:first-child {
+  padding-left: 0;
+}
+.s-form-section .s-header-wrapper .s-header-block table .s-title {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.s-form-section .s-header-wrapper .s-header-block table .s-field-1 {
+  min-width: 170px;
+}
+.s-form-section .s-header-wrapper .s-header-block table .s-field-2 {
+  min-width: 30px;
+}
+.s-form-section .s-header-wrapper .s-header-block table .s-field-3 {
+  min-width: 250px;
+}
+.s-form-section .s-details-section {
+  margin: 5px 0 0;
+}
+.s-form-section .s-details-section table tr td {
+  padding: 2px;
+}
+.s-form-section .s-details-section table tr td.s-column-id {
+  width: 30px;
+  text-align: center;
+}
+.s-form-section .s-details-section .s-column-title,
+.s-form-section .s-details-section .s-column-value {
+  padding: 1px 0;
+}
+.s-form-section .s-details-section .s-column-title {
+  width: 1px;
+  padding-right: 1em;
+  white-space: nowrap;
+}
+.s-form-section .s-details-section .s-column-value .s-editable {
+  min-width: 50px;
+  padding-bottom: 1px;
+}
+.s-form-section .s-details-section .s-column-value:not(.no-border) {
+  border-bottom: 1px solid #000;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 0;
+}
+.s-form-section .s-details-section .s-column-value:not(.no-border) .s-editable {
+  border: 0;
+  padding-bottom: 0;
+}
+.s-form-section .s-details-section .s-column-field {
+  padding: 0 1em;
+  box-sizing: border-box;
+}
+.s-form-section .s-details-section .s-column-field:last-child {
+  padding-right: 0;
+}
+.s-form-section .s-details-section .s-column-field .s-editable {
+  padding-left: 1em;
+  padding-right: 1em;
+  box-sizing: border-box;
+}
+.s-form-section .s-items-section {
+  margin: 5px 0 0;
+  font-size: 10px;
+}
+.s-form-section .s-items-section table td {
+  padding: 1px 2px;
+}
+.s-form-section .s-items-section table td.s-column-1 {
+  width: 16%;
+  white-space: normal;
+}
+.s-form-section .s-items-section table thead td {
+  font-size: 9px;
+  text-align: center;
+}
+.s-form-section .s-items-section .s-editable {
+  border: 0;
+  padding-bottom: 0;
+  white-space: normal;
+}
+.s-form-section .s-items-section .b_left {
+  border-left: 1px solid #000;
+}
+.s-form-section .s-items-section .b_right {
+  border-right: 1px solid #000;
+}
+.s-form-section .s-items-section .b_bottom {
+  border-bottom: 1px solid #000;
+}
+.s-form-section .s-items-section .b_top {
+  border-top: 1px solid #000;
+}
+.s-form-section .s-form-footer {
+  margin: 5px 0 0;
+  text-align: center;
+}
+.s-form-section .s-form-footer > .s-layout {
+  margin: 1em 0 0;
+}
+.s-form-section .s-form-footer > .s-layout:first-child {
+  margin-top: 0;
+}
+.s-form-section .s-form-footer > .s-layout > .s-column {
+  padding: 0 1em;
+  box-sizing: border-box;
+}
+.s-form-section .s-form-footer > .s-layout > .s-column:first-child {
+  padding-left: 0;
+}
+.s-form-section .s-form-footer > .s-layout > .s-column:last-child {
+  padding-right: 0;
+}
+.s-form-section .s-form-footer table td {
+  padding: 0 0 0 1em;
+  vertical-align: bottom;
+  white-space: nowrap;
+}
+.s-form-section .s-form-footer table td:first-child {
+  padding-left: 0;
+}
+.s-form-section .s-form-footer table td.s-column-1 {
+  width: 1px;
+  text-align: left;
+}
+.s-form-section .s-form-footer .s-underlined {
+  border-bottom: 1px solid #000;
+  padding: 0 1em 1px;
+}
+.s-form-section .s-form-footer .s-small {
+  font-size: 9px;
+}
+@media screen {
+  .s-form-section input,
+  .s-form-section .noprint {
+    display: inline;
+    height: auto;
+  }
+  .s-form-section .s-editable {
+    background: #fafae7;
+  }
+  .s-form-section .s-editable:hover {
+    background: #fafae7;
+  }
+  .s-form-section .printable {
+    display: none;
+  }
+}
+@media print {
+  .s-form-section table tbody tr {
+    page-break-before: auto;
+    page-break-inside: avoid;
+  }
+  .s-form-section table tbody tr.tfoot {
+    page-break-before: avoid;
+    page-break-inside: avoid;
+  }
+  .s-form-section table tfoot {
+    page-break-before: avoid;
+    page-break-inside: avoid;
+  }
+  .s-form-section table tfoot tr {
+    page-break-inside: avoid;
+  }
+  .s-form-section .s-form-footer {
+    page-break-before: auto;
+    page-break-inside: avoid;
+  }
+  .s-form-section input,
+  .s-form-section .noprint {
+    display: none;
+  }
+  .s-form-section .printable {
+    display: inline;
+  }
+}

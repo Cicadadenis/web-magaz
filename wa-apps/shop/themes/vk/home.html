@@ -1,0 +1,90 @@
+<!-- get products from predefined product lists 'promo' and 'bestsellers' -->
+{$promos = $wa->shop->productSet('promo')}
+{$bestsellers = $wa->shop->productSet('bestsellers')}
+
+{if (empty($promos) && empty($bestsellers))}
+
+    <div class="welcome">
+        <h1>[`Welcome to your new online store!`]</h1>
+        <p>{sprintf('[`Start by <a href="%s">creating a product</a> in your store backend.`]', $wa_backend_url|cat:'shop/?action=products#/welcome/')}</p>
+    </div>
+
+{else}
+
+    <!-- top products -->
+    <div class="promo">
+        {if $promos && count($promos)}
+            {strip}
+            <ul class="bxslider">
+                {foreach $promos as $_product}
+                    <li class="s-slide-wrapper" itemscope itemtype="http://schema.org/Product">
+                        <div class="s-slide">
+                            <div class="s-info-column">
+                                <div class="s-info-wrapper">
+                                    <h2 itemprop="name">
+                                        <a class="name" href="{$_product.frontend_url}" title="{$_product.name}{if $_product.summary} &ndash; {strip_tags($_product.summary)|escape}{/if}">{$_product.name}</a>
+                                    </h2>
+                                    <div class="s-price-wrapper">
+                                        <span class="price nowrap">{shop_currency_html($_product.price)}</span>
+                                        {if $_product.compare_price > 0}
+                                            <span class="compare-at-price nowrap"> {shop_currency($_product.compare_price)} </span>
+                                        {/if}
+                                    </div>
+                                    {if $_product.summary}
+                                        <p itemprop="description">{strip_tags($_product.summary)}</p>
+                                    {/if}
+                                </div>
+                            </div>
+                            <div class="s-image-column">
+
+                                <div class="s-image-wrapper">
+                                    {$wa->shop->productImgHtml($_product, '350', ['itemprop' => 'image', 'alt' => $_product.name, 'default' => "`$wa_theme_url`img/dummy200.png"])}
+                                    {$badge_html = $wa->shop->badgeHtml($_product.badge)}
+                                    {if $badge_html}
+                                        <div class="corner top right">{$badge_html}</div>
+                                    {/if}
+                                </div>
+
+                            </div>
+                        </div>
+                    </li>
+                {/foreach}
+            </ul>
+            {/strip}
+        {else}
+            <p class="hint align-center"><br><br><em>{sprintf('[`Product set with the ID <strong>%s</strong> either does not exist or does not contain any product. Add some products into a product set with the specified ID to make these products featured here.`]','promo')}</em></p>
+        {/if}
+    </div>
+
+    {if $promocards = $wa->shop->promos('link', '900')}
+        <!-- PROMOS -->
+        <section class="promos">
+            <ul>
+                {foreach $promocards as $promo}
+                    <li id="s-promo-{$promo.id}">
+                        <a href="{$promo.link|escape}" style="background-image: url('{$promo.image}');">
+                            <div class="background-color-layer"></div>
+                            {if !empty($promo.title)}<h5 style="color: {$promo.color};">{$promo.title|escape}</h5>{/if}
+                            {if !empty($promo.body)}<p style="color: {$promo.color};">{$promo.body|escape}</p>{/if}
+                        </a>
+                    </li>
+                {/foreach}
+            </ul>
+        </section>
+    {/if}
+
+    <!-- plugin hook: 'frontend_homepage' -->
+    {* @event frontend_homepage.%plugin_id% *}
+    {foreach $frontend_homepage as $_}{$_}{/foreach}
+
+    <div class="content align-center">
+
+        {if $bestsellers}
+            {include file="list-thumbs.html" products=$bestsellers}
+        {else}
+            <p class="hint align-center"><em>{sprintf('[`Product set with the ID <strong>%s</strong> either does not exist or does not contain any product. Add some products into a product set with the specified ID to make these products featured here.`]','bestsellers')}</em></p>
+        {/if}
+
+    </div>
+
+{/if}

@@ -1,0 +1,6716 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WebAsyst\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2023-03-22 12:26+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((((n%10)==1)&&((n%100)!=11))?(0):(((((n%10)>=2)&&((n%10)<=4))&&(((n%100)<10)||((n%100)>=20)))?(1):2));\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 2.0.6\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: .\n"
+
+msgid "0"
+msgstr "ноль"
+
+msgid "1"
+msgid_plural "1"
+msgstr[0] "один"
+msgstr[1] "одна"
+msgstr[2] "один"
+
+msgid "2"
+msgid_plural "2"
+msgstr[0] "два"
+msgstr[1] "две"
+msgstr[2] "два"
+
+msgid "3"
+msgstr "три"
+
+msgid "4"
+msgstr "четыре"
+
+msgid "5"
+msgstr "пять"
+
+msgid "6"
+msgstr "шесть"
+
+msgid "7"
+msgstr "семь"
+
+msgid "8"
+msgstr "восемь"
+
+msgid "9"
+msgstr "девять"
+
+msgid "10"
+msgstr "десять"
+
+msgid "11"
+msgstr "одиннадцать"
+
+msgid "12"
+msgstr "двенадцать"
+
+msgid "13"
+msgstr "тринадцать"
+
+msgid "14"
+msgstr "четырнадцать"
+
+msgid "15"
+msgstr "пятнадцать"
+
+msgid "16"
+msgstr "шестнадцать"
+
+msgid "17"
+msgstr "семнадцать"
+
+msgid "18"
+msgstr "восемнадцать"
+
+msgid "19"
+msgstr "девятнадцать"
+
+msgid "20"
+msgstr "двадцать"
+
+msgid "30"
+msgstr "тридцать"
+
+msgid "40"
+msgstr "сорок"
+
+msgid "50"
+msgstr "пятьдесят"
+
+msgid "60"
+msgstr "шестьдесят"
+
+msgid "70"
+msgstr "семьдесят"
+
+msgid "80"
+msgstr "восемьдесят"
+
+msgid "90"
+msgstr "девяносто"
+
+msgid "100"
+msgstr "сто"
+
+msgid "200"
+msgstr "двести"
+
+msgid "300"
+msgstr "триста"
+
+msgid "400"
+msgstr "четыреста"
+
+msgid "500"
+msgstr "пятьсот"
+
+msgid "600"
+msgstr "шестьсот"
+
+msgid "700"
+msgstr "семьсот"
+
+msgid "800"
+msgstr "восемьсот"
+
+msgid "900"
+msgstr "девятьсот"
+
+msgid "1000"
+msgid_plural "1000"
+msgstr[0] "тысяча"
+msgstr[1] "тысячи"
+msgstr[2] "тысяч"
+
+msgid "1000000"
+msgid_plural "1000000"
+msgstr[0] "миллион"
+msgstr[1] "миллиона"
+msgstr[2] "миллионов"
+
+msgid "1000000000"
+msgid_plural "1000000000"
+msgstr[0] "миллиард"
+msgstr[1] "миллиарда"
+msgstr[2] "миллиардов"
+
+msgid "1000000000000"
+msgid_plural "1000000000000"
+msgstr[0] "триллион"
+msgstr[1] "триллиона"
+msgstr[2] "триллионов"
+
+msgid "rouble"
+msgid_plural "roubles"
+msgstr[0] "рубль"
+msgstr[1] "рубля"
+msgstr[2] "рублей"
+
+msgid "hryvnia"
+msgid_plural "hryvnias"
+msgstr[0] "гривна"
+msgstr[1] "гривны"
+msgstr[2] "гривен"
+
+msgid "kopeck"
+msgid_plural "kopeks"
+msgstr[0] "копейка"
+msgstr[1] "копейки"
+msgstr[2] "копеек"
+
+msgid "kop."
+msgstr "коп."
+
+msgid "k."
+msgstr "к."
+
+msgid "dollar"
+msgid_plural "dollars"
+msgstr[0] "доллар"
+msgstr[1] "доллара"
+msgstr[2] "долларов"
+
+msgid "cent"
+msgid_plural "cents"
+msgstr[0] "цент"
+msgstr[1] "цента"
+msgstr[2] "центов"
+
+msgid "January"
+msgid_plural "January"
+msgstr[0] "Январь"
+msgstr[1] "Января"
+msgstr[2] "Январь"
+
+msgid "February"
+msgid_plural "February"
+msgstr[0] "Февраль"
+msgstr[1] "Февраля"
+msgstr[2] "Февраль"
+
+msgid "March"
+msgid_plural "March"
+msgstr[0] "Март"
+msgstr[1] "Марта"
+msgstr[2] "Март"
+
+msgid "April"
+msgid_plural "April"
+msgstr[0] "Апрель"
+msgstr[1] "Апреля"
+msgstr[2] "Апрель"
+
+msgid "May"
+msgid_plural "May"
+msgstr[0] "Май"
+msgstr[1] "Мая"
+msgstr[2] "Май"
+
+msgid "June"
+msgid_plural "June"
+msgstr[0] "Июнь"
+msgstr[1] "Июня"
+msgstr[2] "Июнь"
+
+msgid "July"
+msgid_plural "July"
+msgstr[0] "Июль"
+msgstr[1] "Июля"
+msgstr[2] "Июль"
+
+msgid "August"
+msgid_plural "August"
+msgstr[0] "Август"
+msgstr[1] "Августа"
+msgstr[2] "Август"
+
+msgid "September"
+msgid_plural "September"
+msgstr[0] "Сентябрь"
+msgstr[1] "Сентября"
+msgstr[2] "Сентябрь"
+
+msgid "October"
+msgid_plural "October"
+msgstr[0] "Октябрь"
+msgstr[1] "Октября"
+msgstr[2] "Октябрь"
+
+msgid "November"
+msgid_plural "November"
+msgstr[0] "Ноябрь"
+msgstr[1] "Ноября"
+msgstr[2] "Ноябрь"
+
+msgid "December"
+msgid_plural "December"
+msgstr[0] "Декабрь"
+msgstr[1] "Декабря"
+msgstr[2] "Декабрь"
+
+msgid "Jan"
+msgstr "Янв"
+
+msgid "Feb"
+msgstr "Фев"
+
+msgid "Mar"
+msgstr "Мар"
+
+msgid "Apr"
+msgstr "Апр"
+
+msgid "Jun"
+msgstr "Июн"
+
+msgid "Jul"
+msgstr "Июл"
+
+msgid "Aug"
+msgstr "Авг"
+
+msgid "Sep"
+msgstr "Сен"
+
+msgid "Oct"
+msgstr "Окт"
+
+msgid "Nov"
+msgstr "Ноя"
+
+msgid "Dec"
+msgstr "Дек"
+
+msgid "Mon"
+msgstr "Пн"
+
+msgid "Tue"
+msgstr "Вт"
+
+msgid "Wed"
+msgstr "Ср"
+
+msgid "Thu"
+msgstr "Чт"
+
+msgid "Fri"
+msgstr "Пт"
+
+msgid "Sat"
+msgstr "Сб"
+
+msgid "Sun"
+msgstr "Вс"
+
+msgid "Monday"
+msgstr "Понедельник"
+
+msgid "Tuesday"
+msgstr "Вторник"
+
+msgid "Wednesday"
+msgstr "Среда"
+
+msgid "Thursday"
+msgstr "Четверг"
+
+msgid "Friday"
+msgstr "Пятница"
+
+msgid "Saturday"
+msgstr "Суббота"
+
+msgid "Sunday"
+msgstr "Воскресенье"
+
+msgid "year"
+msgid_plural "years"
+msgstr[0] "год"
+msgstr[1] "года"
+msgstr[2] "лет"
+
+msgid "month"
+msgid_plural "months"
+msgstr[0] "месяц"
+msgstr[1] "месяца"
+msgstr[2] "месяцев"
+
+msgid "day"
+msgid_plural "days"
+msgstr[0] "день"
+msgstr[1] "дня"
+msgstr[2] "дней"
+
+msgid "hour"
+msgid_plural "hours"
+msgstr[0] "час"
+msgstr[1] "часа"
+msgstr[2] "часов"
+
+msgid "minute"
+msgid_plural "minutes"
+msgstr[0] "минута"
+msgstr[1] "минуты"
+msgstr[2] "минут"
+
+msgid "Login name"
+msgstr "Логин"
+
+msgid "Email or login name"
+msgstr "Email или логин"
+
+msgid "Password"
+msgstr "Пароль"
+
+msgid "password"
+msgstr "пароль"
+
+msgid "Remember me"
+msgstr "Запомнить меня"
+
+msgid "Sign in Webasyst"
+msgstr "Вход в Вебасист"
+
+msgid "Forgot password?"
+msgstr "Забыли пароль?"
+
+msgid "Login"
+msgstr "Логин"
+
+msgid "Log in"
+msgstr "Вход"
+
+msgid "Log out"
+msgstr "Выйти"
+
+msgid "Sign In"
+msgstr "Войти"
+
+msgid "Sign Up"
+msgstr "Зарегистрироваться"
+
+msgid "Save and log in"
+msgstr "Сохранить и войти"
+
+msgid "Aruba"
+msgstr "Аруба"
+
+msgid "Afghanistan"
+msgstr "Афганистан"
+
+msgid "Angola"
+msgstr "Ангола"
+
+msgid "Anguilla"
+msgstr "Ангилья"
+
+msgid "Åland Islands"
+msgstr "Аландские Острова"
+
+msgid "Albania"
+msgstr "Албания"
+
+msgid "Andorra"
+msgstr "Андорра"
+
+msgid "Netherlands Antilles"
+msgstr "Антильские Острова (Нидерландские)"
+
+msgid "United Arab Emirates"
+msgstr "Объединенные Арабские Эмираты"
+
+msgid "Argentina"
+msgstr "Аргентина"
+
+msgid "Armenia"
+msgstr "Армения"
+
+msgid "American Samoa"
+msgstr "Восточное Самоа"
+
+msgid "Antarctica"
+msgstr "Антарктика"
+
+msgid "French Southern Territories"
+msgstr "Французские Южные территории"
+
+msgid "Antigua and Barbuda"
+msgstr "Антигуа и Барбуда"
+
+msgid "Australia"
+msgstr "Австралия"
+
+msgid "Austria"
+msgstr "Австрия"
+
+msgid "Azerbaijan"
+msgstr "Азербайджан"
+
+msgid "Burundi"
+msgstr "Бурунди"
+
+msgid "Belgium"
+msgstr "Бельгия"
+
+msgid "Benin"
+msgstr "Бенин"
+
+msgid "Burkina Faso"
+msgstr "Буркина Фасо"
+
+msgid "Bangladesh"
+msgstr "Бангладеш"
+
+msgid "Bulgaria"
+msgstr "Болгария"
+
+msgid "Bahrain"
+msgstr "Бахрейн"
+
+msgid "Bahamas"
+msgstr "Багамские Острова"
+
+msgid "Bosnia and Herzegovina"
+msgstr "Босния и Герцеговина"
+
+msgid "Saint Barthélemy"
+msgstr "Сент-Бартельми"
+
+msgid "Belarus"
+msgstr "Беларусь"
+
+msgid "Belize"
+msgstr "Белиз"
+
+msgid "Bermuda"
+msgstr "Бермудские Острова"
+
+msgid "Bolivia, Plurinational State of"
+msgstr "Боливия"
+
+msgid "Brazil"
+msgstr "Бразилия"
+
+msgid "Barbados"
+msgstr "Барбадос"
+
+msgid "Brunei Darussalam"
+msgstr "Бруней"
+
+msgid "Bhutan"
+msgstr "Бутан"
+
+msgid "Bouvet Island"
+msgstr "Буве, остров"
+
+msgid "Botswana"
+msgstr "Ботсвана"
+
+msgid "Central African Republic"
+msgstr "Центральноафриканская Республика"
+
+msgid "Canada"
+msgstr "Канада"
+
+msgid "Cocos (Keeling) Islands"
+msgstr "Кокосовые (Килинг) острова"
+
+msgid "Switzerland"
+msgstr "Швейцария"
+
+msgid "Chile"
+msgstr "Чили"
+
+msgid "China"
+msgstr "Китай"
+
+msgid "Côte d'Ivoire"
+msgstr "Кот-д'Ивуар"
+
+msgid "Cameroon"
+msgstr "Камерун"
+
+msgid "Congo, the Democratic Republic of the"
+msgstr "Конго, Демократическая Республика"
+
+msgid "Congo"
+msgstr "Конго"
+
+msgid "Cook Islands"
+msgstr "Кука, Острова"
+
+msgid "Colombia"
+msgstr "Колумбия"
+
+msgid "Comoros"
+msgstr "Коморские Острова"
+
+msgid "Cape Verde"
+msgstr "Кабо-Верде"
+
+msgid "Costa Rica"
+msgstr "Коста-Рика"
+
+msgid "Cuba"
+msgstr "Куба"
+
+msgid "Christmas Island"
+msgstr "Рождества (Кристмас), Остров"
+
+msgid "Cayman Islands"
+msgstr "Каймановы острова"
+
+msgid "Cyprus"
+msgstr "Кипр"
+
+msgid "Czech Republic"
+msgstr "Чешская Республика"
+
+msgid "Germany"
+msgstr "Германия"
+
+msgid "Djibouti"
+msgstr "Джибути"
+
+msgid "Dominica"
+msgstr "Доминика"
+
+msgid "Denmark"
+msgstr "Дания"
+
+msgid "Dominican Republic"
+msgstr "Доминиканская Республика"
+
+msgid "Algeria"
+msgstr "Алжир"
+
+msgid "Ecuador"
+msgstr "Эквадор"
+
+msgid "Egypt"
+msgstr "Египет"
+
+msgid "Eritrea"
+msgstr "Эритрея"
+
+msgid "Western Sahara"
+msgstr "Западная Сахара"
+
+msgid "Spain"
+msgstr "Испания"
+
+msgid "Estonia"
+msgstr "Эстония"
+
+msgid "Ethiopia"
+msgstr "Эфиопия"
+
+msgid "Finland"
+msgstr "Финляндия"
+
+msgid "Fiji"
+msgstr "Фиджи"
+
+msgid "Falkland Islands (Malvinas)"
+msgstr "Фолклендские (Мальвинские) Острова"
+
+msgid "France"
+msgstr "Франция"
+
+msgid "Faroe Islands"
+msgstr "Фарерские острова"
+
+msgid "Micronesia, Federated States of"
+msgstr "Микронезия (Федеративные Штаты Микронезии)"
+
+msgid "Gabon"
+msgstr "Габон"
+
+msgid "United Kingdom"
+msgstr "Великобритания"
+
+msgid "Georgia"
+msgstr "Грузия"
+
+msgid "Georgia State"
+msgstr "Джорджия"
+
+msgid "Guernsey"
+msgstr "Гернси"
+
+msgid "Ghana"
+msgstr "Гана"
+
+msgid "Gibraltar"
+msgstr "Гибралтар"
+
+msgid "Guinea"
+msgstr "Гвинея"
+
+msgid "Guadeloupe"
+msgstr "Гваделупа"
+
+msgid "Gambia"
+msgstr "Гамбия"
+
+msgid "Guinea-Bissau"
+msgstr "Гвинея-Бисау"
+
+msgid "Equatorial Guinea"
+msgstr "Экваториальная Гвинея"
+
+msgid "Greece"
+msgstr "Греция"
+
+msgid "Grenada"
+msgstr "Гренада"
+
+msgid "Greenland"
+msgstr "Гренландия"
+
+msgid "Guatemala"
+msgstr "Гватемала"
+
+msgid "French Guiana"
+msgstr "Гвиана Французская"
+
+msgid "Guam"
+msgstr "Гуам"
+
+msgid "Guyana"
+msgstr "Гайана"
+
+msgid "Hong Kong"
+msgstr "Гонконг"
+
+msgid "Heard Island and McDonald Islands"
+msgstr "Херд и Макдональд, острова"
+
+msgid "Honduras"
+msgstr "Гондурас"
+
+msgid "Croatia"
+msgstr "Хорватия"
+
+msgid "Haiti"
+msgstr "Гаити"
+
+msgid "Hungary"
+msgstr "Венгрия"
+
+msgid "Indonesia"
+msgstr "Индонезия"
+
+msgid "Isle of Man"
+msgstr "Мэн, Остров"
+
+msgid "India"
+msgstr "Индия"
+
+msgid "British Indian Ocean Territory"
+msgstr "Британская территория в Индийском океане"
+
+msgid "Ireland"
+msgstr "Ирландия"
+
+msgid "Iran, Islamic Republic of"
+msgstr "Иран"
+
+msgid "Iraq"
+msgstr "Ирак"
+
+msgid "Iceland"
+msgstr "Исландия"
+
+msgid "Israel"
+msgstr "Израиль"
+
+msgid "Italy"
+msgstr "Италия"
+
+msgid "Jamaica"
+msgstr "Ямайка"
+
+msgid "Jersey"
+msgstr "Джерси"
+
+msgid "Jordan"
+msgstr "Иордания"
+
+msgid "Japan"
+msgstr "Япония"
+
+msgid "Kazakhstan"
+msgstr "Казахстан"
+
+msgid "Kenya"
+msgstr "Кения"
+
+msgid "Kyrgyzstan"
+msgstr "Киргизия (Кыргызстан)"
+
+msgid "Cambodia"
+msgstr "Камбоджа"
+
+msgid "Kiribati"
+msgstr "Кирибати"
+
+msgid "Saint Kitts and Nevis"
+msgstr "Сент-Китс и Невис"
+
+msgid "Korea, Republic of"
+msgstr "Корея, Республика"
+
+msgid "Kuwait"
+msgstr "Кувейт"
+
+msgid "Lao People's Democratic Republic"
+msgstr "Лаос"
+
+msgid "Lebanon"
+msgstr "Ливан"
+
+msgid "Liberia"
+msgstr "Либерия"
+
+msgid "Libyan Arab Jamahiriya"
+msgstr "Ливия"
+
+msgid "Saint Lucia"
+msgstr "Сент-Люсия"
+
+msgid "Liechtenstein"
+msgstr "Лихтенштейн"
+
+msgid "Sri Lanka"
+msgstr "Шри-Ланка"
+
+msgid "Lesotho"
+msgstr "Лесото"
+
+msgid "Lithuania"
+msgstr "Литва"
+
+msgid "Luxembourg"
+msgstr "Люксембург"
+
+msgid "Latvia"
+msgstr "Латвия"
+
+msgid "Macao"
+msgstr "Аомынь (Макао)"
+
+msgid "Saint Martin (French part)"
+msgstr "Святого Мартина, Остров (Франция)"
+
+msgid "Morocco"
+msgstr "Марокко"
+
+msgid "Monaco"
+msgstr "Монако"
+
+msgid "Moldova, Republic of"
+msgstr "Молдова"
+
+msgid "Madagascar"
+msgstr "Мадагаскар"
+
+msgid "Maldives"
+msgstr "Мальдивы"
+
+msgid "Mexico"
+msgstr "Мексика"
+
+msgid "Marshall Islands"
+msgstr "Маршалловы Острова"
+
+msgid "Macedonia, the former Yugoslav Republic of"
+msgstr "Македония"
+
+msgid "Mali"
+msgstr "Мали"
+
+msgid "Malta"
+msgstr "Мальта"
+
+msgid "Myanmar"
+msgstr "Мьянма (Бирма)"
+
+msgid "Montenegro"
+msgstr "Черногория"
+
+msgid "Mongolia"
+msgstr "Монголия"
+
+msgid "Northern Mariana Islands"
+msgstr "Северные Марианские Острова"
+
+msgid "Mozambique"
+msgstr "Мозамбик"
+
+msgid "Mauritania"
+msgstr "Мавритания"
+
+msgid "Montserrat"
+msgstr "Монтсеррат"
+
+msgid "Martinique"
+msgstr "Мартиника"
+
+msgid "Mauritius"
+msgstr "Маврикий"
+
+msgid "Malawi"
+msgstr "Малави"
+
+msgid "Malaysia"
+msgstr "Малайзия"
+
+msgid "Mayotte"
+msgstr "Маоре (Майотта)"
+
+msgid "Namibia"
+msgstr "Намибия"
+
+msgid "New Caledonia"
+msgstr "Новая Каледония"
+
+msgid "Niger"
+msgstr "Нигер"
+
+msgid "Norfolk Island"
+msgstr "Норфолк"
+
+msgid "Nigeria"
+msgstr "Нигерия"
+
+msgid "Nicaragua"
+msgstr "Никарагуа"
+
+msgid "Niue"
+msgstr "Ниуэ"
+
+msgid "Netherlands"
+msgstr "Нидерланды"
+
+msgid "Norway"
+msgstr "Норвегия"
+
+msgid "Nepal"
+msgstr "Непал"
+
+msgid "Nauru"
+msgstr "Науру"
+
+msgid "New Zealand"
+msgstr "Новая Зеландия"
+
+msgid "Oman"
+msgstr "Оман"
+
+msgid "Pakistan"
+msgstr "Пакистан"
+
+msgid "Panama"
+msgstr "Панама"
+
+msgid "Pitcairn"
+msgstr "Питкэрн"
+
+msgid "Peru"
+msgstr "Перу"
+
+msgid "Philippines"
+msgstr "Филиппины"
+
+msgid "Palau"
+msgstr "Палау"
+
+msgid "Papua New Guinea"
+msgstr "Папуа — Новая Гвинея"
+
+msgid "Poland"
+msgstr "Польша"
+
+msgid "Puerto Rico"
+msgstr "Пуэрто-Рико"
+
+msgid "Korea, Democratic People's Republic of"
+msgstr "Корейская Народно-Демократическая Республика"
+
+msgid "Portugal"
+msgstr "Португалия"
+
+msgid "Paraguay"
+msgstr "Парагвай"
+
+msgid "Palestinian Territory, Occupied"
+msgstr "Палестина"
+
+msgid "French Polynesia"
+msgstr "Французская Полинезия"
+
+msgid "Qatar"
+msgstr "Катар"
+
+msgid "Réunion"
+msgstr "Реюньон"
+
+msgid "Romania"
+msgstr "Румыния"
+
+msgid "Russia"
+msgstr "Россия"
+
+msgid "Russian Federation"
+msgstr "Российская Федерация"
+
+msgid "Rwanda"
+msgstr "Руанда"
+
+msgid "Saudi Arabia"
+msgstr "Саудовская Аравия"
+
+msgid "Sudan"
+msgstr "Судан"
+
+msgid "Senegal"
+msgstr "Сенегал"
+
+msgid "Singapore"
+msgstr "Сингапур"
+
+msgid "South Georgia and the South Sandwich Islands"
+msgstr "Южная Георгия и Южные Сандвичевы острова"
+
+msgid "Saint Helena, Ascension and Tristan da Cunha"
+msgstr "Святой Елены, Остров"
+
+msgid "Svalbard and Jan Mayen"
+msgstr "Свальбард (Шпицберген) и Ян-Майен"
+
+msgid "Solomon Islands"
+msgstr "Соломоновы Острова"
+
+msgid "Sierra Leone"
+msgstr "Сьерра-Леоне"
+
+msgid "El Salvador"
+msgstr "Сальвадор"
+
+msgid "San Marino"
+msgstr "Сан-Марино"
+
+msgid "Somalia"
+msgstr "Сомали"
+
+msgid "Saint Pierre and Miquelon"
+msgstr "Сен-Пьер и Микелон"
+
+msgid "Serbia"
+msgstr "Сербия"
+
+msgid "Sao Tome and Principe"
+msgstr "Сан-Томе и Принсипи"
+
+msgid "Suriname"
+msgstr "Суринам"
+
+msgid "Slovakia"
+msgstr "Словакия"
+
+msgid "Slovenia"
+msgstr "Словения"
+
+msgid "Sweden"
+msgstr "Швеция"
+
+msgid "Swaziland"
+msgstr "Свазиленд"
+
+msgid "Seychelles"
+msgstr "Сейшельские Острова"
+
+msgid "Syrian Arab Republic"
+msgstr "Сирия"
+
+msgid "Turks and Caicos Islands"
+msgstr "Теркс и Кайкос"
+
+msgid "Chad"
+msgstr "Чад"
+
+msgid "Togo"
+msgstr "Того"
+
+msgid "Thailand"
+msgstr "Таиланд"
+
+msgid "Tajikistan"
+msgstr "Таджикистан"
+
+msgid "Tokelau"
+msgstr "Токелау"
+
+msgid "Turkmenistan"
+msgstr "Туркменистан"
+
+msgid "Timor-Leste"
+msgstr "Восточный Тимор"
+
+msgid "Tonga"
+msgstr "Тонга"
+
+msgid "Trinidad and Tobago"
+msgstr "Тринидад и Тобаго"
+
+msgid "Tunisia"
+msgstr "Тунис"
+
+msgid "Turkey"
+msgstr "Турция"
+
+msgid "Tuvalu"
+msgstr "Тувалу"
+
+msgid "Taiwan, Province of China"
+msgstr "Тайвань (провинция Китая)"
+
+msgid "Tanzania, United Republic of"
+msgstr "Танзания"
+
+msgid "Uganda"
+msgstr "Уганда"
+
+msgid "Ukraine"
+msgstr "Украина"
+
+msgid "United States Minor Outlying Islands"
+msgstr "Мелкие отдаленные острова США"
+
+msgid "Uruguay"
+msgstr "Уругвай"
+
+msgid "United States"
+msgstr "Соединенные Штаты Америки (США)"
+
+msgid "Uzbekistan"
+msgstr "Узбекистан"
+
+msgid "Holy See (Vatican City State)"
+msgstr "Ватикан"
+
+msgid "Saint Vincent and the Grenadines"
+msgstr "Сент-Винсент и Гренадины"
+
+msgid "Venezuela, Bolivarian Republic of"
+msgstr "Венесуэла"
+
+msgid "Virgin Islands, British"
+msgstr "Виргинские Острова (Британские)"
+
+msgid "Virgin Islands, U.S."
+msgstr "Виргинские Острова (США)"
+
+msgid "Viet Nam"
+msgstr "Вьетнам"
+
+msgid "Vanuatu"
+msgstr "Вануату"
+
+msgid "Wallis and Futuna"
+msgstr "Уоллис и Футуна"
+
+msgid "Samoa"
+msgstr "Западное Самоа"
+
+msgid "Yemen"
+msgstr "Йемен"
+
+msgid "South Africa"
+msgstr "Южно-Африканская Республика"
+
+msgid "Zambia"
+msgstr "Замбия"
+
+msgid "Zimbabwe"
+msgstr "Зимбабве"
+
+msgid "Moscow"
+msgstr "Москва"
+
+msgid "Samara"
+msgstr "Самара"
+
+msgid "Volgograd"
+msgstr "Волгоград"
+
+msgid "Yekaterinburg"
+msgstr "Екатеринбург"
+
+msgid "Novosibirsk"
+msgstr "Новосибирск"
+
+msgid "Omsk"
+msgstr "Омск"
+
+msgid "Krasnoyarsk"
+msgstr "Красноярск"
+
+msgid "Sakhalin"
+msgstr "Сахалин"
+
+msgid "Vladivostok"
+msgstr "Владивосток"
+
+msgid "Novokuznetsk"
+msgstr "Новокузнецк"
+
+msgid "Paris"
+msgstr "Париж"
+
+msgid "Tunis"
+msgstr "Тунис"
+
+msgid "Dublin"
+msgstr "Дублин"
+
+msgid "London"
+msgstr "Лондон"
+
+msgid "Johannesburg"
+msgstr "Йоханнесбург"
+
+msgid "Tripoli"
+msgstr "Триполи"
+
+msgid "Amsterdam"
+msgstr "Амстердам"
+
+msgid "Belgrade"
+msgstr "Белград"
+
+msgid "Bratislava"
+msgstr "Братислава"
+
+msgid "Brussels"
+msgstr "Брюссель"
+
+msgid "Budapest"
+msgstr "Будапешт"
+
+msgid "Copenhagen"
+msgstr "Копенгаген"
+
+msgid "Madrid"
+msgstr "Мадрид"
+
+msgid "Oslo"
+msgstr "Осло"
+
+msgid "Prague"
+msgstr "Прага"
+
+msgid "Rome"
+msgstr "Рим"
+
+msgid "Stockholm"
+msgstr "Стокгольм"
+
+msgid "Berlin"
+msgstr "Берлин"
+
+msgid "Helsinki"
+msgstr "Хельсинки"
+
+msgid "Kaliningrad"
+msgstr "Калининград"
+
+msgid "Kiev"
+msgstr "Киев"
+
+msgid "Minsk"
+msgstr "Минск"
+
+msgid "Riga"
+msgstr "Рига"
+
+msgid "Vilnius"
+msgstr "Вильнюс"
+
+msgid "Sofia"
+msgstr "София"
+
+msgid "Tallinn"
+msgstr "Таллин"
+
+msgid "Simferopol"
+msgstr "Симферополь"
+
+msgid "Tbilisi"
+msgstr "Тбилиси"
+
+msgid "Dushanbe"
+msgstr "Душанбе"
+
+msgid "Tashkent"
+msgstr "Ташкент"
+
+msgid "Yerevan"
+msgstr "Ереван"
+
+msgid "Vostok"
+msgstr "Станция Восток (Антарктика)"
+
+msgid "Thimphu"
+msgstr "Тхимпху"
+
+msgid "UTC"
+msgstr "Всемирное время (UTC)"
+
+msgid "New York"
+msgstr "Нью-Йорк"
+
+msgid "Toronto"
+msgstr "Торонто"
+
+msgid "Dawson"
+msgstr "Доусон"
+
+msgid "Phoenix"
+msgstr "Финикс"
+
+msgid "Los Angeles"
+msgstr "Лос-Анджелес"
+
+msgid "Chicago"
+msgstr "Чикаго"
+
+msgid "Abkhazia"
+msgstr "Республика Абхазия"
+
+msgid "Bonaire, Sint Eustatius and Saba"
+msgstr "Бонайре, Саба и Синт-Эстатиус"
+
+msgid "Curaçao"
+msgstr "Кюрасао"
+
+msgid "Saint Martin (French Part)"
+msgstr "Сен-Мартен"
+
+msgid "Sint Maarten"
+msgstr "Синт-Мартен"
+
+msgid "South Ossetia"
+msgstr "Республика Южная Осетия"
+
+msgid "South Sudan"
+msgstr "Южный Судан"
+
+msgid "Street"
+msgstr "Улица"
+
+msgid "Street address"
+msgstr "Улица, дом, квартира"
+
+msgid "State"
+msgstr "Регион"
+
+msgid "City"
+msgstr "Город"
+
+msgid "Country"
+msgstr "Страна"
+
+msgid "ZIP"
+msgstr "Индекс"
+
+msgid "home"
+msgstr "домашний"
+
+msgid "work"
+msgstr "рабочий"
+
+msgid "personal"
+msgstr "личный"
+
+msgid "other"
+msgstr "другое"
+
+msgid "Title"
+msgstr "Обращение"
+
+msgid "First name"
+msgstr "Имя"
+
+msgid "Middle name"
+msgstr "Отчество"
+
+msgid "Last name"
+msgstr "Фамилия"
+
+msgid "Company"
+msgstr "Компания"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Description"
+msgstr "Описание"
+
+msgid "Phone"
+msgstr "Телефон"
+
+msgid "Address"
+msgstr "Адрес"
+
+msgid "Website"
+msgstr "Веб-сайт"
+
+msgid "Birthday"
+msgstr "День рождения"
+
+msgid "Language"
+msgstr "Язык"
+
+msgid "Time zone"
+msgstr "Часовой пояс"
+
+msgid "Categories"
+msgstr "Категории"
+
+msgid "Select country"
+msgstr "Выберите страну"
+
+msgid "Select time zone"
+msgstr "Выберите часовой пояс"
+
+msgid "Select language"
+msgstr "Выберите язык"
+
+msgid "Select value"
+msgstr "Выберите значение"
+
+msgid "Name"
+msgstr "Имя"
+
+msgid "mobile"
+msgstr "мобильный"
+
+msgid "Instant messenger"
+msgstr "Мессенджеры"
+
+msgid "Social network"
+msgstr "Соцсети"
+
+msgid "Invalid login name or password."
+msgstr "Неправильное имя пользователя или пароль."
+
+msgid "Invalid email or password"
+msgstr "Неправильный email или пароль"
+
+msgid "Login is required"
+msgstr "Логин обязателен"
+
+msgid "Incorrect numerical value"
+msgstr "Некорректное числовое значение"
+
+msgid "This is your Dashboard."
+msgstr "Это ваш дашборд."
+
+msgid "So far it is empty, but soon it will have useful content."
+msgstr "Сейчас она пустая, но скоро на ней появится полезный контент."
+
+msgid "Thank you for using Webasyst!"
+msgstr "Спасибо за использование Вебасист!"
+
+msgid "Login Webasyst"
+msgstr "Вход в Вебасист"
+
+msgid "Create the first user in your Webasyst installation."
+msgstr "Создайте первого пользователя-администратора."
+
+msgid "Enter"
+msgstr "Войти"
+
+msgid "Welcome"
+msgstr "Добро пожаловать"
+
+msgid "Logout"
+msgstr "Выйти"
+
+msgid "Send"
+msgstr "Отправить"
+
+msgid "Please enter your login name or email:"
+msgstr "Пожалуйста, введите ваш логин или email:"
+
+msgid "Please enter your email:"
+msgstr "Пожалуйста, введите ваш email:"
+
+msgid "or"
+msgstr "или"
+
+msgid "cancel"
+msgstr "отмена"
+
+msgid "Cancel"
+msgstr "Отмена"
+
+msgid "show on map"
+msgstr "показать на карте"
+
+msgid "logout"
+msgstr "выйти"
+
+msgid "To recover your password please follow this link:"
+msgstr "Для восстановления пароля перейдите по ссылке:"
+
+msgid "IMPORTANT NOTE: If you did not request your password recovery, someone else might be trying to log in using your email address. For security purposes we recommend you to log in to your account and to change your password."
+msgstr "ВАЖНО: Если вы не просили восстановить пароль, то значит кто-то другой пытался подключиться используя ваш логин или email. В целях безопасности мы рекомендуем вам зайти сейчас в ваш аккаунт и изменить пароль."
+
+msgid "Enter a new password"
+msgstr "Новый пароль"
+
+msgid "Re-enter password"
+msgstr "Подтвердите пароль"
+
+msgid "Confirm password"
+msgstr "Подтвердите пароль"
+
+msgid "Passwords do not match"
+msgstr "Пароли не совпадают"
+
+msgid "No more than %d character please"
+msgid_plural "No more than %d characters please"
+msgstr[0] "Пожалуйста, не более %d символа"
+msgstr[1] "Пожалуйста, не более %d символов"
+msgstr[2] "Пожалуйста, не более %d символов"
+
+msgid "No less than %d character please"
+msgid_plural "No less than %d characters please"
+msgstr[0] "Пожалуйста, не менее %d символа"
+msgstr[1] "Пожалуйста, не менее %d символов"
+msgstr[2] "Пожалуйста, не менее %d символов"
+
+msgid "Password recovery"
+msgstr "Восстановление пароля"
+
+msgid "Back to login page"
+msgstr "Вернуться на страницу входа"
+
+msgid "Duplicates are not allowed for this field."
+msgstr "Дубликаты недопустимы для этого поля."
+
+msgid "This field is required."
+msgstr "Это поле обязательное."
+
+msgid "At least one of these fields must be filled in."
+msgstr "Хотя бы одно из этих полей должно быть заполнено."
+
+msgid "Password recovery instructions have been sent to your email address."
+msgstr "Инструкции по восстановлению пароля были отправлены на ваш электронный адрес."
+
+msgid "No user with this login name or email has been found."
+msgstr "Пользователь с таким логином или email-адресом не найден."
+
+msgid "No user with this email has been found."
+msgstr "Пользователь с таким email адресом не найден."
+
+msgid "Effective<br/>rights"
+msgstr "Результирующие<br/>права"
+
+msgid "Granted<br/>personally"
+msgstr "Установлено<br/>персонально"
+
+msgid "Inherited<br/>from groups"
+msgstr "Унаследовано<br/>от групп"
+
+msgid "more"
+msgstr "еще"
+
+msgid "all"
+msgstr "все"
+
+msgid "Error"
+msgstr "Ошибка"
+
+msgid "Enter any login and password so<br> we can create a user account for you"
+msgstr "Введите любые логин и пароль,<br> чтобы мы создали вам аккаунт"
+
+msgid "All contacts"
+msgstr "Все контакты"
+
+msgid "All users"
+msgstr "Все пользователи"
+
+msgid "Group"
+msgstr "Группа"
+
+msgid "%s subfield is required."
+msgstr "Поле %s обязательное."
+
+msgid "This field is required"
+msgstr "Это поле обязательное"
+
+msgid "This field is must be unique"
+msgstr "Это поле должно быть уникальным"
+
+msgid "Not an image or invalid image: "
+msgstr "Неправильный формат изображения: "
+
+msgid "%s is not an image adapter."
+msgstr "%s не является адаптером обработки изображений."
+
+msgid "No image adapters found. Install ImageMagick or GD extension to enable image-processing functionality."
+msgstr "Не найдено ни одного расширения для работы с изображениями. Установите ImageMagick или GD."
+
+msgid "File must be writable: "
+msgstr "Нужны права на запись в файл: "
+
+msgid "GD does not support %s images"
+msgstr "GD не поддерживает работу с изображениями в формате %s"
+
+msgid "GD is not installed"
+msgstr "GD не установлен"
+
+msgid "Need GD version of the above 2.0.1"
+msgstr "Необходима версия GD не ниже 2.0.1"
+
+msgid "ImageMagick is not installed."
+msgstr "ImageMagick не установлен."
+
+msgid "Not match."
+msgstr "Не удовлетворяет условиям."
+
+msgid "Required"
+msgstr "Нужно заполнить"
+
+msgid "Invalid"
+msgstr "Неверно"
+
+msgid "Today"
+msgstr "Сегодня"
+
+msgid "Yesterday"
+msgstr "Вчера"
+
+msgid "Tomorrow"
+msgstr "Завтра"
+
+msgid "[close]"
+msgstr "[закрыть]"
+
+msgid "Recover password for"
+msgstr "Восстановление пароля для"
+
+msgid "Session has expired. Please reload this page and log in again."
+msgstr "Сессия истекла. Пожалуйста, обновите страницу и войдите снова."
+
+msgid "Theme %s already exists"
+msgstr "Тема дизайна «%s» уже существует"
+
+msgid "Invalid theme id %s"
+msgstr "Неверный идентификатор темы «%s»"
+
+msgid "Company name"
+msgstr "Название компании"
+
+msgid "Webasyst"
+msgstr "Вебасист"
+
+msgid "Access denied"
+msgstr "Доступ запрещен"
+
+msgid "Pages"
+msgstr "Страницы"
+
+msgid "When done editing, click “Save” to apply changes."
+msgstr "После завершения редактирования не забудьте нажать на кнопку «Сохранить»."
+
+msgid "Enable this URL"
+msgstr "Включить показ страницы по этому адресу"
+
+msgid "Disable this URL"
+msgstr "Отключить показ страницы по этому адресу"
+
+msgid "Page settings"
+msgstr "Настройки страницы"
+
+msgid "Delete"
+msgstr "Удалить"
+
+msgid "This will delete entire page. Are you sure?"
+msgstr "Будет удалена вся страница. Продолжить?"
+
+msgid "Draft"
+msgstr "Черновик"
+
+msgid "draft"
+msgstr "черновик"
+
+msgid "Published"
+msgstr "Опубликовано"
+
+msgid "Page URL"
+msgstr "URL страницы"
+
+msgid "Page name"
+msgstr "Название страницы"
+
+msgid "Optional set of custom <em>key=value</em> parameters which can be used within page.html template or this page content as <em>&#123;$page.key&#125;</em>. Each key=value pair should be on a separate line."
+msgstr "Необязательный набор параметров вида <em>key=value</em>, к значениям которых можно обращаться в шаблоне page.html или в содержимом текущей страницы как <em>&#123;$page.key&#125;</em>. Каждая пара key=value должна быть указана на отдельной строке."
+
+msgid "https://developers.webasyst.com/templates/pages/"
+msgstr "https://developers.webasyst.ru/docs/templates/pages/"
+
+msgid "WYSIWYG"
+msgstr "Визуальный редактор"
+
+msgid "WYSIWYG editor is disabled because page source contains Smarty code tags."
+msgstr "Визуальный редактор выключен, потому что код страницы содержит теги кода Smarty."
+
+msgid "New page"
+msgstr "Новая страница"
+
+msgid "Save"
+msgstr "Сохранить"
+
+msgid "enable"
+msgstr "включить"
+
+msgid "disable"
+msgstr "выключить"
+
+msgid "<strong class=\"title\">Title</strong>"
+msgstr "<strong class=\"title\">Заголовок</strong>"
+
+msgid "Page custom parameters"
+msgstr "Дополнительные параметры страницы"
+
+msgid "META Keywords"
+msgstr "META Keywords"
+
+msgid "META Description"
+msgstr "META Description"
+
+msgid "Help"
+msgstr "Помощь"
+
+msgid "Saving..."
+msgstr "Сохранение..."
+
+msgid "Saved"
+msgstr "Сохранено"
+
+msgid "Refresh CAPTCHA"
+msgstr "Обновить капчу (CAPTCHA)"
+
+msgid "You have no permission to access this page."
+msgstr "У вас нет разрешения на доступ к данной странице."
+
+msgid "Please refer to your system administrator."
+msgstr "Пожалуйста, обратитесь к вашему системному администратору."
+
+msgid "Host"
+msgstr "Сервер"
+
+msgid "User"
+msgstr "Пользователь"
+
+msgid "Database Name"
+msgstr "Имя базы данных"
+
+msgid "Continue"
+msgstr "Продолжить"
+
+msgid "MySQL database"
+msgstr "База данных MySQL"
+
+msgid "Enter connection credentials for the MySQL database which will be used by Webasyst to store system and application data."
+msgstr "Введите настройки подключения к базе данных MySQL, в которой Вебасист создаст таблицы для хранения своих данных и данных приложений."
+
+msgid "If you do not know what should be entered here, please contact your hosting provider technical support."
+msgstr "Если вы не знаете, что здесь ввести, обратитесь в службу поддержки вашего хостинг-провайдера."
+
+msgid "Failed to connect to the “%s” database."
+msgstr "Ошибка подключения к базе данных “%s”."
+
+msgid "Failed to connect to specified MySQL database server."
+msgstr "Ошибка подключения к серверу базы данных."
+
+msgid "Error creating file %s"
+msgstr "Ошибка при создании файла %s"
+
+msgid "Not enough access permissions to write in the folder %s"
+msgstr "Недостаточно прав для записи в папку %s"
+
+msgid "Theme %s for “%s” app not found."
+msgstr "Тема %s для приложения “%s” не найдена."
+
+msgid "Sex"
+msgstr "Пол"
+
+msgid "Gender"
+msgstr "Пол"
+
+msgid "Job title"
+msgstr "Должность"
+
+msgid "Male"
+msgstr "Мужской"
+
+msgid "Female"
+msgstr "Женский"
+
+msgid "kB"
+msgstr "кБ"
+
+msgid "MB"
+msgstr "МБ"
+
+msgid "GB"
+msgstr "ГБ"
+
+msgid "TB"
+msgstr "ТБ"
+
+msgid "PB"
+msgstr "ПБ"
+
+msgid "EB"
+msgstr "ЭБ"
+
+msgid "Page not found"
+msgstr "Страница не найдена"
+
+msgid "Error saving web page"
+msgstr "Произошла ошибка при попытке сохранения страницы"
+
+msgid "Files with extensions %s are allowed only."
+msgstr "Допускаются только файлы с расширениями %s"
+
+msgid "This page will not be visible in the public frontend, because this app is not connected in the website structure."
+msgstr "Страница будет недоступна на сайте, потому что приложение не подключено в правилах маршрутизации этого сайта."
+
+msgid "An error occurred while saving"
+msgstr "Во время сохранения произошла ошибка"
+
+msgid "User with the same “%s” field value is already registered."
+msgstr "Пользователь с таким же значением поля «%s» уже зарегистрирован."
+
+msgid "Access denied."
+msgstr "Доступ запрещен."
+
+msgid "You are banned!"
+msgstr "Вам отказано в доступе!"
+
+msgid "Application \"%s\" not exists"
+msgstr "Приложение «%s» не установлено"
+
+msgid "Unknown response format"
+msgstr "Неизвестный формат ответа"
+
+msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini."
+msgstr "Размер файла превышает максимально допустимый для загрузки (настройка upload_max_filesize в файле php.ini)."
+
+msgid "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form."
+msgstr "Размер файла превышает максимально допустимый для данной HTML-формы (настройка формы MAX_FILE_SIZE)."
+
+msgid "The uploaded file was only partially uploaded."
+msgstr "Файл был загружен частично."
+
+msgid "No file was uploaded."
+msgstr "Не было загружено ни одного файла."
+
+msgid "Missing a temporary folder."
+msgstr "Ошибка доступа ко временной папке."
+
+msgid "Failed to write file to disk."
+msgstr "Произошла ошибка при записи файла."
+
+msgid "A PHP extension stopped the file upload."
+msgstr "Расширение PHP прервало загрузку файла."
+
+msgid "Unknown upload error"
+msgstr "Неопознанная ошибка загрузки файла"
+
+msgid "Unknown field %s"
+msgstr "Неизвестное поле %s"
+
+msgid "Can't read font file $font_file"
+msgstr "Ошибка загрузки файла $font_file"
+
+msgid "Reset password"
+msgstr "Сбросить пароль"
+
+msgid "I remember it now!"
+msgstr "Я помню пароль!"
+
+msgid "Sign up"
+msgstr "Регистрация"
+
+msgid "Password cannot be empty."
+msgstr "Пароль не может быть пустым"
+
+msgid "%s is required"
+msgstr "Поле «%s» является обязательным"
+
+msgid "or <a href=\"%s\">login</a> if you already have an account"
+msgstr "или <a href=\"%s\">войдите</a>, если у вас уже есть аккаунт"
+
+msgid "Invalid Email"
+msgstr "Email-адрес введен неправильно"
+
+msgid "Invalid captcha"
+msgstr "Капча введена неверно"
+
+msgid "Template settings"
+msgstr "Настройки шаблона"
+
+msgid "Design"
+msgstr "Дизайн"
+
+msgid "Can edit pages"
+msgstr "Редактирование страниц"
+
+msgid "Can edit design"
+msgstr "Редактирование дизайна"
+
+msgid "The information provided in this form will be stored in your local Webasyst installation only, and will not be sent anywhere outside your server."
+msgstr "Информация, введенная в этой форме, будет сохранена только внутри этой установки Webasyst и не будет отправлена за пределы вашего сервера."
+
+msgid "Authorize either by entering your contact information, or through one of the websites listed above."
+msgstr "Авторизуйтесь, указав свои контактные данные, или воспользовавшись перечисленными выше сервисами."
+
+msgid "This field must be unique. The value entered is already set for %NAME_LINK%."
+msgstr "Значение этого поля должно быть уникальным. Введенное значение уже используется для %NAME_LINK%."
+
+msgid "This field must be unique. The value entered is already set for another contact."
+msgstr "Значение этого поля должно быть уникальным. Введенное значение уже используется для другого контакта."
+
+msgid "Rename"
+msgstr "Переименовать"
+
+msgid "You are using the original version of this design theme. No customizations have been applied to theme files yet, and thus there is nothing to revert for now."
+msgstr "Вы используете исходную версию темы дизайна. Изменения в шаблоны темы дизайна еще не вносились, поэтому пока еще нет изменений, которые можно было бы сбросить."
+
+msgid "This will erase all customizations you’ve made to this theme’s template files using the design editor, and reset this theme to original"
+msgstr "Очистить все изменения, которые вы вносили в тему дизайна с помощью редактора дизайна, и вернуть тему дизайна к исходному состоянию"
+
+msgid "Theme name"
+msgstr "Название темы"
+
+msgid "Theme ID"
+msgstr "ID темы"
+
+msgid "IMPORTANT: Change Theme ID only if you are sure what you are doing. If this theme is in use by any of your websites, you will have to manually update these websites’ app settings to use this or another theme after altering the Theme ID parameter. Otherwise websites may stop working with the “Unable to load template file” error."
+msgstr "ВАЖНО: изменяйте ID темы, только если вы полностью уверены в своих действиях. Если эта тема используется в ваших сайтах, вам придется вручную обновить настройки этих сайтов для использования этой или другой темы после изменения ID темы. В противном случае ваши сайты могут оказаться нерабочими из-за ошибки «Невозможно загрузить файл шаблона»."
+
+msgid "not in use"
+msgstr "не используется"
+
+msgid "Theme settings"
+msgstr "Настройки темы"
+
+msgid "Design themes"
+msgstr "Темы дизайна"
+
+msgid "Upload theme"
+msgstr "Загрузить тему"
+
+msgid "Theme must be uploaded as a valid Webasyst design theme archive (.tar.gz archive with theme files and theme.xml manifest file)."
+msgstr "Загружаемая тема должна представлять собой правильный архив темы Webasyst (архив в формате .tar.gz с файлами темы и файлом-манифестом theme.xml)."
+
+msgid "Uploading..."
+msgstr "Загрузка..."
+
+msgid "Upload"
+msgstr "Загрузить"
+
+msgid "Used on"
+msgstr "Используется на"
+
+msgid "Theme updated"
+msgstr "Тема обновлена"
+
+msgid "All themes files will be deleted permanently without the ability to recover. Are you sure?"
+msgstr "Все файлы темы будут удалены без возможности восстановления. Удалить?"
+
+msgid "rollback to the original theme"
+msgstr "восстановить оригинальную тему"
+
+msgid "This will permanently delete theme without the ability to recover. Are you sure?"
+msgstr "Тема будет удалена без возможности восстановления. Удалить?"
+
+msgid "Delete theme"
+msgstr "Удалить тему"
+
+msgid "Cheat sheet"
+msgstr "Шпаргалка"
+
+msgid "Theme preview"
+msgstr "Предварительный просмотр"
+
+msgid "Preview theme"
+msgstr "Предпросмотр темы"
+
+msgid "parent theme file"
+msgstr "файл родительской темы"
+
+msgid "Design theme “<strong id=\"wa-current-theme\"></strong>” is temporary enabled for you to see how it looks with your frontend. You can navigate through your website as you do it usually. Other users don't see that you are previewing this design theme."
+msgstr "Тема дизайна «<strong id=\"wa-current-theme\"></strong>» временно активирована для вашего пользователя. Вы можете полноценно просматривать сайт в выбранной теме дизайна, и другие посетители сайта этого не увидят."
+
+msgid "Finish preview session"
+msgstr "Завершить предварительный просмотр"
+
+msgid "All"
+msgstr "Все"
+
+msgid "Paid"
+msgstr "Платная"
+
+msgid "Free"
+msgstr "Бесплатная"
+
+msgid "All categories"
+msgstr "Все категории"
+
+msgid "Installed themes only"
+msgstr "Только установленные темы"
+
+msgid "All colors"
+msgstr "Все цвета"
+
+msgid "Design themes for %s"
+msgstr "Темы дизайна для %s"
+
+msgid "Design themes for %s app"
+msgstr "Темы дизайна для приложения «%s»"
+
+msgid "Click on a design theme to download and install it from the Webasyst Store"
+msgstr "Щелкните по теме дизайна, чтобы скачать и установить ее из магазина Webasyst"
+
+msgid "Insufficient file access permissions to save theme settings"
+msgstr "Недостаточные права доступа для сохранения настроек темы."
+
+msgid "Insufficient access permissions to save the file"
+msgstr "Недостаточные права доступа для сохранения файла."
+
+msgid "Only Latin letters (a—z, A—Z), numbers (0—9) and underline character (_) are allowed."
+msgstr "Допускается использовать только латинские буквы (a—z, A—Z), цифры (0—9) и символ подчеркивания (_)."
+
+msgid "File should have one of the allowed extensions:"
+msgstr "Имя файла должно иметь одно из следующих расширений:"
+
+msgid "Unsettled"
+msgstr "Исключено из списка поселений"
+
+msgid "Select route"
+msgstr "Выберите адрес поселения"
+
+msgid "no-title"
+msgstr "без названия"
+
+msgid "Sorry, we cannot recover a password for these contact data. Please refer to your system administrator."
+msgstr "Извините, восстановить пароль для указанных контактных данных не удалось. Обратитесь к системному администратору."
+
+msgid "Please enter a filename"
+msgstr "Введите имя файла"
+
+msgid "Syntax error at block"
+msgstr "Синтаксическая ошибка в блоке"
+
+msgid "Preview"
+msgstr "Предпросмотр"
+
+msgid "This page is unsettled (unpublished), i.e. not connected to any of your site’s routing rules. Drag this page out of the Unpublished section in the left sidebar to connect it to any of your existing site’s routes."
+msgstr "Страница не опубликована, потому что не прикреплена ни к одному поселению приложения (правилу маршрутизации). Перетащите страницу из секции «Неопубликованные», чтобы подключить ее к существующему правилу маршрутизации."
+
+msgid "Unpublished"
+msgstr "Неопубликованные"
+
+msgid "These pages are not connected to any of the site’s structure rules and are therefore not displayed on your site. To publish these pages now, select a site structure rule for them:"
+msgstr "Эти страницы не прикреплены ни к одному правилу в структуре сайта и поэтому не видны на сайте. Чтобы опубликовать их сейчас, выберите правило в структуре сайта, к которому нужно прикрепить неопубликованные страницы:"
+
+msgid "Unpublished pages"
+msgstr "Неопубликованные страницы"
+
+msgid "Loading"
+msgstr "Загрузка"
+
+msgid "Unsaved changes will be lost if you leave this page now. Are you sure?"
+msgstr "Несохраненные изменения будут потеряны. Продолжить?"
+
+msgid "View original"
+msgstr "Посмотреть оригинал"
+
+msgid "Close"
+msgstr "Закрыть"
+
+msgid "File will be deleted without the ability to recover. Are you sure?"
+msgstr "Файл будет удален без возможности восстановления. Удалить?"
+
+msgid "Create new file"
+msgstr "Создать новый файл"
+
+msgid "Link from parent theme"
+msgstr "Файл из родительской темы"
+
+msgid "File name"
+msgstr "Имя файла"
+
+msgid "File should have one of the allowed extensions: .html, .css, .js"
+msgstr "Допустимые расширения файла: .html, .css, .js"
+
+msgid "Optional template description"
+msgstr "Необязательное описание шаблона"
+
+msgid "Select file"
+msgstr "Выберите файл"
+
+msgid "all available parent theme files are already linked"
+msgstr "все файлы родительской темы уже подключены"
+
+msgid "Select a file and click Save button below."
+msgstr "Выберите файл и нажмите кнопку «Сохранить» ниже."
+
+msgid "New file"
+msgstr "Новый файл"
+
+msgid "About"
+msgstr "О теме"
+
+msgid "Last modified"
+msgstr "Последнее изменение"
+
+msgid "not modified"
+msgstr "не изменялась"
+
+msgid "This design theme is in use on"
+msgstr "Эта тема дизайна используется по адресу"
+
+msgid "This theme is in use on"
+msgstr "Эта тема используется по адресу"
+
+msgid "This theme is currently not in use. Connect this theme in your site <a href=\"%s\">Routing settings</a>."
+msgstr "Эта тема в данный момент не используется. Подключите тему в <a href=\"%s\">настройках маршрутизации</a>."
+
+msgid "This design theme is not in use. Apply this theme in your website <span class=\"js-theme-routing-url\">Routing settings</span>."
+msgstr "Эта тема дизайна не используется. Чтобы подключить данную тему на сайте, выберите ее в <span class=\"js-theme-routing-url\">настройках маршрутизации</span> вашего сайта."
+
+msgid "Download"
+msgstr "Скачать"
+
+msgid "Duplicate"
+msgstr "Создать дубликат"
+
+msgid "This will reset all customizations you applied to this design theme. Are you sure?"
+msgstr "Все изменения, которые вы вносили в тему дизайна, будут потеряны. Сбросить все изменения?"
+
+msgid "Design theme deleted."
+msgstr "Тема дизайна удалена."
+
+msgid "Revert theme to original"
+msgstr "Сбросить все изменения"
+
+msgid "Parent theme"
+msgstr "Родительская тема дизайна"
+
+msgid "Select"
+msgstr "Выбрать"
+
+msgid "not selected"
+msgstr "не выбрана"
+
+msgid "Change theme"
+msgstr "Сменить"
+
+msgid "Not set"
+msgstr "Не задана"
+
+msgid "IMPORTANT: Theme parenting allows linking HTML templates, CSS files and images from other design themes. If you are about to change parent for a design theme which already has a parent, be aware that existing file links and connections may become corrupted. A design theme can have not more than one parent theme."
+msgstr "ВАЖНО: Подключение родительской темы позволит использовать в данной теме дизайна HTML-шаблоны, CSS-стили и изображения из родительской темы. Если родительская тема уже задана, то имейте ввиду, что ее смена может привести к ошибкам доступа к уже используемым файлам родительской темы. Для любой темы дизайна можно задать не более одной родительской темы."
+
+msgid "Subscribe"
+msgstr "Подписаться"
+
+msgid "Shopping cart"
+msgstr "Корзина"
+
+msgid "Order by phone"
+msgstr "Заказ по телефону"
+
+msgid "Design theme"
+msgstr "Тема дизайна"
+
+msgid "Find"
+msgstr "Найти"
+
+msgid "Search"
+msgstr "Поиск"
+
+msgid "Find products"
+msgstr "Найти товары"
+
+msgid "Cart"
+msgstr "Корзина"
+
+msgid "My account"
+msgstr "Личный кабинет"
+
+msgid "Powered by Webasyst"
+msgstr "Мы используем Webasyst"
+
+msgid "Abidjan"
+msgstr "Абиджан"
+
+msgid "Accra"
+msgstr "Аккра"
+
+msgid "Addis Ababa"
+msgstr "Аддис-Абеба"
+
+msgid "Algiers"
+msgstr "Алжир"
+
+msgid "Asmara"
+msgstr "Асмэра"
+
+msgid "Asmera"
+msgstr "Асмера"
+
+msgid "Bamako"
+msgstr "Бамако"
+
+msgid "Bangui"
+msgstr "Банги"
+
+msgid "Banjul"
+msgstr "Банжул"
+
+msgid "Bissau"
+msgstr "Бисау"
+
+msgid "Blantyre"
+msgstr "Блантайр"
+
+msgid "Brazzaville"
+msgstr "Браззавиль"
+
+msgid "Bujumbura"
+msgstr "Бужумбура"
+
+msgid "Cairo"
+msgstr "Каир"
+
+msgid "Casablanca"
+msgstr "Касабланка"
+
+msgid "Ceuta"
+msgstr "Сеута"
+
+msgid "Conakry"
+msgstr "Конакри"
+
+msgid "Dakar"
+msgstr "Дакар"
+
+msgid "Dar es Salaam"
+msgstr "Дар-эс-Салам"
+
+msgid "Douala"
+msgstr "Дуала"
+
+msgid "El Aaiun"
+msgstr "Эль-Аюн"
+
+msgid "Freetown"
+msgstr "Фритаун"
+
+msgid "Gaborone"
+msgstr "Габороне"
+
+msgid "Harare"
+msgstr "Хараре"
+
+msgid "Kampala"
+msgstr "Кампала"
+
+msgid "Khartoum"
+msgstr "Хартум"
+
+msgid "Kigali"
+msgstr "Кигали"
+
+msgid "Kinshasa"
+msgstr "Киншаса"
+
+msgid "Lagos"
+msgstr "Лагос"
+
+msgid "Libreville"
+msgstr "Либревиль"
+
+msgid "Lome"
+msgstr "Ломе"
+
+msgid "Luanda"
+msgstr "Луанда"
+
+msgid "Lubumbashi"
+msgstr "Лубумбаши"
+
+msgid "Lusaka"
+msgstr "Лусака"
+
+msgid "Malabo"
+msgstr "Малабо"
+
+msgid "Maputo"
+msgstr "Мапуту"
+
+msgid "Maseru"
+msgstr "Масеру"
+
+msgid "Mbabane"
+msgstr "Мбабане"
+
+msgid "Mogadishu"
+msgstr "Могадишо"
+
+msgid "Monrovia"
+msgstr "Монровия"
+
+msgid "Nairobi"
+msgstr "Найроби"
+
+msgid "Ndjamena"
+msgstr "Нджамена"
+
+msgid "Niamey"
+msgstr "Ниамэй"
+
+msgid "Nouakchott"
+msgstr "Нуакшот"
+
+msgid "Ouagadougou"
+msgstr "Уагадугу"
+
+msgid "Porto-Novo"
+msgstr "Порто-Ново"
+
+msgid "Sao Tome"
+msgstr "Сан-Томе"
+
+msgid "Timbuktu"
+msgstr "Тимбукту"
+
+msgid "Windhoek"
+msgstr "Виндхук"
+
+msgid "Adak"
+msgstr "Адак"
+
+msgid "Anchorage"
+msgstr "Анкоридж"
+
+msgid "Antigua"
+msgstr "Антигуа"
+
+msgid "Araguaina"
+msgstr "Арагуйана"
+
+msgid "Buenos Aires"
+msgstr "Буэнос-Айрес"
+
+msgid "Catamarca"
+msgstr "Катамарка"
+
+msgid "ComodRivadavia"
+msgstr "Комодоро-Ривадавия"
+
+msgid "Cordoba"
+msgstr "Кордова"
+
+msgid "Jujuy"
+msgstr "Жужуй"
+
+msgid "La Rioja"
+msgstr "Ла-Риоха"
+
+msgid "Mendoza"
+msgstr "Мендоса"
+
+msgid "Rio Gallegos"
+msgstr "Рио-Гальегос"
+
+msgid "San Juan"
+msgstr "Сан-Хуан"
+
+msgid "San Luis"
+msgstr "Сан-Луис"
+
+msgid "Tucuman"
+msgstr "Тукумане"
+
+msgid "Ushuaia"
+msgstr "Ушуайя"
+
+msgid "Asuncion"
+msgstr "Асунсьон"
+
+msgid "Atikokan"
+msgstr "Атикокан"
+
+msgid "Atka"
+msgstr "Атка"
+
+msgid "Bahia"
+msgstr "Баия"
+
+msgid "Belem"
+msgstr "Белем"
+
+msgid "Blanc-Sablon"
+msgstr "Бланк-Саблон"
+
+msgid "Boa Vista"
+msgstr "Боа-Виста"
+
+msgid "Bogota"
+msgstr "Богота"
+
+msgid "Boise"
+msgstr "Бойсе"
+
+msgid "Cambridge Bay"
+msgstr "Кеймбридж-Бей"
+
+msgid "Campo Grande"
+msgstr "Кампо Гранде"
+
+msgid "Cancun"
+msgstr "Канкун"
+
+msgid "Caracas"
+msgstr "Каракас"
+
+msgid "Cayenne"
+msgstr "Кайенна"
+
+msgid "Cayman"
+msgstr "Кайман"
+
+msgid "Chihuahua"
+msgstr "Чиуауа"
+
+msgid "Coral Harbour"
+msgstr "Корал-Харбор"
+
+msgid "Cuiaba"
+msgstr "Куяба"
+
+msgid "Curacao"
+msgstr "Кюрасао"
+
+msgid "Danmarkshavn"
+msgstr "Данмаркшавн"
+
+msgid "Dawson Creek"
+msgstr "Бухта Доусона"
+
+msgid "Denver"
+msgstr "Денвер"
+
+msgid "Detroit"
+msgstr "Детройт"
+
+msgid "Edmonton"
+msgstr "Эдмонтон"
+
+msgid "Eirunepe"
+msgstr "Эйрунепе"
+
+msgid "Ensenada"
+msgstr "Энсенада"
+
+msgid "Fort Wayne"
+msgstr "Форт Уэйн"
+
+msgid "Fortaleza"
+msgstr "Форталеза"
+
+msgid "Glace Bay"
+msgstr "Глейс Бэй"
+
+msgid "Godthab"
+msgstr "Готхоб"
+
+msgid "Goose Bay"
+msgstr "Гус-Бей"
+
+msgid "Grand Turk"
+msgstr "Гранд-Терк"
+
+msgid "Guayaquil"
+msgstr "Гуаякиль"
+
+msgid "Halifax"
+msgstr "Галифакс"
+
+msgid "Havana"
+msgstr "Гавана"
+
+msgid "Hermosillo"
+msgstr "Эрмосильо"
+
+msgid "Indiana"
+msgstr "Индиана"
+
+msgid "Indianapolis"
+msgstr "Индианаполис"
+
+msgid "Knox"
+msgstr "Нокс"
+
+msgid "Marengo"
+msgstr "Маренго"
+
+msgid "Petersburg"
+msgstr "Петербург"
+
+msgid "Tell City"
+msgstr "Телл Сити"
+
+msgid "Vevay"
+msgstr "Вевей"
+
+msgid "Vincennes"
+msgstr "Венсен"
+
+msgid "Winamac"
+msgstr "Винамак"
+
+msgid "Inuvik"
+msgstr "Инувик"
+
+msgid "Iqaluit"
+msgstr "Икаилут"
+
+msgid "Juneau"
+msgstr "Джуно"
+
+msgid "Kentucky"
+msgstr "Кентукки"
+
+msgid "Louisville"
+msgstr "Луисвилл"
+
+msgid "Monticello"
+msgstr "Монтичелло"
+
+msgid "Knox IN"
+msgstr "Нокс (Индиана)"
+
+msgid "La Paz"
+msgstr "Ла-Пас"
+
+msgid "Lima"
+msgstr "Лима"
+
+msgid "Maceio"
+msgstr "Масейо"
+
+msgid "Managua"
+msgstr "Манагуа"
+
+msgid "Manaus"
+msgstr "Манаус"
+
+msgid "Marigot"
+msgstr "Маригот"
+
+msgid "Mazatlan"
+msgstr "Масатлан"
+
+msgid "Menominee"
+msgstr "Меномине"
+
+msgid "Merida"
+msgstr "Мерида"
+
+msgid "Mexico City"
+msgstr "Мехико"
+
+msgid "Miquelon"
+msgstr "Микелон"
+
+msgid "Moncton"
+msgstr "Монктон"
+
+msgid "Monterrey"
+msgstr "Монтеррей"
+
+msgid "Montevideo"
+msgstr "Монтевидео"
+
+msgid "Montreal"
+msgstr "Монреаль"
+
+msgid "Nassau"
+msgstr "Нассау"
+
+msgid "Nipigon"
+msgstr "Нипигон"
+
+msgid "Nome"
+msgstr "Ном"
+
+msgid "Noronha"
+msgstr "Норонха"
+
+msgid "North Dakota"
+msgstr "Северная Дакота"
+
+msgid "New Salem"
+msgstr "Нью-Салем"
+
+msgid "Pangnirtung"
+msgstr "Пангниртунг"
+
+msgid "Paramaribo"
+msgstr "Парамарибо"
+
+msgid "Port-au-Prince"
+msgstr "Порт-о-Пренс"
+
+msgid "Port of Spain"
+msgstr "Порт-оф-Спейн"
+
+msgid "Porto Acre"
+msgstr "Порту-Акри"
+
+msgid "Porto Velho"
+msgstr "Порту-Велью"
+
+msgid "Rainy River"
+msgstr "Рейни-Ривер"
+
+msgid "Rankin Inlet"
+msgstr "Ранкин-Инлет"
+
+msgid "Recife"
+msgstr "Ресифи"
+
+msgid "Regina"
+msgstr "Риджайна"
+
+msgid "Resolute"
+msgstr "Резольют"
+
+msgid "Rio Branco"
+msgstr "Рио-Бранко"
+
+msgid "Rosario"
+msgstr "Росарио"
+
+msgid "Santiago"
+msgstr "Сантьяго"
+
+msgid "Santo Domingo"
+msgstr "Санто Доминго"
+
+msgid "Sao Paulo"
+msgstr "Сан-Паулу"
+
+msgid "Scoresbysund"
+msgstr "Скорсби"
+
+msgid "Shiprock"
+msgstr "Шипрок"
+
+msgid "St Barthelemy"
+msgstr "Сент-Бартелеми"
+
+msgid "St Johns"
+msgstr "Сент-Джонс"
+
+msgid "St Kitts"
+msgstr "Сент-Китс"
+
+msgid "St Lucia"
+msgstr "Сент-Люсия"
+
+msgid "St Thomas"
+msgstr "Санкт-Томас"
+
+msgid "St Vincent"
+msgstr "Сент-Винсент"
+
+msgid "Swift Current"
+msgstr "Свифт-Каррент"
+
+msgid "Tegucigalpa"
+msgstr "Тегусигальпа"
+
+msgid "Thule"
+msgstr "Тула"
+
+msgid "Thunder Bay"
+msgstr "Тандер-Бей"
+
+msgid "Tijuana"
+msgstr "Тихуана"
+
+msgid "Tortola"
+msgstr "Тортола"
+
+msgid "Vancouver"
+msgstr "Ванкувер"
+
+msgid "Virgin"
+msgstr "Вирджин"
+
+msgid "Whitehorse"
+msgstr "Уайтхорс"
+
+msgid "Winnipeg"
+msgstr "Виннипег"
+
+msgid "Yakutat"
+msgstr "Якутат"
+
+msgid "Yellowknife"
+msgstr "Йеллоунайф"
+
+msgid "Casey"
+msgstr "Кейси"
+
+msgid "Davis"
+msgstr "Дэвис"
+
+msgid "Yangon"
+msgstr "Янгон"
+
+msgid "DumontDUrville"
+msgstr "Дюмон-Дюрвиль"
+
+msgid "Mawson"
+msgstr "Моусон"
+
+msgid "McMurdo"
+msgstr "Мак-Мердо"
+
+msgid "Palmer"
+msgstr "Палмер"
+
+msgid "Rothera"
+msgstr "Ротера"
+
+msgid "South Pole"
+msgstr "Южный полюс"
+
+msgid "Syowa"
+msgstr "Сиова"
+
+msgid "Arctic"
+msgstr "Арктика"
+
+msgid "Longyearbyen"
+msgstr "Лонгйир"
+
+msgid "Asia"
+msgstr "Азия"
+
+msgid "Aden"
+msgstr "Аден"
+
+msgid "Almaty"
+msgstr "Алматы"
+
+msgid "Amman"
+msgstr "Амман"
+
+msgid "Anadyr"
+msgstr "Анадырь"
+
+msgid "Aqtau"
+msgstr "Актау"
+
+msgid "Aqtobe"
+msgstr "Актобе"
+
+msgid "Ashgabat"
+msgstr "Ашхабат"
+
+msgid "Ashkhabad"
+msgstr "Ашхабат"
+
+msgid "Baghdad"
+msgstr "Багдад"
+
+msgid "Baku"
+msgstr "Баку"
+
+msgid "Bangkok"
+msgstr "Бангкок"
+
+msgid "Beirut"
+msgstr "Бейрут"
+
+msgid "Bishkek"
+msgstr "Бишкек"
+
+msgid "Brunei"
+msgstr "Бруней"
+
+msgid "Calcutta"
+msgstr "Калькутта"
+
+msgid "Choibalsan"
+msgstr "Чойбалсан"
+
+msgid "Chongqing"
+msgstr "Чунцин"
+
+msgid "Chungking"
+msgstr "Чунцин"
+
+msgid "Colombo"
+msgstr "Коломбо"
+
+msgid "Dacca"
+msgstr "Дакка"
+
+msgid "Damascus"
+msgstr "Дамаск"
+
+msgid "Dhaka"
+msgstr "Дакка"
+
+msgid "Dili"
+msgstr "Дили"
+
+msgid "Dubai"
+msgstr "Дубай"
+
+msgid "Gaza"
+msgstr "Газа"
+
+msgid "Harbin"
+msgstr "Харбин"
+
+msgid "Ho Chi Minh"
+msgstr "Хошимин"
+
+msgid "Hovd"
+msgstr "Ховд"
+
+msgid "Irkutsk"
+msgstr "Иркутск"
+
+msgid "Istanbul"
+msgstr "Стамбул"
+
+msgid "Jakarta"
+msgstr "Джакарта"
+
+msgid "Jayapura"
+msgstr "Джаяпура"
+
+msgid "Jerusalem"
+msgstr "Иерусалим"
+
+msgid "Kabul"
+msgstr "Кабул"
+
+msgid "Kamchatka"
+msgstr "Камчатка"
+
+msgid "Karachi"
+msgstr "Карачи"
+
+msgid "Kashgar"
+msgstr "Кашгар"
+
+msgid "Katmandu"
+msgstr "Катманду"
+
+msgid "Kolkata"
+msgstr "Калькутта"
+
+msgid "Kuala Lumpur"
+msgstr "Куала-Лумпур"
+
+msgid "Kuching"
+msgstr "Кучинг"
+
+msgid "Macau"
+msgstr "Макао"
+
+msgid "Magadan"
+msgstr "Магадан"
+
+msgid "Makassar"
+msgstr "Макассар"
+
+msgid "Manila"
+msgstr "Манила"
+
+msgid "Muscat"
+msgstr "Маскат"
+
+msgid "Nicosia"
+msgstr "Никосия"
+
+msgid "Oral"
+msgstr "Орал"
+
+msgid "Phnom Penh"
+msgstr "Пномпень"
+
+msgid "Pontianak"
+msgstr "Понтианаке"
+
+msgid "Pyongyang"
+msgstr "Пхеньян"
+
+msgid "Qyzylorda"
+msgstr "Кызылорда"
+
+msgid "Rangoon"
+msgstr "Янгон"
+
+msgid "Riyadh"
+msgstr "Эр-Рияд"
+
+msgid "Saigon"
+msgstr "Сайгон"
+
+msgid "Samarkand"
+msgstr "Самарканд"
+
+msgid "Seoul"
+msgstr "Сеул"
+
+msgid "Shanghai"
+msgstr "Шанхай"
+
+msgid "Taipei"
+msgstr "Тайбэй"
+
+msgid "Tehran"
+msgstr "Тегеран"
+
+msgid "Tel Aviv"
+msgstr "Тель-Авив"
+
+msgid "Thimbu"
+msgstr "Тхимпху"
+
+msgid "Tokyo"
+msgstr "Токио"
+
+msgid "Ujung Pandang"
+msgstr "Уджунг Панданга"
+
+msgid "Ulaanbaatar"
+msgstr "Улан-Батор"
+
+msgid "Ulan Bator"
+msgstr "Улан-Батор"
+
+msgid "Urumqi"
+msgstr "Урумчи"
+
+msgid "Vientiane"
+msgstr "Вьентьян"
+
+msgid "Yakutsk"
+msgstr "Якутск"
+
+msgid "Atlantic"
+msgstr "Атлантика"
+
+msgid "Azores"
+msgstr "Азорские острова"
+
+msgid "Canary"
+msgstr "Канары"
+
+msgid "Faeroe"
+msgstr "Фарерские острова"
+
+msgid "Faroe"
+msgstr "Фарер"
+
+msgid "Jan Mayen"
+msgstr "Ян-Марен"
+
+msgid "Madeira"
+msgstr "Мадейра"
+
+msgid "Reykjavik"
+msgstr "Рейкьявик"
+
+msgid "South Georgia"
+msgstr "Южная Георгия"
+
+msgid "St Helena"
+msgstr "Св. Елены"
+
+msgid "Stanley"
+msgstr "Стэнли"
+
+msgid "Adelaide"
+msgstr "Аделаида"
+
+msgid "Brisbane"
+msgstr "Брисбен"
+
+msgid "Broken Hill"
+msgstr "Броукен-Хил"
+
+msgid "Canberra"
+msgstr "Канберра"
+
+msgid "Currie"
+msgstr "Карри"
+
+msgid "Darwin"
+msgstr "Дарвин"
+
+msgid "Eucla"
+msgstr "Эукла"
+
+msgid "Hobart"
+msgstr "Хобарт"
+
+msgid "Lindeman"
+msgstr "Линдеман"
+
+msgid "Lord Howe"
+msgstr "Лорд-Хау"
+
+msgid "Melbourne"
+msgstr "Мельбурн"
+
+msgid "North"
+msgstr "Север"
+
+msgid "NSW"
+msgstr "NSW"
+
+msgid "Perth"
+msgstr "Перт"
+
+msgid "Queensland"
+msgstr "Квинсленд"
+
+msgid "Sydney"
+msgstr "Сидней"
+
+msgid "Tasmania"
+msgstr "Тасмания"
+
+msgid "Victoria"
+msgstr "Виктория"
+
+msgid "Yancowinna"
+msgstr "Янковинна"
+
+msgid "Greenwich"
+msgstr "Гринвич"
+
+msgid "Zulu"
+msgstr "Зулу"
+
+msgid "Athens"
+msgstr "Афины"
+
+msgid "Belfast"
+msgstr "Белфаст"
+
+msgid "Bucharest"
+msgstr "Бухарест"
+
+msgid "Chisinau"
+msgstr "Кишинев"
+
+msgid "Lisbon"
+msgstr "Лиссабон"
+
+msgid "Ljubljana"
+msgstr "Любляна"
+
+msgid "Mariehamn"
+msgstr "Мариехамн"
+
+msgid "Podgorica"
+msgstr "Подгорица"
+
+msgid "Sarajevo"
+msgstr "Сараево"
+
+msgid "Skopje"
+msgstr "Скопье"
+
+msgid "Tirane"
+msgstr "Тирана"
+
+msgid "Tiraspol"
+msgstr "Тирасполь"
+
+msgid "Uzhgorod"
+msgstr "Ужгород"
+
+msgid "Vaduz"
+msgstr "Вадуц"
+
+msgid "Vatican"
+msgstr "Ватикан"
+
+msgid "Vienna"
+msgstr "Вена"
+
+msgid "Warsaw"
+msgstr "Варшава"
+
+msgid "Zagreb"
+msgstr "Загреб"
+
+msgid "Zaporozhye"
+msgstr "Запорожье"
+
+msgid "Zurich"
+msgstr "Цюрих"
+
+msgid "Indian"
+msgstr "Индиан"
+
+msgid "Antananarivo"
+msgstr "Антананариву"
+
+msgid "Chagos"
+msgstr "Чагос"
+
+msgid "Christmas"
+msgstr "Остров Рождества"
+
+msgid "Cocos"
+msgstr "Кокосовые острова"
+
+msgid "Comoro"
+msgstr "Коморские острова"
+
+msgid "Kerguelen"
+msgstr "Кергелен"
+
+msgid "Mahe"
+msgstr "Маэ"
+
+msgid "Reunion"
+msgstr "Реюньон"
+
+msgid "Pacific"
+msgstr "Тихоокеанский регион"
+
+msgid "Apia"
+msgstr "Апия"
+
+msgid "Auckland"
+msgstr "Окленд"
+
+msgid "Chatham"
+msgstr "Чатэм"
+
+msgid "Easter"
+msgstr "Пасха"
+
+msgid "Efate"
+msgstr "Эфате"
+
+msgid "Enderbury"
+msgstr "Эндербери"
+
+msgid "Fakaofo"
+msgstr "Факаофо"
+
+msgid "Funafuti"
+msgstr "Фунафути"
+
+msgid "Galapagos"
+msgstr "Галапагос"
+
+msgid "Gambier"
+msgstr "Остров Гамбье"
+
+msgid "Guadalcanal"
+msgstr "Гуадалканал"
+
+msgid "Honolulu"
+msgstr "Гонолулу"
+
+msgid "Johnston"
+msgstr "Джонсон"
+
+msgid "Kiritimati"
+msgstr "Киритимати"
+
+msgid "Kosrae"
+msgstr "Кусаие"
+
+msgid "Kwajalein"
+msgstr "Кваджалейн"
+
+msgid "Majuro"
+msgstr "Маджуро"
+
+msgid "Marquesas"
+msgstr "Маркизы"
+
+msgid "Midway"
+msgstr "Миндуэй"
+
+msgid "Norfolk"
+msgstr "Норфолк"
+
+msgid "Noumea"
+msgstr "Нумеа"
+
+msgid "Pago Pago"
+msgstr "Паго-Паго"
+
+msgid "Ponape"
+msgstr "Понапе"
+
+msgid "Port Moresby"
+msgstr "Порт-Морсби"
+
+msgid "Rarotonga"
+msgstr "Раротонга"
+
+msgid "Saipan"
+msgstr "Сайпан"
+
+msgid "Tahiti"
+msgstr "Таити"
+
+msgid "Tarawa"
+msgstr "Тарава"
+
+msgid "Tongatapu"
+msgstr "Тонгатапу"
+
+msgid "Truk"
+msgstr "Трук"
+
+msgid "Wake"
+msgstr "Уэйк"
+
+msgid "Wallis"
+msgstr "Уоллис"
+
+msgid "Yap"
+msgstr "Яп"
+
+msgid "Russian Rouble"
+msgstr "Российский рубль"
+
+msgid "rub."
+msgstr "руб."
+
+msgid "r."
+msgstr "р."
+
+msgid "United States Dollar"
+msgstr "Доллар США"
+
+msgid "Euro"
+msgstr "Евро"
+
+msgid "select region"
+msgstr "выберите регион"
+
+msgid "Yes"
+msgstr "Да"
+
+msgid "No"
+msgstr "Нет"
+
+msgid "Ukrainian hryvnia"
+msgstr "Украинская гривна"
+
+msgid "Belarusian ruble"
+msgstr "Белорусский рубль"
+
+msgid "Canadian dollar"
+msgstr "Канадский доллар"
+
+msgid "Pound sterling"
+msgstr "Фунт стерлингов"
+
+msgid "Israeli new shekel"
+msgstr "Израильский шекель"
+
+msgid "Armenian dram"
+msgstr "Армянский драм"
+
+msgid "Azerbaijani manat"
+msgstr "Азербайджанский манат"
+
+msgid "Kazakhstani tenge"
+msgstr "Казахстанский тенге"
+
+msgid "Moldovan leu"
+msgstr "Молдавский лей"
+
+msgid "Kyrgyzstani som"
+msgstr "Кыргызский сом"
+
+msgid "Message"
+msgstr "Сообщение"
+
+msgid "Category"
+msgstr "Категория"
+
+msgid "<strong>%s</strong> requests access to your apps data:"
+msgstr "<strong>%s</strong> запрашивает доступ к данным приложений:"
+
+msgid "Allow"
+msgstr "Разрешить"
+
+msgid "deny"
+msgstr "запретить"
+
+msgid "Deny"
+msgstr "Запретить"
+
+msgid "Recipient (administrator) email is not valid"
+msgstr "Указан неправильный email получателя (администратора)"
+
+msgid "Please define your request"
+msgstr "Укажите текст сообщения"
+
+msgid "Please confirm your agreement"
+msgstr "Подтвердите согласие"
+
+msgid "I agree to the"
+msgstr "Я принимаю условия"
+
+msgid "personal data protection policy"
+msgstr "политики обработки персональных данных"
+
+msgid "Enter an email address"
+msgstr "Укажите email-адрес"
+
+msgid "An error occurred while attempting to send your request. Please try again in a minute."
+msgstr "Во время отправки произошла ошибка. Попробуйте позже."
+
+msgid "URL of this Webasyst installation (relative)."
+msgstr "URL установки Webasyst (относительный)."
+
+msgid "URL of the current app settlement (relative)."
+msgstr "URL текущего поселения приложения (относительный)."
+
+msgid "URL to access Webasyst backend (relative)."
+msgstr "URL бекенда Webasyst (относительный)."
+
+msgid "URL of the current app’s design theme directory (relative)."
+msgstr "URL директории с файлами текущей темы дизайна (относительный)."
+
+msgid "Returns current page’s relative URL, or absolute if the argument is set to <em>true</em>."
+msgstr "Возвращает относительный URL текущей страницы, или абсолютный, если указать значение аргумента <em>true</em>."
+
+msgid "Returns current domain’s root URL (absolute)."
+msgstr "Возвращает корневой URL текущего домена (абсолютный)."
+
+msgid "Returns the value of a global variable."
+msgstr "Возвращает значение глобальной переменной."
+
+msgid "Assigns a new value to a global variable."
+msgstr "Присваивает новое значение глобальной переменной."
+
+msgid "Sets a new page title."
+msgstr "Устанавливает новый заголовок страницы."
+
+msgid "Returns a GET parameter value."
+msgstr "Возвращает значение GET-параметра."
+
+msgid "Returns <em>true</em> or <em>false</em> depending on whether a mobile device is used."
+msgstr "Возвращает <em>true</em> или <em>false</em> в зависимости от того, используется ли мобильное устройство."
+
+msgid "Returns a POST variable value."
+msgstr "Возвращает значение переменной POST-запроса."
+
+msgid "Returns a server variable value."
+msgstr "Возвращает значение серверной переменной."
+
+msgid "Returns a session variable value."
+msgstr "Возвращает значение переменной сессии."
+
+msgid "Embeds HTML block by ID"
+msgstr "Отображает содержимое блока по его идентификатору"
+
+msgid "Returns authorized user’s field value. If no field value is specified then a user object is returned."
+msgstr "Возвращает значение указанного свойства авторизованного пользователя. Если обозначение свойства не указано, то метод возвращает объект пользователя."
+
+msgid "Returns a User-Agent field value:"
+msgstr "Возвращает значение свойства User-Agent:"
+
+msgid "— <em>\"isMobile\"</em>: returns <em>true</em> or <em>false</em> depending on whether a mobile device (iOS, Android and similar) is used, based on the User-Agent value;"
+msgstr "— <em>\"isMobile\"</em>: основываясь на содержимом заголовков User-Agent, возвращает <em>true</em> или <em>false</em> в зависимости от того, используется ли в данный момент мобильное устройство (iPhone, Android и пр.);"
+
+msgid "— not specified: returns entire User Agent string;"
+msgstr "— не указано: возвращает всю строку User-Agent"
+
+msgid "Displays a simple variable (non array/object)."
+msgstr "Отображает переменную (не подходит для массивов и объектов)."
+
+msgid "Displays the 5th element of a zero-indexed array."
+msgstr "Отображает 5-й элемент массива, считая с нулевого индекса."
+
+msgid "Displays variable key value of an array. Similar to PHP $foo[$bar]."
+msgstr "Отображает значение элемента массива с переменным ключом. Аналогично использованию $foo[$bar] в PHP."
+
+msgid "Displays the object property named <em>bar</em>."
+msgstr "Отображает свойство объекта с именем <em>bar</em>."
+
+msgid "Displays the return value of object method named <em>bar()</em>."
+msgstr "Отображает значение, возвращаемое методом объекта с именем <em>bar()</em>."
+
+msgid "Escapes a variable for safe display in HTML."
+msgstr "Экранирует переменную для безопасного отображения в HTML-коде."
+
+msgid "Outputs the sum of <em>$x</em> and <em>$y</em>."
+msgstr "Отображает сумму <em>$x</em> и <em>$y</em>."
+
+msgid "Assigns a value to a variable."
+msgstr "Присваивает значение переменной."
+
+msgid "Content between {literal} tags is not parsed by Smarty."
+msgstr "Содержимое между тегами {literal} не обрабатывается Smarty."
+
+msgid "Similar to <em>if</em> statements in PHP."
+msgstr "Аналогично конструкции <em>if</em> в PHP."
+
+msgid "Looping over arrays of data."
+msgstr "Перебор элементов в массивах данных."
+
+msgid "Returns the value of system setting “Company name”."
+msgstr "Возвращает значение системной настройки «Название компании»."
+
+msgid "Returns items of the current site’s navigation menu, which is either generated automatically or is set up manually in the “Site → Settings” screen."
+msgstr "Возвращает элементы главного меню этого сайта, сформированное автоматически или настроенное вручную в разделе «Сайт → Настройки»."
+
+msgid "Returns user’s locale; e.g., \"en_US\"."
+msgstr "Возвращает языковую локаль пользователя, например, \"en_US\"."
+
+msgid "— <em>\"platform\"</em>: current visitor’s device platform name; e.g., <em>windows, mac, linux, ios, android, blackberry</em>;"
+msgstr "— <em>platform</em>: название системной платформы устройства пользователя, например, <em>windows, mac, linux, ios, android, blackberry</em>;"
+
+msgid "Displays the \"<em>bar</em>\" key value of an array. Similar to PHP $foo[\"bar\"]."
+msgstr "Отображает значение ключа массива \"<em>bar</em>\" аналогично $foo[\"bar\"] в PHP."
+
+msgid "Outputs <em>$var</em> datetime in a user-friendly form. Supported <em>$format</em> values: <em>monthdate, date, dtime, datetime, fulldatetime, time, fulltime, humandate, humandatetime</em>."
+msgstr "Отображает время <em>$var</em> в удобном для чтения виде. Доступные значения <em>$format</em>: <em>monthdate, date, dtime, datetime, fulldatetime, time, fulltime, humandate, humandatetime</em>."
+
+msgid "Direct PHP function access. E.g., <em>{time()}</em> displays the current timestamp value."
+msgstr "Прямой доступ к функциям PHP. Например, <em>{time()}</em> отображает текущую метку времени UNIX."
+
+msgid "Embeds a Smarty template from a specified file in the current content. The <em>file</em> attribute must contain the path to a file."
+msgstr "Внедряет шаблон Smarty из указанного файла в текущее содержимое. Атрибут <em>file</em> должен содержать путь к файлу."
+
+msgid "Displays structured information about variable. Arrays and objects are explored recursively with values indented to show structure. Similar to PHP var_dump($foo)."
+msgstr "Отображает подробную информацию о структуре переменной, массива или объекта. Работает аналогично функции PHP var_dump($foo)."
+
+msgid "Thank you for signing up!"
+msgstr "Вы успешно зарегистрировались!"
+
+msgid "Display settings"
+msgstr "Настройки отображения"
+
+msgid "Manage theme"
+msgstr "Управление темой дизайна"
+
+msgid "Download theme"
+msgstr "Скачать тему дизайна"
+
+msgid "Default theme cannot be deleted"
+msgstr "Эта тема дизайна не может быть удалена"
+
+msgid "Thumbnails"
+msgstr "Эскизы"
+
+msgid "This design theme links image thumbnails of sizes listed below. If custom-sized on-fly thumbnail generation is not allowed by the app settings, please make sure that at least listed thumbnail sizes are allowed. If on-fly thumbnail generation is allowed, thumbnails will be generated automatically."
+msgstr "Эта тема дизайна использует эскизы изображений перечисленных ниже размеров. Если в настройках вашего приложения возможность автоматического создания эскизов «на лету» отключена, убедитесь, что все указанные размеры добавлены в список разрешенных. Если создание эскизов «на лету» разрешено, изображения указанных ниже размеров будут создаваться автоматически."
+
+msgid "Embeds HTML snippet by ID"
+msgstr "Добавляет HTML-блок по ID"
+
+msgid "Returns the path to the design theme directory of a specified app."
+msgstr "Возвращает путь к директории темы дизайна указанного приложения."
+
+msgid "Returns path to theme folder by <em>theme_id</em>"
+msgstr "Возвращает путь к папке темы дизайна по <em>theme_id</em>"
+
+msgid "Thank you for registering on %s!"
+msgstr "Вы успешно зарегистрировались на сайте «%s»!"
+
+msgid "Login to your account"
+msgstr "Вход в личный кабинет"
+
+msgid "Revert to original"
+msgstr "Восстановить из исходной версии"
+
+msgid "Drop all customizations and revert parent theme <strong>%s</strong> to the original version too"
+msgstr "Также сбросить все изменения, которые вносились в родительскую тему дизайна <strong>%s</strong>"
+
+msgid "Revert"
+msgstr "Восстановить"
+
+msgid "Request from website"
+msgstr "Запрос с сайта"
+
+msgid "Thank you!"
+msgstr "Спасибо!"
+
+msgid "Proceed to checkout"
+msgstr "Оформить заказ"
+
+msgid "Checkout"
+msgstr "Оформить заказ"
+
+msgid "Shop"
+msgstr "Магазин"
+
+msgid "Blog"
+msgstr "Блог"
+
+msgid "Photos"
+msgstr "Фото"
+
+msgid "Photostream"
+msgstr "Фотопоток"
+
+msgid "Favorites"
+msgstr "Избранное"
+
+msgid "Your message has been sent."
+msgstr "Ваше сообщение было отправлено."
+
+msgid "Not an image or invalid image:"
+msgstr "Не является файлом изображения:"
+
+msgid "File must be writable:"
+msgstr "Файл должен быть доступен для записи:"
+
+msgid "added a new template"
+msgstr "добавил новый шаблон"
+
+msgid "edited template"
+msgstr "отредактировал шаблон"
+
+msgid "deleted template"
+msgstr "удалил шаблон"
+
+msgid "uploaded a new theme"
+msgstr "загрузил новую тему"
+
+msgid "downloaded theme"
+msgstr "скачал тему"
+
+msgid "deleted theme"
+msgstr "удалил тему"
+
+msgid "reset theme settings"
+msgstr "восстановил стандартные настройки темы"
+
+msgid "create theme duplicate"
+msgstr "создал дубликат темы"
+
+msgid "renamed theme"
+msgstr "переименовал тему"
+
+msgid "added a new page"
+msgstr "добавил новую страницу"
+
+msgid "edited a website page"
+msgstr "отредактировал страницу"
+
+msgid "deleted page"
+msgstr "удалил страницу"
+
+msgid "moved page"
+msgstr "переместил страницу"
+
+msgid "logged in"
+msgstr "вошел в аккаунт"
+
+msgid "logged out"
+msgstr "вышел из аккаунта"
+
+msgid "login failed"
+msgstr "войти не удалось"
+
+msgid "signed up"
+msgstr "зарегистрировался"
+
+msgid "edited profile in customer portal"
+msgstr "отредактировал профиль в личном кабинете"
+
+msgid "enabled access for contact"
+msgstr "разрешил доступ для контакта"
+
+msgid "disabled access for contact"
+msgstr "запретил доступ для контакта"
+
+msgid "Data must be an array."
+msgstr "Данные должны быть массивом"
+
+msgid "Incorrect date"
+msgstr "Неправильная дата"
+
+msgid "Incorrect time"
+msgstr "Неправильное время"
+
+msgid "Facebook"
+msgstr "Фейсбук"
+
+msgid "Twitter"
+msgstr "Твиттер"
+
+msgid "VK"
+msgstr "ВКонтакте"
+
+msgid "Instagram"
+msgstr "Инстаграм"
+
+msgid "Social"
+msgstr "Соцсети"
+
+msgid "Contact us"
+msgstr "Обратная связь"
+
+msgid "Submit"
+msgstr "Отправить"
+
+msgid "Back"
+msgstr "Назад"
+
+msgid "Subscribe to our email newsletter"
+msgstr "Подписаться на новости"
+
+msgid "Follow us"
+msgstr "Подписаться"
+
+msgid "Thank you! We’ll keep you posted."
+msgstr "Спасибо! Будем держать вас в курсе."
+
+msgid "View cart"
+msgstr "Посмотреть корзину"
+
+msgid "My profile"
+msgstr "Мой профиль"
+
+msgid "New password"
+msgstr "Новый пароль"
+
+msgid "Photo"
+msgstr "Фото"
+
+msgid "Site"
+msgstr "Сайт"
+
+msgid "Appearance"
+msgstr "Оформление"
+
+msgid "Templates"
+msgstr "Шаблоны"
+
+msgid "Themes"
+msgstr "Темы дизайна"
+
+msgid "Settings"
+msgstr "Настройки"
+
+msgid "This list represent all parent theme (<strong>%s</strong>) templates which are currently not linked in this design theme."
+msgstr "Этот список отображает все шаблоны дизайна родительской темы (<strong>%s</strong>), которые еще не подключены в текущей теме дизайна."
+
+msgid "Download theme backup"
+msgstr "Скачать архив с темой дизайна"
+
+msgid "Clone theme"
+msgstr "Создать клон темы"
+
+msgid "Rename theme"
+msgstr "Переименовать тему"
+
+msgid "You did not apply customizations to this theme yet, and thus there is nothing to revert."
+msgstr "Вы еще не вносили изменения в эту тему дизайна, поэтому сбрасывать пока нечего."
+
+msgid "Start using %s theme"
+msgstr "Начать использовать тему «%s»"
+
+msgid "preview this theme"
+msgstr "открыть предпросмотр"
+
+msgid "Theme path"
+msgstr "Путь к папке темы"
+
+msgid "Theme usage"
+msgstr "Использование темы"
+
+msgid "All listed routes are linking %s design theme right now."
+msgstr "Тема дизайна «%s» в данный момент используется по всем перечисленным адресам."
+
+msgid "%s design theme does not offer customizable display settings. Please use template editor for customizing the theme."
+msgstr "Тема дизайна «%s» не предоставляет опций для настройки внешнего вида. Используйте редактор шаблонов дизайна для настройки оформления."
+
+msgid "About this theme"
+msgstr "Информация о теме"
+
+msgid "Start using this theme on one of your existing %s app routes, or create a new route:"
+msgstr "Подключите тему дизайна к одному из существующих поселений приложения «%s» или создайте новое правило маршрутизации:"
+
+msgid "Existing route"
+msgstr "Выберите правило"
+
+msgid "New route"
+msgstr "Новое правило"
+
+msgid "Change parent theme"
+msgstr "Сменить родительскую тему"
+
+msgid "%s design theme has been successfully installed. Start using this theme by clicking the button below."
+msgstr "Тема дизайна «%s» была успешно установлена. Начните использование темы, подключив ее с помощью кнопки ниже."
+
+msgid "%s design theme is currently not in use on your websites."
+msgstr "Тема дизайна «%s» в данный момент не используется на ваших сайтах."
+
+msgid "Upload theme archive"
+msgstr "Загрузить архив с темой"
+
+msgid "Blocks"
+msgstr "Блоки"
+
+msgid "Confirm your email by clicking this link"
+msgstr "Подтвердите ваш аккаунт, щелкнув по ссылке"
+
+msgid "Roll back my file to the original version"
+msgstr "Сбросить мои изменения к оригинальной версии файла"
+
+msgid "This will reset all your changes. Are you sure?"
+msgstr "Это сбросит все выполненные вами изменения. Вы уверены?"
+
+msgid "<strong>%s</strong> theme preview in action"
+msgstr "Предпросмотр темы дизайна <strong>%s</strong>"
+
+msgid "Stop preview session"
+msgstr "Завершить предпросмотр"
+
+msgid "Edit"
+msgstr "Редактировать"
+
+msgid "Contact information successfully updated!"
+msgstr "Контактная информация успешно обновлена!"
+
+msgid "Change password"
+msgstr "Сменить пароль"
+
+msgid "Delete photo"
+msgstr "Удалить фото"
+
+msgid "There are no routes for %s app on this site yet."
+msgstr "На этом сайте нет поселений приложения «%s»."
+
+msgid "Customizing %s theme settings below will affect all listed routes. If you want to keep individual designs, use separate theme copies (clones) for each route."
+msgstr "Изменение настроек темы дизайна «%s» затронет все перечисленные поселения приложения. Если вы хотите сохранить индивидуальный дизайн для каждого поселения, используйте отдельные копии (дубликаты) темы дизайна."
+
+msgid "This design theme is also used on <strong>%s</strong>. Editing theme template files will affect both %s and other listed routes."
+msgstr "Эта тема дизайна также используется по адресу <strong>%s</strong>. Редактирование шаблонов дизайна этой темы приведет к изменению внешнего вида как %s, так и всех других перечисленных поселений."
+
+msgid "Connected accounts"
+msgstr "Связанные аккаунты"
+
+msgid "Connect this account to your social network accounts so next time you can log in without entering your password:"
+msgstr "Подключите этот аккаунт к вашим аккаунтам в соцсетях, чтобы в следующий раз входить на сайт без ввода пароля:"
+
+msgid "%s design theme"
+msgstr "Тема дизайна «%s»"
+
+msgid "A confirmation link has been sent to your email address provided during the signup. Please click this link to confirm your email and to sign in. <a class=\"send-email-confirmation\" href=\"%s\">Resend the link</a>"
+msgstr "Вам была отправлена ссылка на подтверждение email-адреса. Пожалуйста, щелкните по этой ссылке, чтобы подтвердить ваш email и авторизоваться на сайте. <a class=\"send-email-confirmation\" href=\"%s\">Отправить ссылку еще раз</a>"
+
+msgid "Confirmation link has been resent."
+msgstr "Ссылка для подтверждения отправлена повторно."
+
+msgid "Invalid login"
+msgstr "Неверный логин"
+
+msgid "Error copying file from %s to %s"
+msgstr "Ошибка копирования файла из %s в %s"
+
+msgid "The requested resource is not available."
+msgstr "Запрашиваемый ресурс недоступен."
+
+msgid "You have successfully confirmed your email."
+msgstr "Вы успешно подтвердили ваш email-адрес."
+
+msgid "You have successfully signed up."
+msgstr "Вы зарегистрировались."
+
+msgid "A confirmation link has been sent to you by email. Please click this link to confirm your signup and to sign in."
+msgstr "Ссылка на подтверждение регистрации была отправлена вам по электронной почте. Пожалуйста, щелкните по этой ссылке, чтобы подтвердить регистрацию и авторизоваться на сайте."
+
+msgid "Original version <strong>%s</strong>"
+msgstr "Оригинальная версия <strong>%s</strong>"
+
+msgid "No customizations have been made to theme settings and template files."
+msgstr "Вы не вносили изменения в шаблоны дизайна и настройки этой темы дизайна."
+
+msgid "Latest version <strong>%s</strong>"
+msgstr "Последняя версия <strong>%s</strong>"
+
+msgid "Your customized version of %s theme is up to date."
+msgstr "Установлена последняя версия темы дизайна %s."
+
+msgid "Update to version %s is available"
+msgstr "Доступно обновление до версии %s"
+
+msgid "Theme update requires your commitment because it may affect changes that you previously applied to template files and thus alter your site layout. Click to review the list of files and update."
+msgstr "Обновление темы дизайна требует вашего подтверждения, так как при обновлении шаблоны дизайна и настройки темы будут перезаписаны их новыми версиями, и это может повлиять на внешний вид и работоспособность вашего сайта. Щелкните, чтобы посмотреть список файлов, которые будут обновлены."
+
+msgid "This design theme was either cloned from another, original, theme or was manually uploaded as an archive. It cannot be updated via the Installer app or reverted to an original version because there is no installed original theme with the same ID <strong>%s</strong>."
+msgstr "Эта тема дизайна была загружена в виде архива или создана как дубликат другой темы. Обновление для данной темы недоступно, так как оригинальной темы дизайна с таким же идентификатором (<strong>%s</strong>) не существует."
+
+msgid "Theme version"
+msgstr "Версия темы"
+
+msgid "This will erase all customizations you’ve made to this theme’s template files using the design editor, and reset this theme to original. Are you sure?"
+msgstr "Очистить все изменения, которые вы вносили в тему дизайна с помощью редактора дизайна, и вернуть тему дизайна к исходному состоянию?"
+
+msgid "Update theme"
+msgstr "Обновить тему"
+
+msgid "Confirm the list of files which will be replaced with their newest versions from theme version %s."
+msgstr "Подтвердите обновление всех выбранных шаблонов дизайна их новыми версиями из %s."
+
+msgid "Files marked with <strong>bold</strong> were previously modified by you — select them only if you’d like to completely drop changes you’ve made to these files. All selected files will be overwritten with their newest versions from the original theme, and there will be no way to automatically rollback this update. (If you feel non-confident, don’t select modified templates by now. You will be able to update them manually file-by-file later on.)"
+msgstr "Файлы, которые вы ранее редактировали, выделены <strong>жирным</strong>. Выберите только те файлы, которые хотите полностью сбросить до их оригинальных версий из обновленной темы дизайна, тем самым удалив все внесенные вами ранее изменения. (Если вы не уверены, нужно ли обновлять тот или иной файл, не выбирайте его. Позже вы сможете обновить все эти файлы по одному.)"
+
+msgid "Theme appearance settings will be updated automatically"
+msgstr "Настройки темы дизайна будут обновлены автоматически"
+
+msgid "Theme appearance settings (theme.xml)"
+msgstr "Настройки оформления (theme.xml)"
+
+msgid "You did not modify this file"
+msgstr "Вы не вносили изменения в этот файл"
+
+msgid "%s and %s"
+msgstr "%s и %s"
+
+msgid "%d more non-modified file"
+msgid_plural "%d more non-modified files"
+msgstr[0] "еще %d неизмененный файл"
+msgstr[1] "еще %d неизмененных файла"
+msgstr[2] "еще %d неизмененных файлов"
+
+msgid "You modified this file"
+msgstr "Вы вносили изменения в этот файл"
+
+msgid "Update all to %s"
+msgstr "Обновить до %s"
+
+msgid "Apply this theme for mobile devices only"
+msgstr "Использовать только для мобильных устройств"
+
+msgid "All selected files will be overwritten with their newest versions from the original theme. In case of incompatibility between your customizations and newer theme templates, CSS, and images, your site looks may change unexpectedly. There will be no way to automatically rollback this update. Update?"
+msgstr "Все выбранные файлы будут перезаписаны оригинальными версиями из обновленной темы дизайна. В случае несовместимости изменений, которые вы вносили в тему дизайна, с шаблонами, CSS и другими ресурсами из новой версии темы внешний вид сайта может потребовать доработки вручную. Обновить тему?"
+
+msgid "Update is available"
+msgstr "Доступно обновление"
+
+msgid "All customizations you’ve made to this file will be lost!"
+msgstr "Все изменения, которые вы вносили в этот файл, будут потеряны."
+
+msgid "Customize dashboard"
+msgstr "Настроить виджеты"
+
+msgid "Done editing"
+msgstr "Готово"
+
+msgid "Can't save plugin settings: unknown plugin id"
+msgstr "Ошибка сохранения настроек плагина: неизвестный плагин"
+
+msgid "Incorrect size"
+msgstr "Недопустимый размер"
+
+msgid "Widget not found"
+msgstr "Виджет не найден"
+
+msgid "Earlier"
+msgstr "Ранее"
+
+msgid "7 Days"
+msgstr "7 дней"
+
+msgid "30 Days"
+msgstr "30 дней"
+
+msgid "90 Days"
+msgstr "90 дней"
+
+msgid "365 Days"
+msgstr "365 дней"
+
+msgid "Dashboard"
+msgstr "Дашборд"
+
+msgid "Live Stream"
+msgstr "Лента событий"
+
+msgid "Everything"
+msgstr "Все события"
+
+msgid "Load more"
+msgstr "Показать еще"
+
+msgid "Drag new widgets onto your dashboard and customize the layout any way you like it. Dashboards are personal, so only you will see your custom layout. Other Webasyst users have their own personal dashboards too."
+msgstr "Перетащите виджеты на дашборд и расположите их так, как удобно лично вам. Расположение виджетов у каждого пользователя Webasyst индивидуально."
+
+msgid "Click or drag this widget to install it on your dashboard"
+msgstr "Щелкните по виджету или перетащите его на дашборд"
+
+msgid "Delete Widget"
+msgstr "Удалить виджет"
+
+msgid "Set small size"
+msgstr "Маленький размер"
+
+msgid "Set medium size"
+msgstr "Средний размер"
+
+msgid "Set big size"
+msgstr "Большой размер"
+
+msgid "Show settings"
+msgstr "Настройки"
+
+msgid "Your dashboard is empty. Add some widgets by clicking Customize dashboard on the top."
+msgstr "Дашборд пока пустой. Добавьте виджеты на дашборд, щелкнув по ссылке «Настроить виджеты» в левом верхнем углу."
+
+msgid "Social sharing"
+msgstr "Соцсети"
+
+msgid "Use these meta tags and default product image for social sharing too"
+msgstr "Для соцсетей использовать эти же заголовки и описания"
+
+msgid "Social sharing title"
+msgstr "Заголовок для соцсетей"
+
+msgid "Social sharing image URL"
+msgstr "URL изображения для соцсетей"
+
+msgid "If not set, a social network will attempt to determine preview image on it’s own."
+msgstr "Если адрес не указан явно, соцсеть автоматически выберет одно из изображений на странице"
+
+msgid "Social sharing video URL"
+msgstr "URL видео для соцсетей"
+
+msgid "Social sharing description"
+msgstr "Описание для соцсетей"
+
+msgid "Social sharing type"
+msgstr "Тип страницы для соцсетей"
+
+msgid "Use these meta tags for social sharing too"
+msgstr "Для соцсетей использовать эти же заголовки и описания"
+
+msgid "Please refer to <a href=\"http://ogp.me\" target=\"_blank\">Open Graph</a> protocol site for more information on social sharing meta tags and available values."
+msgstr "Подробная информация о параметрах для соцсетей и их возможных значениях опубликована на сайте протокола <a href=\"http://ogp.me\" target=\"_blank\">Open Graph</a>."
+
+msgid "Customize the rest of theme settings in your Webasyst backend > <i>select app</i> > Design."
+msgstr "Полный список настроек темы дизайна доступен в бекенде Webasyst > <i>приложение</i> > Дизайн."
+
+msgid "No events in the live stream yet."
+msgstr "Лента событий пока пуста."
+
+msgid "All apps"
+msgstr "Все приложения"
+
+msgid "Selected apps"
+msgstr "Приложения"
+
+msgid "Welcome to your personal dashboard!"
+msgstr "Добро пожаловать на ваш дашборд Webasyst!"
+
+msgid "Customize widgets and dashboard layout using the link above. Dashboards are personal, so only you will see your custom layout. Other Webasyst users have their own personal dashboards too."
+msgstr "Настройте свой дашборд с помощью ссылки выше. Располагайте виджеты так, как удобно именно вам. Набор виджетов на дашборде у каждого пользователя Webasyst индивидуален."
+
+msgid "OK, thanks"
+msgstr "Понятно, спасибо"
+
+msgid "Live stream collects all events from installed apps and presents them in a chronological order."
+msgstr "Лента отображает события из всех приложений, установленных в вашем Webasyst."
+
+msgid "%s theme (version %s) for %s app"
+msgstr "Тема «%s» (версия %s) для приложения «%s»"
+
+msgid "Apps"
+msgstr "Приложения"
+
+msgid "Widgets"
+msgstr "Виджеты"
+
+msgid "The secret parameter is missing."
+msgstr "Секретный параметр отсутствует."
+
+msgid "The secret parameter is invalid or malformed."
+msgstr "Секретный параметр некорректен или искажен."
+
+msgid "The response parameter is missing."
+msgstr "Параметр ответа отсутствует."
+
+msgid "The response parameter is invalid or malformed."
+msgstr "Параметр ответа некорректен или искажен."
+
+msgid "You don’t have permissions to view this widget"
+msgstr "Недостаточно прав доступа для просмотра виджета"
+
+msgid "Popular plugins"
+msgstr "Популярные плагины"
+
+msgid "No plugins are installed."
+msgstr "Плагины не установлены."
+
+msgid "Loading..."
+msgstr "Загрузка..."
+
+msgid "Plugins"
+msgstr "Плагины"
+
+msgid "Plugin %s is installed and working."
+msgstr "Плагин «%s» установлен и работает."
+
+msgid "No configuration options are available for this plugin."
+msgstr "Этот плагин не предоставляет возможность изменения настроек."
+
+msgid "Unknown plugin"
+msgstr "Неизвестный плагин"
+
+msgid "Bytes"
+msgstr "Байт"
+
+msgid "KBytes"
+msgstr "КБайт"
+
+msgid "MBytes"
+msgstr "МБайт"
+
+msgid "GBytes"
+msgstr "ГБайт"
+
+msgid "Hello world"
+msgstr "Hello world"
+
+msgid "Navigation"
+msgstr "Навигация"
+
+msgid "Menu item 1"
+msgstr "Пункт меню 1"
+
+msgid "Menu item 2"
+msgstr "Пункт меню 2"
+
+msgid "Menu item 3"
+msgstr "Пункт меню 3"
+
+msgid "Woohoo, Webasyst app is ready!"
+msgstr "Ура, приложение для Webasyst готово!"
+
+msgid "My dashboard"
+msgstr "Мой дашборд"
+
+msgid "Webasyst TV"
+msgstr ""
+
+msgid "New Webasyst TV dashboard..."
+msgstr "Новый дашборд Webasyst TV..."
+
+msgid "New dashboard"
+msgstr "Новый дашборд"
+
+msgid "Dashboard title"
+msgstr "Название"
+
+msgid "Webasyst TV dashboards can be opened in any modern web browser and streamed to 4K or Full HD TVs."
+msgstr "Дашборд Webasyst TV можно просматривать в любом современном браузере и транслировать на телевизоры 4K или Full HD."
+
+msgid "Dashboard public link"
+msgstr "Ссылка"
+
+msgid "You are about to permanently delete this dashboard. Are you sure?"
+msgstr "Дашборд будет удален без возможности восстановления. Вы уверены?"
+
+msgid "Delete dashboard"
+msgstr "Удалить дашборд"
+
+msgid "Add widgets"
+msgstr "Добавить виджеты"
+
+msgid "Installed"
+msgstr "Установлены"
+
+msgid "Install new widgets"
+msgstr "Виджеты в Инсталлере"
+
+msgid "Only you can see this dashboard."
+msgstr "Этот дашборд видите только вы."
+
+msgid "Themes to clone"
+msgstr "Клонировать темы"
+
+msgid "All %s themes (recommended)"
+msgstr "Тема «%s» для всех приложений (рекомендуется)"
+
+msgid "Only %s theme for this app (%s)"
+msgstr "Тема «%s» только для приложения «%s»"
+
+msgid "%s's birthday — %s"
+msgstr "%s отмечает день рождения — %s"
+
+msgid "%s is now online"
+msgstr "%s сейчас онлайн"
+
+msgid "%s is now away"
+msgstr "%s онлайн, но не активен"
+
+msgid "Plugin not found"
+msgstr "Плагин не найден"
+
+msgid "Error cUrl init"
+msgstr "Ошибка инициализации cUrl"
+
+msgid "edited contact"
+msgstr "отредактировал контакт"
+
+msgid "Change photo"
+msgstr "Изменить фото"
+
+msgid "@"
+msgstr "в"
+
+msgid "Drop photo here"
+msgstr "Перетащите фото сюда"
+
+msgid "To change drop another photo or upload file (JPG, GIF, PNG or WEBP):"
+msgstr "Для замены перетащите другое фото или загрузите файл (JPG, GIF, PNG или WEBP):"
+
+msgid "Or upload file (JPG, GIF, PNG or WEBP):"
+msgstr "Или загрузить файл (JPG, GIF, PNG или WEBP):"
+
+msgid "Are you sure you want to delete this photo?"
+msgstr "Вы действительно хотите удалить фото?"
+
+msgid "Maps"
+msgstr "Карты"
+
+msgid "<a href=\"https://developers.google.com/maps/documentation/javascript/get-api-key\">Obtain a Google Maps API key</a> to display a map within the Webasyst backend. Without a key, only a link to the map will be displayed."
+msgstr "<a href=\"https://developers.google.com/maps/documentation/javascript/get-api-key\">Получите ключ Google Maps API</a>, чтобы показывать карту в бекенде Webasyst. Без ключа будет показана только ссылка на карту."
+
+msgid "To be able to use an API key, <a href=\"https://console.developers.google.com/apis/api/static_maps_backend/\">enable Static Maps API</a> in your Google account."
+msgstr "Для использования API key <a href=\"https://console.developers.google.com/apis/api/static_maps_backend/\">включите Static Maps API</a> в своем аккаунте Google."
+
+msgid "Google Maps API key"
+msgstr ""
+
+msgid "Request preferred delivery time"
+msgstr "Запрашивать желаемый интервал доставки"
+
+msgid "Request preferred delivery date"
+msgstr "Запрашивать желаемую дату доставки"
+
+msgid "from"
+msgstr "с"
+
+msgid "till"
+msgstr "до"
+
+msgid "Delivery intervals"
+msgstr "Интервалы доставки"
+
+msgid "Add interval"
+msgstr "Добавить интервал"
+
+msgid "This setting must be supported by the app; e.g., Shop-Script ver. 8.0 or higher."
+msgstr "Эта настройка должна поддерживаться приложением, например, Shop-Script версии 8.0 или выше."
+
+msgid "Extra workday"
+msgstr "Доп. рабочий день"
+
+msgid "Extra day off"
+msgstr "Доп. выходной"
+
+msgid "Google app ID"
+msgstr "Идентификатор клиента"
+
+msgid "Google app secret"
+msgstr "Секрет клиента"
+
+msgid "Facebook app ID"
+msgstr "Идентификатор приложения"
+
+msgid "Facebook app secret"
+msgstr "Секрет приложения"
+
+msgid "VK app ID"
+msgstr "ID приложения"
+
+msgid "VK app secret"
+msgstr "Защищенный ключ"
+
+msgid "Yandex app ID"
+msgstr "ID"
+
+msgid "Yandex app secret"
+msgstr "Пароль"
+
+msgid "Cannot create a theme copy with specified ID. A theme with this ID already exists."
+msgstr "Не удалось создать копию темы с указанным ID. Тема с таким ID уже существует."
+
+msgid "Comma"
+msgstr "Запятая"
+
+msgid "Semicolon"
+msgstr "Точка с запятой"
+
+msgid "Tab"
+msgstr "Табуляция"
+
+msgid "Page URL is in conflict with the website structure."
+msgstr "URL страницы конфликтует с настройкой структуры сайта."
+
+msgid "Unknown page domain"
+msgstr "Неизвестный домен страницы"
+
+msgid "Unknown page route"
+msgstr "Неизвестный маршрут страницы"
+
+msgid "<strong>id</strong>: block ID.<br><strong>$params</strong>: associative array of additional parameters passed to a block (example: <code>['myparam' => 100]</code>). A parameter is available by its name as a Smarty variable within a block (example: <code>$myparam</code>)."
+msgstr "<strong>id</strong>: ID блока.<br><strong>$params</strong>: ассоциативный массив дополнительных параметров, переданных в блок (пример: <code>['myparam' => 100]</code>). Параметр доступен по своему имени в коде блока в виде переменной Smarty (пример: <code>$myparam</code>)."
+
+msgid "General settings"
+msgstr "Общие настройки"
+
+msgid "Collapse"
+msgstr "Свернуть"
+
+msgid "Expand"
+msgstr "Развернуть"
+
+msgid "Collapse all"
+msgstr "Свернуть всё"
+
+msgid "Expand all"
+msgstr "Развернуть всё"
+
+msgid "Show hidden settings"
+msgstr "Показать скрытые настройки"
+
+msgid "Settings groups"
+msgstr "Группы настроек"
+
+msgid "Find setting"
+msgstr "Найти настройку"
+
+msgid "Search results:"
+msgstr "Результаты поиска:"
+
+msgid "No settings found"
+msgstr "Настройки не найдены"
+
+msgid "Export theme settings"
+msgstr "Экспорт настроек темы"
+
+msgid "Import theme settings"
+msgstr "Импорт настроек темы"
+
+msgid "Select archive"
+msgstr "Выберите архив"
+
+msgid "Select a TAR.GZ archive file"
+msgstr "Выберите файл в формате TAR.GZ"
+
+msgid "Import"
+msgstr "Импорт"
+
+msgid "Empty archive."
+msgstr "Пустой архив."
+
+msgid "No valid settings.json file in archive."
+msgstr "В архиве отсутствует правильный файл settings.json."
+
+msgid "These settings are not for selected app’s design theme."
+msgstr "Эти настройки не соответствуют текущему приложению."
+
+msgid "No settings found in archive."
+msgstr "Настройки в архиве не найдены."
+
+msgid "These images were not found in archive: "
+msgstr "Эти изображения не найдены в архиве: "
+
+msgid "Current design settings will be lost during import. Export current settings before import to restore them later, if necessary."
+msgstr "Текущие настройки дизайна будут потеряны в ходе импорта. Экспортируйте текущие настройки до импорта, чтобы восстановить их при необходимости."
+
+msgid "May be displayed on websites and in notifications."
+msgstr "Может отображаться на страницах сайтов и в уведомлениях."
+
+msgid "May be used on websites and in notifications."
+msgstr "Может использоваться на страницах сайтов и в уведомлениях."
+
+msgid "Email address for notifications"
+msgstr "Email-адрес для уведомлений"
+
+msgid "Main account administrative email where system notification will be sent."
+msgstr "Основной электронный адрес администратора, на который будут отправляться системные уведомления."
+
+msgid "Sender email address"
+msgstr "Email-адрес отправителя"
+
+msgid "Reply-To address for system email notifications sent by Webasyst."
+msgstr "Этот электронный адрес будет указан в качестве обратного адреса в системных email-уведомлениях, отправляемых Вебасистом."
+
+msgid "Email settings"
+msgstr "Настройки email"
+
+msgid "Enter an <strong>email address</strong> to set up a transport <em>for one sender email</em>.<br>Enter a <strong>domain name</strong> to set up a transport <em>for all sender emails on that domain</em>."
+msgstr "Введите <strong>email-адрес</strong>, чтобы настроить транспорт отдельно <em>для одного адреса отправителя</em>.<br>Введите <strong>доменное имя</strong>, чтобы настроить транспорт <em>для всех адресов отправителя на этом домене</em>."
+
+msgid "Select how email messages must be sent by default from your Webasyst."
+msgstr "Выберите, каким способом должны по умолчанию отправляться email-сообщения из вашего Вебасиста."
+
+msgid "Default"
+msgstr "По умолчанию"
+
+msgid "The email sending parameters specified below are used by default for all outgoing email messages. If you need to use other parameters for all or certain sender addresses or domains then add extra rules using the “<strong>%s</strong>” button."
+msgstr "Указанные ниже параметры отправки используются по умолчанию для всех исходящих email-сообщений. Если вам нужно использовать другие параметры отправки для всех или выбранных адресов или отдельных доменов, добавьте дополнительные правила с помощью кнопки «<strong>%s</strong>»."
+
+msgid "Email transport"
+msgstr "Email транспорт"
+
+msgid "Transport"
+msgstr "Транспорт"
+
+msgid "Email or domain"
+msgstr "Email или домен"
+
+msgid "PHP mail() function"
+msgstr "PHP-функция mail()"
+
+msgid "Debug mailer"
+msgstr "Тестовый отправитель"
+
+msgid "When this option is selected messages are sent by the default transport specified in the Webasyst framework configuration."
+msgstr "При выборе этого варианта рассылки будут отправляться транспортом по умолчанию, указанным в конфигурации фреймворка Вебасист."
+
+msgid "Some web-hosting companies allow sending email messages by means of this transport only. If it is required to specify additional parameters for the mail() function enter them below. The default parameters are -f%s."
+msgstr "Некоторые хостинг-провайдеры позволяют отправлять электронные сообщения только этим транспортом. Если нужно использовать дополнительные параметры при вызове функции mail(), укажите их ниже. По умолчанию используются параметры -f%s."
+
+msgid "This is a default command for sending email in UNIX-like operating systems. You can edit it to use a different command for sending messages if you are an experienced server administrator."
+msgstr "Это стандартная команда для отправки email-сообщений на UNIX-хостингах. Ее можно изменить на другую системную команду для отправки сообщений, если вы самостоятельно администрируете работу сервера."
+
+msgid "A special server for sending email messages. You can send email via any SMTP server for which you have connection credentials: host, port, user name, and password. It may belong either to your web-hosting company or to a public mail service such as Gmail, Yahoo! Mail, Outlook.com, etc."
+msgstr "Специальный сервер, предназначенный для отправки электронной почты. Сообщения можно отправлять через любой SMTP-сервер, для подключения к которому у вас есть его адрес, номер порта, имя пользователя (логин) и пароль. Это может быть SMTP-сервер вашего хостинг-провайдера или публичного почтового сервиса: Mail.ru, Gmail и т. п."
+
+msgid "Options"
+msgstr "Параметры"
+
+msgid "Command"
+msgstr "Команда"
+
+msgid "Encryption"
+msgstr "Шифрование"
+
+msgid "None"
+msgstr "Нет"
+
+msgid "You need to install PHP extension openssl to use DKIM."
+msgstr "Вам необходимо установить расширение openssl php для использования DKIM."
+
+msgid "You need PHP version 5.3 or higher to use DKIM. Your current version is:"
+msgstr "Для использования DKIM вам потребуется PHP версии 5.3 или выше. Текущая версия:"
+
+msgid "Extension openssl is not installed"
+msgstr "Расширение openssl не установлено"
+
+msgid "Failed to create DKIM signature"
+msgstr "Не удалось сгенерировать DKIM ключ"
+
+msgid "Enter an email address in “Sender” field to use DKIM."
+msgstr "Для использования DKIM введите email-адрес в поле «Отправитель»."
+
+msgid "Add a DKIM signature to outgoing email messages to confirm your ownership of the sender’s email address."
+msgstr "Добавьте DKIM-подпись для исходящих email-сообщений, чтобы подтвердить владение адресом отправителя."
+
+msgid "Add a new <b>TXT record</b> with this public DKIM key to the DNS zone of domain name"
+msgstr "Добавьте новую <b>TXT-запись</b> с данным публичным ключом DKIM в DNS-зону домена"
+
+msgid "Host "
+msgstr "Хост"
+
+msgid "Domain"
+msgstr "Домен"
+
+msgid "Record type"
+msgstr "Тип записи"
+
+msgid "Value"
+msgstr "Значение"
+
+msgid "Add email sending rule"
+msgstr "Добавить правило отправки email"
+
+msgid "Remove"
+msgstr "Удалить"
+
+msgid "Maps settings"
+msgstr "Настройки карт"
+
+msgid "Select an online map service to display maps."
+msgstr "Выберите картографический сервис для отображения онлайн-карт."
+
+msgid "Map service"
+msgstr "Сервис карт"
+
+msgid "No map services available"
+msgstr "Нет доступных сервисов карт"
+
+msgid "Captcha"
+msgstr "Капча"
+
+msgid "Captcha settings"
+msgstr "Настройки капчи"
+
+msgid "Select a type of captcha to be used on your websites."
+msgstr "Выберите тип капчи, которая будет использоваться на ваших сайтах."
+
+msgid "Captcha type"
+msgstr "Тип капчи"
+
+msgid "Invisible mode"
+msgstr "Невидимый режим"
+
+msgid "Get values for your website"
+msgstr "Получить значения для своего сайта"
+
+msgid "Website address"
+msgstr "Адрес сайта"
+
+msgid "Your website, blog or company URL (will be displayed as a link below the company name in the top left corner)."
+msgstr "Адрес вашего сайта или блога (будет отображаться в виде ссылки под названием компании в левом верхнем углу)."
+
+msgid "Locale of software available for installation"
+msgstr "Язык доступных для установки программных продуктов"
+
+msgid "Allow “Remember me” option in Webasyst backend authorization form"
+msgstr "Можно включить «Запомнить меня» при входе в бекенд Вебасиста"
+
+msgid "Login only"
+msgstr "Только логин"
+
+msgid "Login or email"
+msgstr "Логин или email"
+
+msgid "Login form background"
+msgstr "Фон формы входа"
+
+msgid "Stretch to fill entire screen"
+msgstr "Растянуть изображение на весь экран"
+
+msgid "Localization engine"
+msgstr "Механизм локализации"
+
+msgid "Gettext (recommended)"
+msgstr "Gettext (рекомендуется)"
+
+msgid "Delete background?"
+msgstr "Удалить фоновое изображение?"
+
+msgid "For developers"
+msgstr "Для разработчика"
+
+msgid "Developer mode"
+msgstr "Режим отладки (debug mode)"
+
+msgid "Debug mode disables caching and enables verbose error messages. Recommended for debugging and during software development."
+msgstr "Режим отладки отключает кеширование и включает подробный вывод сообщений об ошибках. Рекомендуется при разработке приложений."
+
+msgid "Clear cache"
+msgstr "Очистка кеша"
+
+msgid "Clear"
+msgstr "Очистить"
+
+msgid "Cache cleared"
+msgstr "Кеш очищен"
+
+msgid "But with errors:"
+msgstr "С ошибками:"
+
+msgid "CDN address"
+msgstr "Адрес CDN"
+
+msgid "SMS providers"
+msgstr "SMS-провайдеры"
+
+msgid "Backend authorization"
+msgstr "Вход в&nbsp;бекенд"
+
+msgid "Set up how users will log into your Webasyst backend."
+msgstr "Настройте, как пользователи должны входить в бекенд вашего Вебасиста."
+
+msgid "Authorization type"
+msgstr "Тип авторизации"
+
+msgid "Permanent user password"
+msgstr "Постоянный пароль пользователя"
+
+msgid "One-time password (4-digit code)"
+msgstr "Одноразовый пароль (код из 4 цифр)"
+
+msgid "Signup confirmation"
+msgstr "Подтверждение регистрации"
+
+msgid "Successful signup"
+msgstr "Успешная регистрация"
+
+msgid "One-time password"
+msgstr "Одноразовый пароль"
+
+msgid "Never require"
+msgstr "Никогда не требовать"
+
+msgid "After one unsuccessful attempt"
+msgstr "После одной неуспешной попытки"
+
+msgid "Require at once"
+msgstr "Требовать сразу"
+
+msgid "Select Webasyst default captcha or Google reCAPTCHA"
+msgstr "Выбрать стандартную капчу Webasyst или Google reCAPTCHA"
+
+msgid "Site Key"
+msgstr "Ключ"
+
+msgid "Secret"
+msgstr "Секретный ключ"
+
+msgid "Placeholder in the login field"
+msgstr "Плейсхолдер в поле логина"
+
+msgid "Communication channel"
+msgstr "Канал связи"
+
+msgid "File could not be saved due to the insufficient file write permissions for the \"%s\" folder."
+msgstr "Не удалось сохранить файл из-за недостаточных прав на перезапись содержимого папки «%s»."
+
+msgid "Creating new templates"
+msgstr "Создание новых шаблонов"
+
+msgid "Template group name"
+msgstr "Название группы шаблонов"
+
+msgid "Sender"
+msgstr "Отправитель"
+
+msgid "Phone number"
+msgstr "Номер телефона"
+
+msgid "Senders are edited in “<a class=\"js-disable-router\" href=\"%s\">Email&nbsp;settings</a>” section."
+msgstr "Список отправителей редактируется в разделе «<a class=\"js-disable-router\" href=\"%s\">Настройки&nbsp;email</a>»."
+
+msgid "Senders are edited in “<a class=\"js-disable-router\" href=\"%s\">SMS&nbsp;providers</a>” section."
+msgstr "Список отправителей редактируется в разделе «<a class=\"js-disable-router\" href=\"%s\">SMS-провайдеры</a>»."
+
+msgid "New template group"
+msgstr "Новая группа шаблонов"
+
+msgid "Templates not found"
+msgstr "Шаблоны не найдены"
+
+msgid "No templates"
+msgstr "Нет шаблонов"
+
+msgid "Email templates"
+msgstr "Email-шаблоны"
+
+msgid "SMS templates"
+msgstr "SMS-шаблоны"
+
+msgid "Check sending"
+msgstr "Проверить отправку"
+
+msgid "Letter subject"
+msgstr "Тема письма"
+
+msgid "Text of the letter"
+msgstr "Текст письма"
+
+msgid "System templates"
+msgstr "Системные шаблоны"
+
+msgid "Edit channel"
+msgstr "Редактировать канал"
+
+msgid " (Copy %s)"
+msgstr " (Копия %s)"
+
+msgid "Delete template group?"
+msgstr "Удалить группу шаблонов?"
+
+msgid "Preview template"
+msgstr "Предварительный просмотр"
+
+msgid "Preview SMS message “<span class=\"js-template-name\"></span>”"
+msgstr "Предварительный просмотр SMS-сообщения «<span class=\"js-template-name\"></span>»"
+
+msgid "Checking the sending of SMS messages"
+msgstr "Проверка отправки SMS-сообщений"
+
+msgid "Checking the sending of email messages"
+msgstr "Проверка отправки email-сообщений"
+
+msgid "Recipient's phone number"
+msgstr "Телефон получателя"
+
+msgid "Recipient's email"
+msgstr "Email получателя"
+
+msgid "Send %s SMS"
+msgstr "Отправить %s SMS"
+
+msgid "Channel does not exist"
+msgstr "Канал не существует"
+
+msgid "Enter a valid phone number"
+msgstr "Введите действительный номер телефона"
+
+msgid "Select at least one template to send"
+msgstr "Выберите хотя бы один шаблон для отправки"
+
+msgid "Error sending message"
+msgstr "Ошибка отправки сообщения"
+
+msgid "Save your templates"
+msgstr "Сохраните шаблоны"
+
+msgid "Save your template"
+msgstr "Сохраните ваш шаблон"
+
+msgid "To check the sending of SMS messages, you must save the changes you made."
+msgstr "Чтобы проверить отправку SMS-сообщений — необходимо сохранить внесенные вами изменения."
+
+msgid "To check whether you send email message, you must save the changes you made."
+msgstr "Чтобы проверить отправку Email сообщение — необходимо сохранить внесенные вами изменения."
+
+msgid "Found the password?"
+msgstr "Вспомнили пароль?"
+
+msgid "For the first time with us?"
+msgstr "Впервые у нас?"
+
+msgid "Already registered?"
+msgstr "Уже регистрировались?"
+
+msgid "Reset"
+msgstr "Сбросить"
+
+msgid "Restore default text"
+msgstr "Восстановить текст по умолчанию"
+
+msgid "Duplicate templates"
+msgstr "Дублировать шаблоны"
+
+msgid "Delete templates"
+msgstr "Удалить шаблоны"
+
+msgid "<a class=\"%s\" href=\"javascript:void(0);\">Change sender address</a> <i class=\"icon10 settings\"></i> for entire template group"
+msgstr "<a class=\"%s\" href=\"javascript:void(0);\">Измените адрес отправителя </a> <i class=\"icon10 settings\"></i> для всей группы шаблонов"
+
+msgid "<a class=\"%s\" href=\"javascript:void(0);\">Change sender address</a> <i class=\"fas fa-cog\"></i> for entire template group"
+msgstr "<a class=\"%s\" href=\"javascript:void(0);\">Измените адрес отправителя </a> <i class=\"fas fa-cog\"></i> для всей группы шаблонов"
+
+msgid "Sender IDs"
+msgstr "Идентификаторы отправителя"
+
+msgid "Enter sender IDs, each on a separate line, to use with this SMS gateway. A sender ID is either your phone number or an up to 11 characters long text label. Enter * (asterisk) to use a default sender ID issued by the gateway for your account."
+msgstr "Введите идентификаторы отправителей для этого SMS-провайдера — каждый идентификатор с новой строки. Идентификатор отправителя представляет собой либо номер телефона, либо строку длиной до 11 символов. Введите звездочку *, чтобы использовать идентификатор, автоматически назначенный SMS-провайдером."
+
+msgid "Email notification templates"
+msgstr "Шаблоны email-уведомлений"
+
+msgid "Edit the list in “<a href=\"%s\">Email&nbsp;templates</a>” section."
+msgstr "Измените список в разделе «<a href=\"%s\">Email-шаблоны</a>»."
+
+msgid "SMS notification templates"
+msgstr "Шаблоны SMS-уведомлений"
+
+msgid "Edit the list in “<a href=\"%s\">SMS&nbsp;templates</a>” section."
+msgstr "Измените список в разделе «<a href=\"%s\">SMS-шаблоны</a>»."
+
+msgid "A user must enter characters shown in an image"
+msgstr "Пользователь должен ввести символы с изображения"
+
+msgid "“Remember me” option"
+msgstr "Флажок «Запомнить меня»"
+
+msgid "Auto-login"
+msgstr "Автоматический вход"
+
+msgid "enabled"
+msgstr "включено"
+
+msgid "disabled"
+msgstr "выключено"
+
+msgid "Name of site that has sent a message"
+msgstr "Название сайта, с которого отправлено уведомление"
+
+msgid "Address of site that has sent a message"
+msgstr "Адрес сайта, с которого отправлено уведомление"
+
+msgid "Signup confirmation link URL"
+msgstr "URL ссылки подтверждения регистрации"
+
+msgid "Login page URL"
+msgstr "URL страницы входа"
+
+msgid "Password recovery page URL"
+msgstr "URL страницы восстановления пароля"
+
+msgid "User email address"
+msgstr "Email-адрес пользователя"
+
+msgid "Generated password"
+msgstr "Сгенерированный пароль"
+
+msgid "Passwords type"
+msgstr "Система паролей"
+
+msgid "Wait for specified number of seconds before sending next one-time password"
+msgstr "Период ожидания в секундах перед отправкой следующего одноразового кода"
+
+msgid "User notifications"
+msgstr "Уведомления пользователей"
+
+msgid "Login form"
+msgstr "Форма входа"
+
+msgid "Invisible captcha will be used"
+msgstr "Будет использована невидимая капча"
+
+msgid "Link to map"
+msgstr "Ссылка на карту"
+
+msgid "Support"
+msgstr "Поддержка"
+
+msgid "User manual"
+msgstr "Инструкция"
+
+msgid "Images thumbnails"
+msgstr "Эскизы изображений"
+
+msgid "Contact fields"
+msgstr "Поля контакта"
+
+msgid "Main contact fields cannot be modified or disabled."
+msgstr "Главные поля контактов нельзя изменять и удалять."
+
+msgid "person"
+msgstr "персона"
+
+msgid "company"
+msgstr "компания"
+
+msgid "New field"
+msgstr "Новое поле"
+
+msgid "Add field"
+msgstr "Добавить поле"
+
+msgid "Text (input)"
+msgstr "Текст (input)"
+
+msgid "Text (textarea)"
+msgstr "Текст (textarea)"
+
+msgid "Number"
+msgstr "Число"
+
+msgid "Number (input)"
+msgstr "Число (input)"
+
+msgid "Selectable (radio)"
+msgstr "Список (radio)"
+
+msgid "Selectable (select)"
+msgstr "Список (select)"
+
+msgid "Selectable (checkboxes)"
+msgstr "Список (checkboxes)"
+
+msgid "Conditional (select/input)"
+msgstr "Зависимый список (select/input)"
+
+msgid "checkbox"
+msgstr "флажок"
+
+msgid "Checkbox"
+msgstr "Флажок"
+
+msgid "Date (input)"
+msgstr "Дата (input)"
+
+msgid "Select "
+msgstr "Выпадающий список (select)"
+
+msgid "radio select"
+msgstr "список (radio)"
+
+msgid "Radio Select"
+msgstr "Список (Radio)"
+
+msgid "Composite field group"
+msgstr "Группа полей"
+
+msgid "Region"
+msgstr "Регион"
+
+msgid "Hidden field"
+msgstr "Скрытое поле"
+
+msgid "Full name"
+msgstr "Полное имя"
+
+msgid "Add item"
+msgstr "Добавить элемент"
+
+msgid "Delete field"
+msgstr "Удалить поле"
+
+msgid "No data in the field"
+msgstr "В поле нет данных."
+
+msgid "Deleting this field will not cause a loss of any contact information."
+msgstr "Удаление этого поля не приведет к потере информации о контактах."
+
+msgid "Deleting the field will cause a loss of this contact information."
+msgid_plural "Deleting the field will cause a loss of these contacts information."
+msgstr[0] "Удаление этого поля приведет к потере информации об этом контакте."
+msgstr[1] "Удаление этого поля приведет к потере информации об этих контактах."
+msgstr[2] "Удаление этого поля приведет к потере информации об этих контактах."
+
+msgid "%d contact have data in the field"
+msgid_plural "%d contacts have data in the field"
+msgstr[0] "У %d контакта есть данные в этом поле."
+msgstr[1] "У %d контактов есть данные в этом поле."
+msgstr[2] "У %d контактов есть данные в этом поле."
+
+msgid "Field name"
+msgstr "Название поля"
+
+msgid "Edit field"
+msgstr "Изменить поле"
+
+msgid "Add name in another language"
+msgstr "Добавить название на другом языке"
+
+msgid "Field ID"
+msgstr "ID поля"
+
+msgid "Type of field"
+msgstr "Тип поля"
+
+msgid "Address fields"
+msgstr "Поля адреса"
+
+msgid "This will remove field and all its data from all existing contacts. Are you sure?"
+msgstr "Будет удалено это поле и связанные с ним данные у всех контактов. Удалить?"
+
+msgid "List items"
+msgstr "Список"
+
+msgid "Enter each new item on new line"
+msgstr "Введите каждый элемент списка с новой строки"
+
+msgid "Applied to"
+msgstr "Применить к"
+
+msgid "Person"
+msgstr "Персона"
+
+msgid "Enable field"
+msgstr "Включить поле"
+
+msgid "Disable field"
+msgstr "Отключить поле"
+
+msgid "Manage conditions"
+msgstr "Настроить условия"
+
+msgid "Click “Save” button below to commit changes."
+msgstr "Нажмите на кнопку «Сохранить», чтобы подтвердить изменения."
+
+msgid "Set default fixed value"
+msgstr "Установить значение"
+
+msgid "Default fixed value:"
+msgstr "Фиксированное значение:"
+
+msgid "Enter available options for %s depending on it’s parent field value."
+msgstr "Заполните списки значений поля «%s» в зависимости от значения его родительского поля."
+
+msgid "https://www.shop-script.com/help/46/conditional-contact-fields/"
+msgstr "https://support.webasyst.ru/shop-script/7/conditional-contact-fields/"
+
+msgid "Get help"
+msgstr "Помощь"
+
+msgid "<strong>IF</strong> parent field"
+msgstr "<strong>IF</strong> родительское поле"
+
+msgid "Prompt to select %s from the following list:"
+msgstr "Предлагать выбрать %s из следующих вариантов:"
+
+msgid "<strong>ELSE</strong>, in case parent field value does not match any of the listed above"
+msgstr "<strong>ELSE</strong>, если значение родительского поля не совпадает ни с одним из вариантов"
+
+msgid "Display &lt;input&gt; (custom text) field for %s"
+msgstr "Показать &lt;input&gt; для ввода произвольного текста"
+
+msgid "Do not prompt for %s"
+msgstr "Не запрашивать поле «%s»"
+
+msgid "Add rule"
+msgstr "Добавить правило"
+
+msgid "IF"
+msgstr "ЕСЛИ"
+
+msgid "Add option"
+msgstr "Добавить вариант"
+
+msgid "one-line text"
+msgstr "одна строка текста"
+
+msgid "multi-line text"
+msgstr "многострочный текст"
+
+msgid "number"
+msgstr "число"
+
+msgid "drop-down list"
+msgstr "выпадающий список"
+
+msgid "date"
+msgstr "дата"
+
+msgid "Can't construct field"
+msgstr "Не удалось создать поле"
+
+msgid "We have found %d duplicate for this field"
+msgid_plural "We have found %d duplicates for this field"
+msgstr[0] "Найден %d дубликат этого поля."
+msgstr[1] "Найдено %d дубликата этого поля."
+msgstr[2] "Найдено %d дубликатов этого поля."
+
+msgid "Unknown locale: %s"
+msgstr "Неизвестная локаль: %s"
+
+msgid "Required field"
+msgstr "Обязательное поле"
+
+msgid "Only English alphanumeric, hyphen and underline symbols are allowed"
+msgstr "Разрешены только латинские буквы, дефисы и символы подчеркивания."
+
+msgid "This ID is already in use"
+msgstr "Этот ID уже используется."
+
+msgid "Unknown field type:"
+msgstr "Неизвестный тип поля:"
+
+msgid "Countries & regions"
+msgstr "Страны и регионы"
+
+msgid "Select a country"
+msgstr "Выберите страну"
+
+msgid "Clone on top of the list"
+msgstr "Дублировать в начале списка"
+
+msgid "Regions"
+msgstr "Регионы"
+
+msgid "Region name"
+msgstr "Название региона"
+
+msgid "Region code"
+msgstr "Код региона"
+
+msgid "No regions (states, provinces) are defined for this country."
+msgstr "Для этой страны не определено ни одного региона (штата, провинции)."
+
+msgid "Add region"
+msgstr "Добавить регион"
+
+msgid "Click “Save” button below to commit the delete."
+msgstr "Нажмите на кнопку «Сохранить», чтобы подтвердить удаление."
+
+msgid "Regions are not saved. Are you sure you want to leave current page?"
+msgstr "Регионы не сохранены. Покинуть эту страницу без сохранения?"
+
+msgid "You can change the theme in settlement settings."
+msgstr "Сменить тему можно в настройках поселения."
+
+msgid "Upload image"
+msgstr "Загрузить изображение"
+
+msgid "Login or phone"
+msgstr "Логин или телефон"
+
+msgid "A user enters a password during signup"
+msgstr "Пользователь вводит свой пароль при регистрации"
+
+msgid "A password is generated during signup and sent in a notification"
+msgstr "При регистрации пароль генерируется и отправляется в уведомлении"
+
+msgid "A one-time password (4-digit code) is sent to a user for each login"
+msgstr "Одноразовый пароль (код из 4 цифр) отправляется пользователю каждый раз при входе в личный кабинет"
+
+msgid "Waiting period in seconds before sending next verification code:"
+msgstr "Интервал в секундах перед отправкой следующего кода подтверждения:"
+
+msgid "Re-sending of verification code"
+msgstr "Повторная отправка кода подтверждения"
+
+msgid "<p>How to learn more details about this error:</p><ol><li><p>Enable the <strong>developer mode</strong> in <em>Settings</em> app.</p><p>If the <em>Settings</em> app is not available, change the '<code>debug</code>' parameter to <strong><code>true</code></strong> in <em style=\"white-space: nowrap\">wa-config/config.php</em> file.</p></li><li><p>Reload this page.</p></li><li><p>Use the displayed debug information to fix the error.</p></li></ol><p>Additional details are contained in error log files located in the <em class=\"nowrap\">wa-log/</em> directory. You can view them using the <em>Logs</em> app available in the <em>Installer</em>.</p>"
+msgstr "<p>Как получить больше информации об ошибке:</p><ol><li><p>Включите <strong>режим отладки</strong> в приложении «Настройки».</p><p>Если приложение «Настройки» недоступно, измените значение параметра '<code>debug</code>' на <strong><code>true</code></strong> в файле <em style=\"white-space: nowrap\">wa-config/config.php</em>.</p></li><li><p>Обновите эту страницу.</p></li><li><p>Используйте показанную диагностическую информацию для устранения ошибки.</p></li></ol><p>Дополнительная информация содержится в файлах с логами ошибок в директории <em class=\"nowrap\">wa-log/</em> — их можно просматривать с помощью приложения «Логи», доступного для установки в «Инсталлере».</p>"
+
+msgid "Please contact server administrator."
+msgstr "Обратитесь к администратору сервера."
+
+msgid "Select template"
+msgstr "Выберите шаблон"
+
+msgid "One-time password was not sent."
+msgstr "Одноразовый пароль не отправлен."
+
+msgid "One-time password has been sent to your email address."
+msgstr "Одноразовый пароль отправлен на ваш email-адрес."
+
+msgid "One-time password has been sent to you as an SMS."
+msgstr "Одноразовый пароль отправлен вам в SMS-сообщении."
+
+msgid "One-time password has been sent."
+msgstr "Одноразовый пароль отправлен."
+
+msgid "These images were not found in archive:"
+msgstr "Следующие изображения не найдены в архиве:"
+
+msgid "Copy"
+msgstr "Копировать"
+
+msgid "Field is required"
+msgstr "Поле обязательное"
+
+msgid "Password is required"
+msgstr "Пароль обязателен"
+
+msgid "Captcha is required"
+msgstr "Капча обязательна"
+
+msgid "Spam protection"
+msgstr "Антиспам-защита"
+
+msgid "Enter a one-time code to log in."
+msgstr "Введите одноразовый код, чтобы войти."
+
+msgid "Re-send"
+msgstr "Выслать еще раз"
+
+msgid "Via social media"
+msgstr "Через соцсети"
+
+msgid "Repeat new password"
+msgstr "Повторите новый пароль"
+
+msgid "Enter a confirmation code to complete the operation."
+msgstr "Введите код подтверждения, чтобы завершить процедуру."
+
+msgid "Code"
+msgstr "Код"
+
+msgid "Confirm and change password"
+msgstr "Подтвердить и сменить пароль"
+
+msgid "You can’t restore password too often. Try again in %s seconds."
+msgstr "Нельзя восстанавливать пароль слишком часто.  Повторите через %s секунд."
+
+msgid "Recover password"
+msgstr "Восстановить пароль"
+
+msgid "Confirmation code"
+msgstr "Код подтверждения"
+
+msgid "Couldn’t sign in via “%s”."
+msgstr "Не удалось войти через «%s»."
+
+msgid "Incorrect or expired one-time password. Try again or request a new one-time password."
+msgstr "Введен неверный одноразовый код, или истек срок его действия. Попробуйте еще раз или запросите новый код."
+
+msgid "Incorrect or expired confirmation code. Try again or request a new code."
+msgstr "Введен неверный код подтверждения, или истек срок его действия. Попробуйте еще раз или запросите новый код."
+
+msgid "Contact does not exist. <a href=\"%s\">Sign up</a> first."
+msgstr "Контакт не существует. Сначала <a href=\"%s\">зарегистрируйтесь</a>."
+
+msgid "Contact doesn't exist."
+msgstr "Контакт не существует."
+
+msgid "Done! A message with a new password has been sent to email address <strong>%s</strong>."
+msgstr "Готово! На email-адрес <strong>%s</strong> отправлено письмо с новым паролем для входа."
+
+msgid "Done! An SMS message with a new password has been sent to phone number <strong>%s</strong>."
+msgstr "Готово! На номер телефона <strong>%s</strong> отправлено SMS-сообщение с новым паролем для входа."
+
+msgid "Incorrect confirmation code. Try again or request a new code."
+msgstr "Введен неверный код подтверждения. Попробуйте еще раз или запросите новый код."
+
+msgid "Password recovery for “%s” has been banned."
+msgstr "Восстановление пароля для «%s» заблокировано."
+
+msgid "No user with this login name has been found."
+msgstr "Пользователь с этим именем для входа не найден."
+
+msgid "Couldn’t recover password via “%s”."
+msgstr "Не удалось восстановить пароль через «%s»."
+
+msgid "Please check new mail at <strong>%s</strong>, we have sent you a message with a password recovery link to confirm the password change. After confirmation, we will send you your password in the next message."
+msgstr "Проверьте новую почту для адреса <strong>%s</strong> — мы отправили вам сообщение со ссылкой для подтверждения смены пароля. После подтверждения мы пришлем новый пароль следующим письмом."
+
+msgid "Please check new mail at <strong>%s</strong>, we have sent you a message with a password recovery link."
+msgstr "Проверьте новую почту для адреса <strong>%s</strong> — мы отправили вам сообщение со ссылкой для восстановления пароля."
+
+msgid "Confirm your phone number"
+msgstr "Подтвердите номер телефона"
+
+msgid "Unknown field"
+msgstr "Неизвестное поле"
+
+msgid "Signup completed"
+msgstr "Регистрация завершена"
+
+msgid "Passwords changed"
+msgstr "Пароли изменены"
+
+msgid "Password recovery for %s"
+msgstr "Восстановление пароля для %s"
+
+msgid "<b>WYSIWYG editor may change your HTML code.</b><br><br>It is necessary for correct text formatting. Smarty code may be broken and outdated HTML tags may be replaced with modern ones.<br><br>Are you sure to switch to WYSIWYG editor?"
+msgstr "<b>Визуальный редактор может изменить ваш HTML-код.</b><br><br>Это нужно для правильного форматирования текста. Код Smarty может быть испорчен, а устаревшие HTML-теги — заменены на современные.<br><br>Переключиться на визуальный редактор?"
+
+msgid "Switch"
+msgstr "Переключиться"
+
+msgid "Confirm email exception"
+msgstr "Ошибка подтверждения email-адреса"
+
+msgid "Auth exception"
+msgstr "Ошибка авторизации"
+
+msgid "Contact can't be authorized"
+msgstr "Контакт не может быть авторизован"
+
+msgid "B,KB,MB"
+msgstr "Б,КБ,МБ"
+
+msgid "File not found."
+msgstr "Файл не найден."
+
+msgid "Add SMS templates in <a href=\"%s\">Settings</a> app."
+msgstr "Добавьте SMS-шаблоны в приложении \"<a href=\"%s\">Настройки</a>\"."
+
+msgid "Edit field label"
+msgstr "Измените подпись к полю"
+
+msgid "Edit hint for this placeholder"
+msgstr "Измените текст подсказки"
+
+msgid "To enable SMS message sending, install and configure an integration plugin for your preferred SMS gateway. <a href=\"%s\">Browse for SMS gateway plugins</a> in Installer app."
+msgstr "Для отправки SMS-сообщений установите и настройте подключение к какому-либо из SMS-провайдеров. Плагины для подключения к SMS-провайдерам доступны для установки <a href=\"%s\">в «Инсталлере»</a>."
+
+msgid "Radio selector advanced settings"
+msgstr "Расширенные настройки поля-переключателя"
+
+msgid "Depending on the current radio selector value, other contact form fields may be set to be omitted (become hidden). Manage form fields visibility settings using checkboxes below for each radio selector value."
+msgstr "В зависимости от выбранного значения поля-переключателя другие поля формы для ввода контактной информации могут быть отмечены как скрытые (т. е. будут пропущены). Для каждого из значений поля-переключателя отметьте галочками те поля формы ввода контактной информации, которые должны быть запрошены у пользователя."
+
+msgid "Please specify options for multiple choice field."
+msgstr "Укажите значения для множественного поля."
+
+msgid "Port"
+msgstr "Порт"
+
+msgid "SSL/TLS"
+msgstr ""
+
+msgid "STARTTLS"
+msgstr ""
+
+msgid "POP3 host name"
+msgstr "Имя хоста POP3"
+
+msgid "POP3 port"
+msgstr "Порт POP3"
+
+msgid "+1XXXXXXXXXX, 1XXXXXXXXXX"
+msgstr "8XXXXXXXXXX, 7XXXXXXXXXX, +7XXXXXXXXXX"
+
+msgid "Webasyst Captcha"
+msgstr "Капча Webasyst"
+
+msgid "Google reCAPTCHA"
+msgstr ""
+
+msgid "May be displayed on websites and in email notifications."
+msgstr "Может отображаться на страницах сайтов и в email-уведомлениях."
+
+msgid "May be used on websites and in email notifications."
+msgstr "Может использоваться на страницах сайтов и в email-уведомлениях."
+
+msgid "System"
+msgstr ""
+
+msgid "SMTP"
+msgstr ""
+
+msgid "Sendmail"
+msgstr ""
+
+msgid "Channel not found"
+msgstr "Канал не найден"
+
+msgid "(Copy of %s)"
+msgstr "(Копия %s)"
+
+msgid "Invalid value"
+msgstr "Недопустимое значение"
+
+msgid "Conditional field"
+msgstr "Зависимое поле"
+
+msgid "Unknown parent field"
+msgstr "Неизвестное родительское поле"
+
+msgid "Enter characters from an image"
+msgstr "Введите код с изображения"
+
+msgid "Refresh code"
+msgstr "Обновить код"
+
+msgid "Show all group’s settings"
+msgstr "Показать все настройки группы"
+
+msgid "Scroll up"
+msgstr "Наверх"
+
+msgid "Invalid archive"
+msgstr "Некорректный архив"
+
+msgid "Enter a confirmation code to complete signup"
+msgstr "Чтобы завершить регистрацию, введите код подтверждения"
+
+msgid "Done"
+msgstr "Готово"
+
+msgid "Open website →"
+msgstr "Открыть сайт →"
+
+msgid "At least one of these fields is required"
+msgstr "Как минимум, одно из этих полей является обязательным"
+
+msgid "Email confirmation failed"
+msgstr "Подтвердить email-адрес не удалось"
+
+msgid "You have successfully signed up. An SMS message with your password has been sent to phone number <strong>%s</strong>."
+msgstr "Вы успешно зарегистрировались. На номер телефона <strong>%s</strong> отправлено SMS-сообщение с паролем для входа."
+
+msgid "Signup failed."
+msgstr "Регистрация не удалась."
+
+msgid "Please check new mail at <strong>%s</strong>, we have sent a message for you to confirm signup."
+msgstr "Проверьте почту для адреса <strong>%s</strong> — мы отправили вам сообщение для подтверждения регистрации."
+
+msgid "An SMS message has been sent to phone number <strong>%s</strong> for you to confirm signup."
+msgstr "На номер телефона <strong>%s</strong> отправлено SMS-сообщение для подтверждения регистрации."
+
+msgid "Incorrect phone number value"
+msgstr "Неправильное значение номера телефона"
+
+msgid "Date"
+msgstr "Дата"
+
+msgid "You can request a code in <strong>%s:%s</strong>."
+msgstr "Вы можете запросить код через <strong>%s:%s</strong>."
+
+msgid "You can request password recovery in <strong>%s:%s</strong>."
+msgstr "Вы можете запросить восстановление пароля через <strong>%s:%s</strong>."
+
+msgid "You can request a one-time password in <strong>%s:%s</strong>."
+msgstr "Вы можете запросить одноразовый пароль через <strong>%s:%s</strong>."
+
+msgid "You have been requesting a code too frequently. Try again in <strong>%s:%s</strong>."
+msgstr "Вы запрашивали код слишком часто. Повторите попытку через <strong>%s:%s</strong>."
+
+msgid "You have been requesting password recovery too frequently. Try again in <strong>%s:%s</strong>."
+msgstr "Вы запрашивали восстановление пароля слишком часто. Повторите попытку через <strong>%s:%s</strong>."
+
+msgid "You have been requesting a one-time password too frequently. Try again in <strong>%s:%s</strong>."
+msgstr "Вы запрашивали одноразовый пароль слишком часто. Повторите попытку через <strong>%s:%s</strong>."
+
+msgid "New channel %s"
+msgstr "Новый канал %s"
+
+msgid "SMS"
+msgstr ""
+
+msgid "Time"
+msgstr "Время"
+
+msgid "Receive confirmation code"
+msgstr "Получить код подтверждения"
+
+msgid "Receive code"
+msgstr "Получить код"
+
+msgid "Confirm signup"
+msgstr "Подтвердить регистрацию"
+
+msgid "Webasyst version"
+msgstr "Версия Webasyst"
+
+msgid "PHP version"
+msgstr "Версия PHP"
+
+msgid "MySQL version"
+msgstr "Версия MySQL"
+
+msgid "Connection charset"
+msgstr "Кодировка соединения"
+
+msgid "Update not available"
+msgstr "Обновление недоступно"
+
+msgid "You have successfully signed up. Please check new mail at <strong>%s</strong>, we have sent you a message with your password."
+msgstr "Вы успешно зарегистрировались. Проверьте почту для адреса <strong>%s</strong> — мы отправили вам сообщение с паролем для входа."
+
+msgid "Invalid theme archive structure (%s). <a href=\"%s\" target=\"_blank\">See help</a> for details."
+msgstr "Неправильная структура архива темы (%s). Подробнее см. <a href=\"%s\" target=\"_blank\">в документации</a>"
+
+msgid "Theme %s not found"
+msgstr "Тема %s не найдена"
+
+msgid "Missing theme files: %s."
+msgstr "Отсутствующие файлы темы: %s."
+
+msgid "Invalid theme slug"
+msgstr "Некорректный идентификатор темы"
+
+msgid "Brush custom theme not available"
+msgstr ""
+
+msgid "Theme “%s” is for %s app, which is not installed in your Webasyst. Install the app and upload the theme once again."
+msgstr "Тема «%s» создана для приложения «%s», которое не установлено в вашем Вебасисте. Установите приложение и снова загрузите тему."
+
+msgid "http://www.webasyst.com/framework/docs/site/themes/#%s"
+msgstr "https://developers.webasyst.ru/docs/site/themes/#%s"
+
+msgid "Failed to extract files from theme archive (%s). <a href=\"%s\" target=\"_blank\">See help</a> for details."
+msgstr "Не удалось извлечь файлы из архива с темой (%s). Подробнее см. <a href=\"%s\" target=\"_blank\">в документации</a>."
+
+msgid "Change"
+msgstr "Изменить"
+
+msgid "Password required"
+msgstr "Введите пароль"
+
+msgid "DD"
+msgstr "ДД"
+
+msgid "D"
+msgstr "Д"
+
+msgid "Month"
+msgstr "Месяц"
+
+msgid "Mth"
+msgstr "Мес."
+
+msgid "M"
+msgstr "М"
+
+msgid "MM"
+msgstr "ММ"
+
+msgid "YYYY"
+msgstr "ГГГГ"
+
+msgid "YY"
+msgstr "ГГ"
+
+msgid "Please confirm your phone number to sign in."
+msgstr "Подтвердите свой номер телефона, чтобы войти."
+
+msgid "Phone number confirmation error."
+msgstr "Ошибка подтверждения номера телефона."
+
+msgid "Design theme user manual"
+msgstr "Инструкция к теме дизайна"
+
+msgid "User support"
+msgstr "Поддержка"
+
+msgid "Minimum 3 characters"
+msgstr "Минимум 3 символа"
+
+msgid "No sender email address specified in “<a href=\"%s\">Email settings</a>” section."
+msgstr "Не заполнен email-адрес отправителя в разделе «<a href=\"%s\">Настройки email</a>»."
+
+msgid "(sent by email)"
+msgstr "(отправлен по email)"
+
+msgid "(sent in SMS)"
+msgstr "(отправлен в SMS)"
+
+msgid "API key"
+msgstr "Ключ API"
+
+msgid "“Address” is a complex field, which cannot be completely disabled; you can only edit its components listed below."
+msgstr "Поле «Адрес» — составное, его нельзя полностью отключить, но можно редактировать его составляющие, перечисленные ниже."
+
+msgid "Please check new mail, we have sent you a message with a link to confirm the password change. After confirmation, we will send you your password in the next message."
+msgstr "Проверьте новую почту — мы отправили вам сообщение со ссылкой для подтверждения смены пароля. После подтверждения мы пришлем новый пароль следующим письмом."
+
+msgid "Please check new mail, we have sent you a message with a password recovery link."
+msgstr "Проверьте новую почту — мы отправили вам сообщение со ссылкой для восстановления пароля."
+
+msgid "Password has not been sent. Please contact your administrator."
+msgstr "Пароль не отправлен. Обратитесь к своему администратору."
+
+msgid "Sending error"
+msgstr "Ошибка отправки"
+
+msgid "<strong>%s</strong> in <strong>%s</strong> template."
+msgstr "<strong>%s</strong> в шаблоне <strong>%s</strong>."
+
+msgid "Server address is required"
+msgstr "Адрес сервера обязателен"
+
+msgid "Port is required"
+msgstr "Порт обязателен"
+
+msgid "Sender ID “%s” is already in use by “%s” provider. You can save each sender ID for one provider only."
+msgstr "ID Отправителя «%s» уже используется провайдером «%s». Каждый ID отправителя можно сохранить только для одного провайдера."
+
+msgid "You have run out of available attempts. Please request a new code."
+msgstr "Доступное количество попыток закончилось. Запросите новый код, пожалуйста."
+
+msgid "User does not exist."
+msgstr "Нет такого пользователя."
+
+msgid "You have run out of available attempts."
+msgstr "Доступное количество попыток закончилось."
+
+msgid "You have run out of available attempts. Please request a new one-time password."
+msgstr "Доступное количество попыток закончилось. Запросите новый одноразовый пароль, пожалуйста."
+
+msgid "Specify email sender address"
+msgstr "Введите email-адрес отправителя"
+
+msgid "Please be sure to correctly set up a sender. It will be used to restore a lost password or to regain access to the backend should the one-time password authentication fail."
+msgstr "Убедитесь в правильность настройки отправителя. Он используется для восстановления забытого пароля и доступа к бекенду в случае сбоя входа по одноразовому паролю."
+
+msgid "No email template group is selected."
+msgstr "Не выбрана группа email-шаблонов."
+
+msgid "Set one-time password authentication?"
+msgstr "Выбрать вход по одноразовому паролю?"
+
+msgid "This authentication type means that a backend user is sent a new one-time password every time they log into the backend. Therefore, you must ensure that at least either email or SMS notifications, or both, are being sent and delivered so that your backend users can always log in with their one-time passwords."
+msgstr "При выборе этого варианта пользователям бекенда при каждом входе отправляется новый одноразовый пароль. Поэтому нужно убедиться, что стабильно отправляются и доставляются либо email-, либо SMS-уведомления или оба типа уведомлений, чтобы пользователи всегда могли успешно входить с одноразовыми паролями."
+
+msgid "Please check in “<a href=\"%s\">%s</a>” section that email notifications based on “%s“ template are correctly sent."
+msgstr "Проверьте в разделе «<a href=\"%s\">%s</a>», чтобы правильно отправлялись email-уведомления, основанные на шаблоне «%s»."
+
+msgid "Also check in “<a href=\"%s\">%s</a>” section that SMS notifications based on “%s“ template are correctly sent, too. Be aware that SMS sending might not work occasionally; e.g., due to low SMS balance."
+msgstr "Проверьте также в разделе «<a href=\"%s\">%s</a>», чтобы правильно отправлялись и SMS-уведомления, основанные на шаблоне «%s». Помните, что отправка SMS иногда может не срабатывать, например, из-за исчерпания баланса в аккаунте SMS-провайдера."
+
+msgid "Email notifications must be enabled."
+msgstr "Email-уведомления должны быть включены."
+
+msgid "SMS notifications must be enabled."
+msgstr "SMS-уведомления должны быть включены."
+
+msgid "Email address is not valid."
+msgstr "Email-адрес введен неверно."
+
+msgid "Sender address %s is not configured."
+msgstr "Адрес отправителя %s не настроен."
+
+msgid "Configure a sender in “<a href=\"%s\">%s</a>” section."
+msgstr "Настройте отправителя в разделе «<a href=\"%s\">%s</a>»."
+
+msgid "Notification sending is not working."
+msgstr "Отправка уведомлений не работает."
+
+msgid "Design theme update failure"
+msgstr "Ошибка обновления темы дизайна"
+
+msgid "This design theme cannot be updated."
+msgstr "Невозможно обновить эту тему дизайна."
+
+msgid "Insufficient permissions to read files"
+msgstr "Недостаточно прав на доступа для чтения файлов"
+
+msgid "Insufficient permissions to write to files"
+msgstr "Недостаточно прав на доступа для записи в файлы"
+
+msgid "WYSIWYG editor may change your HTML code. It is necessary for correct text formatting. Smarty code may be broken and outdated HTML tags may be replaced with modern ones. Are you sure to switch to WYSIWYG editor?"
+msgstr "Редактор WYSIWYG может изменить ваш HTML-код. Это необходимо для правильного форматирования текста. Код Smarty может быть сломан, и устаревшие HTML-теги могут быть заменены на современные. Вы действительно хотите переключиться на WYSIWYG-редактор?"
+
+msgid "Webasyst is moving to PHP versions 5.6 and higher."
+msgstr "Webasyst переходит на версии PHP 5.6 и выше."
+
+msgid "Database"
+msgstr "База данных"
+
+msgid "To add emoji support enable <b>Debug mode</b> in <b>General settings</b>."
+msgstr "Чтобы добавить поддержку эмодзи, включите <b>Режим отладки (debug mode)</b> в <b>Общих настройках</b>."
+
+msgid "supports emoji"
+msgstr "поддерживает эмодзи"
+
+msgid "does not support emoji"
+msgstr "не поддерживает эмодзи"
+
+msgid "Tables and fields without emoji support"
+msgstr "Таблицы и поля без поддержки эмодзи"
+
+msgid "Add emoji support"
+msgstr "Добавить поддержку эмодзи"
+
+msgid "New encoding"
+msgstr "Новая кодировка"
+
+msgid "Old encoding"
+msgstr "Старая кодировка"
+
+msgid "Table"
+msgstr "Таблица"
+
+msgid "Fields"
+msgstr "Поля"
+
+msgid "Collation"
+msgstr "Сравнение"
+
+msgid "Change encoding"
+msgstr "Сменить кодировку"
+
+msgid "Proceed to adding emoji support"
+msgstr "Перейти к добавлению поддержки эмодзи"
+
+msgid "Total tables"
+msgstr "Всего таблиц"
+
+msgid "Total fields"
+msgstr "Всего полей"
+
+msgid "Converted tables"
+msgstr "Сконвертировано таблиц"
+
+msgid "Converted fields"
+msgstr "Сконвертировано полей"
+
+msgid "Not converted tables"
+msgstr "Не преобразованные таблицы"
+
+msgid "Not converted fields"
+msgstr "Не преобразованные поля"
+
+msgid "Path to log file"
+msgstr "Путь к файлу с логом"
+
+msgid "Do not close this form until the conversion is completed."
+msgstr "Не закрывайте эту форму до окончания конвертации."
+
+msgid "Start changing encoding for tables and fields?"
+msgstr "Запустить смену кодировки для таблиц и полей?"
+
+msgid "This will start the conversion of your database tables and fields to <code>utf8mb4</code> encoding."
+msgstr "Будет запущен процесс конвертации таблиц и полей вашей базы данных в кодировку <code>utf8mb4</code>."
+
+msgid "It will enable you and your website visitors use emoji (smilies), hieroglyphs, and other Unicode symbols."
+msgstr "Это позволит вам и вашим пользователям использовать символы эмодзи (смайлики), иероглифы и другие символы Юникода."
+
+msgid "The encoding change may last a few seconds or minutes."
+msgstr "Смена кодировки может длиться несколько секунд или минут."
+
+msgid "It is essential to wait until the process completion to ensure that no tables or fields with outdated encoding remain."
+msgstr "Очень важно дождаться окончания конвертации, чтобы не осталось таблиц и полей с устаревшей кодировкой."
+
+msgid "Do not close this browser tab until the process is completed. It is recommended to start conversion during a period of minimum load on your website."
+msgstr "Не закрывайте эту вкладку браузера до окончания конвертации. Рекомендуется запускать этот процесс в период минимальных нагрузок на ваш сайт."
+
+msgid "Run"
+msgstr "Запустить"
+
+msgid "Unable to delete design theme"
+msgstr "Удаление темы дизайна невозможно"
+
+msgid "This design theme is still in use on your website."
+msgstr "Эта тема дизайна еще используется на вашем сайте."
+
+msgid "To delete this theme, first select another theme in the following settlements’ settings:"
+msgstr "Чтобы удалить тему дизайна, сначала смените ее на другую тему в настройках следующих поселений:"
+
+msgid "Only image files can be uploaded"
+msgstr "Можно загружать только файлы изображений"
+
+msgid "Design theme was not installed from Webasyst Store."
+msgstr "Тема дизайна была установлена не из магазина Webasyst."
+
+msgid "Tables not found."
+msgstr "Таблицы не найдены."
+
+msgid "Some tables and fields will not be converted. Do not try to run the conversion again to fix it."
+msgstr "Некоторые таблицы и поля не будут конвертированы. Не пытайтесь повторно запустить конвертацию, чтобы исправить это."
+
+msgid "Repeat the conversion after the installation of apps or plugins whenever you need to add emoji support for them."
+msgstr "Повторите конвертацию после установки приложений или плагинов, когда понадобится добавить для них поддержку эмодзи."
+
+msgid "Shipping plugin class “%s” not found."
+msgstr "Не найден класс «%s» плагина доставки."
+
+msgid "Payment plugin class “%s” not found."
+msgstr "Не найден класс «%s» плагина оплаты."
+
+msgid "SMS plugin class “%s” not found."
+msgstr "Не найден класс «%s» SMS-плагина."
+
+msgid "Web push notifications"
+msgstr "Push-уведомления"
+
+msgid "Web push notifications settings"
+msgstr "Настройки push-уведомлений"
+
+msgid "Select and configure a service for sending web push notifications."
+msgstr "Выберите и настройте сервис для отправки push-уведомлений."
+
+msgid "No web push notifications services available"
+msgstr "Нет доступных сервисов отправки push-уведомлений"
+
+msgid "Web push notifications service"
+msgstr "Сервис push-уведомлений"
+
+msgid "Get an account ID <a href=\"https://pushcrew.com/admin/app.php#/settings/account/general\" target=\"_blank\">in your profile</a>."
+msgstr "Получите account ID <a href=\"https://pushcrew.com/admin/app.php#/settings/account/general\" target=\"_blank\">в своем профиле</a>."
+
+msgid "Get an API token <a href=\"https://pushcrew.com/admin/app.php#/settings/account/general\" target=\"_blank\">in your profile</a>."
+msgstr "Получите API token <a href=\"https://pushcrew.com/admin/app.php#/settings/account/general\" target=\"_blank\">в своем профиле</a>."
+
+msgid "A OneSignal account is required to notify backend users."
+msgstr "Для уведомления пользователей бекенда требуется аккаунт в сервисе OneSignal."
+
+msgid "Please sign up at %s and copy <b>User Auth Key</b> from <b>Account &amp; API Keys</b> page."
+msgstr "Зарегистрируйтесь по адресу %s и скопируйте <b>User Auth Key</b> со страницы <b>Account &amp; API Keys</b>."
+
+msgid "OneSignal User Auth Key is required."
+msgstr "Требуется User Auth Key из аккаунта OneSignal."
+
+msgid "Each domain used by your backend users has to be configured separately in OneSignal account."
+msgstr "Для каждого домена, на котором работают ваши пользователи, нужна отдельная настройка в аккаунте OneSignal."
+
+msgid "To add a different domain, open Webasyst backend on that domain and save settings again."
+msgstr "Чтобы добавить другой домен, войдите в бекенд Webasyst на этом домене и сохраните настройки еще раз."
+
+msgid "Connected"
+msgstr "Подключен"
+
+msgid "Not connected"
+msgstr "Не подключен"
+
+msgid "Some files could not be deleted."
+msgstr "Не удалось удалить некоторые файлы."
+
+msgid "Administrative center"
+msgstr "Административный центр"
+
+msgid "Do not use"
+msgstr "Не использовать"
+
+msgid "Server key"
+msgstr "Ключ сервера"
+
+msgid "Sender ID"
+msgstr "Идентификатор отправителя"
+
+msgid "Copy a <strong>Server key</strong> and a <strong>Sender ID</strong> under “Cloud Messaging” tab in <a href=\"https://console.firebase.google.com/project/\" target=\"_blank\">project settings<i class=\"icon16 new-window\"></i></a>."
+msgstr "Скопируйте <strong>Ключ сервера</strong> и <strong>Идентификатор отправителя</strong> на вкладке «Cloud Messaging» в <a href=\"https://console.firebase.google.com/project/\" target=\"_blank\">настройках проекта<i class=\"icon16 new-window\"></i></a>."
+
+msgid "Installed themes"
+msgstr "Установленные"
+
+msgid "No installed themes."
+msgstr "Установленных тем нет."
+
+msgid "Account ID"
+msgstr ""
+
+msgid "API token"
+msgstr ""
+
+msgid "OneSignal User Auth Key"
+msgstr ""
+
+msgid "Used"
+msgstr "Используется"
+
+msgid "Not used"
+msgstr "Не используется"
+
+msgid "Buy theme"
+msgstr "Купить тему"
+
+msgid "Trial theme"
+msgstr "Пробная тема дизайна"
+
+msgid "Preview on my website"
+msgstr "Открыть предпросмотр"
+
+msgid "Your website will display this trial theme for you only."
+msgstr "Сайт откроется в пробной теме только для вас."
+
+msgid "Other visitors will keep seeing existing theme with no change."
+msgstr "Другие посетители продолжат видеть рабочую тему."
+
+msgid "Show %d more"
+msgstr ""
+
+msgid "%d hour"
+msgid_plural "%d hours"
+msgstr[0] "%d час"
+msgstr[1] "%d часа"
+msgstr[2] "%d часов"
+
+msgid "Scheduled tasks"
+msgstr "Задачи по расписанию"
+
+msgid "The app does not support scheduled updating of plugin data. This may slow down the plugin operation."
+msgstr "Приложение не поддерживает обновление справочников плагинов по расписанию. Это может замедлить работу плагина."
+
+msgid "The data update of %s failed."
+msgstr "Обновление справочников %s завершилось с ошибкой."
+
+msgid "Recommended data updating interval (%s) was disrupted."
+msgstr "Нарушен рекомендуемый интервал обновления справочников (%s)."
+
+msgid "Most recent data update was attempted on %s."
+msgstr "Дата последней попытки обновления: %s."
+
+msgid "Most recent data update occurred on %s."
+msgstr "Дата последнего обновления %s."
+
+msgid "Data update was never run for this plugin. Check the server scheduler settings."
+msgstr "Для плагина ни разу не запускалось обновление справочников. Проверьте настройки планировщика задач."
+
+msgid "Data update was never run for this plugin."
+msgstr "Для плагина еще ни разу не запускалось обновление справочников."
+
+msgid "Yandex.Maps returns error “%s”"
+msgstr "Сервис «Яндекс.Карты» вернул ошибку «%s»"
+
+msgid "Yandex.Maps returns error “%s”, API key is invalid. Try to fix it in the <a href=\"https://developer.tech.yandex.ru/services/\">developer dashboard</a>."
+msgstr "Сервис «Яндекс.Карты» вернул ошибку «%s» — неверный ключ API. Попробуйте исправить это в <a href=\"https://developer.tech.yandex.ru/services/\">кабинете разработчика</a>."
+
+msgid "Yandex.Maps returns error “%s”, daily rate limit is exceeded."
+msgstr "Сервис «Яндекс.Карты» вернул ошибку «%s» — превышен суточный лимит."
+
+msgid "Yandex.Maps returns error “%s”, probably API key is invalid or daily rate limit is exceeded."
+msgstr "Сервис «Яндекс.Карты» вернул ошибку «%s» — возможно, неверный ключ API или превышен суточный лимит."
+
+msgid "Cache is temporary data that help reduce extensive load on your server. Clear cache to update those data, if you have encountered a malfunction."
+msgstr "Кеш — это временные данные, которые помогают снизить нагрузку на сервер. Очистите кеш, чтобы обновить данные, если вы обнаружили неполадку."
+
+msgid "For emoji support to be enabled, tables in your database need to be converted to another encoding."
+msgstr "Для добавления поддержки эмодзи таблицы вашей базы данных должны быть конвертированы в другую кодировку."
+
+msgid "Click the button below to start the conversion."
+msgstr "Запустите смену кодировки с помощью кнопки внизу."
+
+msgid "National direct-dialing code (NDD)"
+msgstr "Код междугородней связи"
+
+msgid "Enter the NDD code which is used for making calls within your country."
+msgstr "Введите код, с помощью которого совершаются междугородние звонки в вашей стране. Пример кода для Российской Федерации: 8."
+
+msgid "The NDD, if specified, will be replaced with the country code in website visitors’ phone numbers."
+msgstr "Если указан код междугородней связи, то в номерах посетителей сайта он будет заменен на телефонный код страны."
+
+msgid "Country code"
+msgstr "Код страны"
+
+msgid "Enter your country’s phone number code to be used in website visitors’ phone numbers instead of the NDD."
+msgstr "Международный код вашей страны, который будет использоваться в телефонных номерах посетителей сайта вместо кода междугородней связи."
+
+msgid "Enter digits only"
+msgstr "Введите только цифры"
+
+msgid "Unknown error"
+msgstr "Неизвестная ошибка"
+
+msgid "Saving error"
+msgstr "Ошибка сохранения"
+
+msgid "Enable authorization by phone number"
+msgstr "Включить вход по номеру телефона"
+
+msgid "Sign-in with Webasyst ID"
+msgstr "Вход с Webasyst ID"
+
+msgid "Will close in"
+msgstr "Закроется через"
+
+msgid "sec"
+msgstr "сек"
+
+msgid "Got it"
+msgstr "Понятно"
+
+msgid "has been successfully connected to account"
+msgstr "успешно подключен для аккаунта"
+
+msgid "Leave as it is"
+msgstr "Оставить как есть"
+
+msgid "Confirm"
+msgstr "Подтвердить"
+
+msgid "Webasyst ID account <i class=\"icon16 userpic20\" style=\"background-image: url(%s);\"></i> <strong>%s</strong> is already connected to user <i class=\"icon16 userpic20\" style=\"background-image: url(%s);\"></i> <strong>%s</strong>"
+msgstr "Аккаунт Webasyst ID <i class=\"icon16 userpic20\" style=\"background-image: url(%s);\"></i> <strong>%s</strong> уже подключен для пользователя бекенда <i class=\"icon16 userpic20\" style=\"background-image: url(%s);\"></i> <strong>%s</strong>."
+
+msgid "Change connection to a new user?"
+msgstr "Изменить подключение на нового пользователя?"
+
+msgid "If you need to change the connection of your Webasyst ID account to user <strong>%s</strong>, press “Confirm”."
+msgstr "Если вам необходимо изменить подключение вашего аккаунта Webasyst ID на пользователя <strong>%s</strong>, нажмите «Подтвердить»."
+
+msgid "The time for authorization has expired. Please go back using the button below and try again."
+msgstr "Истекло время, необходимое для авторизации. Вернитесь назад с помощью кнопки ниже и повторите попытку."
+
+msgid "Sorry, the login has failed."
+msgstr "Извините, авторизация не удалась."
+
+msgid "is connected"
+msgstr "подключен"
+
+msgid "is not connected"
+msgstr "не подключен"
+
+msgid "Disconnect"
+msgstr "Отключить"
+
+msgid "Connect"
+msgstr "Подключить"
+
+msgid "%sRead more%s."
+msgstr "%sПодробнее%s."
+
+msgid "is disabled"
+msgstr "отключен"
+
+msgid "Disable"
+msgstr "Отключить"
+
+msgid "Enable"
+msgstr "Включить"
+
+msgid "More info"
+msgstr "Подробнее"
+
+msgid "Disable sign in with Webasyst ID"
+msgstr "Отключить вход с Webasyst ID"
+
+msgid "Sign-in with Webasyst ID has been disabled."
+msgstr "Вход с Webasyst ID отключен."
+
+msgid "Failed to disable sign-in with Webasyst ID."
+msgstr "Не удалось отключить вход с Webasyst ID."
+
+msgid "Enable sign-in with Webasyst ID"
+msgstr "Подключить вход с Webasyst ID"
+
+msgid "Sign-in with Webasyst ID has been enabled."
+msgstr "Вход с Webasyst ID подключен."
+
+msgid "Connecting to the Webasyst ID authentication server..."
+msgstr "Подключение к серверу авторизации Webasyst ID..."
+
+msgid "Failed to connect to Webasyst ID authentication server."
+msgstr "Не удалось подключиться к серверу авторизации Webasyst ID."
+
+msgid "Connect my Webasyst ID account"
+msgstr "Подключить мой аккаунт Webasyst ID"
+
+msgid "<strong>Enable sign-in with Webasyst ID</strong>, a universal authorization option that unites Webasyst Customer Center and backend sign-in on your custom domains. Webasyst ID allows you to use all Webasyst apps, sites, and services, and to avoid the use of different passwords on various domains."
+msgstr "<strong>Подключите вход с Webasyst ID</strong> — единый способ авторизации, который объединяет вход в бекенд Webasyst на вашем сайте, Центр заказчика Webasyst, все приложения, сайты и сервисы экосистемы Webasyst."
+
+msgid "Enable&nbsp;Webasyst&nbsp;ID on %s — it’s free and secure!"
+msgstr "Подключить&nbsp;Webasyst&nbsp;ID на %s — бесплатно и безопасно!"
+
+msgid "<strong>Upgrade your user account (%s) to Webasyst ID</strong>, a unified authorization across all Webasyst apps, sites, and services. It’s free, secure, and takes just a minute."
+msgstr "<strong>Подключите для своего аккаунта (%s) вход с помощью Webasyst ID</strong> — единой системы авторизации, объединяющей Центр заказчика Webasyst, мобильные приложения, сайты и сервисы Webasyst. Подключение займет всего минуту."
+
+msgid "Enable&nbsp;Webasyst&nbsp;ID for %s now!"
+msgstr "Подключить&nbsp;Webasyst&nbsp;ID для %s сейчас!"
+
+msgid "How does it work?"
+msgstr "Как это работает?"
+
+msgid "What is Webasyst ID?"
+msgstr "Что такое Webasyst ID?"
+
+msgid "What is it?"
+msgstr "Что это?"
+
+msgid "Sign in with"
+msgstr "Войти с"
+
+msgid "Enable sign in with"
+msgstr "Подключить вход с"
+
+msgid "Unknown authorization error. Sign in with a login and a password."
+msgstr "Неизвестная ошибка авторизации. Войдите с помощью имени и пароля."
+
+msgid "Connect your Webasyst ID account and sign into the backend securely with no extra passwords."
+msgstr "Подключите свой аккаунт Webasyst ID и входите в бекенд с его помощью без лишних паролей."
+
+msgid "Go to the Webasyst Customer Center"
+msgstr "Перейти в Центр заказчика Webasyst"
+
+msgid "Failed to log into the Webasyst Customer Center"
+msgstr "Не удалось войти в Центр заказчика Webasyst"
+
+msgid "User revoked permission to log into the Webasyst Customer Center"
+msgstr "Пользователь отозвал разрешение на переход в Центр заказчика Webasyst"
+
+msgid "Disconnect Webasyst ID account"
+msgstr "Отключить аккаунт Webasyst ID"
+
+msgid "The user will be able to connect a Webasyst ID account again at any time."
+msgstr "Пользователь сможет снова подключить свой аккаунт Webasyst ID в любое время."
+
+msgid "What is Webasyst ID"
+msgstr "Что такое Webasyst ID"
+
+msgid "1. Customer Center &rarr; Webasyst ID"
+msgstr "1. Центр заказчика &rarr; Webasyst ID"
+
+msgid "Based on a Webasyst Customer Center account, Webasyst ID is a unified secure authorization option, <strong>a single password</strong> for all Webasyst apps, sites, and backends — including those that work on your own domains."
+msgstr "Webasyst ID — это <strong>аккаунт в Центре заказчика Webasyst</strong> и вход с его помощью во все приложения и на все сайты, где вы работаете с Webasyst — как в облаке, так и на собственном хостинге."
+
+msgid "2. Start using Webasyst ID"
+msgstr "2. Как подключить"
+
+msgid "To enable Webasyst ID, simply sign in with your Webasyst Customer Center account <strong>just once</strong>. The system will connect everything automatically and will then allow you to quickly sign into your backend using your single Webasyst ID password. If you do not remember your Customer Center account details, simply <a href=\"https://www.webasyst.com/my/forgotpassword/\">recover the password</a> or <a href=\"https://www.webasyst.com/my/signup/\">create an account for free</a>."
+msgstr "Чтобы подключить вход с Webasyst ID, нужно всего лишь <strong>один раз связать</strong> вход на сайте с вашим аккаунтом в Центре заказчика. Система свяжет авторизацию и позволит в будущем входить везде с единым паролем. Если вы не помните, как войти в Центр заказчика, <a href=\"https://www.webasyst.ru/my/forgotpassword/\">восстановите свой пароль</a> или <a href=\"https://www.webasyst.ru/my/signup/\">зарегистрируйтесь</a>. Это бесплатно."
+
+msgid "3. Personal Webasyst ID for each user"
+msgstr "3. У каждого пользователя — свой Webasyst ID"
+
+msgid "If you are working together with your team then each of your teammates will be able to use their own Webasyst ID. All access rights remain unchanged while users get an option to log in with a new single password."
+msgstr "Если вы работаете в команде, то каждый сотрудник сможет использовать свой личный Webasyst ID. Все права доступа останутся без изменений, но каждый пользователь сможет входить со своим новым единым паролем."
+
+msgid "4. Why this is useful"
+msgstr "4. Для чего это нужно"
+
+msgid "With Webasyst ID, it is much more convenient to use the entire Webasyst <strong>ecosystem of apps and plugins</strong>, communicate with developers and get support, manage your Webasyst customer assets such as software licenses, cloud accounts, domain names, and purchases. A single account for everything."
+msgstr "Webasyst ID — самый удобный способ работы со всей <strong>экосистемой приложений и плагинов Webasyst</strong>, общения с разработчиками, обращения в поддержку, управления активами Webasyst: лицензиями, хостингом и облаком, доменными именами. Один аккаунт для всех сервисов."
+
+msgid "5. Will I retain the usual login option?"
+msgstr "5. Можно ли будет вернуться к обычному способу входа?"
+
+msgid "Yes, you will be able to use it as before. Simply enter your user name and password as usual, without selecting the Webasyst ID login option."
+msgstr "Да, такая возможность у вас останется. Для этого нужно просто вводить свои имя пользователя и пароль, как обычно, — не выбирая вход через Webasyst ID."
+
+msgid "Next"
+msgstr "Далее"
+
+msgid "Finish"
+msgstr "Завершить"
+
+msgid "Sign in without Webasyst ID"
+msgstr "Войти без подключения Webasyst ID"
+
+msgid "Sign in and connect Webasyst ID"
+msgstr "Войти и подключить Webasyst ID"
+
+msgid "Webasyst ID account %s is not connected to any backend user."
+msgstr "Аккаунт Webasyst ID %s не связан ни с одним пользователем бекенда."
+
+msgid "Sign in with a login name or email address to connect the account:"
+msgstr "Чтобы подключить аккаунт, войдите с логином или email-адресом:"
+
+msgid "Failed to get Webasyst ID account data from the Webasyst resource server."
+msgstr "Не удалось получить данные аккаунта Webasyst ID с сервера ресурсов Webasyst."
+
+msgid "“"
+msgstr "«"
+
+msgid "”"
+msgstr "»"
+
+msgid "will get:"
+msgstr "получит:"
+
+msgid "Connected: all team users"
+msgstr "Подключились все пользователи команды"
+
+msgid "Connected: ** from %d team user"
+msgid_plural "Connected: ** from %d team users"
+msgstr[0] "Подключились: ** из %d пользователя команды"
+msgstr[1] "Подключились: ** из %d пользователей команды"
+msgstr[2] "Подключились: ** из %d пользователей команды"
+
+msgid "Connected users"
+msgstr "Подключенные пользователи"
+
+msgid "No users have connected Webasyst ID"
+msgstr "Пока нет пользователей, подключивших Webasyst ID"
+
+msgid "Last sign-in with Webasyst ID"
+msgstr "Последний вход с Webasyst ID"
+
+msgid "Specified URL already exists."
+msgstr "Указанный URL уже существует."
+
+msgid "No SMS notifications template group is selected."
+msgstr "Не выбрана группа шаблонов SMS-уведомлений."
+
+msgid "Specified password is too long."
+msgstr "Указан слишком длинный пароль."
+
+msgid "Anti-CSRF protection."
+msgstr "Защита от CSRF-атак."
+
+msgid "This may be caused by a server error, or by a limitation on the allowed number of POST variables or their values size. Try to increase the values of “max_input_vars” and “post_max_size” parameters in PHP configuration or other similar parameters in you web server configuration."
+msgstr "Это может быть вызвано серверной ошибкой или ограничением на допустимое количество переменных в POST-запросах либо на размер их значений. Попробуйте увеличить значения параметров max_input_vars и post_max_size в конфигурации PHP или других подобных параметров в конфигурации веб-сервера."
+
+msgid "This design theme does not have its own settings. Try to export the parent theme’s settings."
+msgstr "У этой темы дизайна нет собственных настроек. Попробуйте экспортировать настройки родительской темы."
+
+msgid "A password cannot be empty."
+msgstr "Пароль не может быть пустым."
+
+msgid "The design theme preview will not work on your domain name <strong id=\"wa-preview-domain\"></strong> if it is not available via HTTPS protocol. If so then please either install an SSL certificate for your domain name or log into your Webasyst backend on that domain to preview a design theme."
+msgstr "Предварительный просмотр темы дизайна не будет работать на доменном имени <strong id=\"wa-preview-domain\"></strong>, если оно недоступно по протоколу HTTPS. Если это так, то для предпросмотра темы дизайна либо установите SSL-сертификат для этого домена, либо войдите в свой Webasyst на этом домене."
+
+msgid "Unknown error from Webasyst ID server."
+msgstr "Неизвестная ошибка с сервера Webasyst ID."
+
+msgid "This is a custom file and it will not be affected by the update."
+msgstr "Это пользовательский файл, и он не будет затронут обновлением."
+
+msgid "Restoring of missing database indices and AUTO_INCREMENT values"
+msgstr "Восстановление отсутствующих индексов и значений AUTO_INCREMENT"
+
+msgid "Table name"
+msgstr "Имя таблицы"
+
+msgid "Query"
+msgstr "Запрос"
+
+msgid "Fix selected tables"
+msgstr "Исправить выбранные таблицы"
+
+msgid "Fix all listed tables"
+msgstr "Исправить все перечисленные таблицы"
+
+msgid "Update all database tables"
+msgstr "Обновить все таблицы базы данных"
+
+msgid "No errors found."
+msgstr "Неполадки не найдены."
+
+msgid "Database indices and AUTO_INCREMENT repair tool"
+msgstr "Исправление индексов таблиц базы данных и AUTO_INCREMENT"
+
+msgid "Indices and AUTO_INCREMENT values will be restored <strong>only for selected tables</strong>."
+msgstr "Индексы и значения AUTO_INCREMENT будут восстановлены <strong>только для выбранных таблиц</strong>."
+
+msgid "Indices and AUTO_INCREMENT values will be restored for <strong>all tables listed on this page</strong>."
+msgstr "Индексы и значения AUTO_INCREMENT будут восстановлены <strong>для всех таблиц, перечисленных на этой странице</strong>."
+
+msgid "Indices and AUTO_INCREMENT values will be <strong>removed and restored for all tables in the database</strong>."
+msgstr "Индексы и значения AUTO_INCREMENT будут <strong>удалены и восстановлены для всех таблиц базы данных</strong>."
+
+msgid "Upgrade to Webasyst ID"
+msgstr "Вход с Webasyst ID"
+
+msgid "Connect Webasyst ID"
+msgstr "Подключить Webasyst ID"
+
+msgid "It is your personal account in <a %s>Webasyst Customer Center</a>, via which you can quickly access Webasyst apps either in the Cloud or on your own server."
+msgstr "Это ваш личный кабинет в <a %s>Центре заказчика Webasyst</a>, через который можно быстро переходить к работе с приложениями Webasyst в облаке или на своем хостинге."
+
+msgid "With Webasyst ID, it is convenient to access your apps and data, communicate with software developers, contact Webasyst support team, and manage your Webasyst client assets such as software licenses, Cloud accounts, or domain names. It is a universal login option to use all Webasyst apps and services."
+msgstr "Через Webasyst ID удобно работать с приложениями и управлять своим сайтом, общаться с разработчиками программных продуктов, обращаться в службу поддержки и управлять своими активами клиента Webasyst: лицензиями, хостингом, облаком, доменными именами. Это единый способ входа для использования всех приложений и сервисов Webasyst."
+
+msgid "How to use it?"
+msgstr "Как этим пользоваться?"
+
+msgid "Simply click the Webasyst login button, which will appear on your website’s backend authorization page. You won’t even need to enter a password if you recently signed into your Customer Center account."
+msgstr "Используйте кнопку для входа с Webasyst, которая появится на странице входа на ваш сайт. А если вы недавно уже входили в Центр заказчика Webasyst, то вам даже не придется вводить пароль."
+
+msgid "Will I be able to use again the ordinary login option, without Webasyst ID?"
+msgstr "Можно ли будет вернуться к обычному способу входа &mdash; без Webasyst ID?"
+
+msgid "Yes, just enter your login name and password as usual."
+msgstr "Да, для этого просто вводите свои имя пользователя и пароль так, как вы привыкли."
+
+msgid "%s prompts you to upgrade your account on %s with the Webasyst ID secure login option — a single sign in system across all Webasyst apps, sites, and services. Confirm the upgrade for %s by linking it with your existing Webasyst ID account or by creating a new one. It’s free and secure!"
+msgstr "%s предлагает вам подключить для вашего аккаунта на сайте %s вход с помощью Webasyst ID — единой безопасной системы авторизации для всех приложений, сайтов и сервисов на основе Webasyst. Подтвердите подключение, связав аккаунт %s с ранее созданным Webasyst ID или зарегистрировав новый. Это быстро и бесплатно!"
+
+msgid "for login as %s%s"
+msgstr "для пользователя %s%s"
+
+msgid "[Action Required] %s invites you to upgrade to Webasyst ID on %s"
+msgstr "[Требуется подтверждение] %s приглашает вас подключить Webasyst ID для входа на сайте %s"
+
+msgid "Already bound"
+msgstr "Уже привязан"
+
+msgid "Invitation token is invalid."
+msgstr "Недействительный токен приглашения."
+
+msgid "Invited contact doesn't exist."
+msgstr "Приглашенный контакт не существует."
+
+msgid "Client ID"
+msgstr "ID клиента"
+
+msgid "Client secret"
+msgstr "Секретный код клиента"
+
+msgid "Connecting my Webasyst ID account"
+msgstr "Подключение моего аккаунта Webasyst ID"
+
+msgid "If you disable sign-in with Webasyst ID, all configured user associations with Webasyst ID accounts will be deleted. Users will not be able to sign into the backend with Webasyst ID."
+msgstr "Если вы отключите вход с Webasyst ID, то все настроенные связи пользователей с аккаунтами Webasyst ID будут удалены. Пользователи не смогут входить в бекенд с Webasyst ID."
+
+msgid "Disable Webasyst ID for everyone"
+msgstr "Отключить Webasyst ID для всех"
+
+msgid "Image processing library"
+msgstr "Механизм обработки изображений"
+
+msgid "not installed"
+msgstr "не установлен"
+
+msgid "Disable Webasyst ID sign-in for all users"
+msgstr "Отключить вход с Webasyst ID для всех пользователей"
+
+msgid "<strong>Sign-in with Webasyst ID</strong> is a universal authorization option that unites Webasyst Customer Center and sign-in to Webasyst backends on your own domains."
+msgstr "<strong>Вход с Webasyst ID</strong> — это универсальный способ входа, объединяющий Центр заказчика Webasyst и вход в бекенд Webasyst на ваших личных доменах."
+
+msgid "Webasyst ID allows you to use all Webasyst apps, sites, and services, and to avoid the use of different passwords on various domains."
+msgstr "Webasyst ID позволяет пользоваться всеми приложениями, сайтами и сервисами Webasyst и при этом избежать использования разных паролей на разных доменах."
+
+msgid "Pending upgrade to Webasyst ID"
+msgstr "Ожидающие подключения к Webasyst ID"
+
+msgid "Sending invitations. Please don’t leave this page until the process is completed."
+msgstr "Приглашения отправляются. Не закрывайте эту страницу до завершения процесса."
+
+msgid "Awaiting the user to confirm"
+msgstr "Ожидание подтверждения пользователем"
+
+msgid "Connect Webasyst ID for my account"
+msgstr "Подключить Webasyst ID для моего аккаунта"
+
+msgid "Send sign-in instructions by email"
+msgstr "Отправить инструкцию по подключению по email"
+
+msgid "Re-send sign-in instructions"
+msgstr "Отправить инструкцию по подключению еще раз"
+
+msgid "An invitation has been sent"
+msgstr "Приглашение отправлено"
+
+msgid "User email is unknown."
+msgstr "Email-адрес пользователя неизвестен."
+
+msgid "Successfully upgraded to Webasyst ID"
+msgstr "Успешно подключены к Webasyst ID"
+
+msgid "all users!"
+msgstr "все пользователи!"
+
+msgid "Webasyst ID"
+msgstr "Webasyst ID"
+
+msgid "Allow users to use their Webasyst ID accounts to sign into the backend:"
+msgstr "Разрешить пользователям использовать их аккаунты Webasyst ID для входа в бекенд:"
+
+msgid "Enable Webasyst ID"
+msgstr "Включить Webasyst ID"
+
+msgid "and email invitations to users for fast upgrade"
+msgstr "и отправить пользователям email-приглашения с ссылкой для быстрого подключения"
+
+msgid "Should the sending of email invitations fail, users will still see a notification with an upgrade link in the backend. Users will also have the option to enable or disable the sign-in with Webasyst ID in their profiles."
+msgstr "Если email-приглашения не будут отправлены или получены, пользователи все равно увидят в бекенде уведомление со ссылкой для подключения. Пользователи также могут самостоятельно подключать или отключать вход с Webasyst ID в своем профиле."
+
+msgid "%d user"
+msgid_plural "%d users"
+msgstr[0] "%d пользователь"
+msgstr[1] "%d пользователя"
+msgstr[2] "%d пользователей"
+
+msgid "Association with a Webasyst ID account will be deleted. The user will not be able to sign into the backend with Webasyst ID."
+msgstr "Связь с аккаунтом Webasyst ID будет удалена. Пользователь не сможет входить в бекенд с Webasyst ID."
+
+msgid "User not found."
+msgstr "Пользователь не найден."
+
+msgid "Sending failure."
+msgstr "Ошибка отправки."
+
+msgid "%d invitation email has been sent."
+msgid_plural "%d invitation emails have been sent."
+msgstr[0] "Отправлено %d приглашение."
+msgstr[1] "Отправлены %d приглашения."
+msgstr[2] "Отправлено %d приглашений."
+
+msgid "%s and %d more unmodified file"
+msgid_plural "%s and %d more unmodified files"
+msgstr[0] "%s и еще %d неизмененный файл"
+msgstr[1] "%s и еще %d неизмененный файла"
+msgstr[2] "%s и еще %d неизмененный файлов"
+
+msgid "Association with Webasyst ID account will be deleted. The user will not be able to sign into the backend with Webasyst ID."
+msgstr "Связь с аккаунтом Webasyst ID будет удалена. Пользователь не сможет входить в бекенд с Webasyst ID."
+
+msgid "The system sender email address is not configured. Save it in “<a href=\"%s\">Email settings</a>” section."
+msgstr "Не настроен системный email-адрес отправителя. Сохраните его в разделе «<a href=\"%s\">Настройки email</a>»."
+
+msgid "Disable sign-in with Webasyst ID"
+msgstr "Отключить вход с Webasyst ID"
+
+msgid "This page will not be published because there is no settlement, or routing rule, for this app in the site structure settings. Set up a settlement in Site app’s “Structure” section to publish this page."
+msgstr "Страница не будет опубликована, потому что в настройках структуры сайта нет ни одного поселения (правила маршрутизации) для этого приложения. Настройте поселение для публикации страницы в разделе «Структура» приложения «Сайт»."
+
+msgid "This page is unsettled (unpublished), i.e. not connected to any of your site’s routing rules. Set up a settlement in Site app’s “Structure” section to publish this page."
+msgstr "Страница не опубликована, потому что не прикреплена ни к одному поселению приложения (правилу маршрутизации). Настройте поселение для публикации этой страницы в разделе «Структура» приложения «Сайт»."
+
+msgid "Try with another Webasyst ID"
+msgstr "Попробовать с другим Webasyst ID"
+
+msgid "You cannot sign in because Webasyst ID <strong>%s</strong> is not connected to the backend at <strong>%s</strong>."
+msgstr "Вы не можете войти, потому что аккаунт Webasyst ID <strong>%s</strong> не подключен к бекенду <strong>%s</strong>."
+
+msgid "Or <a class=\"link\" href=\"%s\">sign into your backend in the usual way</a> and connect it to your Webasyst ID."
+msgstr "Или <a class=\"link\" href=\"%s\">войдите в бекенд стандартным способом</a> и подключите к нему свой аккаунт Webasyst ID."
+
+msgid "Use another Webasyst ID"
+msgstr "Использовать другой Webasyst ID"
+
+msgid "Use only sign-in option with Webasyst ID — <span class=\"%s\">recommended</span>"
+msgstr "Использовать вход только с Webasyst ID — <span class=\"%s\">рекомендуется</span>"
+
+msgid "When sign-in with Webasyst ID is enabled by default, the usual sign-in method is disabled, with all its configuration saved for later use. Backend users who are not yet connected to Webasyst ID will be able to get connected later on, or you may send them an email invitation in section “<a href=\"%s\">Sign-in with Webasyst ID</a>”. Newly added users will get connected to Webasyst ID right away."
+msgstr "При использовании входа с Webasyst ID по умолчанию простой вход отключается с сохранением всех настроек и возможностью возврата к ним. Пользователи бекенда, которые не подключились к Webasyst ID, смогут подключиться позже самостоятельно, либо вы можете отправить им email-приглашение в разделе «<a href=\"%s\">Вход с Webasyst</a>». Новые пользователи бекенда будут сразу подключаться к Webasyst ID."
+
+msgid "When sign-in with Webasyst ID is enabled by default, the usual sign-in method is disabled, with all its configuration saved for later use. Backend users who are not yet connected to Webasyst ID will be able to get connected later on, or you may send them an email invitation. Newly added users will get connected to Webasyst ID right away."
+msgstr "При использовании входа с Webasyst ID по умолчанию простой вход отключается с сохранением всех настроек и возможностью возврата к ним. Пользователи бекенда, которые не подключились к Webasyst ID, смогут подключиться позже самостоятельно, либо вы можете отправить им email-приглашение. Новые пользователи бекенда будут сразу подключаться к Webasyst ID."
+
+msgid "Sign-in with Webasyst ID is enabled by default, a disconnection is not allowed."
+msgstr "Активирован вход с Webasyst ID по умолчанию, поэтому отключение невозможно."
+
+msgid "You need to connect Webasyst ID to your account."
+msgstr "Необходимо подключить Webasyst ID для своего аккаунта."
+
+msgid "Obtain an API key for the <strong>free or paid version</strong> on the <a href=\"https://developer.tech.yandex.ru/\" target=\"_blank\">developer dashboard</a>. Select “<strong>JavaScript API, Geocoding API</strong>” option."
+msgstr "Получите ключ API для <strong>бесплатной или платной версии</strong> в <a href=\"https://developer.tech.yandex.ru/\" target=\"_blank\">кабинете разработчика</a>. Выберите тип карт «<strong>JavaScript API и HTTP Геокодер</strong>»."
+
+msgid "Obtain an API key for the <strong>paid version</strong> on the <a href=\"https://developer.tech.yandex.ru/\" target=\"_blank\">developer dashboard</a>. Select “<strong>JavaScript API, Geocoding API</strong>” option."
+msgstr "Получите ключ API для <strong>платной версии</strong> в <a href=\"https://developer.tech.yandex.ru/\" target=\"_blank\">кабинете разработчика</a>. Выберите тип карт «<strong>JavaScript API и HTTP Геокодер</strong>»."
+
+msgid "If the free version’s API key is specified, only a link to the map will be displayed."
+msgstr "Если указать ключ API для бесплатной версии, то будет показана только ссылка на карту."
+
+msgid "<a href=\"https://developers.google.com/maps/documentation/javascript/get-api-key\">Obtain a Google Maps API key</a> to get a map displayed."
+msgstr "<a href=\"https://developers.google.com/maps/documentation/javascript/get-api-key\">Получите ключ API «Карт Google»</a> для отображения карты."
+
+msgid "Backend"
+msgstr "Бекенд"
+
+msgid "shipping"
+msgstr "доставка"
+
+msgid "billing"
+msgstr "оплата"
+
+msgid "This page has sub-pages with empty addresses."
+msgstr "У этой страницы есть подстраницы с пустыми адресами."
+
+msgid "%s: call of unknown method %s->%s() with arguments %s"
+msgstr "%s: вызов неизвестного метода %s->%s() с аргументами %s"
+
+msgid "%s: attempt to read unknown property %s->%s"
+msgstr "%s: попытка чтения неизвестного свойства %s->%s"
+
+msgid "Plugin “%s” not found."
+msgstr "Плагин «%s» не найден."
+
+msgid "The called plugin “%s” is disabled."
+msgstr "Вызываемый плагин «%s» выключен."
+
+msgid "The called plugin “%s” is not installed."
+msgstr "Вызываемый плагин «%s» не установлен."
+
+msgid "All-new Webasyst 2 UI"
+msgstr "Новый интерфейс Webasyst 2"
+
+msgid "beta"
+msgstr "бета"
+
+msgid "This app supports the brand-new Webasyst 2 user interface (beta version). Go ahead and check out its amazing new style. And don’t worry — you can return to the classic UI any time."
+msgstr "Это приложение поддерживает новый интерфейс Webasyst 2 (бета)! Включите режим нового интерфейса и посмотрите, как классно приложение выглядит в новых стилях. И не волнуйтесь — вы всегда сможете вернуться обратно в старый режим."
+
+msgid "Turn on the new UI"
+msgstr "Включить новый интерфейс"
+
+msgid "http://2.webasyst.com"
+msgstr "http://2.webasyst.ru"
+
+msgid "learn more about Webasyst 2"
+msgstr "подробнее о Webasyst 2"
+
+msgid "Thank you for checking out the newest Webasyst 2 user interface (beta)!"
+msgstr "Спасибо за то, что решили попробовать новый интерфейс Webasyst 2 (бета)!"
+
+msgid "This is a fully functional version of this app in the new style. We encourage you to use the new UI in full and <a href=\"%s\" target=\"_blank\">share your feedback %s</a> with us in case of any issues."
+msgstr "Вы используете новую версию интерфейса этого приложения. Если вдруг что-то пошло не так, пожалуйста, <a href=\"%s\" target=\"_blank\">сообщите нам %s</a>. Будем рады вашим отзывам!"
+
+msgid "https://support.webasyst.com"
+msgstr "https://support.webasyst.ru"
+
+msgid "Back to the classic UI"
+msgstr "Вернуться в старый интерфейс"
+
+msgid "Try it in both light and dark modes:"
+msgstr "Попробуйте его в светлом и темном режимах:"
+
+msgid "You’ve enabled the new Webasyst 2 UI, but this app does not currently support it. Please contact the app developer to encourage upgrading the UI to the new style."
+msgstr "Вы включили режим нового интерфейса Webasyst 2, но это приложение его пока не поддерживает. Пожалуйста, свяжитесь с разработчиком приложения и узнайте, когда новый интерфейс станет доступен."
+
+msgid "New UI is not yet supported"
+msgstr "Новый интерфейс пока не поддерживается."
+
+msgid "Edit widgets"
+msgstr "Виджеты"
+
+msgid "Teams"
+msgstr "Команда"
+
+msgid "Use the Team app to set up your team and customize access rights."
+msgstr "Используйте приложение «Команда» для настройки прав доступа и состава команд."
+
+msgid "No new notifications."
+msgstr "Новых уведомлений нет."
+
+msgid "Company logo"
+msgstr "Логотип"
+
+msgid "Text"
+msgstr "Текст"
+
+msgid "Image"
+msgstr "Картинка"
+
+msgid "Larger font, two lines"
+msgstr "Больше шрифт, две строки"
+
+msgid "Custom colors"
+msgstr "Свои цвета"
+
+msgid "Color A"
+msgstr "Цвет А"
+
+msgid "Color B"
+msgstr "Цвет Б"
+
+msgid "Gradient angle (&deg;)"
+msgstr "Угол градиента (&deg;)"
+
+msgid "Text color"
+msgstr "Цвет текста"
+
+msgid "%s characters"
+msgstr "%s символов"
+
+msgid "Upload new image"
+msgstr "Загрузить картинку"
+
+msgid "My apps"
+msgstr "Мои приложения"
+
+msgid "Everyone"
+msgstr "Вся команда"
+
+msgid "Activity"
+msgstr "Новости"
+
+msgid "Dashboards"
+msgstr "Дашборды"
+
+msgid "No activity today yet."
+msgstr "Сегодня еще не было событий."
+
+msgid "Filter by app"
+msgstr "Фильтр по приложениям"
+
+msgid "TV link"
+msgstr "Ссылка для ТВ"
+
+msgid "Open in a new window"
+msgstr "Открыть в новом окне"
+
+msgid "Copied"
+msgstr "Скопировано"
+
+msgid "This dashboard can be viewed both in a browser and on a TV with the support for basic website browsing. Get a private TV link and open it using an internal browser on your TV."
+msgstr "Этот дашборд можно открыть и в браузере, и на любом телевизоре с функцией просмотра интернет-сайтов. Просто перейдите по приватной ссылке этого дашборда в браузере своего телевизора."
+
+msgid "Show navigation"
+msgstr "Показать меню"
+
+msgid "Your dashboard is empty. Add widgets by clicking “Edit widgets” button at the top."
+msgstr "Ваш дашборд пуст. Добавьте на него виджеты с помощью кнопки «Виджеты» вверху."
+
+msgid "Please refer to <a href=\"http://ogp.me\" rel=\"noopener\" target=\"_blank\">Open Graph</a> protocol site for more information on social sharing meta tags and available values."
+msgstr "На сайте протокола <a href=\"http://ogp.me\" rel=\"noopener\" target=\"_blank\">Open Graph</a> доступно больше информации о метатегах для социальных сетей и допустимых значениях для них."
+
+msgid "The page is not published because it is not connected to any of your website’s structure entries, or routing rules. Add a new entry to Site app’s “Structure” section in order to publish this page."
+msgstr "Страница не опубликована, потому что не прикреплена ни к одному поселению приложения (правилу маршрутизации). Добавьте новое правило в разделе «Структура» приложения «Сайт» для публикации этой страницы."
+
+msgid "The page will not be published because there is no settlement, or routing rule, of the app in the website structure settings. Add a new entry to Site app’s “Structure” section in order to publish this page."
+msgstr "Страница не будет опубликована, потому что в настройках структуры сайта нет ни одного поселения приложения (правил маршрутизации). Настройте поселение для публикации этой страницы в разделе «Структура» приложения «Сайт»."
+
+msgid "Notifications"
+msgstr "Уведомления"
+
+msgid "New Webasyst 2 UI"
+msgstr "Новый интерфейс Webasyst 2"
+
+msgid "Light mode"
+msgstr "Светлый режим"
+
+msgid "Dark mode"
+msgstr "Темный режим"
+
+msgid "Auto (based on device settings)"
+msgstr "Авто (зависит от настроек устройства)"
+
+msgid "Installed widgets"
+msgstr "Установленные виджеты"
+
+msgid "All widgets"
+msgstr "Все виджеты"
+
+msgid "Add widget"
+msgstr "Добавить виджет"
+
+msgid "Also check in “<a href=\"%s\">%s</a>” section that SMS notifications based on “%s“ template are correctly sent, too. Be aware that SMS sending may not work occasionally; e.g., due to low SMS balance."
+msgstr "Также проверьте в разделе «<a href=\"%s\">%s</a>», чтобы правильно отправлялись SMS-сообщения, сформированные по шаблону «%s». Учитывайте, что отправка SMS может иногда не срабатывать, например, из-за исчерпания баланса у провайдера."
+
+msgid "PHP extension “openssl” must be installed on your server to make the DKIM option available."
+msgstr "На вашем сервере должно быть установлено PHP-расширение openssl, для того чтобы настройка DKIM была доступна."
+
+msgid "To check the sending of SMS messages, please first save the changes you have made."
+msgstr "Для проверки отправки SMS-сообщений сначала сохраните сделанные вами изменения."
+
+msgid "Select UI mode"
+msgstr "Режим интерфейса (debug)"
+
+msgid "Route settings"
+msgstr "Настройки маршрутизации"
+
+msgid "Browse all themes"
+msgstr "Все темы дизайна"
+
+msgid "Theme"
+msgstr "Тема"
+
+msgid "Actions"
+msgstr "Действия"
+
+msgid "Configure %s"
+msgstr "Настройки %s"
+
+msgid "Browse plugins"
+msgstr "Все плагины"
+
+msgid "Publish"
+msgstr "Опубликовать"
+
+msgid "Menu"
+msgstr "Меню"
+
+msgid "Try again"
+msgstr "Повторите попытку"
+
+msgid "Or <a class=\"link\" href=\"%s\">sign into your backend in the usual way</a>."
+msgstr "Или <a class=\"link\" href=\"%s\">войдите в свой бекенд обычным способом</a>."
+
+msgid "Drag & drop a file here or upload it manually (JPG, GIF or PNG)"
+msgstr "Перетащите сюда файл или загрузите его вручную (JPG, GIF или PNG)"
+
+msgid "Choose file"
+msgstr "Выберите файл"
+
+msgid "Unable to delete certain files."
+msgstr "Не удалось удалить некоторые файлы."
+
+msgid "Default sending parameters"
+msgstr "Параметры отправки по умолчанию"
+
+msgid "Additional sending parameters"
+msgstr "Дополнительные параметры отправки"
+
+msgid "Calendar"
+msgstr "Календарь"
+
+msgid "Error getting section contents."
+msgstr "Ошибка получения содержимого."
+
+msgid "Access rights inherited from groups (%s) can be expanded on an individual user level (%s). To reduce access inherited from a group, exclude the user from the group or shrink the group basis access rights setup."
+msgstr "Если пользователь унаследовал доступ от групп (%s), то вы можете только расширить его за счет установки персонального доступа (%s). Чтобы понизить уровень доступа измените или настройте группы, в которых состоит пользователь"
+
+msgid "Access granted for the user individually."
+msgstr "Доступ установлен персонально для этого пользователя."
+
+msgid "Access inherited from user groups."
+msgstr "Доступ унаследован от групп."
+
+msgid "Enable 2.0"
+msgstr "Включить 2.0"
+
+msgid "Access granted for the user individually"
+msgstr "Доступ установлен персонально для этого пользователя"
+
+msgid "Access inherited from user groups"
+msgstr "Доступ унаследован от групп"
+
+msgid "My company"
+msgstr "Моя компания"
+
+msgid "Error while running update of %s.%s plugin: %s"
+msgstr "Ошибка во время выполнения метаобновления плагина %s.%s: %s"
+
+msgid "About us"
+msgstr "О нас"
+
+msgid "Error while running update of %s app: %s"
+msgstr "Ошибка во время выполнения метаобновления приложения %s: %s"
+
+msgid "Empty <code>form_id</code> parameter."
+msgstr "Пустой параметр <code>form_id</code>."
+
+msgid "Default UI mode"
+msgstr "Режим интерфейса по умолчанию"
+
+msgid "new"
+msgstr "новый"
+
+msgid "old"
+msgstr "старый"
+
+msgid "logged in with Webasyst ID"
+msgstr "вошел в аккаунт с Webasyst ID"
+
+msgid "Mark as read"
+msgstr "Пометить как прочитанное"
+
+msgid "Light/dark mode"
+msgstr "Светлый/темный режим"
+
+msgid "Webasyst is ready for work! Use the available apps via the icons at the page top and add more apps via Installer. Invite teammates and friends for collaboration via the Team app."
+msgstr "Webasyst готов к работе! Используйте установленные приложения с помощью иконок в верхнем меню и устанавливайте новые приложения с помощью «Инсталлера». Приглашайте сотрудников и друзей для совместной работы в приложении «Команда»."
+
+msgid "Names must not contain URLs."
+msgstr "Имена не должны содержать URL-адреса."
+
+msgid "No supported network transports are available."
+msgstr "Отсутствуют поддерживаемые сетевые инструменты передачи данных."
+
+msgid "<strong>Enable secure sign-in with 2-factor authentication (2FA).</strong> Your account will be connected to Webasyst ID, and any sign-in attempts from new devices will be protected with an SMS confirmation code."
+msgstr "<strong>Подключите безопасный вход с двухфакторной аутентификацией (2FA).</strong> Ваш аккаунт будет подключен к Webasyst ID, и все попытки входа с новых устройств будут защищены подтверждением по SMS."
+
+msgid "+1"
+msgstr "+7"
+
+msgid "Sign-in with 2FA"
+msgstr "Вход с 2FA"
+
+msgid "Last sign-in with 2-factor authentication"
+msgstr "Последний вход с двухфакторной авторизацией"
+
+msgid "No backend user is linked with this Webasyst ID."
+msgstr "Нет пользователя бекенда, связанного с этим Webasyst ID."
+
+msgid "Log"
+msgstr "Журнал"
+
+msgid "Auth log"
+msgstr "Журнал авторизации"
+
+msgid "No user found with this email address."
+msgstr "Пользователь с этим email-адресом не найден."
+
+msgid "No user found with this phone number."
+msgstr "Пользователь с этим номером телефона не найден."
+
+msgid "No user found with these sign-in credentials."
+msgstr "Пользователь с этими данными для входа не найден."
+
+msgid "This is a parent design theme, which has child themes."
+msgstr "Эта тема дизайна является родительской, и у нее есть дочерние темы."
+
+msgid "Delete child themes or select another parent theme for them."
+msgstr "Удалите дочерние темы дизайна или выберите для них другую родительскую."
+
+msgid "“%s” theme for the “%s” app"
+msgstr "Тема «%s» для приложения «%s»"
+
+msgid "Enter your email address or phone number."
+msgstr "Введите свой email-адрес или номер телефона."
+
+msgid "Enter your email address."
+msgstr "Введите свой email-адрес."
+
+msgid "Enter your phone number."
+msgstr "Введите свой номер телефона."
+
+msgid "A design theme’s localization string key is the same as an app’s localization string key."
+msgstr "Ключ из файла локализации темы дизайна совпадает с ключом в файле локализации приложения."
+
+msgid "Returns a relative root URL, or absolute if the argument is set to <em>true</em>."
+msgstr "Возвращает относительный корневой URL, либо абсолютный, если указать аргумент <em>true</em>."
+
+msgid "Returns the value of a page meta tag. Supported meta tag names are \"<em>title</em>\" (&lt;title&gt; tag), \"<em>description</em>\" (description meta tag), \"<em>keywords</em>\" (keywords meta tag); e.g., <code>{$meta_description = $wa-&gt;meta(\"description\")}</code>."
+msgstr "Возвращает значение метатега страницы. Поддерживаемые обозначения метатегов: \"<em>title</em>\" (тег &lt;title&gt;), \"<em>description</em>\" (метатег description), \"<em>keywords</em>\" (метатег keywords), например: <code>{$meta_description = $wa-&gt;meta(\"description\")}</code>."
+
+msgid "Sets a new meta tag value; e.g., <code>{$wa-&gt;meta(\"title\", \"My super page\")}</code>."
+msgstr "Устанавливает новое значение метатега страницы, например: <code>{$wa-&gt;meta(\"title\", \"Моя новая страница\")}</code>."
+
+msgid "Returns authorized user’s ID."
+msgstr "Возвращает ID авторизованного пользователя."
+
+msgid "Returns the value of a current app’s setting."
+msgstr "Возвращает значение настройки текущего приложения."
+
+msgid "Returns the value of a current app’s setting, or a default value if the setting is empty."
+msgstr "Возвращает значение настройки текущего приложения или значение по умолчанию, если настройка пуста."
+
+msgid "Returns the value of a specified app’s setting, or a default value if the setting is empty. To get a system setting’s value, specify \"webasyst\" as the app ID."
+msgstr "Возвращает значение настройки указанного приложения или значение по умолчанию, если настройка пуста. Чтобы получить значение системной настройки, укажите \"webasyst\" в качестве ID приложения."
+
+msgid "Returns the version number of a specified app. To get the Webasyst version, specify <em>true</em> instead of an app ID."
+msgstr "Возвращает номер версии указанного приложения. Чтобы получить версию Webasyst, укажите <em>true</em> вместо ID приложения."
+
+msgid "Returns the current URL of a design theme directory of a specified app."
+msgstr "Возвращает текущий URL директории темы дизайна указанного приложения."
+
+msgid "Returns the data array of an app’s page."
+msgstr "Возвращает массив данных страницы приложения."
+
+msgid "Returns the array of published pages of a specified app.<br><br><em>$parent_id</em> is the ID of the parent page whose subpages must be returned. <em>0</em> means that all app’s pages must be returned.<br><br><em>$with_params</em> means whether pages must be returned with custom parameters specified in their settings."
+msgstr "Возвращает массив данных опубликованных страниц указанного приложения.<br><br><em>$parent_id</em> — ID родительской страницы, чьи вложенные страницы нужно получить. <em>0</em> означает, что нужно получить свойства всех страниц приложения.<br><br><em>$with_params</em> означает, нужно ли получить свойства страниц с дополнительными параметрами, сохраненные в их настройках."
+
+msgid "Returns the current page’s title."
+msgstr "Возвращает текущий заголовок страницы."
+
+msgid "Yandex SmartCaptcha"
+msgstr ""
+
+msgid "Client key"
+msgstr "Ключ клиента"
+
+msgid "https://cloud.yandex.com/en/services/smartcaptcha"
+msgstr "https://cloud.yandex.ru/services/smartcaptcha"
+
+msgid "Team calendar"
+msgstr "Календарь команды"
+
+msgid "<strong>More profile and account authentication features are available in the Team app.</strong> Contact your Webasyst admin for access."
+msgstr "<strong>В приложении «Команда» есть дополнительные полезные функции управления профилем и авторизацией.</strong> Обратитесь к администратору Webasyst по поводу доступа."
+
+msgid "Fill-in default region list"
+msgstr "Заполнить список из справочника"
+
+msgid "The country is not in the list."
+msgstr "Страны нет в списке."
+
+msgid "User-Agent"
+msgstr ""
+
+msgid "Last sign-in with Webasyst ID: %s"
+msgstr "Последний вход с Webasyst ID: %s"
+
+msgid "Last 2FA verification: %s"
+msgstr "Последнее подтверждение с 2FA: %s"
+
+msgid "The user has Webasyst ID two-factor authentication protection enabled! Last 2FA code verification: <b>%s</b>."
+msgstr "У пользователя включена двухфакторная защита аутентификации Webasyst ID! Последнее подтверждение кодом 2FA: <b>%s</b>."
+
+msgid "Two-factor authentication is not enabled! In security concerns, it is highly recommended that the user enable 2FA in his Webasyst ID profile: %s."
+msgstr "Двухфакторная аутентификация не включена! Из соображений безопасности настоятельно рекомендуется, чтобы пользователь включил 2FA в своем профиле Webasyst ID: %s."
+
+msgid "Can be used only for yourself."
+msgstr "Можно использовать только для себя."
+
+msgid "Unable to connect to Webasyst API."
+msgstr "Не удалось подключиться к API Webasyst."

@@ -1,0 +1,1031 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: site\n"
+"POT-Creation-Date: 2011-12-07 18:35+0400\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: site\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((((n%10)==1)&&((n%100)!=11))?(0):(((((n%10)>=2)&&((n%10)<=4))&&(((n%100)<10)||((n%100)>=20)))?(1):2));\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 2.0.6\n"
+"Language: ru_RU\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: .\n"
+
+msgid "Site"
+msgstr "Сайт"
+
+msgid "Files"
+msgstr "Файлы"
+
+msgid "New folder"
+msgstr "Новая папка"
+
+msgid "Upload files"
+msgstr "Загрузить файлы"
+
+msgid "Selected files"
+msgstr "Выбранные файлы"
+
+msgid "Move to folder"
+msgstr "Переместить в папку"
+
+msgid "Delete"
+msgstr "Удалить"
+
+msgid "Folder"
+msgstr "Папка"
+
+msgid "Rename"
+msgstr "Переименовать"
+
+msgid "File"
+msgstr "Файл"
+
+msgid "Modified"
+msgstr "Изменен"
+
+msgid "Size"
+msgstr "Размер"
+
+msgid "Create"
+msgstr "Создать"
+
+msgid "or"
+msgstr "или"
+
+msgid "cancel"
+msgstr "отмена"
+
+msgid "Uploading..."
+msgstr "Загрузка..."
+
+msgid "Upload"
+msgstr "Загрузить"
+
+msgid "Save"
+msgstr "Сохранить"
+
+msgid "Move"
+msgstr "Переместить"
+
+msgid "Delete folder"
+msgstr "Удалить папку"
+
+msgid "Folder will be deleted without the ability to recover."
+msgstr "Папка будет удалена без возможности восстановления."
+
+msgid "Delete files"
+msgstr "Удалить файлы"
+
+msgid "Files will be deleted without the ability to recover."
+msgstr "Файлы будут удалены без возможности восстановления."
+
+msgid "Site setup"
+msgstr "Настройка сайта"
+
+msgid "Delete entire website"
+msgstr "Удалить сайт"
+
+msgid "Settings"
+msgstr "Настройки"
+
+msgid "New rule"
+msgstr "Новое правило"
+
+msgid "Delete rule"
+msgstr "Удалить правило"
+
+msgid "Comment"
+msgstr "Комментарий"
+
+msgid "Help"
+msgstr "Помощь"
+
+msgid "A valid URL pointing to this Webasyst installation."
+msgstr "Действующий адрес (URL), который ведет на данную установку фреймворка Webasyst."
+
+msgid "Site name"
+msgstr "Название сайта"
+
+msgid "menu"
+msgstr "меню"
+
+msgid "Array defining the core website navigation menu"
+msgstr "Массив, который определяет основное меню навигации на сайте"
+
+msgid "All settled apps"
+msgstr "Все приложения"
+
+msgid "Automatically define the navigation menu according to the routing rules"
+msgstr "Меню навигации будет сформировано автоматически согласно правилам маршрутизации этого сайта"
+
+msgid "Set up manually"
+msgstr "Настроить"
+
+msgid "Edit"
+msgstr "Редактировать"
+
+msgid "When you have finished editing, click “Save” to apply changes."
+msgstr "После завершения редактирования не забудьте нажать на кнопку «Сохранить»"
+
+msgid "Add link"
+msgstr "Добавить ссылку"
+
+msgid "Favicon"
+msgstr "Фавиконка"
+
+msgid "Contents of this site's robots.txt file."
+msgstr "Содержимое файла robots.txt этого сайта"
+
+msgid "Saved"
+msgstr "Сохранено"
+
+msgid "Redirect"
+msgstr "Перенаправление"
+
+msgid "This will delete the link from the menu. Are you sure?"
+msgstr "Ссылка будет удалена из меню. Продолжить?"
+
+msgid "This will delete the rule from the website structure. Are you sure?"
+msgstr "Правило будет удалено из структуры сайта. Продолжить?"
+
+msgid "Page name"
+msgstr "Название страницы"
+
+msgid "Block"
+msgstr "Блок"
+
+msgid "New block"
+msgstr "Новый блок"
+
+msgid "Block settings"
+msgstr "Настройки блока"
+
+msgid "Embed block in a page or template"
+msgstr "Встроить на страницу или в шаблон"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Description"
+msgstr "Описание"
+
+msgid "This will permanently delete this snippet. Are you sure?"
+msgstr "Блок будет удален и перестанет подключаться в шаблонах и на страницах, на которые был добавлен до этого. Удалить блок?"
+
+msgid "New file"
+msgstr "Новый файл"
+
+msgid "Template settings"
+msgstr "Настройки шаблона"
+
+msgid "File name"
+msgstr "Имя файла"
+
+msgid "A file’s name must have one of the allowed extensions: .html, .css, .js."
+msgstr "Имя файла должно оканчиваться одним из следующих расширений: .html, .css, .js."
+
+msgid "Optional template description"
+msgstr "Необязательное описание шаблона"
+
+msgid "settings"
+msgstr "настройки"
+
+msgid "Settlement name"
+msgstr "Название поселения"
+
+msgid "The name is used in the <em>$wa->apps</em> navigation menu of this website."
+msgstr "Название используется в меню навигации <em>$wa->apps</em> этого сайта."
+
+msgid "Design theme"
+msgstr "Тема оформления"
+
+msgid "Mobile design theme"
+msgstr "Мобильная тема оформления"
+
+msgid "Design theme for mobile multi-touch devices such as iPhone and Android"
+msgstr "Тема оформления для мобильных multi-touch устройств (iPhone, Android и пр.)"
+
+msgid "Custom parameters"
+msgstr "Дополнительные параметры"
+
+msgid "https://developers.webasyst.com/docs/templates/design-themes/"
+msgstr "https://developers.webasyst.ru/docs/templates/design-themes/"
+
+msgid "Saving..."
+msgstr "Сохранение..."
+
+msgid "Loading"
+msgstr "Загрузка"
+
+msgid "An error occurred while saving"
+msgstr "При попытке сохранения произошла ошибка"
+
+msgid "Unsaved changes will be lost if you leave this page now. Are you sure?"
+msgstr "Несохраненные изменения будут потеряны. Уйти с этой страницы?"
+
+msgid "New site"
+msgstr "Новый сайт"
+
+msgid "E.g., mydomain.com, www.mydomain.com, subdomain.mydomain.com"
+msgstr "Например, mydomain.ru, www.mydomain.ru, subdomain.mydomain.ru"
+
+msgid "Create site"
+msgstr "Создать сайт"
+
+msgid "Apps"
+msgstr "Приложения"
+
+msgid "Blocks"
+msgstr "Блоки"
+
+msgid "Only files with name extensions %s are allowed."
+msgstr "Разрешена загрузка файлов только с расширениями %s."
+
+msgid "Folder could not be created due to insufficient file write permissions for folder %s."
+msgstr "Не удалось создать папку из-за недостаточных прав на перезапись содержимого папки %s."
+
+msgid "An unknown error occurred when attempting to create a folder."
+msgstr "При попытке создания папки произошла неизвестная ошибка."
+
+msgid "Folder could not be deleted due to insufficient permissions."
+msgstr "Не удалось удалить папку из-за недостаточных прав доступа."
+
+msgid "Files could not be moved due to insufficient file write permissions for folder %s."
+msgstr "Не удалось переместить файлы из-за недостаточных прав на перезапись содержимого папки %s."
+
+msgid "Cannot move file “%s” to a new location."
+msgstr "Не удалось переместить файл %s в указанную папку."
+
+msgid "Cannot move to a new location."
+msgstr "Не удалось переместить в указанную папку."
+
+msgid "Files with name extension .%s are not allowed to security considerations."
+msgstr "Файлы с расширением .%s не допускаются из соображений обеспечения безопасности."
+
+msgid "Folder or file could not be renamed due to insufficient file write permissions for folder %s."
+msgstr "Не удалось переименовать файл (папку) из-за недостаточных прав на перезапись содержимого папки %s."
+
+msgid "File (folder) cannot be renamed."
+msgstr "Не удалось переименовать файл (папку)."
+
+msgid "Enter a new name."
+msgstr "Введите новое имя."
+
+msgid "Selected folder (file) does not exist any more."
+msgstr "Выбранная папка (файл) больше не существует."
+
+msgid "Favicon image you upload here will not take effect for your website %s, because the website is accessible in a subfolder. A favicon uploaded using the form above will be applied only to websites accessible at the domain root."
+msgstr "Иконка, загруженная с помощью этой формы, не будет применена к сайту %s, потому что сайт расположен в подкаталоге домена. Загруженная через данную форму иконка может быть установлена только для сайтов, размещенных в корневом каталоге домена."
+
+msgid "Rules you specify above for robots.txt will not take effect for you website %s, because the website is accessible in a subfolder. Rules for robots.txt entered in the form above will be effective only for websites accessible at the domain root."
+msgstr "Правила для файла robots.txt, установленные с помощью этой формы, не применятся для сайта %s, потому что этот сайт расположен в подкаталоге домена. Содержимое robots.txt, добавленное с помощью этой формы, может быть использовано только для сайтов, расположенных в корневом каталоге домена."
+
+msgid "File favicon.ico exists in the Webasyst framework installation folder. The favicon you upload here will be overridden by the existing icon file unless you delete it."
+msgstr "Файл favicon.ico обнаружен в каталоге установки Webasyst. Вместо иконки, сохраненной на этой странице, будет отображаться иконка из указанного файла."
+
+msgid "File robots.txt exists in the Webasyst framework installation folder. Rules for robots.txt you specify above will not take effect unless you delete the existing file."
+msgstr "Файл robots.txt обнаружен в каталоге установки Webasyst. Правила для файла robots.txt, сохраненные на этой странице, не будут применены."
+
+msgid "Settings could not be saved due to insufficient file write permissions for folder “%s”."
+msgstr "Не удалось сохранить настройки из-за недостаточных прав на перезапись содержимого папки «%s»."
+
+msgid "Settings could not be saved due to the insufficient file write permissions for the file \"%s\"."
+msgstr "Не удалось сохранить настройки из-за недостаточных прав на запись файла «%s»."
+
+msgid "Only files with name extension .ico are allowed."
+msgstr "Допускаются только файлы с расширением *.ico."
+
+msgid "File could not be saved due to insufficient file write permissions for folder “%s”."
+msgstr "Не удалось сохранить файл из-за недостаточных прав на перезапись содержимого папки «%s»."
+
+msgid "Failed to upload file."
+msgstr "Не удалось загрузить файл."
+
+msgid "File URL"
+msgstr "URL файла"
+
+msgid "Delete file"
+msgstr "Удалить файл"
+
+msgid "will be deleted without the ability to recover."
+msgstr "будет удален без возможности восстановления."
+
+msgid "META Keywords"
+msgstr "META Keywords"
+
+msgid "META Description"
+msgstr "META Description"
+
+msgid "Only Latin letters, numbers, and the underscore character are allowed."
+msgstr "Допускается использование только латинских букв, цифр и символа подчеркивания"
+
+msgid "This website is powered by the Site app."
+msgstr "Этот сайт работает на основе приложения «Сайт»."
+
+msgid "Refer to this tutorial to build your new site"
+msgstr "Посмотрите статью документации Webasyst с примером создания сайта"
+
+msgid "https://developers.webasyst.com/tutorials/creating-a-website-tutorial/"
+msgstr "https://developers.webasyst.ru/tutorials/creating-a-website-tutorial/"
+
+msgid "Page title (&lt;title&gt;)"
+msgstr "Заголовок страницы (&lt;title&gt;)"
+
+msgid "Page content"
+msgstr "Содержимое страницы"
+
+msgid "Last page update date & time"
+msgstr "Время последнего обновления страницы"
+
+msgid "Page list (only id, name, title, url, create_datetime, update_datetime)"
+msgstr "Список страниц (только id, name, title, url, create_datetime, update_datetime)"
+
+msgid "Returns page info (array) by <em>id</em> (int)"
+msgstr "Возвращает информацию о странице (массив) по идентификатору <em>id</em> (int)"
+
+msgid "Content"
+msgstr "Содержимое"
+
+msgid "Error code (e.g., 404)"
+msgstr "Код ошибки (например, 404)"
+
+msgid "Error message"
+msgstr "Сообщение об ошибке"
+
+msgid "Available sites"
+msgstr "Доступные сайты"
+
+msgid "Auto"
+msgstr "Авто"
+
+msgid "Image will be uploaded to"
+msgstr "Изображение будет загружено в"
+
+msgid "Authorization"
+msgstr "Авторизация"
+
+msgid "Error"
+msgstr "Ошибка"
+
+msgid "Logout"
+msgstr "Выйти"
+
+msgid "Sign up"
+msgstr "Регистрация"
+
+msgid "Login"
+msgstr "Вход"
+
+msgid "Powered by Webasyst"
+msgstr "Работает на основе Webasyst"
+
+msgid "The requested resource is not available."
+msgstr "Запрашиваемый ресурс недоступен."
+
+msgid "Select a site section where visitors will sign up and log into their personal accounts."
+msgstr "Выберите раздел сайта, в котором посетители будут регистрироваться и входить в личный кабинет."
+
+msgid "Enter the URL of your new website. You should own the domain name and be able to configure it to point to your Webasyst installation. Contact your hosting provider on how to map your domain name to this server."
+msgstr "Введите URL нового сайта. Вы должны быть владельцем доменного имени и предварительно настроить домен так, чтобы он указывал на данную установку Webasyst. Для настройки доменного имени обратитесь за помощью к вашему хостинг-провайдеру."
+
+msgid "Optional set of custom <em>key=value</em> parameters, which can be used in design templates and pages of this settlement as <em>&#123;$wa->param(\"key\")&#125;</em>. Each key=value pair must be specified on a separate line."
+msgstr "Необязательный набор параметров вида <em>key=value</em>, к значениям которых можно обращаться шаблонах дизайна и страницах этого поселения как <em>&#123;$wa->param(\"key\")&#125;</em>. Каждая пара key=value должна быть указана на отдельной строке."
+
+msgid "Select a route to manage its settings"
+msgstr "Выберите правило маршрутизации для редактирования его настроек"
+
+msgid "Rules are processed one by one in the given order. The first rule matching current HTTP request (web address) will be processed. Use * symbol in the URL fields for wildcard."
+msgstr "Правила обрабатываются по одному в указанном порядке. Обработка начинается с первого правила в списке и заканчивается на правиле, которое соответствует текущему HTTP-запросу (адресу). Для обозначения любых символов в качестве маски используйте звездочку (*)."
+
+msgid "View original"
+msgstr "Посмотреть оригинал"
+
+msgid "E.g., <em>domain.com</em> if Webasyst is installed in the root folder of domain.com, or <em>domain.com/wa</em> if Webasyst is installed in the /wa/ subfolder of domain.com. Do not add slash / at the end of the URL."
+msgstr "Например, <em>domain.ru</em>, если Webasyst устанавливается в корневую директорию домена domain.ru, или <em>domain.ru/wa</em>, если Webasyst устанавливается в поддиректорию /wa/ домена domain.ru. В конце URL добавлять косую черту (/) не нужно."
+
+msgid "Site alias displayed in the site selection menu (in the top left corner) and used as the anchor name in the <em>$wa->apps()</em> navigation menu array in the frontend."
+msgstr "Псевдоним сайта, используемый в меню выбора сайтов (в верхнем левом углу) и в качестве текста ссылки в меню навигации фронтенда <em>$wa->apps()</em>."
+
+msgid "Background"
+msgstr "Фон"
+
+msgid "Custom"
+msgstr "Загрузить"
+
+msgid "Background can be changed to customize your Site app backend, which is useful when you have several websites powered by one Webasyst installation. The selected background will not be displayed in the frontend."
+msgstr "Фон используется для индивидуальной настройки бекенда приложения «Сайт» — это удобно, если вы управляете несколькими сайтами внутри одной установки фреймворка Вебасист. Выбранный фон не виден во фронтенде."
+
+msgid "Custom JavaScript code within &lt;head&gt;"
+msgstr "Пользовательский JavaScript-код внутри &lt;head&gt;"
+
+msgid "Google Analytics Property ID"
+msgstr "Google Analytics Property ID"
+
+msgid "E.g., <strong>UA-123456-1</strong><br />If you are using <a href=\"https://www.google.com/analytics/\">Google Analytics</a> to track website visits and conversions, then, instead of embedding Google Analytics JS code manually, you can simply enter your Google Analytics Property ID here. A valid Google Analytics code will be automatically embedded in all apps and design themes just before the closing &lt;/head&gt; tag."
+msgstr "Например, <strong>UA-123456-1</strong><br />Если вы используете <a href=\"https://www.google.com/analytics/\">Google Analytics</a> для отслеживания статистики посещений и конверсии вашего сайта, то вместо внедрения кода Google Analytics вручную достаточно просто ввести здесь ваш Google Analytics Property ID. Правильный код Google Analytics автоматически вставится во все темы оформления всех приложений перед закрывающим тегом &lt;/head&gt;."
+
+msgid "Additional JavaScript code to be added before the closing &lt;/head&gt; tag:"
+msgstr "Дополнительный JavaScript-код для вставки перед закрывающим тегом &lt;/head&gt;:"
+
+msgid "Enables your site visitors to quickly sign up or sign in via accounts on external popular platforms, e.g. Facebook and Twitter. <a href=\"https://support.webasyst.com/5556/third-party-auth-setup/\" target=\"_blank\">Setup instructions</a> <i class=\"icon10 new-window\"></i>"
+msgstr "Позволяет посетителям вашего сайта быстро зарегистрироваться или авторизоваться через аккаунты в популярных сторонних сервисах, например, через «Фейсбук» или «Твиттер». <a href=\"https://support.webasyst.ru/5554/third-party-auth-setup/\" target=\"_blank\">Документация по настройке</a> <i class=\"icon10 new-window\"></i>"
+
+msgid "To enable authorization on this website, install and settle at least one app that supports authorization forms."
+msgstr "Чтобы сделать доступной авторизацию на этом сайте, установите хотя бы одно приложение, которое поддерживает формы авторизации,  и настройте для него маршрутизацию."
+
+msgid "This will delete entire website including all its pages without the ability to recover. Are you sure?"
+msgstr "Будет удален весь сайт со всеми страницами без возможности восстановления. Удалить?"
+
+msgid "Returns the array of pages associated with the current Site app settlement. Each page is an array of ( <em>\"id\", \"name\", \"title\", \"url\", \"create_datetime\", \"update_datetime\", \"content\"[, \"custom_1\", \"custom_2\", …]</em> )"
+msgstr "Возвращает массив страниц, связанных с данным поселением приложения «Сайт». Каждая страница представляет собой массив со следующей структурой: <em>\"id\", \"name\", \"title\", \"url\", \"create_datetime\", \"update_datetime\", \"content\"[, \"custom_1\", \"custom_2\", …]</em>"
+
+msgid "Email feedback form"
+msgstr "Форма для отправки сообщений"
+
+msgid "Block with id “%s” already exists."
+msgstr "Блок с идентификатором «%s» уже существует."
+
+msgid "Database error"
+msgstr "Ошибка базы данных"
+
+msgid "Thank you!"
+msgstr "Спасибо!"
+
+msgid "You have successfully signed up."
+msgstr "Регистрация завершена успешно."
+
+msgid "Revert to original"
+msgstr "Восстановить из оригинала"
+
+msgid "This will reset all changes you have applied to this block. Are you sure?"
+msgstr "Восстановление из оригинала сбросит все изменения, которые вы применяли к блоку. Продолжить?"
+
+msgid "File will be deleted without the ability to recover. Are you sure?"
+msgstr "Файл будет удален без возможности восстановления. Удалить?"
+
+msgid "Download"
+msgstr "Скачать"
+
+msgid "Privacy"
+msgstr "Публичность"
+
+msgid "Private settlement"
+msgstr "Скрытое поселение"
+
+msgid "When this option is enabled, the settlement is treated as hidden (not published), i.e. accessible by the direct URL but not included either in the $wa->apps array or in the main Sitemaps file. The private setting is useful for temporary settlements, such as “Under Construction” pages, and for other settlements which should not be included in the core website navigation menu or indexed by search engines."
+msgstr "При включении этой настройки поселение будет считаться скрытым (не публичным). Оно будет доступно по своему прямому адресу, но не будет включено в массив $wa->apps и основной Sitemap-файл. Скрытыми удобно делать временные поселения, например, страницы «Сайт находится в разработке», и поселения, которые не должны быть включены в основное меню навигации либо индексироваться поисковыми системами."
+
+msgid "We are using <a href=\"http://www.webasyst.com/\">Webasyst</a>"
+msgstr "Мы используем <a href=\"http://www.webasyst.ru\">Webasyst</a>"
+
+msgid "Facebook"
+msgstr "Фейсбук"
+
+msgid "Twitter"
+msgstr "Твиттер"
+
+msgid "Close"
+msgstr "Закрыть"
+
+msgid "We are using <a href=\"http://www.webasyst.com/\" target=\"_blank\">Webasyst</a>"
+msgstr "Мы используем <a href=\"http://www.webasyst.ru/\" target=\"_blank\">Webasyst</a>"
+
+msgid "http://www.webasyst.com/developers/docs/routing/site-app-routing/"
+msgstr "http://www.webasyst.ru/developers/docs/routing/site-app-routing/"
+
+msgid "Site structure"
+msgstr "Структура сайта"
+
+msgid "Site structure is defined by routing rules. Each rule sets which app should run by which URL (web address). Similar to how folders are used to organize files on a computer, routing rules are used to create a website powered by multiple apps."
+msgstr "Структура сайта определяется правилами маршрутизации. Каждое правило указывает, по какому адресу работает каждое приложение. По аналогии с тем, как папки используются для организации файлов на компьютере, правила маршрутизации используются для распределения приложений по разделам сайта."
+
+msgid "Back"
+msgstr "Назад"
+
+msgid "Domain name"
+msgstr "Доменное имя"
+
+msgid "IMPORTANT"
+msgstr "ВАЖНО"
+
+msgid "The URL entered must point to the root of this Webasyst framework installation."
+msgstr "Введенный адрес должен указывать на корневую папку установки Webasyst."
+
+msgid "Matches domain name"
+msgstr "Совпадает с доменным именем"
+
+msgid "Structure"
+msgstr "Структура"
+
+msgid "Welcome to your new site!"
+msgstr "Добро пожаловать на ваш новый сайт!"
+
+msgid "Open “<a href=\"%s\">Pages</a>” section and add a new page with an empty address. You will see its contents here."
+msgstr "Перейдите в раздел «<a href=\"%s\">Страницы</a>» и создайте страницу с пустым адресом. Здесь вы увидите её текст."
+
+msgid "Website with a domain name %s is already registered in this Webasyst installation. Delete %s website (Site app > %s > Settings) to be able to use it's domain name for another website."
+msgstr "Сайт с доменным именем %s уже зарегистрирован в этой установке Вебасиста. Удалите сайт %s (приложение «Сайт» > %s > Настройки), чтобы подключить этот домен к другому сайту."
+
+msgid "Incorrect domain URL: %s"
+msgstr "Неправильный адрес домена: %s"
+
+msgid "My profile"
+msgstr "Мой профиль"
+
+msgid "Website with a domain name %s is already registered in this Webasyst installation. Delete %s website (Site app > Settings > %s) to be able to use it's domain name for another website."
+msgstr "Сайт с доменным именем %s уже зарегистрирован в этой установке Вебасиста. Удалите сайт %s (приложение «Сайт» > %s > Настройки), чтобы подключить этот домен к другому сайту."
+
+msgid "My account"
+msgstr "Личный кабинет"
+
+msgid "added a new site"
+msgstr "добавил новый сайт"
+
+msgid "edited site settings"
+msgstr "отредактировал настройки сайта"
+
+msgid "deleted site"
+msgstr "удалил сайт"
+
+msgid "uploaded file"
+msgstr "загрузил файл"
+
+msgid "deleted file"
+msgstr "удалил файл"
+
+msgid "added a new block for site"
+msgstr "добавил новый блок для сайта"
+
+msgid "edited block for site"
+msgstr "отредактировал блок для сайта"
+
+msgid "deleted block for site"
+msgstr "удалил блок на сайте"
+
+msgid "added a new routing rule"
+msgstr "добавил новое правило маршрутизации"
+
+msgid "edited routing rule"
+msgstr "отредактировал правило маршрутизации"
+
+msgid "deleted routing rule"
+msgstr "удалил правило маршрутизации"
+
+msgid "Personal account sections"
+msgstr "Разделы личного кабинета"
+
+msgid "Sections are determined by connected applications."
+msgstr "Разделы определяются подключенными приложениями."
+
+msgid "Read <a href=\"https://support.webasyst.com/29298/site-auth-settings/\" target=\"_blank\">user manual</a>."
+msgstr "Смотрите <a href=\"https://support.webasyst.ru/29281/site-auth-settings/\" target=\"_blank\">инструкцию</a>."
+
+msgid "This app cannot be enabled for personal accounts on this domain, because the app is not settled in this domain's routing settings. Add this app to the routing table first so it becomes published on this site, and then you’ll be able to link it in personal accounts navigation."
+msgstr "Это приложение нельзя включить в личном кабинете, так как приложение не подключено в правилах маршрутизации сайта. Добавьте правило маршрутизации для этого приложения в настройках структуры сайта, после чего вы сможете включить его в личном кабинете."
+
+msgid "Setup routing"
+msgstr "Настроить маршрутизацию"
+
+msgid "Disabled"
+msgstr "Выключена"
+
+msgid "Redirect disabled"
+msgstr "Выключено"
+
+msgid "Enabled"
+msgstr "Включена"
+
+msgid "Redirect enabled"
+msgstr "Включено"
+
+msgid "%s personal account is disabled on this site."
+msgstr "Личный кабинет приложения «%s» выключен на этом сайте."
+
+msgid "My profile form fields"
+msgstr "Поля формы настройки профиля"
+
+msgid "User signup, authorization and personal accounts are not enabled on %s."
+msgstr "Регистрация пользователей, авторизация и личный кабинет выключены на сайте %s."
+
+msgid "Edit field label"
+msgstr "Редактировать название поля"
+
+msgid "Edit hint for this field"
+msgstr "Редактировать подсказку к полю"
+
+msgid "Personal data processing"
+msgstr "Обработка персональных данных"
+
+msgid "---INSERT A LINK HERE!---"
+msgstr "---ВСТАВЬТЕ СЮДА ССЫЛКУ НА ДОКУМЕНТ!---"
+
+msgid "I agree to %spersonal data protection policy%s"
+msgstr "Я принимаю условия %sполитики обработки персональных данных%s"
+
+msgid "By submitting this form I agree to %spersonal data protection policy%s"
+msgstr "Нажимая на кнопку подтверждения, я принимаю условия %sполитики обработки персональных данных%s"
+
+msgid "Do not require consent to personal data protection policy"
+msgstr "Не требовать согласия с политикой обработки персональных данных"
+
+msgid "Show only notice and link to policy"
+msgstr "Показывать только подсказку со ссылкой на политику"
+
+msgid "Show mandatory checkbox, notice, and link"
+msgstr "Предлагать включить обязательный флажок с подсказкой и ссылкой"
+
+msgid "Restore original text"
+msgstr "Восстановить стандартный текст"
+
+msgid "Edit button label"
+msgstr "Редактировать текст на кнопке"
+
+msgid "Upload favicon"
+msgstr "Загрузить фавиконку"
+
+msgid "from 152x152 and up to 1024x1024 px"
+msgstr "от 152х152 до 1024х1024 пикселей"
+
+msgid "Personal"
+msgstr "Личный кабинет"
+
+msgid "File manager"
+msgstr "Файл-менеджер"
+
+msgid "Touch icon you upload here will not take effect for you website %s because your website is set for a subfolder on a domain. Touch icon uploaded using the form above will be set only for websites set from the domain root folder."
+msgstr "Изображение, загруженное с помощью этой формы, не будет использовано на сайте %s, потому что сайт расположен в подкаталоге домена. Загруженная через данную форму иконка может быть установлена только для сайтов, размещенных в корневом каталоге домена."
+
+msgid "File apple-touch-icon.png exists in the Webasyst framework installation folder. The touch icon you upload here will be overridden by the icon uploaded as file unless you delete this file."
+msgstr "Файл apple-touch-icon.png обнаружен в каталоге установки Webasyst. Вместо иконки, сохраненной на этой странице, будет отображаться иконка из указанного файла."
+
+msgid "Files with extension *.png are allowed only."
+msgstr "Разрешена загрузка только PNG-файлов."
+
+msgid "Touch icon for iOS"
+msgstr "Фавиконка для iOS"
+
+msgid "Upload iOS touch icon"
+msgstr "Загрузить iOS-фавиконку"
+
+msgid "Personal &rarr; <a href=\"%s\">Auth &amp; Sign Up</a>"
+msgstr "Личный кабинет &rarr; <a href=\"%s\">Настройки авторизации</a>"
+
+msgid "My profile page is not available on this site, because user authorization on this site is hosted by <strong>%s</strong> app, while it’s personal account functionality is disabled. Either enable <a href=\"#/personal/app/%s/\">%s app’s personal account</a> on this site, or change the app that hosts user authorization in <a href=\"%s\">Auth &amp; Sign Up</a> settings."
+msgstr "Страница управления профилем на этом сайте недоступна, так как личный кабинет приложения «<strong>%s</strong>», отвечающего за функциональность форм регистрации и авторизации на этом сайте, отключен. Для включения страницы управления профилем необходимо либо включить <a href=\"#/personal/app/%s/\">личный кабинет приложения «%s»</a>, либо <a href=\"%s\">в настройках авторизации</a> выбрать другое приложения, которое будет отвечать за функциональность форм регистрации и авторизации на этом сайте."
+
+msgid "The URL %s is already used by %s app. If you proceed, this will replace %s app with %s app on this URL."
+msgstr "Адрес %s уже используется приложением «%s». Сохранив изменения, поселение приложения «%s» по этому адресу будет полностью заменено поселением приложения «%s»."
+
+msgid "%s personal account URL: <a id=\"s-app-frontend-link\" href=\"%s\" target=\"_blank\">%s</a> <i class=\"icon10 new-window top-padded\"></i>"
+msgstr "«%s» в личном кабинете: <a id=\"s-app-frontend-link\" href=\"%s\" target=\"_blank\">%s</a> <i class=\"icon10 new-window top-padded\"></i>"
+
+msgid "Universal Analytics"
+msgstr "Universal Analytics"
+
+msgid "CDN"
+msgstr "CDN"
+
+msgid "Enable CDN (Content Delivery Network) support for this site by entering CDN URL prefix."
+msgstr "Введите адрес CDN (Content Delivery Network), чтобы включить его автоматическую поддержку для этого сайта."
+
+msgid "Alias (mirror site) for"
+msgstr "Зеркало сайта"
+
+msgid "This is a mirror site (alias) for <strong>%s</strong>."
+msgstr "Это зеркало сайта <strong>%s</strong>"
+
+msgid "Specified email is already in use."
+msgstr "Указанный email-адрес уже используется."
+
+msgid "Select a language to translate text strings in website frontend."
+msgstr "Выберите язык для перевода текстовых строк на страницах сайта."
+
+msgid "If “Auto” option is selected, website language will be determined by user browser settings."
+msgstr "Если выбран вариант «Авто», язык сайта будет определен на основании настроек браузера пользователя."
+
+msgid "Files uploaded here are accessible to all website visitors without authorization. Do not upload private files."
+msgstr "Загруженные здесь файлы доступны всем посетителям сайта без авторизации. Не загружайте личные файлы."
+
+msgid "Security"
+msgstr "Безопасность"
+
+msgid "Redirect to HTTPS"
+msgstr "Перенаправлять на HTTPS"
+
+msgid "Redirect website visitors from ordinary HTTP to secure HTTPS connection within this settlement."
+msgstr "Перенаправлять посетителей сайта с обычного HTTP- на безопасное HTTPS-подключение в пределах этого поселения."
+
+msgid "This option will work only if an SSL certificate is installed for your domain name."
+msgstr "Эта настройка будет работать, только если для вашего доменного имени установлен SSL-сертификат."
+
+msgid "To enable redirect to HTTPS for <em>all</em> website settlements, change this option in <a href=\"%s#/settings/\">common site settings</a>."
+msgstr "Чтобы включить перенаправление на HTTPS для <em>всех</em> поселений сайта, измените этот параметр в <a href=\"%s#/settings/\">общих настройках сайта</a>."
+
+msgid "Redirect website visitors from ordinary HTTP to secure HTTPS connection."
+msgstr "Перенаправлять посетителей сайта с обычного HTTP- на безопасное HTTPS-подключение."
+
+msgid "To activate this option, <a>log in via HTTPS</a>."
+msgstr "Чтобы активировать эту настройку, <a>войдите через HTTPS</a>."
+
+msgid "You cannot enable redirection because your web server does not allow to distinguish HTTP from HTTPS."
+msgstr "Включение перенаправления недоступно, потому что ваш веб-сервер не позволяет отличать подключение через HTTP от HTTPS."
+
+msgid "Settings have been saved"
+msgstr "Настройки сохранены"
+
+msgid "Your file is too large. Either raise the size limit for uploaded files in PHP configuration above %s bytes or upload a smaller file."
+msgstr "Слишком большой файл. Либо установите ограничение на размер загружаемых файлов в конфигурации PHP выше %s байтов, либо попробуйте загрузить файл меньшего размера."
+
+msgid "Remove"
+msgstr "Удалить"
+
+msgid "Captcha"
+msgstr "Капча"
+
+msgid "You have no rules set up for %s app."
+msgid_plural "You have no rules set up for %s apps."
+msgstr[0] "Нет правил для приложения «%s»."
+msgstr[1] "Нет правил для приложений «%s»."
+msgstr[2] "Нет правил для приложений «%s»."
+
+msgid "Some rules of %s app are incorrect."
+msgid_plural "Some rules of %s apps are incorrect."
+msgstr[0] "Некоторые правила приложения «%s» настроены неправильно."
+msgstr[1] "Некоторые правила приложений «%s» настроены неправильно."
+msgstr[2] "Некоторые правила приложений «%s» настроены неправильно."
+
+msgid "”, “"
+msgstr "», «"
+
+msgid "Site structure error notifications"
+msgstr "Уведомления об ошибках в структуре сайта"
+
+msgid "Show error notifications in site structure settings."
+msgstr "Показывать уведомления об ошибках в настройках структуры сайта."
+
+msgid "Site settings"
+msgstr "Настройки сайта"
+
+msgid "Auto-login"
+msgstr "Автоматическая авторизация"
+
+msgid "CDN address"
+msgstr "Адрес CDN"
+
+msgid "Custom text"
+msgstr "Произвольный текст"
+
+msgid "Text to be returned at specified URL"
+msgstr "Текст, который должен быть доступен по указанному URL"
+
+msgid "Content type"
+msgstr "Тип содержимого"
+
+msgid "file"
+msgstr "файл"
+
+msgid "text (text/plain)"
+msgstr "текст (text/plain)"
+
+msgid "HTML code (text/html)"
+msgstr "HTML-код (text/html)"
+
+msgid "If content type “file” is selected, downloading of a file will start automatically if there is no extension in its name."
+msgstr "Если выбран тип содержимого «файл», то автоматически начнется скачивание файла, если в его имени не указано расширение."
+
+msgid "This rule is disabled because it is placed below a more general rule. Move this rule higher in the list to enable it."
+msgstr "Это правило отключено, потому что оно находится ниже более общего правила. Перенесите правило выше, чтобы включить его."
+
+msgid "Delete route"
+msgstr "Удалить правило"
+
+msgid "You are about to delete the only routing rule set up for <b>%s</b> app."
+msgstr "Вы удаляете единственное настроенное правило маршрутизации для приложения «<b>%s</b>»."
+
+msgid "This will limit its functionality. Delete the rule?"
+msgstr "Это ограничит его функциональность. Удалить правило?"
+
+msgid "Deleting this site will also delete routing rules set up for installed apps. This will limit their functionality. Delete the site?"
+msgstr "Вместе с сайтом будут удалены правила маршрутизации для установленных приложений. Это ограничит их функциональность. Удалить сайт?"
+
+msgid "Deleting this site will also delete routing rules set up for <b>%s</b> app. This will limit its functionality.</p><p>Upon site deletion, set up routing rules for this app in the structure settings of remaining sites to continue using all functions."
+msgid_plural "Deleting this site will also delete routing rules set up for <b>%s</b> apps. This will limit their functionality.</p><p>Upon site deletion, set up routing rules for these apps in the structure settings of remaining sites to continue using all functions."
+msgstr[0] "При удалении сайта будут удалены правила маршрутизации для приложения <b>«%s»</b>. Это может ограничить его функциональность.</p><p>После удаления сайта добавьте правила маршрутизации для этого приложения в структуре оставшихся сайтов, чтобы продолжить пользоваться всеми возможностями."
+msgstr[1] "При удалении сайта будут удалены правила маршрутизации для приложений <b>«%s»</b>. Это может ограничить их функциональность.</p><p>После удаления сайта добавьте правила маршрутизации для этих приложений в структуре оставшихся сайтов, чтобы продолжить пользоваться всеми возможностями."
+msgstr[2] "При удалении сайта будут удалены правила маршрутизации для приложений <b>«%s»</b>. Это может ограничить их функциональность.</p><p>После удаления сайта добавьте правила маршрутизации для этих приложений в структуре оставшихся сайтов, чтобы продолжить пользоваться всеми возможностями."
+
+msgid "”</b>, <b>“"
+msgstr "»</b>, <b>«"
+
+msgid "Add"
+msgstr "Добавить"
+
+msgid "Login and signup settings"
+msgstr "Настройки входа и регистрации"
+
+msgid "Login and signup settings for %s"
+msgstr "Настройки входа и регистрации на %s"
+
+msgid "User personal area"
+msgstr "Личный кабинет пользователя"
+
+msgid "Site section for login and signup"
+msgstr "Раздел сайта для авторизации и регистрации"
+
+msgid "Select app"
+msgstr "Выберите приложение"
+
+msgid "Ways of login and registration"
+msgstr "Способы входа и регистрации"
+
+msgid "Social networks (additional authorization option)"
+msgstr "Социальные сети (дополнительный способ входа)"
+
+msgid "Signup form"
+msgstr "Форма регистрации"
+
+msgid "Login form"
+msgstr "Форма входа"
+
+msgid "Fields"
+msgstr "Поля"
+
+msgid "authorization enabled"
+msgstr "включен"
+
+msgid "authorization disabled"
+msgstr "выключен"
+
+msgid "Set up how website visitors will log in and sign up on your website."
+msgstr "Настройте, как посетители будут входить и регистрироваться на сайте."
+
+msgid "Login & signup forms"
+msgstr "Формы входа и регистрации"
+
+msgid "Set up fields website visitors will need to complete in login and signup forms."
+msgstr "Настройте поля форм входа и регистрации, которые будут заполнять посетители сайта."
+
+msgid "A signup confirmation link or code will be sent in a notification."
+msgstr "Ссылка или код для подтверждения регистрации будут отправлены в уведомлении."
+
+msgid "A registered website visitor will be able to log in only with an email address or phone number confirmed."
+msgstr "Зарегистрированный посетитель сможет войти только после подтверждения email-адреса или номера телефона."
+
+msgid "Confirm signup"
+msgstr "Подтверждать регистрацию"
+
+msgid "Passwords type"
+msgstr "Система паролей"
+
+msgid "Successful signup notification"
+msgstr "Уведомление о завершении регистрации"
+
+msgid "Send successful signup notifications to users"
+msgstr "Отправлять пользователям уведомление о завершении регистрации"
+
+msgid "Select a group of notification templates to be used for sending login, signup, and password recovery notifications."
+msgstr "Выберите группу шаблонов уведомлений для отправки уведомлений при входе, регистрации и смене пароля."
+
+msgid "Edit email notification templates in <a href=\"%s\">Settings</a> app"
+msgstr "Изменяйте шаблоны email-уведомлений в приложении «<a href=\"%s\">Настройки</a>»."
+
+msgid "Edit SMS notification templates in <a href=\"%s\">Settings</a> app"
+msgstr "Изменяйте шаблоны SMS-уведомлений в приложении «<a href=\"%s\">Настройки</a>»."
+
+msgid "User notifications"
+msgstr "Уведомления пользователей"
+
+msgid "Notification templates"
+msgstr "Шаблоны уведомлений"
+
+msgid "Priority over email notifications"
+msgstr "Приоритет над email-уведомлениями"
+
+msgid "Prefer SMS over email for sending notifications. In case of SMS sending failure, email will be sent as a replacement."
+msgstr "Приоритет SMS над email при отправке уведомлений. В случае сбоя в отправке SMS будет отправлено email-уведомление."
+
+msgid "A user must enter characters shown in an image"
+msgstr "Пользователь должен ввести символы с изображения"
+
+msgid "Email or phone"
+msgstr "Email или телефон"
+
+msgid "Cannot disable both authorization options “Email” &amp; “Phone”"
+msgstr "Нельзя отключать оба способа авторизации «Email» и «Телефон»"
+
+msgid "Keep at least one of these two basic authorization option enabled for website visitors to be able to log into their accounts."
+msgstr "Оставьте включенным хотя бы один из этих двух основных способов авторизации, чтобы посетители сайта могли входить в личный кабинет."
+
+msgid "Authorization with an email address is used by default."
+msgstr "По умолчанию используется авторизация с помощью email-адреса."
+
+msgid "Services"
+msgstr "Сервисы"
+
+msgid "Invisible captcha will be used"
+msgstr "Будет использована невидимая капча"
+
+msgid "Login, signup, and personal account"
+msgstr "Вход, регистрация и личный кабинет"
+
+msgid "Delete this site alias? It will <strong>not</strong> delete any data of the main site."
+msgstr "Удалить этот сайт-зеркало? Никакие данные основного сайта <strong>не&nbsp;будут</strong> удалены."
+
+msgid "Waiting period in seconds before sending next verification code:"
+msgstr "Интервал в секундах перед отправкой следующего кода подтверждения:"
+
+msgid "Verification code re-sending"
+msgstr "Повторная отправка кода подтверждения"
+
+msgid "Authorization by login name"
+msgstr "Вход по имени пользователя"
+
+msgid "Enable to allow backend users to log in on the website with their login names. Only login names different from phone numbers, i.e. containing characters other than digits, are supported."
+msgstr "Включите, чтобы пользователи бекенда могли входить на сайт со своими логинами. Поддерживаются имена пользователей, отличающиеся от телефонных номеров, т. е. состоящие не только из цифр."
+
+msgid "No sender email address specified in “<a href=\"%s\">Email settings</a>” section of Settings app."
+msgstr "Не заполнен email-адрес отправителя в разделе «<a href=\"%s\">Настройки email</a>» приложения «Настройки»."
+
+msgid "Language"
+msgstr "Язык"
+
+msgid "The [%s] app deleted or disabled."
+msgstr "Приложение [%s] удалено или отключено."
+
+msgid "Email"
+msgstr ""
+
+msgid "Phone"
+msgstr "Телефон"
+
+msgid "Edit the list in “<a href=\"%s\">Email&nbsp;templates</a>” section."
+msgstr "Измените список в разделе «<a href=\"%s\">Email-шаблоны</a>»."
+
+msgid "Required field"
+msgstr "Обязательное поле"
+
+msgid "National direct-dialing code (NDD)"
+msgstr "Код междугородней связи"
+
+msgid "Enter the NDD code which is used for making calls within your country."
+msgstr "Введите код, с помощью которого совершаются междугородние звонки в вашей стране. Пример кода для Российской Федерации: 8."
+
+msgid "The NDD, if specified, will be replaced with the country code in website visitors’ phone numbers."
+msgstr "Если указан код междугородней связи, то в номерах посетителей сайта он будет заменен на телефонный код страны."
+
+msgid "Country code"
+msgstr "Код страны"
+
+msgid "Enter your country’s phone number code to be used in website visitors’ phone numbers instead of the NDD."
+msgstr "Международный код вашей страны, который будет использоваться в телефонных номерах посетителей сайта вместо кода междугородней связи."
+
+msgid "Enter digits only"
+msgstr "Введите только цифры"
+
+msgid "Temporary redirecting"
+msgstr "Временное перенаправление"
+
+msgid "Use server response code 302"
+msgstr "Использовать код ответа сервера 302"
+
+msgid "Enable for <strong>temporary</strong> redirecting only, which you are planning to cancel in the future."
+msgstr "Включите только для <strong>временного</strong> перенаправления, которое вы планируете отменить в будущем."
+
+msgid "Disable for <strong>permanent</strong> redirecting with server response code 301, which is used to inform search engines that the new URL should be indexed instead of the old one."
+msgstr "Выключите для использования <strong>постоянного</strong> перенаправления с кодом ответа сервера 301 — он сообщает поисковым системам, что новый URL должен индексироваться вместо старого."
+
+msgid "Move rule %s/* to the bottom of the rule list."
+msgstr "Перенесите правило %s/* в конец списка правил."
+
+msgid "Rule cannot be saved"
+msgstr "Невозможно сохранить правило"
+
+msgid "Rule address contains unsupported character <strong class=\"highlighted\">%s</strong>."
+msgstr "В адресе правила содержится недопустимый символ <strong class=\"highlighted\">%s</strong>."
+
+msgid "“Custom text” rule is incorrect."
+msgid_plural "%d “Custom text” rules are incorrect."
+msgstr[0] "Правило «Произвольный текст» настроено неправильно."
+msgstr[1] "%d правила «Произвольный текст» настроены неправильно."
+msgstr[2] "%d правил «Произвольный текст» настроены неправильно."
+
+msgid "“Redirect” rule is incorrect."
+msgid_plural "%d “Redirect” rules are incorrect."
+msgstr[0] "Правило «Перенаправление» настроено неправильно."
+msgstr[1] "%d правила «Перенаправление» настроены неправильно."
+msgstr[2] "%d правил «Перенаправление» настроены неправильно."
+
+msgid "Homepage"
+msgstr "Главная страница"
+
+msgid "Invalid value: %s."
+msgstr "Недопустимое значение: %s."
+
+msgid "The [%s] app is disabled."
+msgstr "Приложение [%s] отключено."

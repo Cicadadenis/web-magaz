@@ -1,0 +1,420 @@
+{*
+ * Dialog to crop image to use as contact photo.
+ *}
+{$random_id = uniqid(time())}
+<div class="dialog-background"></div>
+<div id="{$random_id}" class="dialog-body">
+    <div class="dialog-content flexbox">
+        <style>
+            #c-pe-photo-big { max-width: 100%; max-height: 300px; }
+            .user-edit__preview {
+                overflow: hidden;
+            }
+            .user-edit__preview img,
+            .user-edit__preview-img {
+                width: 96px;
+                height: 96px;
+            }
+            .user-edit__buttons {
+                justify-content: center;
+            }
+            .user-edit__buttons button {
+                margin: 0 6px;
+            }
+
+            #new-photo-wrapper .cropper-view-box {
+                outline: 2px solid var(--white);
+            }
+
+            #new-photo-wrapper .cropper-center::before,
+            #new-photo-wrapper .cropper-center::after {
+                background-color: var(--white);
+            }
+            #new-photo-wrapper .cropper-center::before {
+                left: -10px;
+                width: 20px;
+                height: 2px;
+            }
+            #new-photo-wrapper .cropper-center::after {
+                top: -10px;
+                width: 2px;
+                height: 20px;
+            }
+        </style>
+
+        <div id="new-photo-wrapper" class="box uploadbox width-100">
+            <div class="wa-contact-photo">
+                <div id="new-photo-preview" class="userpic userpic96 user-edit__preview">
+                    <div class="js-user-edit-preview">
+                        <img src="{if !empty($oldImage)}{$oldPreview}{else}{$wa_url}wa-content/img/userpic.svg{/if}" class="user-edit__preview-img" alt="" />
+                    </div>
+                </div>
+                <div class="hint">[`Preview`]</div>
+            </div>
+
+            <p>[`Drag & drop a file here or upload it manually (JPG, GIF or PNG)`]:</p>
+
+            <div id="new-photo-area" class="upload">
+                <label class="button purple outlined rounded">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <span>[`Choose file`]</span>
+                    <input type="file" autocomplete="off">
+                </label>
+            </div>
+
+            <div class="hint custom-mt-8 custom-mb-20 js-uploaded-file-name{if empty($oldImage)} hidden{/if}"></div>
+
+            <div>
+                <img id="c-pe-photo-big" class="hidden">
+            </div>
+
+            <div id="edit-buttons" class="custom-mt-20 flexbox user-edit__buttons hidden">
+                <button class="button circle light-gray js-edit-zoom-in"><i class="fas fa-plus"></i></button>
+                <button class="button circle light-gray js-edit-zoom-out"><i class="fas fa-minus"></i></button>
+                {*
+                <button class="button circle light-gray js-edit-rotate-left"><i class="fas fa-undo"></i></button>
+                <button class="button circle light-gray js-edit-rotate-right"><i class="fas fa-undo fa-flip-horizontal"></i></button>
+                *}
+            </div>
+        </div>
+    </div>
+    <footer class="dialog-footer">
+        <div class="flexbox middle">
+            <button type="button" class="js-save-button">[`Save`]</button>
+            <button type="button" class="light-gray js-close-dialog">[`Cancel`]</button>
+            {if !empty($oldImage)}
+            <button type="button" class="red outlined js-delete-button custom-ml-auto">
+                <span class="icon"><i class="fas fa-trash-alt"></i></span>
+                <span class="desktop-and-tablet-only">[`Delete photo`]</span>
+            </button>
+            {/if}
+        </div>
+        <div class="hidden">
+            <button type="button" class="light-gray js-close-dialog">[`Cancel`]</button>
+        </div>
+    </footer>
+    <script>
+        (function($) {
+            new class CropImage {
+
+                constructor() {
+                    // Data from PHP
+                    this.dialog_id = '{$random_id}'
+                    this.contact_id = {$contact.id|json_encode};
+                    this.old_image_url = {ifset($oldImage)|json_encode};
+
+                    // DOM
+                    this.$body = $('body');
+                    this.$dialog = $(`#${ this.dialog_id }`).closest('.dialog');
+                    this.$wrapper = this.$dialog.find('#new-photo-wrapper');
+                    this.$input = this.$wrapper.find('input:file');
+                    this.$editButtons = this.$wrapper.find('#edit-buttons');
+                    this.$editZoomOut = this.$wrapper.find('.js-edit-zoom-out');
+                    this.$editZoomIn = this.$wrapper.find('.js-edit-zoom-in');
+                    this.$editRotateLeft = this.$wrapper.find('.js-edit-rotate-left');
+                    this.$editRotateRight = this.$wrapper.find('.js-edit-rotate-right');
+                    this.$saveButton = this.$dialog.find('.js-save-button');
+                    this.$deleteButton = this.$dialog.find('.js-delete-button');
+                    this.$preview_namePlace = this.$wrapper.find('.js-uploaded-file-name');
+                    this.$image_img = this.$dialog.find('#c-pe-photo-big');
+
+                    // Data from cropper
+                    this.attached_file = { };
+
+                    this.dialog = { }
+
+                    this.init()
+                }
+
+                init(){
+                    const that = this;
+
+                    setTimeout(() => {
+                        that.dialog = that.$dialog.data('dialog');
+                    });
+
+                    if (that.old_image_url) {
+                        that.prepareSelector(that.old_image_url);
+                    }
+
+                    that.bindEvents();
+                }
+
+                bindEvents() {
+                    this.$saveButton.on('click', $.proxy(this.saveArea, this));
+                    this.$deleteButton.on('click', $.proxy(this.deletePhoto, this));
+
+                    this.$body.on('dragover.UserPhotoEdit drop.UserPhotoEdit', $.proxy(this.preventSystemDnd, this));
+                    this.$wrapper.on('dragover.UserPhotoEdit drop.UserPhotoEdit', $.proxy(this.preventSystemDnd, this));
+
+                    this.$wrapper.on('dragenter.UserPhotoEdit', $.proxy(this.highlight, this));
+                    this.$wrapper.on('dragleave.UserPhotoEdit, drop.UserPhotoEdit', $.proxy(this.unhighlight, this));
+                    this.$wrapper.on('drop.UserPhotoEdit', $.proxy(this.handleDrop, this));
+
+                    this.$input.on('change', $.proxy(this.replaceImage, this));
+                }
+
+                deletePhoto() {
+                    const that = this;
+
+                    $.waDialog.confirm({
+                        title: "[`Are you sure you want to delete this photo?`]",
+                        success_button_title: '[`Delete`]',
+                        success_button_class: 'danger',
+                        cancel_button_title: '[`Cancel`]',
+                        cancel_button_class: 'light-gray',
+                        onSuccess: function() {
+                            const url = that.$dialog.data('photo-delete-url') || "?module=profile&action=savePhoto";
+                            const removeData = {
+                                id: that.contact_id,
+                                del: 1
+                            };
+
+                            const spinner = $('<i class="fas fa-spinner wa-animation-spin"></i>')
+                            that.$deleteButton.prop('disabled', true);
+                            that.$deleteButton.append(spinner)
+
+                            $.ajax(url, {
+                                method: 'POST',
+                                data: removeData,
+                                success(data) {
+                                    if (that.contact_id === $('#wa-userprofile').data('user-id')) {
+                                        $('#wa-userprofile .wa-userpic').attr('src', data.data.url);
+                                        $('.js-userpic img').attr('src', data.data.url);
+                                        $('.js-userpic-team-head').css('background-image', 'url(' + data.data.url + ')');
+                                    }
+                                    localStorage.removeItem('wa_user_edit_avatar');
+                                    that.$dialog.trigger('photo_deleted', data.data);
+                                    that.dialog.close();
+                                },
+                                error() {
+                                    console.log('Upload error');
+                                },
+                            });
+                        },
+                        onCancel: function() {
+                            return;
+                        }
+                    });
+                }
+
+                saveArea() {
+                    const that = this;
+
+                    const cropper = that.$image_img.data('cropper');
+
+                    const cropData = cropper.getData();
+
+                    localStorage.setItem('wa_user_edit_avatar', JSON.stringify(cropper.getData(true)));
+
+                    const formData = new FormData();
+
+                    formData.append('id', that.contact_id);
+                    formData.append('ww', that.$image_img[0].width);
+
+                    formData.append('x1', cropData.x);
+                    formData.append('y1', cropData.y);
+                    formData.append('x2', cropData.x + cropData.width);
+                    formData.append('y2', cropData.y + cropData.height);
+                    formData.append('w', cropData.width);
+                    formData.append('h', cropData.height);
+
+                    const hasNoAttachedFile = $.isEmptyObject(that.attached_file);
+
+                    if (hasNoAttachedFile) {
+                        formData.append('orig', '1');
+                    } else {
+                        formData.append('photo', that.attached_file);
+                    }
+
+                    const url = that.$dialog.data('photo-upload-url') || "?module=profile&action=savePhoto";
+                    const spinner = $('<i class="fas fa-spinner wa-animation-spin" style="margin-left: 5px;"></i>')
+                    that.$saveButton.prop('disabled', true);
+                    that.$saveButton.append(spinner);
+
+                    $.ajax(url, {
+                        method: 'POST',
+                        data: formData,
+                        processData: false,
+                        contentType: false,
+                        success(data) {
+                            if (that.contact_id === $('#wa-userprofile').data('user-id')) {
+                                $('#wa-userprofile .wa-userpic').attr('src', data.data.url);
+                            }
+
+                            $('.js-userpic img').attr('src', data.data.url);
+                            $('.js-userpic-team-head').css('background-image', 'url(' + data.data.url + ')');
+
+                            that.$dialog.trigger('photo_updated', data.data);
+                            that.dialog.close();
+                        },
+                        error() {
+                          console.log('Upload error');
+                        },
+                    });
+                }
+
+                replaceImage() {
+                    const that = this;
+
+                    const file = that.$input[0].files[0];
+
+                    if (!that.$input[0].files.length || !that.$input[0].files[0]) {
+                        return;
+                    }
+
+                    this.fileSelected(file);
+                }
+
+                highlight() {
+                    this.$wrapper.addClass('highlighted');
+                }
+
+                unhighlight(e) {
+                    if ( e.currentTarget.contains(e.relatedTarget) ) {
+                        return;
+                    }
+
+                    this.$wrapper.removeClass('highlighted');
+                }
+
+                handleDrop(e) {
+                    try {
+                        const file = e.originalEvent.dataTransfer.files[0];
+                        if (file) {
+                          this.fileSelected(file);
+                        }
+                    } catch (error) {
+                        console.error(error);
+                    }
+                }
+
+                preventSystemDnd(e) {
+                    e.preventDefault();
+                }
+
+                fileSelected(file) {
+                    const that = this;
+
+                    if (!file.type.match(/^image\/(png|jpe?g|gif)$/)) {
+                        $.waDialog.alert({
+                            title: "[`Not an image or invalid image:`] " + file.name,
+                            button_title: '[`Close`]',
+                            button_class: 'warning',
+                        });
+
+                        return;
+                    }
+
+                    // Read file contents as data url, then show in $image_img
+                    that.attached_file = file;
+
+                    this.$preview_namePlace.text(file.name).removeClass('hidden');
+
+                    const reader = new FileReader();
+
+                    reader.onload = function(event) {
+                        that.prepareSelector(event.target.result);
+                    }
+
+                    reader.onerror = function() {
+                        console.log(reader.error);
+                        return;
+                    }
+
+                    reader.readAsDataURL(file);
+                }
+
+                prepareSelector(img_src) {
+                    const that = this;
+
+                    if (!$.fn.cropper) {
+                        $.wa.loadFiles(
+                            "{$wa_url}wa-content/js/jquery-plugins/cropper/cropper.css?{$wa->version(true)}",
+                            "{$wa_url}wa-content/js/jquery-plugins/cropper/cropper.js?{$wa->version(true)}",
+                            "{$wa_url}wa-content/js/jquery-plugins/cropper/jquery-cropper.js?{$wa->version(true)}"
+                        ).then(function() {
+                            that.prepareSelector(img_src);
+                        });
+
+                        return;
+                    }
+
+                    that.$image_img.removeClass('hidden');
+                    that.$image_img[0].src = img_src;
+                    that.$editButtons.removeClass('hidden');
+
+                    that.$image_img.on('load', function() {
+                        that.$image_img.cropper('destroy');
+
+                        const lsData = localStorage.getItem('wa_user_edit_avatar');
+                        const hasNoAttachedFile = $.isEmptyObject(that.attached_file);
+
+                        let cropData;
+
+                        if (lsData && hasNoAttachedFile) {
+                            cropData = JSON.parse(lsData);
+                        }
+
+                        that.$image_img.cropper({
+                            dragMode: 'move',
+                            viewMode: 1,
+                            preview: '.js-user-edit-preview',
+                            guides: false,
+                            cropBoxResizable: false,
+                            minCropBoxWidth: 96,
+                            minCropBoxHeight: 96,
+                            rotatable: true,
+                            checkOrientation: true,
+                            ready: function(event) {
+                                that.$editZoomOut.on('click', () => {
+                                    this.cropper.zoom(-0.1);
+                                });
+
+                                that.$editZoomIn.on('click', () => {
+                                    this.cropper.zoom(0.1);
+                                });
+
+                                that.$editRotateLeft.on('click', () => {
+                                    this.cropper.rotate(-90);
+                                });
+
+                                that.$editRotateRight.on('click', () => {
+                                    this.cropper.rotate(90);
+                                });
+
+                                if (lsData && hasNoAttachedFile) {
+                                    return;
+                                }
+
+                                const sourceWidth = event.target.width;
+                                const sourceHeight = event.target.height;
+
+                                const xPos = sourceWidth > sourceHeight ? Math.abs((sourceWidth / 2) - (sourceHeight / 2) + (sourceHeight * 0.1)) : Math.abs(sourceWidth * 0.1);
+                                const yPos = sourceWidth > sourceHeight ? Math.abs(sourceHeight * 0.1) : Math.abs((sourceHeight / 2) - (sourceWidth / 2) + (sourceWidth * 0.1));
+
+                                const targetSquare = sourceWidth > sourceHeight ? Math.abs(sourceHeight * 0.8) : Math.abs(sourceWidth * 0.8);
+
+                                cropData = {
+                                    x: xPos,
+                                    y: yPos,
+                                    width: targetSquare,
+                                    height: targetSquare
+                                };
+
+                                this.cropper.setData(cropData);
+                            },
+                            data: cropData
+                        });
+
+                        that.dialog.resize();
+                    });
+
+                    setTimeout(() => {
+                        that.dialog.resize();
+                    });
+                }
+            }
+        })(jQuery);
+    </script>
+</div>

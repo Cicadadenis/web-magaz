@@ -1,0 +1,597 @@
+$pad = 0.625rem
+$rem = 16
+// Main
+.t-dialog-wrapper
+    position absolute
+    top 0
+    left 0
+    box-sizing border-box
+    background #fff
+
+    border 1px solid #888
+    border-radius 2px
+    box-shadow: 0 1px 5px rgba(0,0,0,0.13);
+
+    &.is-full-screen
+        position fixed
+        top 0
+        left 0
+        width 100%
+        height 100%
+        background transparent
+        border: 0;
+        border-radius 0
+        box-shadow none
+
+        .t-dialog-background
+            position absolute
+            top 0
+            left 0
+            width 100%
+            height 100%
+            box-sizing border-box
+            background rgba(255,255,255,.8)
+
+        .t-dialog-block
+            position absolute
+            top 0
+            left 0
+            box-sizing border-box
+            background #fff
+
+            border: 5px solid #f3f3f3;
+            border-radius 4px
+            box-shadow: 0 0 70px #bbb;
+
+            &.is-animated
+                transition all 200ms linear
+
+            form
+                overflow visible
+
+    .t-dialog-block
+        .t-dialog-header
+            padding ($pad * 2) ($pad * 2) $pad ($pad * 2)
+
+        .t-dialog-content
+            padding 0 ($pad * 2)
+
+            &.is-long-content
+                overflow auto
+                box-sizing border-box
+
+    .t-dialog-footer
+        margin 2em 0 0
+        padding 0 ($pad * 2) ($pad * 2) ($pad * 2)
+
+        .icon16
+            vertical-align: baseline;
+            position: relative;
+            top: 3px;
+            margin: 0 0 0 4px;
+
+        .t-actions
+            .t-layout
+                //table-layout fixed
+
+                .t-column
+                    vertical-align middle
+
+            .t-button
+                display inline-block
+                vertical-align middle
+                margin 0 0 0 1em
+                cursor pointer
+
+                &:first-child
+                    margin-left 0
+
+                .icon16
+                    position relative
+                    top 3px
+                    vertical-align baseline;
+
+// Access
+.t-access-dialog
+    .dialog-header
+        position relative
+        .t-text
+            gap: .5em
+        .t-app
+            font-weight bold
+            .t-app-icon
+                height: 30px;
+                margin-bottom: -4px;
+        .t-user
+            .t-userpic
+            .t-group-icon
+                color var(--menu-glyph-color);
+
+            .t-userpic
+                margin-bottom: -2px;
+
+        .t-access-list
+            text-align center
+            .t-access-item
+                cursor pointer
+                padding .78125em .75em
+                background: var(--background-color-blank)
+                &.selected
+                    &.type-no
+                        color: #aaa;
+                        background-color: rgba(229, 229, 229, .5);
+
+                    &.type-limited
+                        color: rgba(#000, .5);
+                        background-color: rgba(161, 229, 161, .6);
+
+                    &.type-full
+                        color: rgba(#000, .75);
+                        background-color: rgba(102, 204, 102, .85);
+
+    .dialog-content
+        table
+            tr
+                &.c-access-subcontrol-header
+                    font-weight bold
+                    td:last-child
+                        text-align right
+                &.c-access-subcontrol-item
+                    td:first-child
+                        padding-left 1.5em
+
+    .dialog-footer
+
+        .t-notice
+            display none
+            margin 0 0 0 4px
+
+            &.is-visible
+                display inline-block
+
+// Calendar :: Day
+.t-event-days-popup
+    width 300px
+
+    .t-dialog-header
+        padding $pad
+        border-bottom 1px solid $border_c
+
+        & > *:last-child
+            margin-bottom 0
+
+    .t-dialog-content
+        padding $pad
+
+    .t-events
+        display block
+        list-style: none
+        margin 0
+        padding 0
+
+        .t-event-wrapper
+            display block
+            margin 0
+
+// Calendar :: Edit Event Dialog
+.t-edit-event-dialog
+    .dialog-content
+        .t-date-wrapper
+            &.is-extended
+                .is-time
+                    visibility visible
+            .is-time
+                visibility hidden
+                transition none
+    &.is-event
+        .dialog-content
+            .t-status-field
+                display none
+
+    &.is-status
+        .dialog-content
+            .t-event-field
+                display none
+
+
+// Group :: edit group
+.t-edit-group-dialog
+    .dialog-content
+        .t-icon-toggle
+            .t-icon-list
+                display flex
+                flex-wrap wrap
+                gap .45em
+                .t-icon-item
+                    border-radius: 50%
+                    width: 2.25em
+                    height: 2.25em
+                    display: inline-grid
+                    place-items: center
+                    color: var(--menu-glyph-color)
+                    margin 0 !important
+                    &.selected
+                    &:hover
+                        background-color: var(--menu-selected-background-color);
+                        color: var(--black);
+                        cursor: pointer;
+
+// Settings :: edit calendar
+.dialog-content
+
+    .t-badge-preview
+        display: inline-flex
+        align-items: center
+        gap: .5em
+        &:first-child
+            margin: 0 1em .5em 0
+
+    .t-style-wrapper
+
+        .t-color-toggle
+            margin .5em 0 0
+
+            .t-toggle
+                position relative
+                display inline-flex
+                flex-direction column
+                justify-content: center
+                margin 0 0 0 1em
+
+                &:first-child
+                    margin-left 0
+
+                .t-label
+                    flex 1 0 100%
+                    margin 0 0 4px 0
+                    font-size (12/$rem)em
+                    color #aaa
+
+                .t-color-field
+                    min-width auto
+                    width 5.625em
+
+                .t-color-picker
+                    position absolute
+                    top 100%
+                    left 0
+                    padding $pad
+                    background #fff
+                    box-shadow 0 0 15px rgba(0,0,0,.2)
+                    z-index 1
+
+                    &.is-hidden
+                        display none
+
+        .t-style-list
+            display: flex
+            gap: .5em
+            flex-wrap: wrap
+
+            .t-style-item
+                border-radius: 50%
+                width: 2em
+                height: 2em
+                box-shadow: inset 0 0 0 0.125em rgba(0,0,0,.2)
+                cursor pointer
+                position relative
+                display flex
+                justify-content center
+                align-items center
+                svg
+                    display none
+
+                &:hover
+                &.is-selected
+                    opacity 1
+
+                &.is-selected
+                    svg
+                        display inline-block
+                        z-index 1
+                    &::before
+                        content ''
+                        width 1.4em
+                        height 1.4em
+                        border-radius 50%
+                        background-color rgba(0,0,0,.2)
+                        position absolute
+                        z-index 0
+
+
+        .t-limited-toggle
+
+            .menu-v
+                a
+                    display inline
+
+            .t-hidden-content
+                p
+                    margin .5em 0 0
+
+                    &:first-child
+                        margin-top 0
+
+                .menu-v
+                    margin 1em 0 0
+
+                    &:first-child
+                        margin-top 0
+
+                    .is-inactive
+                        color #aaa
+
+    .t-calendar-icons
+        display: flex
+        gap: .5em
+        flex-wrap: wrap
+        .t-calendar-icons--item
+            border-radius: 50%
+            width: 2.25em
+            height: 2.25em
+            display: inline-grid
+            place-items: center
+            color var(--menu-glyph-color);
+            &:hover
+            &.is-selected
+                background-color: var(--menu-selected-background-color)
+                color var(--black)
+                cursor: pointer
+
+// Delete dialogs :: general styles
+.t-delete-group-popup
+.t-delete-event-popup
+.t-delete-calendar-popup
+.t-confirm-deletion-dialog
+.t-delete-calendar-external-popup
+    .t-dialog-block
+        width 400px
+
+        .t-dialog-content
+            min-height 100px
+
+// Profile :: add outside calendars
+.t-outside-calendars-dialog
+    .t-dialog-block
+        width 500px
+
+        .t-dialog-content
+            .t-o_calendar-list
+                margin 0
+                padding 0
+
+                .t-o_calendar-item
+                    margin 1em 0 0
+                    padding .25em 1em .25em .25em
+                    list-style none
+                    line-height 18px
+                    background transparent
+                    border-radius 2px
+
+                    &:first-child
+                        margin-top 0
+
+                    &:hover
+                        background #ffc
+
+                        .t-external-calendar-unmount
+                            opacity 1
+
+                    & > .t-layout
+                        table-layout fixed
+
+                        .t-column
+                            vertical-align middle
+
+                            &.right
+                                width 90px;
+                                white-space nowrap
+
+                    span
+                    a
+                        margin 0 4px 0 0
+
+                        &:last-child
+                            margin-right 0
+
+                        .icon16
+                            vertical-align top
+                            margin 0 4px 0 0
+
+                    .t-html
+                        margin 0
+                        max-width 100%
+                        white-space nowrap
+                        overflow hidden
+                        text-overflow ellipsis
+
+                    .t-offline
+                        font-size: 12px;
+                        margin: 0;
+
+                        .t-notice
+                            color #aaa
+
+                    .t-external-calendar-unmount
+                        opacity 0
+
+                    .t-date
+                        display inline-block
+                        font-size: 12px;
+                        color #aaa
+
+                    .t-plugin-icon
+                        vertical-align top
+                        margin 0 4px 0 0
+
+                    .t-calendar-name
+                        display inline-block
+                        padding 0 4px;
+                        border-radius 2px
+
+
+                    .t-sub-info
+                        font-size: 12px;
+
+            .t-actions
+                margin 1em 0 0 .25em
+
+// Profile :: delete user
+.t-confirm-deletion-dialog
+    .t-dialog-block
+
+        table em.errormsg
+            display: inline
+
+// Sidebar :: add user
+.t-invite-user-dialog
+    .dialog-body
+        .is-by-login
+            .by-login-hint
+                display inline-block !important
+
+        .t-apps-list-wrapper
+            position: relative;
+            &.invisible
+                visibility: hidden;
+                position: absolute;
+            .t-user-groups-nav
+                position absolute
+                top 0
+                bottom 0
+                font-size 150%
+                z-index 2
+                display flex
+                align-items center
+                justify-content center
+                cursor pointer
+                color var(--gray)
+                width: 28px
+                &.left
+                    left 0;
+                &.right
+                    right 0
+                &.swiper-button-disabled
+                    svg
+                        opacity .5;
+            .t-access-app
+                width: 48px
+                height: 100%
+                position: relative
+                img
+                    max-width 48px;
+
+// Profile :: edit user
+.t-edit-profile
+    .dialog-content
+        &.fields:not(.vertical)
+            .field
+                & > .multifield-subfields
+                    display: block
+                    vertical-align: unset
+                    .field-composite-subfields-block
+                        position: relative
+                        .sort
+                            position: absolute
+                            cursor: move
+                            margin-top: 0.5rem !important
+                            margin-left 10.5rem
+                            @media screen and (max-width: 760px)
+                                margin-left 0
+                                margin-top 2rem !important
+                        & > .field
+                            display: flex
+                            align-items: center
+                            flex-wrap: wrap
+                            .name
+                                padding-top: 0
+                            .value
+                                margin-bottom: 0 !important
+                                display: flex
+                                align-items: center
+                                .wa-select
+                                    margin-top: 0 !important
+                                    margin-right: 0 !important
+                                input
+                                    margin-top: 0 !important;
+                                    margin-left: 0.5rem;
+                                    max-width: calc(100% - 0.5rem)
+                                .delete-subfield
+                                    margin-left 0.5rem
+                        .no-bot-margins
+                            & > .value
+                                margin-left 1.625rem
+                        .composite
+                            display flex
+                            flex-direction column
+                            align-items flex-start
+                            padding-left 12.125rem
+                            margin 0
+                            box-sizing border-box
+                            @media screen and (max-width: 760px)
+                                padding-left 0
+                            .field
+                                display flex
+                                flex-direction column
+                                margin-top 0.75rem;
+                                .name
+                                    &.for-input
+                                        padding-bottom: 0.25rem
+                                .value
+                                    display table-cell
+                                    input
+                                        margin 0
+                                &.hdr
+                                    display none
+                    & + .field
+                        display: block
+                        padding-left 10.5rem
+                        box-sizing border-box
+                        @media screen and (max-width: 760px)
+                            padding-left 0
+        .multifield-subfields
+            & > .value
+                position: relative
+                margin-bottom: 16px;
+
+                .sort-handler
+                    display: none;
+                    cursor: move;
+
+                .delete-subfield
+                    display: none;
+
+                &:not(:only-child)
+                    @media (max-width: 760px)
+                        border-bottom: 1px solid var(--border-color-soft);
+                        padding: 10px 26px;
+                        margin-bottom: 0;
+
+                    .sort-handler
+                    .delete-subfield
+                        display: inline;
+
+                        @media (max-width: 760px)
+                            position: absolute;
+                            top: 16px;
+
+                    .sort-handler
+                        @media (max-width: 760px)
+                            left: 0;
+
+                    .delete-subfield
+                        @media (max-width: 760px)
+                            right: 0;
+
+                &:last-child
+                    @media (max-width: 760px)
+                        margin-bottom: 16px;
+
+@media screen and (min-width: 760px)
+    .dialog-body
+        display flex
+        flex-direction column
+        max-height 94%
+        .dialog-footer
+            margin-top auto !important
+            padding-top 1.5rem !important

@@ -1,0 +1,85 @@
+<div class="wa-dialog s-category-delete-dialog" id="js-category-delete-dialog">
+    <div class="dialog-background"></div>
+    <div class="dialog-body">
+        <div class="js-vue-section" style="visibility: hidden;">
+            <div class="dialog-header">
+                <h3>{sprintf(_w("Delete the “%s” category"), "{ { category.name } }")}</h3>
+            </div>
+            <div class="dialog-content">
+
+                <p v-if="!categories_count && !products_count">[`Confirm the category deletion.`]</p>
+
+                <div class="s-options-section">
+                    <div class="wa-fields">
+                        <div class="wa-field" v-if="categories_count">
+                            <div class="name unshifted size-small">
+                                <span class="s-label">[`Deletion of subcategories`]</span>
+                            </div>
+                            <div class="value">
+                                <div class="flexbox space-12">
+                                    <div class="s-switch-wrapper">
+                                        <component-switch v-model="remove_categories"></component-switch>
+                                    </div>
+                                    <div class="s-text-wrapper">
+                                        <template v-if="remove_categories">
+                                            <div class="s-title color-black">{_w("Delete subcategories")}</div>
+                                            <div class="s-description hint">[`All subcategories will be deleted regardless of their nesting level.`]</div>
+                                        </template>
+                                        <template v-else>
+                                            <div class="s-title color-black">{_w("Do not delete subcategories")}</div>
+                                            <div class="s-description hint">[`Subcategories will be moved one level up.`]</div>
+                                        </template>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="wa-field" v-if="products_count">
+                            <div class="name unshifted size-small">
+                                <span class="s-label">[`Products deletion`]</span>
+                            </div>
+                            <div class="value">
+                                <div class="flexbox space-12">
+                                    <div class="s-switch-wrapper">
+                                        <component-switch v-model="remove_products"></component-switch>
+                                    </div>
+                                    <div class="s-text-wrapper">
+                                        <template v-if="remove_products">
+                                            <div class="s-title color-black">{sprintf(_w("Delete products (%s)"), "{ { products_count } }")}</div>
+                                            <div class="s-description hint">[`All products added to the category you are about to delete will also be deleted without the ability restore.`]</div>
+                                        </template>
+                                        <template v-else>
+                                            <div class="s-title color-black">[`Don’t delete products`]</div>
+                                            <div class="s-description hint">[`No products directly added to the category are about to delete will be deleted. Only their links to this category will be deleted.`]</div>
+                                        </template>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="dialog-footer">
+                <button class="wa-button red" type="button" v-on:click.prevent="removeCategory"v-bind:disabled="locked">
+                    <span class="s-icon icon size-14" v-if="locked"><i class="fas fa-spinner fa-spin"></i></span>
+                    <span class="s-name">[`Delete`]</span>
+                </button>
+                <button class="js-dialog-close wa-button gray-light" type="button">[`Cancel`]</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        ( function($) {
+            var $dialog = $("#js-category-delete-dialog").removeAttr("id"),
+                dialog = $dialog.data("dialog");
+
+            dialog.options.ready.done( function() {
+                dialog.options.initDialog($dialog, dialog, {
+                    category: {$category|json_encode}
+                });
+            });
+        })(jQuery);
+    </script>
+</div>

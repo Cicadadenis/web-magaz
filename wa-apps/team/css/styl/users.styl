@@ -1,0 +1,340 @@
+$rem = 16
+
+.t-users-page
+.t-group-page
+    .t-users-list
+        display flex
+        flex-wrap wrap
+        gap 0.6em 1.2em
+
+        @media screen and (max-width: 760px)
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 1.85em 0.6em
+
+        @media screen and (max-width: 320px)
+            .userpic144
+                min-width: auto;
+                width: 8rem;
+                height: @width;
+
+        .t-user-wrapper
+            text-align center
+
+            @media screen and (max-width: 760px)
+                width: auto;
+                margin: 0;
+
+            .t-userpic-wrapper
+                .t-userpic
+                    border-radius 50%
+                    border: 4px solid transparent;
+                    box-sizing: border-box;
+                &.is-clone
+                    width 40px
+                    padding 0
+                    margin 0
+
+                    .t-user-block
+                        & > *:not(.t-userpic-wrapper)
+                            display none
+                .t-user-block
+                    line-height 18px
+
+
+                    .t-userpic-wrapper
+                        font-size 0
+                        line-height 0
+                        max-width 144px
+                        margin: 0 auto 2px
+
+                        .t-userpic
+                            width 100%
+                            height auto
+                            border-radius 50%
+
+                    .t-name
+                        word-wrap: break-word
+                        margin 0 0 6px
+
+                        .user-badge
+                            margin 6px 2px 0
+
+                    .t-job
+                        margin 6px 0 0;
+                        font-size: 90%
+                        line-height: 1.3em
+
+                    .t-login
+                        color #bebfc5
+                        margin 6px 0 0;
+
+            &.online
+                .t-userpic
+                    border-color: var(--green)
+
+    &.is-online-page
+        .t-offline-list
+            .t-user-wrapper
+                @media screen and (max-width: 760px)
+                    justify-content center
+                $_userpic_w = 48px
+
+                &:first-child
+                    margin-top 0
+
+                &:last-child
+                    margin-bottom 0
+
+                .t-user-block
+                    position relative
+                    display: inline-block;
+                    vertical-align: top;
+                    max-width 100%
+                    box-sizing border-box
+
+                    .t-layout
+                        width auto
+                        table-layout fixed
+
+                        .t-column
+                            vertical-align middle
+
+                            &.left
+                                padding-right $pad
+                                width $_userpic_w
+
+                            &.right
+                                padding-left $pad
+                                width 20%
+
+                    .t-userpic-wrapper
+                        display block
+                        width $_userpic_w
+                        line-height 0
+
+                        img
+                            width 100%
+                            height auto
+
+                    .t-name
+                        margin 0
+
+                    .t-online-date
+                        font-size (12/$rem)em
+                        color #aaa
+
+                    .t-link
+                        display block
+                        position absolute
+                        top 0
+                        left 0
+                        width 100%
+                        height 100%
+                        cursor pointer
+
+.t-group-page
+    .t-content-header
+        display flex
+        gap .5rem 1rem
+        flex-wrap wrap
+
+    .t-content-body
+
+        .t-map-wrapper
+            position relative
+            width 100%
+            height 280px
+            margin-bottom 1.5em
+
+            &.before-render
+                position absolute
+                visibility hidden
+
+            .t-location-map
+                position absolute
+                top 0
+                left 0
+                width 100%
+                height 100%
+
+.t-group-access-page
+.t-group-manage-page
+    .t-content-header
+        display flex
+        gap 1rem
+        flex-wrap wrap
+
+    .t-content-body
+
+        .t-autocomplete-wrapper
+            margin 1em 0 2em
+
+            .t-hint
+                margin 0 0 0 4px
+                line-height 22px
+
+        .t-users-wrapper
+            margin 2em 0 0
+
+            .is-hidden
+                display none
+
+            .t-users-list
+                margin 1em 0 0
+
+                &.is-used-list
+                    .t-add-text
+                        display none
+
+                &.is-unused-list
+                    .t-user-wrapper
+                        .t-userpic-wrapper
+                        .t-name
+                        .t-login
+                        .t-actions
+                            opacity .5
+
+                        &:hover
+                            .t-userpic-wrapper
+                            .t-name
+                            .t-login
+                            .t-actions
+                                opacity 1
+
+                    .t-remove-text
+                        display none
+
+                .t-user-wrapper
+                    box-sizing border-box
+                    border-radius 2px
+
+                    &:first-child
+                        margin-top 0
+
+                    &:last-child
+                        margin-bottom 0
+
+                    .t-user-block
+                        .t-layout
+                            word-wrap: break-word;
+
+                            & > .t-column
+                                vertical-align middle
+
+                                @media (max-width: 760px)
+                                    vertical-align: top;
+                                    width: 100%;
+
+                                &.left
+                                    width 48px
+                                    padding 0 1em 0 0
+
+                                &.right
+                                    padding 0 0 0 1em
+                                    text-align right
+
+                        .t-userpic-wrapper
+                            line-height 0
+
+                            .t-userpic
+                                width 100%
+                                height auto
+
+                        .t-actions
+                            white-space nowrap
+
+                        .t-name
+                            margin 0
+                            line-height (18/$rem)em
+
+                        .t-login
+                            font-size (12/$rem)em
+                            color #aaa
+
+                        a
+                            display inline-block
+
+    .c-access-rights-wrapper
+        .t-access-app
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color-soft);
+            padding: .5rem 0;
+            position relative
+
+            @media (max-width: 760px)
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-areas: "icon access" "name access";
+
+            .t-app-icon
+                max-width: 48px;
+                padding: 0;
+                margin-right: 1rem;
+
+                @media (max-width: 760px)
+                    grid-area: icon;
+                    margin: 0 auto;
+
+            .t-app-name
+                flex-basis 40%
+                padding 0
+
+                @media (max-width: 760px)
+                    grid-area: name;
+                    word-break: break-word;
+                    text-align: center;
+
+            .t-app-access
+                flex-basis 50%
+                margin-left: auto;
+
+                @media (max-width: 760px)
+                    grid-area: access;
+                    height: 100%;
+                    margin: 0;
+
+                    .t-access-status
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 100%;
+
+.t-group-access-page
+    .t-content-header
+        display flex
+        gap 1rem
+        flex-wrap wrap
+        margin-bottom 1rem
+    .t-content-body
+        .c-access-rights-wrapper
+            .t-access-status
+                width auto
+                background: var(--chips-background-color);
+                color var(--text-color-hint)
+
+.t-user-birthday-icon
+    right: 0;
+    bottom: 0;
+    font-size: .75rem;
+    padding: 5px;
+
+.t-users-avatar-highlight
+    box-shadow: 0 0.25rem 1.5rem -0.25rem var(--thumbs-highlighted-color);
+
+.editable-highlight
+    color: var(--text-color-strongest);
+    font-style: normal;
+    background-color: var(--background-color-blank);
+    border-radius: 0.25em;
+    outline: none;
+    outline: 0.125em solid var(--accent-color);
+    &:hover
+        background-color: inherit;
+
+.editable:empty:not(:focus):before
+    content: attr(data-placeholder);
+    color: var(--gray);
+    font-style: italic;
+    pointer-events: none;
